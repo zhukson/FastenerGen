@@ -648,6 +648,113 @@ class DesignResult(BaseModel):
 
 
 # ===========================================================================
+# Pseudo-Reasoning Pipeline
+# ===========================================================================
+
+
+class ProductDiePair(BaseModel):
+    """Input to the pseudo-reasoning pipeline: a complete product-die design pair."""
+
+    pair_id: str = Field(..., description="Unique identifier for this pair")
+    part_features: PartFeatures
+    process_plan: ProcessPlan
+    die_parameters: list[DieParameters]
+    source_order_id: str | None = Field(None, description="Source order ID if from factory data")
+
+
+class PrimaryReasoning(BaseModel):
+    """Structured reasoning output from a single Claude Opus 4.7 run."""
+
+    run_index: int = Field(..., ge=0, lt=3)
+    observable_facts: list[str] = Field(..., description="Verifiable facts from the input data")
+    stock_selection_reasoning: str = Field(..., description="Why this wire stock was chosen")
+    station_count_reasoning: str = Field(..., description="Why this number of stations was chosen")
+    deformation_sequence_reasoning: str = Field(..., description="Logic of the forming sequence")
+    die_material_reasoning: str = Field(..., description="Why these die materials/hardness were chosen")
+    dimensional_compensations: list[str] = Field(
+        ..., description="Product→die dimensional differences and why"
+    )
+    critical_parameters: dict[str, str] = Field(
+        ..., description="Critical parameter name → typical acceptable range"
+    )
+    potential_risks: list[str] = Field(..., description="Failure modes and manufacturing risks")
+    section_confidences: dict[str, float] = Field(
+        ..., description="Confidence per reasoning section (0-1)"
+    )
+    overall_confidence: float = Field(..., ge=0, le=1)
+    input_tokens: int = Field(0, ge=0)
+    output_tokens: int = Field(0, ge=0)
+    cost_usd: float = Field(0.0, ge=0)
+    prompt_version: str = Field("PR_V1_0_0")
+
+
+class CrossValidation(BaseModel):
+    """Gemini 2.5 Pro cross-validation result."""
+
+    agreements: dict[str, bool] = Field(
+        ..., description="Section name → True if Gemini agrees with Claude"
+    )
+    alternative_reasonings: dict[str, str] = Field(
+        default_factory=dict,
+        description="Section name → Gemini's alternative reasoning where it disagrees",
+    )
+    missed_observations: list[str] = Field(
+        default_factory=list,
+        description="Observations Claude missed that Gemini caught",
+    )
+    overall_agreement: float = Field(..., ge=0, le=1, description="Fraction of sections agreed on")
+    input_tokens: int = Field(0, ge=0)
+    output_tokens: int = Field(0, ge=0)
+    cost_usd: float = Field(0.0, ge=0)
+    prompt_version: str = Field("CV_V1_0_0")
+
+
+class RuleCheck(BaseModel):
+    """Result of a single rule-based verification check."""
+
+    check_name: str = Field(..., description="Machine-readable check identifier")
+    passed: bool
+    message: str = Field(..., description="Human-readable result")
+    actual_value: str | None = None
+    expected_range: str | None = None
+
+
+class RuleVerification(BaseModel):
+    """Aggregated rule-based verification for a reasoning output."""
+
+    checks: list[RuleCheck]
+    passed: bool = Field(..., description="True only if all checks passed")
+    pass_rate: float = Field(..., ge=0, le=1)
+
+
+class QualityScores(BaseModel):
+    """Quality metrics for a pseudo-reasoning output."""
+
+    self_consistency: float = Field(..., ge=0, le=1, description="Agreement across 3 Claude runs")
+    cross_model_agreement: float = Field(..., ge=0, le=1, description="Claude-Gemini agreement")
+    rule_compliance: float = Field(..., ge=0, le=1, description="Fraction of rules passed")
+    geometric_grounding: float = Field(
+        ..., ge=0, le=1, description="Reasoning references actual input data"
+    )
+    overall_confidence: ConfidenceLevel
+
+
+class ReasoningResult(BaseModel):
+    """Final aggregated output of the pseudo-reasoning pipeline for one pair."""
+
+    pair_id: str
+    reasoning: PseudoReasoning
+    quality: QualityScores
+    primaries: list[PrimaryReasoning]
+    cross_validation: CrossValidation
+    rule_verification: RuleVerification
+    total_cost_usd: float = Field(0.0, ge=0)
+    total_time_s: float = Field(0.0, ge=0)
+    prompt_versions: dict[str, str] = Field(default_factory=dict)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+
+# ===========================================================================
 # Drawing Parsing
 # ===========================================================================
 

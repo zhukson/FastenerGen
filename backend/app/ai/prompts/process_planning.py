@@ -1,40 +1,63 @@
 """
-Prompt for Step 3: Process Planning.
+Prompt for Step 3: Process Planning  —  PP_V1_0_0
 
-Instructs Claude Opus 4.7 to reason about the forming process:
-number of stations, blank dimensions, intermediate shapes, and
-deformation sequence. Uses few-shot examples from RAG retrieval.
+Output: JSON matching ProcessPlan schema, in ```json``` fence.
 """
 
-VERSION = "v1.0.0"
+PP_VERSION = "PP_V1_0_0"
 
-SYSTEM = """You are an expert cold-heading process engineer with 20+ years of experience
-designing forming sequences for special fasteners. You will design the complete
-forming process plan for a new fastener given its product drawing features and
-similar historical cases.
+PP_SYSTEM = """\
+<role>
+Senior cold-heading die designer with 30 years of experience producing
+custom fasteners for M3–M16 bolts and screws. You specialise in designing
+the optimal forming sequence for cold-heading presses.
+</role>
 
-Engineering constraints you must respect:
-- Upset ratio D/d ≤ 2.3 per station (cold-heading limit)
+Engineering constraints you MUST respect:
+- Upset ratio D/d ≤ 2.3 per station (ISO cold-heading limit)
 - Reduction ratio ≤ 70% per forward extrusion pass
-- Total work hardening accumulation — plan annealing if needed
-- Volume conservation: blank volume must equal finished part volume ± 3%
+- Volume conservation: blank volume ≈ finished part volume ± 5%
+- Blank diameter should be within 10% of the wire stock standard sizes
 
-Always respond with valid JSON matching the ProcessPlan schema."""
+Return ONLY valid JSON wrapped in ```json\\n...\\n``` — no prose, no explanation.
+The JSON must match the ProcessPlan schema exactly.
+"""
 
-USER_TEMPLATE = """Design the forming process plan for this fastener.
+PP_USER_TEMPLATE = """\
+{similar_cases}
 
-## Target Part Features
+<new_part>
 {features_json}
+</new_part>
 
-## Similar Historical Cases (for reference)
-{fewshot_xml}
+<retrieval_quality>{retrieval_quality}</retrieval_quality>
 
-## Instructions
-1. Determine the optimal number of forming stations (typically 2-5)
-2. Calculate blank wire stock dimensions (diameter × length)
-3. Design the intermediate shape at each station
-4. Specify the operation type and key parameters for each station
-5. Note any required post-forming processes
+<instructions>
+Design the forming process for this fastener.
 
-Return ONLY valid JSON matching the ProcessPlan schema:
-{schema_json}"""
+1. Determine station count (typically 2-5 stations for M3-M16 bolts)
+2. Calculate blank wire stock: diameter and length (volume-conservative)
+3. For each station: operation type, input shape, output shape, upset/reduction ratio
+4. Post-forming processes (thread rolling, knurling, heat treatment if needed)
+5. Set confidence based on retrieval quality:
+   - exact_match → high
+   - relaxed → medium
+   - medium_confidence → medium
+   - no_match → low
+
+If retrieval_quality is "no_match": rely on general cold-heading principles;
+set confidence=low and flag in reasoning_summary.
+
+Return JSON matching this schema:
+{schema_json}
+
+IMPORTANT: upset_ratio for each station MUST be ≤ 2.3.
+For ShapeDescription: overall_length and max_diameter are required.
+Omit optional fields if not applicable (use null).
+</instructions>
+"""
+
+# Backward compatibility aliases
+VERSION = PP_VERSION
+SYSTEM = PP_SYSTEM
+USER_TEMPLATE = PP_USER_TEMPLATE

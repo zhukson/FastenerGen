@@ -45,5 +45,8 @@ class Settings(BaseSettings):
     max_design_retries: int = 2
     min_confidence_threshold: str = "high"
 
+    # Output file storage (local dev; production uses MinIO)
+    output_base_dir: str = "/tmp/fastenergpt/designs"
+
 
 settings = Settings()

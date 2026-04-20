@@ -128,6 +128,35 @@ WITH FASTENERGPT (target: 30 min + engineer review):
 
 ---
 
+## Demo Roadmap (Sessions 1–11)
+
+Phase 1 demo target: upload M6 bolt drawing → complete die design package in < 2 min.
+
+| Session | Focus                        | Key Deliverable                                              | File                                        |
+| ------- | ---------------------------- | ------------------------------------------------------------ | ------------------------------------------- |
+| **1**   | Project init                 | Skeleton: FastAPI + Next.js + Docker + ChromaDB              | *(done)*                                    |
+| **2**   | Core pipeline                | Drawing upload → LLM parse → process plan → die params       | *(done)*                                    |
+| **3**   | Pseudo-reasoning             | RAG seeding pipeline, self-consistency, cross-validation     | `prompts/SESSION_3_PSEUDO_REASONING.md`     |
+| **4**   | RAG + eval                   | ChromaDB hybrid search, eval harness, golden test set        | `prompts/SESSION_4_RAG_AND_DESIGN.md`       |
+| **5**   | RAG seed + Docker fix        | 200+ ISO cases in ChromaDB, CADQuery working in Docker       | `prompts/SESSION_5_RAG_SEED_AND_DOCKER.md`  |
+| **6**   | DXF rewrite                  | Real DIMENSION entities, ANSI31 hatch, tolerances            | `prompts/SESSION_6_DXF_REWRITE.md`          |
+| **7**   | Workpiece + assembly 3D      | Intermediate workpiece shapes + assembly STL per station     | `prompts/SESSION_7_WORKPIECE_AND_ASSEMBLY_3D.md` |
+| **8**   | Frontend assembly viewer     | Three.js multi-mesh viewer, Process Story strip              | `prompts/SESSION_8_FRONTEND_ASSEMBLY_VIEWER.md`  |
+| **9**   | Prompt + parameter quality   | Chain-of-thought arithmetic, computed constraints, ≥80% pass | `prompts/SESSION_9_PROMPT_AND_PARAMETER_QUALITY.md` |
+| **10**  | Frontend polish              | Case cards, SVG flow diagram, DXF preview, grouped downloads | `prompts/SESSION_10_FRONTEND_POLISH.md`     |
+| **11**  | E2E test + demo              | Full integration tests, demo script, CI pipeline             | `prompts/SESSION_11_E2E_TEST_AND_DEMO.md`   |
+
+### Demo Acceptance Gate (Session 11)
+
+- Upload M6×33 flat head bolt drawing → complete package in < 120s
+- 3D viewer shows punch (blue) + die (grey transparent) + workpiece (orange) per station
+- Process Story strip shows all intermediate shapes
+- ≥ 16/20 M6 designs pass verification on first attempt
+- DXF files open in LibreCAD with real dimension entities
+- Total output files ≥ 14 for a 3-station design
+
+---
+
 ## Core Pipeline (Phase 1 Detail)
 
 ```
@@ -436,6 +465,11 @@ fastener-gpt/
 | 2026-04-18 | Docker for local dev from Day 1                   | 3-person team needs consistent environments                           |
 | 2026-04-18 | Parametric 3D templates (CADQuery)                | More reliable than free-form generation                               |
 | 2026-04-18 | 3-layer data: Source / RAG / Few-shot             | Separate storage / retrieval / LLM presentation                       |
+| 2026-04-19 | Revolution solid geometry (numpy+trimesh)         | CADQuery OCCT needs X11 in Docker; trimesh path as reliable fallback  |
+| 2026-04-19 | ISO metric tables as synthetic seed data          | No public die design datasets; ISO dims + engineering rules → correct proportions |
+| 2026-04-19 | Sonnet for die design, Opus for process planning  | Process planning needs hard reasoning; die params are schema-following with injected constraints |
+| 2026-04-19 | Computed constraint injection before LLM call     | General rules like "2.5–4× bore" cause wrong proportions; part-specific pre-computed values force correct geometry |
+| 2026-04-19 | pypdfium2 for PDF→JPEG, scale=1.5, quality=90     | Stay under Claude's 5MB base64 limit; scale=2.0 produced 6MB+ files  |
 
 ---
 
@@ -447,3 +481,7 @@ fastener-gpt/
 - [ ] Legal: Delaware C-Corp + China WFOE — need lawyer
 - [ ] Data compliance: IP ownership of factory drawings
 - [ ] Domain expert hiring plan post-funding
+- [ ] Sessions 5–11 implementation (see `prompts/` folder for detailed specs)
+- [ ] ChromaDB seed with 250 ISO-derived cases (Session 5)
+- [ ] DXF rewrite with real DIMENSION entities (Session 6)
+- [ ] Demo recording for investor deck

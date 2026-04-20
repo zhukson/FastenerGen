@@ -2,10 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  experimental: {
-    // Enable WebAssembly for occt-import-js
-    serverComponentsExternalPackages: ["three"],
-  },
+  serverExternalPackages: ["three"],
   webpack: (config) => {
     // Support WASM for occt-import-js
     config.experiments = { ...config.experiments, asyncWebAssembly: true };
