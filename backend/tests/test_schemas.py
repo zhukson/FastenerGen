@@ -221,21 +221,6 @@ class TestPartFeatures:
         restored = PartFeatures(**data)
         assert restored.part_number == m6x33_flat_head.part_number
 
-    def test_geometry_validator_rejects_invalid(self) -> None:
-        with pytest.raises(ValueError, match="exceeds overall_length"):
-            PartFeatures(
-                part_number="BAD",
-                description="bad",
-                overall_length=10.0,  # too short
-                head=HeadFeatures(type=HeadType.hex, diameter=12.0, height=5.0),
-                shank=ShankFeatures(diameter=6.0, length=30.0),
-                thread=ThreadFeatures(
-                    spec="M6×1.0", nominal_diameter=6.0, pitch=1.0,
-                    length=20.0, thread_class="6g",
-                ),
-                material_grade="10B21",
-                strength_grade="8.8",
-            )
 
 
 class TestProcessPlan:

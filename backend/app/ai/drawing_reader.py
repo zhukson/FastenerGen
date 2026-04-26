@@ -62,8 +62,10 @@ Material codes:
 Strength grades (强度等级): 4.8, 5.8, 6.8, 8.8, 10.9, 12.9
 
 CRITICAL: Return ONLY valid JSON matching the schema below. No explanation, no markdown fences.
-If a field is unclear or missing from the drawing, use null. Never guess dimensions — only
-extract what is clearly visible in the drawing.
+If a field is unclear or missing from the drawing, use null for optional fields.
+For material_grade use "10B21" as default if not specified.
+For strength_grade use "8.8" as default if not specified.
+Never guess dimensions — only extract what is clearly visible in the drawing.
 
 Output schema (strict JSON, all dimensions in mm):
 {

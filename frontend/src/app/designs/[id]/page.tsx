@@ -2,7 +2,8 @@
 
 import { use, useEffect, useState } from "react";
 import { apiClient, type DesignResult } from "@/lib/api";
-import { ThreeDViewer } from "@/components/ThreeDViewer";
+import { ViewerStage } from "@/components/ViewerStage";
+import { StationViewer } from "@/components/StationViewer";
 import { FeaturePanel } from "@/components/FeaturePanel";
 import { ReasoningPanel } from "@/components/ReasoningPanel";
 import { FileDownloadPanel } from "@/components/FileDownloadPanel";
@@ -19,10 +20,18 @@ export default function DesignDetailPage({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Lifted state — shared between ThreeDViewer and StationViewer
+  const [activeStation, setActiveStation] = useState<number | "assembly">(1);
+
   useEffect(() => {
     apiClient
       .getDesign(id)
-      .then(setDesign)
+      .then((d) => {
+        setDesign(d);
+        // Initialize to first station
+        const firstStation = d.process_plan.stations[0]?.station_number ?? 1;
+        setActiveStation(firstStation);
+      })
       .catch((e: Error) => setError(e.message))
       .finally(() => setLoading(false));
   }, [id]);
@@ -78,12 +87,28 @@ export default function DesignDetailPage({
 
       {/* Main layout: 3D viewer (left 60%) + panels (right 40%) */}
       <div className="grid grid-cols-5 gap-6">
-        {/* 3D Viewer */}
-        <div
-          className="col-span-3 bg-white rounded-xl border border-gray-200 overflow-hidden"
-          style={{ height: 500 }}
-        >
-          <ThreeDViewer designId={id} design={design} />
+        {/* 3D Viewer + Process Story strip */}
+        <div className="col-span-3 space-y-3">
+          <div className="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden" style={{ height: 540 }}>
+            <ViewerStage
+              designId={id}
+              design={design}
+              height={540}
+              activeStation={activeStation}
+              onSelectStation={setActiveStation}
+            />
+          </div>
+
+          {/* Process Story strip */}
+          <div className="bg-gray-900 rounded-xl border border-gray-700 px-3">
+            <p className="text-xs text-gray-500 pt-2 pb-0.5">Forming Sequence</p>
+            <StationViewer
+              design={design}
+              designId={id}
+              activeStation={activeStation}
+              onSelectStation={setActiveStation}
+            />
+          </div>
         </div>
 
         {/* Right panels */}

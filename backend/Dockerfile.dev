@@ -15,8 +15,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxext6 \
     libx11-6 \
     libfontconfig1 \
+    fontconfig \
+    fonts-dejavu-core \
+    fonts-liberation \
+    fonts-noto-cjk \
+    fonts-wqy-zenhei \
     libxi6 \
     libxrandr2 \
+    libgomp1 \
+    && fc-cache -f \
     && rm -rf /var/lib/apt/lists/*
 
 COPY pyproject.toml .

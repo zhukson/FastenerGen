@@ -211,12 +211,19 @@ class DieDesigner:
     ) -> list[OutputFile]:
         files: list[OutputFile] = []
 
+        # Build station_number → StationPlan lookup for workpiece shapes
+        station_plans = {s.station_number: s for s in plan.stations}
+
         try:
             from app.drawings.generator import DrawingGenerator
             from app.geometry.exporter import GeometryExporter
+            from app.geometry.workpiece import WorkpieceGenerator
+            from app.geometry.assembly import AssemblyBuilder
 
             gen = DrawingGenerator()
             exporter = GeometryExporter()
+            wp_gen = WorkpieceGenerator()
+            assy_builder = AssemblyBuilder()
 
             # --- Production + process breakdown drawings ---
             prod_path = gen.generate_production_drawing(part, plan, output_dir / "production_drawing.dxf")
@@ -237,25 +244,47 @@ class DieDesigner:
                 size_bytes=proc_path.stat().st_size,
             ))
 
-            # --- Per-station 3D + 2D ---
+            # --- Station 0: wire blank ---
+            try:
+                s0_dir = output_dir / "station_0"
+                s0_dir.mkdir(exist_ok=True)
+                blank_path = wp_gen.generate_blank_stl(
+                    plan.blank_diameter, plan.blank_length,
+                    s0_dir / "blank.stl",
+                )
+                files.append(OutputFile(
+                    file_type="blank_stl",
+                    station_number=0,
+                    file_path=str(blank_path),
+                    format=FileFormat.stl,
+                    size_bytes=blank_path.stat().st_size,
+                ))
+            except Exception as exc:
+                logger.warning("blank_stl_failed", error=str(exc))
+
+            # --- Per-station 2D + 3D + workpiece + assembly ---
             for die_param in dies:
                 sn = die_param.station_number
                 station_dir = output_dir / f"station_{sn}"
                 station_dir.mkdir(exist_ok=True)
+                station_plan = station_plans.get(sn)
 
                 # 2D drawings — one for punch, one for die
                 for comp, comp_label, ft in [
                     (die_param.punch, "punch", "punch_drawing"),
                     (die_param.die, "die", "die_drawing"),
                 ]:
-                    dwg_path = gen.generate_die_drawing(comp, sn, station_dir / f"{comp_label}_drawing.dxf")
-                    files.append(OutputFile(
-                        file_type=ft,
-                        station_number=sn,
-                        file_path=str(dwg_path),
-                        format=FileFormat.dxf,
-                        size_bytes=dwg_path.stat().st_size,
-                    ))
+                    try:
+                        dwg_path = gen.generate_die_drawing(comp, sn, station_dir / f"{comp_label}_drawing.dxf")
+                        files.append(OutputFile(
+                            file_type=ft,
+                            station_number=sn,
+                            file_path=str(dwg_path),
+                            format=FileFormat.dxf,
+                            size_bytes=dwg_path.stat().st_size,
+                        ))
+                    except Exception as exc:
+                        logger.warning("die_drawing_failed", station=sn, component=comp_label, error=str(exc))
 
                 # 3D models — try CADQuery first, fall back to trimesh primitives
                 try:
@@ -288,8 +317,50 @@ class DieDesigner:
                 except ImportError:
                     # CADQuery not installed — generate preview STLs via trimesh
                     logger.warning("cadquery_not_available_using_trimesh", station=sn)
-                    stl_files = _generate_trimesh_stls(die_param, station_dir)
-                    files.extend(stl_files)
+                    try:
+                        stl_files = _generate_trimesh_stls(die_param, station_dir)
+                        files.extend(stl_files)
+                    except Exception as exc:
+                        logger.warning("trimesh_stl_failed", station=sn, error=str(exc))
+                except Exception as exc:
+                    logger.warning("die_3d_failed", station=sn, error=str(exc))
+
+                # Workpiece STL (trimesh — always available)
+                if station_plan is not None:
+                    try:
+                        wp_path = wp_gen.generate_workpiece_stl(
+                            station_plan.output_shape,
+                            station_dir / "workpiece.stl",
+                        )
+                        files.append(OutputFile(
+                            file_type="workpiece_stl",
+                            station_number=sn,
+                            file_path=str(wp_path),
+                            format=FileFormat.stl,
+                            size_bytes=wp_path.stat().st_size,
+                        ))
+                    except Exception as exc:
+                        logger.warning("workpiece_stl_failed", station=sn, error=str(exc))
+
+                # Assembly preview STL (punch + die + workpiece combined, trimesh)
+                if station_plan is not None:
+                    try:
+                        assy_paths = assy_builder.build_station_assembly_stls(
+                            die_param,
+                            station_plan.output_shape,
+                            station_dir,
+                        )
+                        if "assembly_preview" in assy_paths:
+                            ap = assy_paths["assembly_preview"]
+                            files.append(OutputFile(
+                                file_type="assembly_preview",
+                                station_number=sn,
+                                file_path=str(ap),
+                                format=FileFormat.stl,
+                                size_bytes=ap.stat().st_size,
+                            ))
+                    except Exception as exc:
+                        logger.warning("assembly_stl_failed", station=sn, error=str(exc))
 
         except Exception as exc:
             logger.error("output_generation_failed", error=str(exc))

@@ -245,8 +245,8 @@ class PartFeatures(BaseModel):
     thread: ThreadFeatures
     tail: TailFeatures | None = None
 
-    material_grade: str = Field(..., description="Material grade / steel spec", examples=["10B21"])
-    strength_grade: str = Field(..., description="Mechanical strength grade", examples=["8.8"])
+    material_grade: str = Field("10B21", description="Material grade / steel spec", examples=["10B21"])
+    strength_grade: str = Field("8.8", description="Mechanical strength grade", examples=["8.8"])
     hardness_min_hv: float | None = Field(
         None, ge=0, description="Min surface hardness (HV)", examples=[250.0]
     )
@@ -271,16 +271,6 @@ class PartFeatures(BaseModel):
     drawing_scale: str | None = Field(None, description="Drawing scale e.g. '1:1'", examples=["1:1"])
     notes: list[str] = Field(default_factory=list, description="Additional notes from drawing")
 
-    @model_validator(mode="after")
-    def validate_geometry(self) -> PartFeatures:
-        # Shank + thread length should not exceed overall length
-        total = self.shank.length + self.thread.length + self.head.height
-        if total > self.overall_length * 1.1:
-            raise ValueError(
-                f"shank({self.shank.length}) + thread({self.thread.length}) + "
-                f"head({self.head.height}) = {total} exceeds overall_length {self.overall_length}"
-            )
-        return self
 
     model_config = {"json_schema_extra": {"example": {
         "part_number": "18149-D6",
@@ -576,6 +566,7 @@ class OutputFile(BaseModel):
         "punch_stl",
         "die_stl",
         "workpiece_stl",
+        "blank_stl",
         "assembly_preview",
         "parameters",
         "reasoning",

@@ -4,9 +4,14 @@ Assembly positioning for punch + die + workpiece.
 Positions individual 3D solids into a per-station assembly view
 aligned on the forming axis. Used to generate assembly preview renders
 and for interference checking.
+
+Two paths:
+- CADQuery (build_station_assembly): returns cq.Assembly for STEP export
+- Trimesh (generate_assembly_stl): no CQ needed, exports combined preview STL
 """
 
 from __future__ import annotations
+from pathlib import Path
 
 try:
     import cadquery as cq
@@ -94,6 +99,64 @@ class AssemblyBuilder:
         for i, assy in enumerate(station_assemblies):
             full.add(assy, name=f"station_{i + 1}", loc=cq.Location((i * spacing_mm, 0, 0)))
         return full
+
+    def build_station_assembly_stls(
+        self,
+        die_params: DieParameters,
+        workpiece_shape: ShapeDescription,
+        output_dir: Path,
+        gap_mm: float = 5.0,
+    ) -> dict[str, Path]:
+        """
+        Generate positioned STL meshes for a station assembly using trimesh.
+
+        No CADQuery required. Positions:
+          - die at Z = 0
+          - workpiece top aligned with die top face
+          - punch above die with gap_mm clearance
+
+        Returns dict of {"punch": path, "die": path, "workpiece": path,
+                         "assembly_preview": path}.
+        """
+        import trimesh
+        from app.geometry.numpy_templates import (
+            build_punch_mesh,
+            build_die_mesh,
+            _revolve_profile,
+            export_stl,
+        )
+        from app.geometry.workpiece import _build_profile
+
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        die_len = die_params.die.working_length
+        wp_len = workpiece_shape.overall_length
+
+        punch_mesh = build_punch_mesh(die_params.punch)
+        die_mesh = build_die_mesh(die_params.die)
+        wp_mesh = _revolve_profile(_build_profile(workpiece_shape), sections=48)
+
+        # Position workpiece so its top aligns with die top face
+        wp_offset = max(0.0, die_len - wp_len)
+        wp_positioned = wp_mesh.copy()
+        wp_positioned.apply_translation([0, 0, wp_offset])
+
+        # Position punch above die entry face
+        punch_positioned = punch_mesh.copy()
+        punch_positioned.apply_translation([0, 0, die_len + gap_mm])
+
+        result: dict[str, Path] = {}
+        result["punch"] = export_stl(punch_positioned, output_dir / "punch.stl")
+        result["die"] = export_stl(die_mesh, output_dir / "die.stl")
+        result["workpiece"] = export_stl(wp_positioned, output_dir / "workpiece.stl")
+
+        try:
+            combined = trimesh.util.concatenate([die_mesh, wp_positioned, punch_positioned])
+            result["assembly_preview"] = export_stl(combined, output_dir / "assembly_preview.stl")
+        except Exception:
+            pass
+
+        return result
 
     def check_interference(
         self, die_params: DieParameters, tolerance_mm: float = 0.0

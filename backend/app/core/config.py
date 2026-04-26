@@ -38,6 +38,7 @@ class Settings(BaseSettings):
     cross_val_model: str = "gemini-2.5-pro"
     embedding_model: str = "voyage-3-large"
     rerank_model: str = "rerank-2"
+    claude_model_die_design: str = "claude-sonnet-4-6"  # faster/cheaper for schema-following task
 
     # Pipeline config
     rag_top_k: int = 20

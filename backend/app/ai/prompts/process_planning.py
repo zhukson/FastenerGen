@@ -54,6 +54,12 @@ Return JSON matching this schema:
 IMPORTANT: upset_ratio for each station MUST be ≤ 2.3.
 For ShapeDescription: overall_length and max_diameter are required.
 Omit optional fields if not applicable (use null).
+
+reasoning_summary must be 3-5 sentences describing: (1) why this station count was chosen
+and the key constraint that drives it, (2) the blank wire diameter selection and volume
+calculation rationale, (3) the deformation sequence logic — what each station achieves and
+why that order, (4) any notable material or geometry constraints applied.
+Write as an engineer explaining their decision to a colleague. No bullet points — prose only.
 </instructions>
 """
 

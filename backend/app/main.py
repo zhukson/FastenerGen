@@ -22,6 +22,17 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
         environment=settings.environment,
         database_url=settings.database_url.split("@")[-1],  # hide credentials
     )
+
+    # Pre-warm ezdxf's system font cache so DXF rendering finds
+    # installed TTFs instead of falling back to txt.shx and logging
+    # "no fonts available" on every render.
+    try:
+        from ezdxf.fonts import fonts as ezdxf_fonts
+        ezdxf_fonts.build_system_font_cache()
+        logger.info("ezdxf_font_cache_ready")
+    except Exception as exc:
+        logger.warning("ezdxf_font_cache_failed", error=str(exc))
+
     yield
     logger.info("shutdown")
 

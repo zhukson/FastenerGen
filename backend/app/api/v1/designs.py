@@ -179,10 +179,14 @@ async def download_file(design_id: str, file_name: str) -> FileResponse:
     if design is None:
         raise HTTPException(status_code=404, detail=f"Design '{design_id}' not found")
 
-    # Look up by file_name (last path component) or file_type
+    # Match by: exact filename, relative subpath (e.g. "station_1/workpiece.stl"), or file_type
+    norm_name = file_name.replace("\\", "/")
     for output_file in design.output_files:
         fp = Path(output_file.file_path)
-        if fp.name == file_name or output_file.file_type == file_name:
+        fp_norm = str(output_file.file_path).replace("\\", "/")
+        if (fp.name == norm_name
+                or fp_norm.endswith("/" + norm_name)
+                or output_file.file_type == norm_name):
             if not fp.exists():
                 raise HTTPException(status_code=404, detail=f"File '{file_name}' not found on disk")
             media_type_map = {
@@ -195,6 +199,121 @@ async def download_file(design_id: str, file_name: str) -> FileResponse:
             return FileResponse(path=str(fp), filename=fp.name, media_type=media_type)
 
     raise HTTPException(status_code=404, detail=f"File '{file_name}' not found in design '{design_id}'")
+
+
+@router.get("/designs/{design_id}/dxf-preview/{file_name:path}", tags=["designs"])
+async def dxf_preview(design_id: str, file_name: str) -> Any:
+    """
+    Render a DXF output file to PNG for in-browser preview.
+
+    Uses ezdxf matplotlib backend. Dark background to match the UI.
+    Returns image/png. Cached for 1 hour.
+    """
+    from fastapi.responses import Response
+
+    design = _designs.get(design_id)
+    if design is None:
+        raise HTTPException(status_code=404, detail=f"Design '{design_id}' not found")
+
+    norm_name = file_name.replace("\\", "/")
+    target_fp: Path | None = None
+    for output_file in design.output_files:
+        fp = Path(output_file.file_path)
+        fp_norm = str(output_file.file_path).replace("\\", "/")
+        if (fp.name == norm_name
+                or fp_norm.endswith("/" + norm_name)
+                or output_file.file_type == norm_name):
+            if fp.suffix.lower() == ".dxf" and fp.exists():
+                target_fp = fp
+                break
+
+    if target_fp is None:
+        raise HTTPException(status_code=404, detail=f"DXF '{file_name}' not found")
+
+    try:
+        import io
+        import ezdxf
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        from ezdxf.addons.drawing import RenderContext, Frontend
+        from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
+
+        doc = ezdxf.readfile(str(target_fp))
+        msp = doc.modelspace()
+
+        fig = plt.figure(figsize=(14, 10), facecolor="#111827")
+        ax = fig.add_axes([0, 0, 1, 1])
+        ax.set_facecolor("#111827")
+
+        ctx = RenderContext(doc)
+        out = MatplotlibBackend(ax)
+        Frontend(ctx, out).draw_layout(msp)
+
+        buf = io.BytesIO()
+        fig.savefig(buf, format="png", dpi=120, bbox_inches="tight",
+                    facecolor="#111827", edgecolor="none")
+        plt.close(fig)
+        buf.seek(0)
+
+        return Response(
+            content=buf.read(),
+            media_type="image/png",
+            headers={
+                "Cache-Control": "max-age=3600",
+                "Cross-Origin-Resource-Policy": "cross-origin",
+            },
+        )
+    except Exception as exc:
+        logger.error("dxf_preview_failed", error=str(exc), file=str(target_fp))
+        raise HTTPException(status_code=500, detail=f"Render failed: {exc}")
+
+
+@router.get("/rag/stats", tags=["designs"])
+async def rag_stats() -> dict:
+    """
+    Return ChromaDB collection stats.
+
+    Useful for verifying that RAG seeding completed successfully.
+    Returns total case count broken down by nominal size and head type.
+    """
+    try:
+        import chromadb
+
+        from app.core.config import settings
+
+        host_port = settings.chroma_url.replace("http://", "").replace("https://", "")
+        host, _, port_str = host_port.partition(":")
+        port = int(port_str) if port_str else 8000
+
+        client = chromadb.HttpClient(host=host, port=port)
+        collection = client.get_or_create_collection(
+            name=settings.chroma_collection_name,
+            metadata={"hnsw:space": "cosine"},
+        )
+        count = collection.count()
+        if count == 0:
+            return {"total_cases": 0, "by_size": {}, "by_head_type": {}}
+
+        # Fetch all metadata (limit to 2000 for safety)
+        results = collection.get(limit=min(count, 2000), include=["metadatas"])
+        metadatas = results.get("metadatas") or []
+
+        by_size: dict[str, int] = {}
+        by_head: dict[str, int] = {}
+        for m in metadatas:
+            size_key = f"M{m.get('nominal_dia', '?'):.0f}" if isinstance(m.get("nominal_dia"), float) else str(m.get("nominal_dia", "?"))
+            head_key = str(m.get("head_type", "unknown"))
+            by_size[size_key] = by_size.get(size_key, 0) + 1
+            by_head[head_key] = by_head.get(head_key, 0) + 1
+
+        return {
+            "total_cases": count,
+            "by_size": dict(sorted(by_size.items())),
+            "by_head_type": dict(sorted(by_head.items())),
+        }
+    except Exception as exc:
+        raise HTTPException(status_code=503, detail=f"ChromaDB unavailable: {exc}") from exc
 
 
 @router.post("/designs/{design_id}/feedback", tags=["designs"])
