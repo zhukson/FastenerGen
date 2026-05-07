@@ -1,0 +1,146 @@
+{
+  "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+  "source_kind": "case_dwg",
+  "source_file": "DJGS-24-6-冲铆轴销-YT105S -过模图",
+  "product_name_zh": "冲铆轴销",
+  "product_category": "rivet_pin",
+  "standard_ref": null,
+  "material": "YT105S",
+  "part_features": {
+    "part_number": "DJTZ-23-5",
+    "description": "Hex-trim rivet pin with flange, formed on JM-85S",
+    "overall_length": 75.38,
+    "material_grade": "YT105S",
+    "strength_grade": "",
+    "head": {
+      "type": "flange",
+      "diameter": 19.0,
+      "height": 7.5
+    },
+    "shank": {
+      "diameter": 8.04,
+      "length": 61.0
+    },
+    "thread": null,
+    "tail": null,
+    "hardness_min_hv": null,
+    "hardness_max_hv": null,
+    "surface_treatment": null,
+    "standard": null,
+    "tolerance_class": null,
+    "drawing_scale": null,
+    "notes": []
+  },
+  "process_forming": {
+    "part_name_zh": "冲铆轴销（六角切边）",
+    "material": "YT105S",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 48.0,
+      "max_diameter_mm": 10.68
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "combined",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 74.11,
+          "max_diameter_mm": 10.75,
+          "head_diameter_mm": 10.75,
+          "head_height_mm": 15.41,
+          "shank_diameter_mm": 7.98,
+          "shank_length_mm": 58.7
+        },
+        "key_dimensions": {
+          "L_total": 74.11,
+          "L_head": 15.41,
+          "D_head": 10.75,
+          "L_shank": 58.7,
+          "D_shank": 7.98,
+          "R": 1.5
+        },
+        "notes_zh": "正向挤压细杆部，保留头部坯料；R1.5/R0.5 过渡圆角"
+      },
+      {
+        "n": 2,
+        "operation": "forward_extrusion",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 74.03,
+          "max_diameter_mm": 10.8,
+          "head_diameter_mm": 10.8,
+          "head_height_mm": 15.53,
+          "shank_diameter_mm": 8.0,
+          "shank_length_mm": 58.5
+        },
+        "key_dimensions": {
+          "L_total": 74.03,
+          "L_head": 15.53,
+          "D_head": 10.8,
+          "D_head_top": 9.2,
+          "L_head_top": 13.35,
+          "D_shank": 8.0,
+          "R": 1.5
+        },
+        "notes_zh": "二次挤压成形，头部出现 φ9.2 阶梯（预成形凸台）"
+      },
+      {
+        "n": 3,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 75.38,
+          "max_diameter_mm": 10.85,
+          "head_diameter_mm": 10.85,
+          "head_height_mm": 6.6,
+          "shank_diameter_mm": 8.02,
+          "shank_length_mm": 68.78
+        },
+        "key_dimensions": {
+          "L_total": 75.38,
+          "H_head": 6.6,
+          "D_head": 10.85,
+          "D_head_recess": 8.35,
+          "D_shank": 8.02,
+          "R": 1.4
+        },
+        "notes_zh": "镦粗成型头部，形成短粗法兰预形，头顶预留 φ8.35 凹槽"
+      },
+      {
+        "n": 4,
+        "operation": "combined",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 75.0,
+          "max_diameter_mm": 19.0,
+          "head_diameter_mm": 19.0,
+          "head_height_mm": 7.5,
+          "shank_diameter_mm": 8.04,
+          "shank_length_mm": 61.0
+        },
+        "key_dimensions": {
+          "L_total": 75.0,
+          "H_flange": 7.5,
+          "D_flange": 19.0,
+          "D_head_top": 10.95,
+          "H_head_top": 6.5,
+          "D_head_recess": 8.2,
+          "H_collar": 3.0,
+          "D_shank": 8.04,
+          "L_shank": 61.0,
+          "chamfer_h": 1.2,
+          "D_chamfer": 6.6
+        },
+        "notes_zh": "终镦+切边：法兰外径成形 φ19、头部凸台 φ10.95，杆端倒角 1.2×φ6.6；六角切边在最后一序完成"
+      }
+    ],
+    "post_processes": [],
+    "reasoning_zh": "四工位过模：①下料 φ10.68×48；②③正向挤压形成细杆并对头部多次预成形；④终镦得到带法兰头部，最后六角切边。机型 JM-85S，产品名称为‘六角切边’，材料 YT105S。",
+    "cited_case_ids": [],
+    "confidence": "medium"
+  },
+  "extraction_confidence": "medium",
+  "extracted_by": "llm_draft",
+  "notes_zh": null
+}

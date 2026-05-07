@@ -240,9 +240,11 @@ class PartFeatures(BaseModel):
     description: str = Field(..., description="Part description", examples=["M6×33 Flat Head Bolt"])
     overall_length: float = Field(..., gt=0, description="Overall part length (mm)", examples=[33.0])
 
-    head: HeadFeatures
-    shank: ShankFeatures
-    thread: ThreadFeatures
+    head: HeadFeatures | None = None
+    shank: ShankFeatures | None = None
+    thread: ThreadFeatures | None = Field(
+        None, description="Optional — many 异形件 (pins, T-caps) are unthreaded"
+    )
     tail: TailFeatures | None = None
 
     material_grade: str = Field("10B21", description="Material grade / steel spec", examples=["10B21"])
@@ -851,3 +853,121 @@ class EvalReport(BaseModel):
     baseline_comparison: dict[str, float] | None = Field(
         None, description="Delta vs. checked-in baseline for each metric"
     )
+
+
+# ===========================================================================
+# v2 (2026-05-01 pivot): 过模图 (Process Forming Drawing) — single-output
+# ===========================================================================
+#
+# These models drive the v2 pipeline:
+#   PartFeatures (existing) -> ProcessForming -> 过模图 DXF
+#
+# CaseRecord is the curated 经验库 (experience library) entry distilled from
+# each real DWG / standard PDF in fasternerGenData/. Loaded as full-context
+# few-shot in every Step 3 call (no vector retrieval at N=8).
+# ===========================================================================
+
+
+class WorkpieceGeometry(BaseModel):
+    """Geometry of an intermediate workpiece at one station of a 过模图.
+
+    Kept deliberately loose: the 8 real cases use mixed primitives
+    (cylinder + cone + square head + flange). LLM picks the type; the DXF
+    generator dispatches on `type`.
+    """
+
+    type: Literal[
+        "cylinder",       # straight rod
+        "stepped",        # multi-diameter rod
+        "headed",         # cylinder with upset head
+        "tapered",        # conical / pointed
+        "square_head",    # cylinder with square upset
+        "T_head",         # T-shaped head
+        "flanged",        # cylinder with flange
+        "pin",            # short pin (bushing / rivet style)
+        "custom",         # free-form; describe in `notes_zh`
+    ] = Field(..., description="Primitive shape category")
+    # ge=0: 0.0 is a sentinel for "unknown" used during LLM-draft extraction;
+    # human review must replace it. Runtime pipeline (Step 3 -> Step 4) should
+    # re-validate that all in-use values are > 0 before rendering DXF.
+    overall_length_mm: float = Field(..., ge=0)
+    max_diameter_mm: float = Field(..., ge=0)
+    head_diameter_mm: float | None = Field(None, ge=0)
+    head_height_mm: float | None = Field(None, ge=0)
+    shank_diameter_mm: float | None = Field(None, ge=0)
+    shank_length_mm: float | None = Field(None, ge=0)
+    extra_dims_mm: dict[str, float] = Field(
+        default_factory=dict,
+        description="Open-ended named dimensions (e.g., 方头边长, 圆角R, 倒角C)",
+    )
+    notes_zh: str | None = Field(None, description="Chinese-language notes / shape detail")
+
+
+class StationStep(BaseModel):
+    """One station in a 过模图 progression."""
+
+    n: int = Field(..., ge=1, description="Station number (1-based)")
+    operation: OperationType = Field(..., description="Primary operation at this station")
+    workpiece: WorkpieceGeometry = Field(..., description="Workpiece shape leaving this station")
+    key_dimensions: dict[str, float] = Field(
+        default_factory=dict,
+        description="Dimensions to call out on the 过模图 for this station",
+    )
+    notes_zh: str | None = Field(None, description="Chinese-language operation notes")
+
+
+class ProcessForming(BaseModel):
+    """The structured plan that becomes a 过模图 DXF.
+
+    LLM emits this in Step 3; ezdxf renders it deterministically in Step 4.
+    """
+
+    part_name_zh: str = Field(..., description="零件名称")
+    material: str = Field(..., description="材料 (e.g., 106S, 105S, YT105S, 10B21)")
+    blank: WorkpieceGeometry = Field(..., description="原始下料 (initial blank)")
+    stations: list[StationStep] = Field(..., min_length=1, max_length=8)
+    post_processes: list[PostProcess] = Field(default_factory=list)
+    reasoning_zh: str = Field(..., description="工艺设计理由 (Chinese reasoning)")
+    cited_case_ids: list[str] = Field(
+        default_factory=list,
+        description="经验库 case_ids the LLM cited as references (for traceability)",
+    )
+    confidence: ConfidenceLevel = Field(...)
+
+    @property
+    def station_count(self) -> int:
+        return len(self.stations)
+
+
+class CaseRecord(BaseModel):
+    """One entry in the 经验库 (Tier 1 experience library).
+
+    Distilled (LLM-assisted + human-reviewed) from a real DWG or standard PDF.
+    Stored as flat JSON in backend/app/knowledge/cases/ and standards/.
+    """
+
+    case_id: str = Field(..., description="Stable identifier; matches filename stem")
+    source_kind: Literal["case_dwg", "standard_pdf"] = Field(
+        ..., description="case_dwg = 异形件过模图; standard_pdf = 标准件全套图"
+    )
+    source_file: str = Field(..., description="Original filename in fasternerGenData/")
+    product_name_zh: str
+    product_category: str = Field(
+        ...,
+        description="Free tag for pre-filtering (e.g., square_T_head, riveting_screw, hex_bolt_DIN933)",
+    )
+    standard_ref: str | None = Field(
+        None, description="DIN/GB/ISO reference if applicable (e.g., DIN912, DIN933)"
+    )
+    material: str
+    part_features: PartFeatures = Field(..., description="Extracted product geometry")
+    process_forming: ProcessForming = Field(
+        ..., description="The 过模图 ground truth distilled from this drawing"
+    )
+    extraction_confidence: ConfidenceLevel = Field(
+        ..., description="How confident we are this CaseRecord matches the source drawing"
+    )
+    extracted_by: Literal["llm_draft", "human_reviewed"] = Field(
+        ..., description="llm_draft = needs human review before use as few-shot"
+    )
+    notes_zh: str | None = None

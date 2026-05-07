@@ -1,0 +1,183 @@
+{
+  "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+  "source_kind": "case_dwg",
+  "source_file": "DJGS--25--8-B001-0358-四方T帽-106S - 过模图",
+  "product_name_zh": "四方T帽",
+  "product_category": "square_T_head",
+  "standard_ref": null,
+  "material": "106S",
+  "part_features": {
+    "part_number": "DJGS-25-8-B001-0358",
+    "description": "Square T-head fastener with internal thread (square flange T-head nut/insert)",
+    "overall_length": 17.0,
+    "material_grade": "106S",
+    "strength_grade": "",
+    "head": {
+      "type": "flange",
+      "diameter": 17.65,
+      "height": 3.0
+    },
+    "shank": {
+      "diameter": 7.93,
+      "length": 14.0
+    },
+    "thread": null,
+    "tail": null,
+    "hardness_min_hv": null,
+    "hardness_max_hv": null,
+    "surface_treatment": null,
+    "standard": null,
+    "tolerance_class": null,
+    "drawing_scale": null,
+    "notes": [
+      "机型 YT-106S",
+      "四方头带 4-R2.5 圆角",
+      "头部带十字凹槽特征"
+    ]
+  },
+  "process_forming": {
+    "part_name_zh": "四方T帽",
+    "material": "106S",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 17.6,
+      "max_diameter_mm": 10.68
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "cylinder",
+          "overall_length_mm": 17.8,
+          "max_diameter_mm": 10.78
+        },
+        "key_dimensions": {
+          "L": 17.8,
+          "D": 10.78
+        },
+        "notes_zh": "整形镦粗,料径校正至 10.78"
+      },
+      {
+        "n": 2,
+        "operation": "forward_extrusion",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 25.0,
+          "max_diameter_mm": 10.85,
+          "head_diameter_mm": 10.85,
+          "head_height_mm": 11.08,
+          "shank_diameter_mm": 7.84,
+          "shank_length_mm": 14.0
+        },
+        "key_dimensions": {
+          "head_D": 10.85,
+          "head_H": 11.08,
+          "shank_D": 7.84,
+          "shank_L": 14.0
+        },
+        "notes_zh": "正挤压成型,挤出 φ7.84 杆部,头部预成形 φ10.85×11.08"
+      },
+      {
+        "n": 3,
+        "operation": "heading",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 25.85,
+          "max_diameter_mm": 17.0,
+          "head_diameter_mm": 17.0,
+          "head_height_mm": 4.1,
+          "shank_diameter_mm": 7.87,
+          "shank_length_mm": 14.0
+        },
+        "key_dimensions": {
+          "head_C": 17.0,
+          "head_H": 4.1,
+          "shank_D": 7.87,
+          "shank_L": 14.0
+        },
+        "notes_zh": "镦粗成圆形大头(C17),头厚 4.1,杆部 φ7.87×14"
+      },
+      {
+        "n": 4,
+        "operation": "combined",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 25.61,
+          "max_diameter_mm": 24.0,
+          "head_diameter_mm": 17.65,
+          "head_height_mm": 2.61,
+          "head_recess_diameter_mm": 11.8,
+          "head_recess_depth_mm": 3.0,
+          "shank_diameter_mm": 7.9,
+          "shank_length_mm": 14.0
+        },
+        "key_dimensions": {
+          "flat_W": 24.0,
+          "head_H": 2.61,
+          "recess_D": 11.8,
+          "recess_depth": 3.0,
+          "shank_D": 7.9
+        },
+        "notes_zh": "压扁四方成形+正面凹坑(C7.2 凹槽,深 3.0),四方对边 17.65,毛边外径 24"
+      },
+      {
+        "n": 5,
+        "operation": "trimming",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 21.15,
+          "max_diameter_mm": 17.65,
+          "head_diameter_mm": 17.65,
+          "head_height_mm": 2.0,
+          "head_recess_diameter_mm": 11.8,
+          "head_recess_depth_mm": 3.0,
+          "shank_diameter_mm": 7.93,
+          "shank_length_mm": 14.0
+        },
+        "key_dimensions": {
+          "head_W": 17.65,
+          "head_H": 2.0,
+          "recess_D": 11.8,
+          "recess_depth": 3.0,
+          "shank_D": 7.93,
+          "shank_L": 14.0,
+          "total_L": 5.15
+        },
+        "notes_zh": "切边修整成四方头 17.65×17.65,4-R2.5 圆角,头厚 2.0"
+      },
+      {
+        "n": 6,
+        "operation": "piercing",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 21.12,
+          "max_diameter_mm": 17.65,
+          "head_diameter_mm": 17.65,
+          "head_height_mm": 2.0,
+          "head_recess_diameter_mm": 11.8,
+          "head_recess_depth_mm": 3.0,
+          "shank_diameter_mm": 7.93,
+          "shank_length_mm": 14.0,
+          "through_hole_diameter_mm": 9.65
+        },
+        "key_dimensions": {
+          "hole_D": 9.65,
+          "head_W": 17.65,
+          "shank_D": 7.93,
+          "shank_L": 14.0
+        },
+        "notes_zh": "冲通孔 φ9.65 为后续攻丝做准备"
+      }
+    ],
+    "post_processes": [
+      "thread_rolling"
+    ],
+    "reasoning_zh": "六工位冷镦成形:① 切料整形 ② 正挤压形成阶梯杆 ③ 镦圆头 ④ 压四方+预凹槽(组合工序) ⑤ 切边修四方角(4-R2.5) ⑥ 冲通孔 φ9.65。后工序为攻内螺纹。机型 YT-106S。",
+    "cited_case_ids": [],
+    "confidence": "medium"
+  },
+  "extraction_confidence": "medium",
+  "extracted_by": "llm_draft",
+  "notes_zh": "图纸为常州鼎坚 DJGS-25-7 单号,机型 YT-106S,产品为四方 T 帽异形件,需后续攻丝形成内螺纹"
+}

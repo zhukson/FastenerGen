@@ -1,0 +1,135 @@
+{
+  "case_id": "BG24081-P03-DIN933-M18-P2-5",
+  "source_kind": "standard_pdf",
+  "source_file": "BG24081-P03-DIN933 M18 P2.5",
+  "product_name_zh": "DIN933 M18×2.5 外六角螺栓",
+  "product_category": "hex_bolt_DIN933",
+  "standard_ref": "DIN933",
+  "material": "1025",
+  "part_features": {
+    "part_number": "BG24081-P03S01",
+    "description": "M18 hex head bolt, DIN933, full thread, grade 6.8",
+    "overall_length": 25.0,
+    "material_grade": "1025",
+    "strength_grade": "6.8",
+    "head": {
+      "type": "hex",
+      "diameter": 26.67,
+      "height": 11.5,
+      "across_flats": 27.0,
+      "chamfer_angle_deg": 30.0
+    },
+    "shank": {
+      "diameter": 17.7,
+      "length": 25.0
+    },
+    "thread": {
+      "spec": "M18×2.5",
+      "nominal_diameter": 18.0,
+      "pitch": 2.5,
+      "length": 25.0,
+      "thread_class": "6g",
+      "thread_type": "metric",
+      "is_full_length": true
+    },
+    "tail": null,
+    "hardness_min_hv": null,
+    "hardness_max_hv": null,
+    "surface_treatment": null,
+    "standard": "DIN 933",
+    "tolerance_class": null,
+    "drawing_scale": "1:1.05",
+    "notes": [
+      "MARK: TASK 6.8 凸字 0.25 mm",
+      "线径 Ø17.7",
+      "末端 45° 倒角至 Ø13.8"
+    ]
+  },
+  "process_forming": {
+    "part_name_zh": "DIN933 M18×2.5 外六角螺栓",
+    "material": "1025",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 95.0,
+      "max_diameter_mm": 17.7
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "combined",
+        "workpiece": {
+          "type": "cylinder",
+          "overall_length_mm": 95.0,
+          "max_diameter_mm": 17.7
+        },
+        "key_dimensions": {
+          "L": 95.0,
+          "D": 17.7
+        },
+        "notes_zh": "切料：从 Ø17.7 线材切取所需长度坯料，端部倒角"
+      },
+      {
+        "n": 2,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 75.0,
+          "max_diameter_mm": 22.0
+        },
+        "key_dimensions": {
+          "D_head_pre": 22.0,
+          "D_shank": 17.7
+        },
+        "notes_zh": "一次镦粗：聚料形成头部预成形（锥形过渡）"
+      },
+      {
+        "n": 3,
+        "operation": "heading",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 36.5,
+          "max_diameter_mm": 30.14,
+          "head_diameter_mm": 30.14,
+          "head_height_mm": 11.5,
+          "shank_diameter_mm": 17.7,
+          "shank_length_mm": 25.0
+        },
+        "key_dimensions": {
+          "H_head": 11.5,
+          "D_head_circ": 30.14,
+          "S_flats": 27.0
+        },
+        "notes_zh": "二次镦粗成形六角头（头顶 30° 倒角，R0.6 圆角）"
+      },
+      {
+        "n": 4,
+        "operation": "trimming",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 36.5,
+          "max_diameter_mm": 26.67,
+          "head_diameter_mm": 26.67,
+          "head_height_mm": 11.5,
+          "shank_diameter_mm": 17.7,
+          "shank_length_mm": 25.0
+        },
+        "key_dimensions": {
+          "S_flats": 27.0,
+          "e_corner": 26.67,
+          "H_head": 11.5
+        },
+        "notes_zh": "切边：将圆头切成六角形，对边 27 mm，对角 26.67 mm"
+      }
+    ],
+    "post_processes": [
+      "thread_rolling",
+      "heat_treatment"
+    ],
+    "reasoning_zh": "DIN933 M18 六角螺栓采用典型 4 工位冷镦工艺：切料 → 预镦聚料 → 终镦六角头 → 切边成型。头部标识 TASK 6.8 由终镦冲头模印实现（凸字 0.25 mm）。线径 Ø17.7 与 M18 螺纹搓制收缩匹配（搓后中径 Ø16.15-16.18）。末端 45° 倒角至 Ø13.8 在切料工位完成。强度等级 6.8 需后续淬火回火热处理。",
+    "cited_case_ids": [],
+    "confidence": "medium"
+  },
+  "extraction_confidence": "medium",
+  "extracted_by": "llm_draft",
+  "notes_zh": null
+}

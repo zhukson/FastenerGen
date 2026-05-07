@@ -20,13 +20,21 @@ from pydantic import BaseModel
 
 from app.core.config import settings
 from app.core.logging import get_logger
-from app.data.schemas import ConfidenceLevel, DesignResult, DesignStatus, PartFeatures
+from app.data.schemas import ConfidenceLevel, DesignResult, DesignStatus, PartFeatures, ProcessForming
 
 router = APIRouter()
 logger = get_logger(__name__)
 
 # In-memory store for MVP (Session 5+ migrates to PostgreSQL)
 _designs: dict[str, DesignResult] = {}
+
+# v2 (2026-05-01 pivot) — separate store for ProcessForming designs.
+# Records:
+#   {design_id: {"forming": ProcessForming, "part": PartFeatures,
+#                "dxf": Path, "params": Path, "reasoning": Path,
+#                "cited": list[str], "drawing_id": str}}
+_v2_designs: dict[str, dict[str, Any]] = {}
+V2_OUTPUT_ROOT = Path("/tmp/fastenergpt/v2_designs")
 
 
 # ---------------------------------------------------------------------------
@@ -351,6 +359,176 @@ async def submit_feedback(design_id: str, feedback: DesignFeedback) -> dict[str,
         has_notes=bool(feedback.notes),
     )
     return {"design_id": design_id, "action": feedback.action, "status": "recorded"}
+
+
+# ---------------------------------------------------------------------------
+# v2 endpoints — single-output 过模图 pipeline (2026-05-01 pivot)
+# ---------------------------------------------------------------------------
+
+
+class V2GenerateRequest(BaseModel):
+    drawing_id: str
+    prefer_category: str | None = None
+    self_consistency_runs: int = 3
+
+
+class V2GenerateResponse(BaseModel):
+    design_id: str
+    drawing_id: str
+    part_name_zh: str
+    material: str
+    station_count: int
+    confidence: str
+    cited_case_ids: list[str]
+    dxf_url: str
+    parameters_url: str
+    reasoning_url: str
+    preview_url: str
+
+
+@router.post("/designs/v2/generate", response_model=V2GenerateResponse, tags=["designs-v2"])
+async def v2_generate(request: V2GenerateRequest) -> V2GenerateResponse:
+    """v2 pipeline — input drawing -> single 过模图 DXF + reasoning."""
+    if not settings.anthropic_api_key:
+        raise HTTPException(status_code=503, detail="ANTHROPIC_API_KEY not configured")
+
+    drawing_path = _find_drawing(request.drawing_id)
+
+    from app.ai.process_designer import ProcessDesigner
+
+    design_id = uuid.uuid4().hex[:12]
+    output_dir = V2_OUTPUT_ROOT / design_id
+    designer = ProcessDesigner()
+    try:
+        artifacts = await designer.design(
+            product_drawing_path=drawing_path,
+            output_dir=output_dir,
+            prefer_category=request.prefer_category,
+            self_consistency_runs=request.self_consistency_runs,
+        )
+    except Exception as exc:
+        logger.error("v2_design_failed", error=str(exc), drawing_id=request.drawing_id)
+        raise HTTPException(status_code=500, detail=f"v2 generation failed: {exc}") from exc
+
+    _v2_designs[design_id] = {
+        "forming": artifacts.process_forming,
+        "part": artifacts.part_features,
+        "dxf": artifacts.dxf_path,
+        "params": artifacts.parameters_path,
+        "reasoning": artifacts.reasoning_path,
+        "cited": artifacts.cited_case_ids,
+        "drawing_id": request.drawing_id,
+    }
+    base = f"/api/v1/designs/v2/{design_id}"
+    return V2GenerateResponse(
+        design_id=design_id,
+        drawing_id=request.drawing_id,
+        part_name_zh=artifacts.process_forming.part_name_zh,
+        material=artifacts.process_forming.material,
+        station_count=artifacts.process_forming.station_count,
+        confidence=artifacts.process_forming.confidence.value,
+        cited_case_ids=artifacts.cited_case_ids,
+        dxf_url=f"{base}/dxf",
+        parameters_url=f"{base}/parameters",
+        reasoning_url=f"{base}/reasoning",
+        preview_url=f"{base}/preview",
+    )
+
+
+@router.get("/designs/v2/{design_id}", tags=["designs-v2"])
+async def v2_get(design_id: str) -> dict[str, Any]:
+    record = _v2_designs.get(design_id)
+    if record is None:
+        raise HTTPException(status_code=404, detail=f"v2 design '{design_id}' not found")
+    return {
+        "design_id": design_id,
+        "drawing_id": record["drawing_id"],
+        "part_name_zh": record["forming"].part_name_zh,
+        "material": record["forming"].material,
+        "station_count": record["forming"].station_count,
+        "confidence": record["forming"].confidence.value,
+        "cited_case_ids": record["cited"],
+        "process_forming": record["forming"].model_dump(mode="json"),
+        "part_features": record["part"].model_dump(mode="json", exclude_none=True),
+    }
+
+
+def _v2_record(design_id: str) -> dict[str, Any]:
+    rec = _v2_designs.get(design_id)
+    if rec is None:
+        raise HTTPException(status_code=404, detail=f"v2 design '{design_id}' not found")
+    return rec
+
+
+@router.get("/designs/v2/{design_id}/dxf", tags=["designs-v2"])
+async def v2_dxf(design_id: str) -> FileResponse:
+    rec = _v2_record(design_id)
+    fp: Path = rec["dxf"]
+    if not fp.exists():
+        raise HTTPException(status_code=404, detail="DXF file missing on disk")
+    return FileResponse(path=str(fp), filename=fp.name, media_type="application/octet-stream")
+
+
+@router.get("/designs/v2/{design_id}/parameters", tags=["designs-v2"])
+async def v2_parameters(design_id: str) -> FileResponse:
+    rec = _v2_record(design_id)
+    fp: Path = rec["params"]
+    return FileResponse(path=str(fp), filename=fp.name, media_type="application/json")
+
+
+@router.get("/designs/v2/{design_id}/reasoning", tags=["designs-v2"])
+async def v2_reasoning(design_id: str) -> FileResponse:
+    rec = _v2_record(design_id)
+    fp: Path = rec["reasoning"]
+    return FileResponse(path=str(fp), filename=fp.name, media_type="text/markdown")
+
+
+@router.get("/designs/v2/{design_id}/preview", tags=["designs-v2"])
+async def v2_preview(design_id: str) -> Any:
+    """Render the v2 DXF to PNG for in-browser preview."""
+    from fastapi.responses import Response
+
+    rec = _v2_record(design_id)
+    target_fp: Path = rec["dxf"]
+    if not target_fp.exists():
+        raise HTTPException(status_code=404, detail="DXF missing on disk")
+
+    try:
+        import io
+
+        import ezdxf
+        import matplotlib
+
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        from ezdxf.addons.drawing import Frontend, RenderContext
+        from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
+
+        doc = ezdxf.readfile(str(target_fp))
+        msp = doc.modelspace()
+
+        fig = plt.figure(figsize=(14, 10), facecolor="#111827")
+        ax = fig.add_axes((0, 0, 1, 1))
+        ax.set_facecolor("#111827")
+        ctx = RenderContext(doc)
+        out = MatplotlibBackend(ax)
+        Frontend(ctx, out).draw_layout(msp)
+
+        buf = io.BytesIO()
+        fig.savefig(
+            buf, format="png", dpi=120, bbox_inches="tight",
+            facecolor="#111827", edgecolor="none",
+        )
+        plt.close(fig)
+        buf.seek(0)
+        return Response(
+            content=buf.read(),
+            media_type="image/png",
+            headers={"Cache-Control": "max-age=3600"},
+        )
+    except Exception as exc:
+        logger.error("v2_preview_failed", error=str(exc))
+        raise HTTPException(status_code=500, detail=f"Render failed: {exc}") from exc
 
 
 # ---------------------------------------------------------------------------

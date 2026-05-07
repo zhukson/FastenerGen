@@ -1,0 +1,144 @@
+{
+  "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+  "source_kind": "case_dwg",
+  "source_file": "DJGS--25-5-B144-0056-106S - 过模图",
+  "product_name_zh": "六角轴",
+  "product_category": "special_shape",
+  "standard_ref": null,
+  "material": "106S",
+  "part_features": {
+    "part_number": "DJGS-25-5-B144-0056",
+    "description": "Hexagonal shaft / special shape part with flanged head and internal hex socket",
+    "overall_length": 13.9,
+    "material_grade": "106S",
+    "strength_grade": "",
+    "head": {
+      "type": "flange",
+      "diameter": 19.0,
+      "height": 1.3
+    },
+    "shank": {
+      "diameter": 7.82,
+      "length": 12.6
+    },
+    "thread": null,
+    "tail": null,
+    "hardness_min_hv": null,
+    "hardness_max_hv": null,
+    "surface_treatment": null,
+    "standard": null,
+    "tolerance_class": null,
+    "drawing_scale": null,
+    "notes": []
+  },
+  "process_forming": {
+    "part_name_zh": "六角轴",
+    "material": "106S",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 17.5,
+      "max_diameter_mm": 7.5
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "cylinder",
+          "overall_length_mm": 17.7,
+          "max_diameter_mm": 7.59
+        },
+        "key_dimensions": {
+          "L": 17.7,
+          "D": 7.59
+        },
+        "notes_zh": "整形/倒角，料杆端部修整准备聚料"
+      },
+      {
+        "n": 2,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 8.1,
+          "max_diameter_mm": 14.04
+        },
+        "key_dimensions": {
+          "L": 8.1,
+          "D": 14.04,
+          "shank_D": 7.7
+        },
+        "notes_zh": "预镦头部，形成球冠形预成形头"
+      },
+      {
+        "n": 3,
+        "operation": "heading",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 13.0,
+          "max_diameter_mm": 20.5
+        },
+        "key_dimensions": {
+          "head_D": 20.5,
+          "head_H": 1.3,
+          "shank_D": 7.73
+        },
+        "notes_zh": "终镦扁平大法兰头部，初步形成头部轮廓"
+      },
+      {
+        "n": 4,
+        "operation": "backward_extrusion",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 13.0,
+          "max_diameter_mm": 20.5
+        },
+        "key_dimensions": {
+          "head_D": 20.5,
+          "shank_D": 7.76
+        },
+        "notes_zh": "头部反挤压，预冲内孔"
+      },
+      {
+        "n": 5,
+        "operation": "backward_extrusion",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 13.0,
+          "max_diameter_mm": 19.0
+        },
+        "key_dimensions": {
+          "head_D": 19.0,
+          "shank_D": 7.79
+        },
+        "notes_zh": "切边修整外缘，反挤压成型内六角孔"
+      },
+      {
+        "n": 6,
+        "operation": "piercing",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 13.9,
+          "max_diameter_mm": 19.0,
+          "head_diameter_mm": 19.0,
+          "shank_diameter_mm": 7.82,
+          "shank_length_mm": 12.6
+        },
+        "key_dimensions": {
+          "head_D": 19.0,
+          "shank_D": 7.82,
+          "shank_L": 12.6,
+          "hole_D": 5.15,
+          "total_L": 13.9
+        },
+        "notes_zh": "冲通内孔/最终成型，孔径5.15"
+      }
+    ],
+    "post_processes": [],
+    "reasoning_zh": "六模六冲工艺：1工位下料整形；2工位预镦聚料；3工位终镦头部成型大法兰；4-5工位反挤成型内孔与外形修整；6工位冲通孔得到最终六角轴零件。机型YT-106S适用于该类异形件多工位冷镦。",
+    "cited_case_ids": [],
+    "confidence": "medium"
+  },
+  "extraction_confidence": "medium",
+  "extracted_by": "llm_draft",
+  "notes_zh": null
+}

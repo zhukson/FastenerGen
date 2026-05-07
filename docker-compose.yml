@@ -57,6 +57,10 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - ./backend:/app
+      # Anonymous volumes mask host .venv / caches so the container uses its
+      # own Linux-built venv (host venv is macOS-native and crashes on Linux).
+      - /app/.venv
+      - /app/__pycache__
       - backend_cache:/root/.cache
     ports:
       - "8080:8080"

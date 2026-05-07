@@ -1,0 +1,129 @@
+{
+  "case_id": "12齿车削球头",
+  "source_kind": "case_dwg",
+  "source_file": "12齿车削球头",
+  "product_name_zh": "六角切边球头件",
+  "product_category": "ball_head",
+  "standard_ref": null,
+  "material": "10B21",
+  "part_features": {
+    "part_number": "DJTZ-23-5",
+    "description": "Hex trimmed ball-head fastener blank, machine JM-85S",
+    "overall_length": 41.0,
+    "material_grade": "10B21",
+    "strength_grade": "",
+    "head": {
+      "type": "hex",
+      "diameter": 17.42,
+      "height": 13.77
+    },
+    "shank": {
+      "diameter": 11.05,
+      "length": 23.0
+    },
+    "thread": null,
+    "tail": null,
+    "hardness_min_hv": null,
+    "hardness_max_hv": null,
+    "surface_treatment": null,
+    "standard": null,
+    "tolerance_class": null,
+    "drawing_scale": null,
+    "notes": []
+  },
+  "process_forming": {
+    "part_name_zh": "六角切边球头件",
+    "material": "10B21",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 38.3,
+      "max_diameter_mm": 9.76,
+      "notes_zh": "下料圆棒，线材直径Φ9.76，倒角C14.8（端面倒角参考）"
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 49.37,
+          "max_diameter_mm": 14.9,
+          "notes_zh": "正挤压细杆+顶端预镦头部，杆径约10.94，头部Φ14.9，长度23.3"
+        },
+        "key_dimensions": {
+          "L": 49.37,
+          "D": 14.9,
+          "shank_D": 10.94,
+          "head_L": 23.3
+        },
+        "notes_zh": "一工位：缩径正挤压形成杆部并预镦头部"
+      },
+      {
+        "n": 2,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 41.0,
+          "max_diameter_mm": 17.32,
+          "notes_zh": "进一步镦粗成型六角头雏形，头部Φ17.32，杆径10.98"
+        },
+        "key_dimensions": {
+          "L": 41.0,
+          "D": 17.32,
+          "shank_D": 10.98,
+          "head_H": 18.52
+        },
+        "notes_zh": "二工位：镦粗形成头部圆形雏形"
+      },
+      {
+        "n": 3,
+        "operation": "heading",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 41.0,
+          "max_diameter_mm": 22.0,
+          "notes_zh": "终镦成型，头部带球面/锥面过渡，外接圆Φ22，对边Φ17.42，头高约17.02"
+        },
+        "key_dimensions": {
+          "L": 41.0,
+          "D": 22.0,
+          "head_H": 17.02,
+          "shank_D": 11.02
+        },
+        "notes_zh": "三工位：终镦成型六角头部及球头过渡面"
+      },
+      {
+        "n": 4,
+        "operation": "trimming",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 41.0,
+          "max_diameter_mm": 22.0,
+          "head_diameter_mm": 17.42,
+          "head_height_mm": 13.77,
+          "shank_diameter_mm": 11.05,
+          "shank_length_mm": 23.0,
+          "notes_zh": "六角切边成型，对边Φ17.42，头部高13.77，杆径Φ11.05，杆长23"
+        },
+        "key_dimensions": {
+          "L": 41.0,
+          "head_AF": 17.42,
+          "head_H": 13.77,
+          "shank_D": 11.05,
+          "shank_L": 23.0
+        },
+        "notes_zh": "四工位：六角切边，形成最终六角头外形"
+      }
+    ],
+    "post_processes": [
+      "thread_rolling",
+      "heat_treatment"
+    ],
+    "reasoning_zh": "工艺为四工位冷镦：下料→正挤+预镦→镦粗→终镦成型球头/锥面→六角切边。后续可进行车削球头、滚牙及热处理工序。机型JM-85S。",
+    "cited_case_ids": [],
+    "confidence": "medium"
+  },
+  "extraction_confidence": "medium",
+  "extracted_by": "llm_draft",
+  "notes_zh": "图纸标注产品名称为‘六角切边’，案例名标识为12齿车削球头，推测为后续车削球头加工的镦制坯件。"
+}

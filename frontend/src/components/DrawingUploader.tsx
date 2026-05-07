@@ -40,6 +40,21 @@ export function DrawingUploader() {
     }
   };
 
+  // v2 (2026-05-01 pivot): single-output 过模图 pipeline
+  const handleGenerateV2 = async () => {
+    if (!drawingId) return;
+    setStep("generating");
+    setError(null);
+    try {
+      const result = await apiClient.v2GenerateDesign(drawingId);
+      setDesignId(result.design_id);
+      window.location.href = `/designs/v2/${result.design_id}`;
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "v2 generation failed");
+      setStep("error");
+    }
+  };
+
   const handleDrop = useCallback(
     (e: React.DragEvent) => {
       e.preventDefault();
@@ -168,7 +183,26 @@ export function DrawingUploader() {
 
       {/* Results */}
       {step === "done" && features && (
-        <FeaturesPanel features={features} onGenerateDesign={handleGenerateDesign} />
+        <FeaturesPanel
+          features={features}
+          onGenerateDesign={handleGenerateDesign}
+          onGenerateV2={handleGenerateV2}
+        />
+      )}
+
+      {/* v2 quick path — skip features review, go straight to 过模图 */}
+      {step === "uploaded" && drawingId && (
+        <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-3">
+          <p className="text-xs text-amber-700 font-medium mb-1.5">
+            Or skip review and run the v2 单输出过模图 pipeline directly
+          </p>
+          <button
+            onClick={handleGenerateV2}
+            className="px-4 py-1.5 bg-amber-600 text-white text-sm rounded-lg hover:bg-amber-700 transition-colors"
+          >
+            Generate 过模图 (v2)
+          </button>
+        </div>
       )}
     </div>
   );
@@ -188,20 +222,26 @@ function ProgressCard({ label }: { label: string }) {
 function FeaturesPanel({
   features,
   onGenerateDesign,
+  onGenerateV2,
 }: {
   features: PartFeatures;
   onGenerateDesign?: () => void;
+  onGenerateV2?: () => void;
 }) {
+  // v2: head/shank/thread are now optional (异形件 may have none of them).
+  const head = features.head;
+  const shank = features.shank;
+  const thread = features.thread;
   const rows: Array<[string, string | number | null]> = [
     ["Part No.", features.part_number],
     ["Description", features.description],
     ["Overall Length", features.overall_length ? `${features.overall_length} mm` : null],
-    ["Head Type", features.head.type],
-    ["Head ⌀", features.head.diameter ? `⌀${features.head.diameter} mm` : null],
-    ["Head Height", features.head.height ? `${features.head.height} mm` : null],
-    ["Shank ⌀", features.shank.diameter ? `⌀${features.shank.diameter} mm` : null],
-    ["Thread", features.thread.spec],
-    ["Thread Length", features.thread.length ? `${features.thread.length} mm` : null],
+    ["Head Type", head?.type ?? null],
+    ["Head ⌀", head?.diameter ? `⌀${head.diameter} mm` : null],
+    ["Head Height", head?.height ? `${head.height} mm` : null],
+    ["Shank ⌀", shank?.diameter ? `⌀${shank.diameter} mm` : null],
+    ["Thread", thread?.spec ?? null],
+    ["Thread Length", thread?.length ? `${thread.length} mm` : null],
     ["Material", features.material_grade],
     ["Grade", features.strength_grade],
     ["HRC (core)", features.core_hardness_min_hrc != null && features.core_hardness_max_hrc != null
@@ -212,16 +252,28 @@ function FeaturesPanel({
 
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-5">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex items-center justify-between mb-4 gap-2">
         <h3 className="font-semibold">Extracted Features</h3>
-        {onGenerateDesign && (
-          <button
-            onClick={onGenerateDesign}
-            className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            Generate Die Design →
-          </button>
-        )}
+        <div className="flex gap-2">
+          {onGenerateV2 && (
+            <button
+              onClick={onGenerateV2}
+              className="px-3 py-1.5 bg-amber-600 text-white text-sm rounded-lg hover:bg-amber-700 transition-colors"
+              title="v2: single 过模图 DXF (preferred)"
+            >
+              Generate 过模图 (v2)
+            </button>
+          )}
+          {onGenerateDesign && (
+            <button
+              onClick={onGenerateDesign}
+              className="px-3 py-1.5 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors"
+              title="v1: legacy multi-file output"
+            >
+              Generate Die Design (v1)
+            </button>
+          )}
+        </div>
       </div>
 
       <div className="space-y-1.5">

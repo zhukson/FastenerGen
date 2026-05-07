@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/bin/python -c ' *)",
+      "Bash(brew search *)",
+      "Bash(brew tap *)",
+      "Bash(.venv/bin/pip search *)"
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+  "source_kind": "case_dwg",
+  "source_file": "DJGS--25-7-21023C-00808-106S - 过模图",
+  "product_name_zh": "内六角圆柱头螺钉过模件",
+  "product_category": "special_shape",
+  "standard_ref": "DIN912",
+  "material": "106S",
+  "part_features": {
+    "part_number": "DJGS-25-7-21023C-00808",
+    "description": "Socket head cap screw blank, M6 class, DIN912 style",
+    "overall_length": 31.7,
+    "material_grade": "106S",
+    "strength_grade": "",
+    "head": {
+      "type": "socket",
+      "diameter": 9.6,
+      "height": 6.45
+    },
+    "shank": {
+      "diameter": 5.12,
+      "length": 25.0
+    },
+    "thread": null,
+    "tail": null,
+    "hardness_min_hv": null,
+    "hardness_max_hv": null,
+    "surface_treatment": null,
+    "standard": "DIN 912",
+    "tolerance_class": null,
+    "drawing_scale": null,
+    "notes": []
+  },
+  "process_forming": {
+    "part_name_zh": "内六角圆柱头螺钉",
+    "material": "106S",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 19.8,
+      "max_diameter_mm": 6.55
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "cylinder",
+          "overall_length_mm": 19.9,
+          "max_diameter_mm": 6.62
+        },
+        "key_dimensions": {
+          "L": 19.9,
+          "D": 6.62
+        },
+        "notes_zh": "整形坯料,直径轻微胀粗,端面平整"
+      },
+      {
+        "n": 2,
+        "operation": "forward_extrusion",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 19.96,
+          "max_diameter_mm": 6.66,
+          "shank_diameter_mm": 5.17,
+          "shank_length_mm": 13.0
+        },
+        "key_dimensions": {
+          "L_total": 19.96,
+          "D_head": 6.66,
+          "D_shank": 5.17,
+          "L_shank": 13.0,
+          "L_head": 2.97
+        },
+        "notes_zh": "正挤压成型杆部Φ5.17,长度13mm,头部段保留Φ6.66"
+      },
+      {
+        "n": 3,
+        "operation": "forward_extrusion",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 31.7,
+          "max_diameter_mm": 6.68,
+          "shank_diameter_mm": 5.15,
+          "shank_length_mm": 21.15
+        },
+        "key_dimensions": {
+          "L_total": 31.7,
+          "D_head": 6.68,
+          "D_shank": 5.15,
+          "L_shank": 21.15
+        },
+        "notes_zh": "二次正挤压继续延长杆部至21.15mm,直径Φ5.15"
+      },
+      {
+        "n": 4,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 31.7,
+          "max_diameter_mm": 9.4,
+          "head_diameter_mm": 9.4,
+          "head_height_mm": 6.4,
+          "shank_diameter_mm": 5.14,
+          "shank_length_mm": 25.3
+        },
+        "key_dimensions": {
+          "D_head": 9.4,
+          "H_head": 6.4,
+          "D_shank": 5.14,
+          "D_neck": 6.7
+        },
+        "notes_zh": "预镦头部成圆柱形,Φ9.4×6.4"
+      },
+      {
+        "n": 5,
+        "operation": "combined",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 31.7,
+          "max_diameter_mm": 9.45,
+          "head_diameter_mm": 9.45,
+          "head_height_mm": 5.13,
+          "shank_diameter_mm": 5.12,
+          "shank_length_mm": 25.3
+        },
+        "key_dimensions": {
+          "D_head": 9.45,
+          "H_head": 5.13,
+          "D_shank": 5.12,
+          "D_neck": 6.72
+        },
+        "notes_zh": "终镦头部成形+反挤压预成内六角凹槽"
+      },
+      {
+        "n": 6,
+        "operation": "backward_extrusion",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 31.7,
+          "max_diameter_mm": 9.6,
+          "head_diameter_mm": 9.6,
+          "head_height_mm": 6.45,
+          "shank_diameter_mm": 5.12,
+          "shank_length_mm": 25.3
+        },
+        "key_dimensions": {
+          "D_head": 9.6,
+          "H_head": 6.45,
+          "D_socket": 7.17,
+          "D_shank": 5.12,
+          "D_neck": 6.72
+        },
+        "notes_zh": "反挤压成形内六角孔Φ7.17,头部Φ9.6×6.45定型"
+      }
+    ],
+    "post_processes": [
+      "thread_rolling",
+      "heat_treatment"
+    ],
+    "reasoning_zh": "六工位冷镦成形内六角圆柱头螺钉:下料Φ6.55×19.8 → 整形 → 两次正挤压依次缩径杆部至Φ5.12 → 预镦头部 → 终镦兼反挤预成内六角 → 反挤压精成内六角孔。后工序滚牙及热处理。",
+    "cited_case_ids": [],
+    "confidence": "high"
+  },
+  "extraction_confidence": "high",
+  "extracted_by": "llm_draft",
+  "notes_zh": null
+}

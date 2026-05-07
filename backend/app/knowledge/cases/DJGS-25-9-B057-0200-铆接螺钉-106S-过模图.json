@@ -1,0 +1,180 @@
+{
+  "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+  "source_kind": "case_dwg",
+  "source_file": "DJGS--25--9-B057-0200-铆接螺钉-106S - 过模图",
+  "product_name_zh": "铆接螺钉",
+  "product_category": "riveting_screw",
+  "standard_ref": null,
+  "material": "106S",
+  "part_features": {
+    "part_number": "DJGS-25-9-B057-0200",
+    "description": "Riveting screw with hex socket head and stepped rivet shank",
+    "overall_length": 17.8,
+    "material_grade": "106S",
+    "strength_grade": "",
+    "head": {
+      "type": "hex",
+      "diameter": 7.13,
+      "height": 5.2
+    },
+    "shank": {
+      "diameter": 3.03,
+      "length": 3.03
+    },
+    "thread": {
+      "spec": "M3",
+      "nominal_diameter": 2.95,
+      "pitch": 0.5,
+      "length": 1.5,
+      "thread_class": "6g",
+      "thread_type": "metric",
+      "is_full_length": false
+    },
+    "tail": null,
+    "hardness_min_hv": null,
+    "hardness_max_hv": null,
+    "surface_treatment": null,
+    "standard": null,
+    "tolerance_class": null,
+    "drawing_scale": null,
+    "notes": []
+  },
+  "process_forming": {
+    "part_name_zh": "铆接螺钉",
+    "material": "106S",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 16.6,
+      "max_diameter_mm": 6.9
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "combined",
+        "workpiece": {
+          "type": "cylinder",
+          "overall_length_mm": 16.6,
+          "max_diameter_mm": 6.9
+        },
+        "key_dimensions": {
+          "L": 16.6,
+          "D": 6.9
+        },
+        "notes_zh": "下料：剪切棒料为圆柱坯，长度16.6mm，直径6.9mm"
+      },
+      {
+        "n": 2,
+        "operation": "combined",
+        "workpiece": {
+          "type": "tapered",
+          "overall_length_mm": 16.8,
+          "max_diameter_mm": 6.94
+        },
+        "key_dimensions": {
+          "L": 16.8,
+          "D": 6.94,
+          "d_end": 3.94,
+          "R": 2.83
+        },
+        "notes_zh": "整形并倒锥端：下端缩径至3.94，过渡圆角R2.83，便于后续挤压定位"
+      },
+      {
+        "n": 3,
+        "operation": "forward_extrusion",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 16.6,
+          "max_diameter_mm": 6.98
+        },
+        "key_dimensions": {
+          "L": 16.6,
+          "D": 6.98,
+          "d": 3.98
+        },
+        "notes_zh": "正挤压：形成主体直径6.98与端部缩径3.98的台阶过渡"
+      },
+      {
+        "n": 4,
+        "operation": "forward_extrusion",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 18.1,
+          "max_diameter_mm": 7.02
+        },
+        "key_dimensions": {
+          "L": 18.1,
+          "D": 7.02,
+          "shank_d": 3.86,
+          "shank_l": 6.3
+        },
+        "notes_zh": "继续正挤：拉伸下端形成铆接杆部，杆径3.86，杆长6.3"
+      },
+      {
+        "n": 5,
+        "operation": "backward_extrusion",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 13.3,
+          "max_diameter_mm": 7.07
+        },
+        "key_dimensions": {
+          "L_head": 13.3,
+          "D_head": 7.07,
+          "step_d": 6.36,
+          "step_l": 3.03,
+          "tail_l": 3.1,
+          "tail_d": 3.93
+        },
+        "notes_zh": "上端预镦平准备六角成形，下端形成铆接台肩6.36×3.03，末端铆杆3.93×3.1"
+      },
+      {
+        "n": 6,
+        "operation": "combined",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 13.33,
+          "max_diameter_mm": 7.1
+        },
+        "key_dimensions": {
+          "L": 13.33,
+          "D": 7.1,
+          "step_d": 6.36,
+          "step_l": 3.03,
+          "tail_d": 3.93
+        },
+        "notes_zh": "整形头部并修整六角轮廓预备，下端铆接台肩定型"
+      },
+      {
+        "n": 7,
+        "operation": "combined",
+        "workpiece": {
+          "type": "custom",
+          "overall_length_mm": 17.8,
+          "max_diameter_mm": 7.13
+        },
+        "key_dimensions": {
+          "L_total": 17.8,
+          "head_AF": 7.13,
+          "head_h": 5.2,
+          "socket_d": 4.13,
+          "step_d": 6.36,
+          "step_l": 3.03,
+          "rivet_d": 2.95,
+          "rivet_l": 1.5,
+          "neck_l": 3.97
+        },
+        "notes_zh": "成形六角头(对边7.13)、内六角孔4.13×深度、铆接台肩6.36与铆接尾杆2.95×1.5"
+      }
+    ],
+    "post_processes": [
+      "thread_rolling",
+      "heat_treatment"
+    ],
+    "reasoning_zh": "七工位成形铆接螺钉：下料→缩径定位→正挤台阶→正挤铆杆→反挤头部预成形→整形→精整六角头与内六角并完成铆接尾部。后续工序还包括末端搓牙、表面处理。",
+    "cited_case_ids": [],
+    "confidence": "medium"
+  },
+  "extraction_confidence": "medium",
+  "extracted_by": "llm_draft",
+  "notes_zh": null
+}

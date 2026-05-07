@@ -1,0 +1,135 @@
+{
+  "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+  "source_kind": "case_dwg",
+  "source_file": "DJGS-25-2-B120-0044-YT105S - 过模图",
+  "product_name_zh": "异形件（带凸缘双头方形件）",
+  "product_category": "special_shape",
+  "standard_ref": null,
+  "material": "YT105S",
+  "part_features": {
+    "part_number": "DJGS-25-2-B120-0044",
+    "description": "Special-shape cold-headed part with flanged head and pierced socket",
+    "overall_length": 8.05,
+    "material_grade": "YT105S",
+    "strength_grade": "",
+    "head": {
+      "type": "flange",
+      "diameter": 15.9,
+      "height": 2.5
+    },
+    "shank": {
+      "diameter": 12.95,
+      "length": 8.05
+    },
+    "thread": null,
+    "tail": null,
+    "hardness_min_hv": null,
+    "hardness_max_hv": null,
+    "surface_treatment": null,
+    "standard": null,
+    "tolerance_class": null,
+    "drawing_scale": null,
+    "notes": []
+  },
+  "process_forming": {
+    "part_name_zh": "异形凸缘件",
+    "material": "YT105S",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 12.5,
+      "max_diameter_mm": 11.5,
+      "notes_zh": "下料：方形/圆形坯料 11.5×12.5"
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 10.7,
+          "max_diameter_mm": 12.6,
+          "notes_zh": "正镦倒角整形，形成 C12.6 头部，下端 φ9 杆部"
+        },
+        "key_dimensions": {
+          "L": 10.7,
+          "D": 12.6,
+          "d": 9.0
+        },
+        "notes_zh": "第一次镦粗整形"
+      },
+      {
+        "n": 2,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 11.0,
+          "max_diameter_mm": 12.85,
+          "notes_zh": "进一步镦头，C12.85 头部，下端 φ10"
+        },
+        "key_dimensions": {
+          "L": 11.0,
+          "D": 12.85,
+          "d": 10.0
+        },
+        "notes_zh": "二次镦粗，头部成形"
+      },
+      {
+        "n": 3,
+        "operation": "combined",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 12.8,
+          "max_diameter_mm": 12.9,
+          "notes_zh": "镦出凸缘，下部预成形 φ5.1 凸出"
+        },
+        "key_dimensions": {
+          "L": 12.8,
+          "D": 12.9,
+          "d": 5.1
+        },
+        "notes_zh": "镦凸缘+反挤预成形"
+      },
+      {
+        "n": 4,
+        "operation": "combined",
+        "workpiece": {
+          "type": "custom",
+          "overall_length_mm": 8.05,
+          "max_diameter_mm": 15.9,
+          "notes_zh": "中间法兰 φ15.9，上下 φ12.95，两端凸出 φ5.1，凸缘厚 3，台阶 2.5"
+        },
+        "key_dimensions": {
+          "L": 8.05,
+          "D": 15.9,
+          "D2": 12.95,
+          "t_flange": 3.0,
+          "t_step": 2.5,
+          "d_end": 5.1
+        },
+        "notes_zh": "终成形：双向挤压+法兰镦粗"
+      },
+      {
+        "n": 5,
+        "operation": "trimming",
+        "workpiece": {
+          "type": "custom",
+          "overall_length_mm": 8.05,
+          "max_diameter_mm": 15.9,
+          "notes_zh": "切边/整形成最终轮廓"
+        },
+        "key_dimensions": {
+          "L": 8.05,
+          "D": 15.9
+        },
+        "notes_zh": "切边整形，得到成品"
+      }
+    ],
+    "post_processes": [],
+    "reasoning_zh": "5 工位过模：下料→正镦倒角→二次镦粗→镦凸缘并反挤预成形→双向挤压形成法兰及两端凸台→切边整形。机型 YT-105S。",
+    "cited_case_ids": [],
+    "confidence": "medium"
+  },
+  "extraction_confidence": "medium",
+  "extracted_by": "llm_draft",
+  "notes_zh": null
+}

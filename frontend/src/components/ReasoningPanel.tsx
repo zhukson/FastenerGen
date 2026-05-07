@@ -102,7 +102,7 @@ export function ReasoningPanel({
                     {rc.case.part_features.description}
                   </div>
                   <div className="text-gray-500 mt-0.5">
-                    {rc.case.part_features.thread.spec} ·{" "}
+                    {rc.case.part_features.thread?.spec ?? "—"} ·{" "}
                     {rc.case.part_features.material_grade} ·{" "}
                     {rc.case.process_plan.total_stations} stations
                   </div>

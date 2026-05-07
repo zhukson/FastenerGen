@@ -68,7 +68,7 @@ export default function DesignDetailPage({
           <h1 className="text-2xl font-bold">{design.part_features.description}</h1>
           <div className="flex items-center gap-3 mt-1">
             <span className="text-gray-500 text-sm font-mono">
-              {design.part_features.thread.spec} · L={design.part_features.overall_length}mm
+              {design.part_features.thread?.spec ?? "—"} · L={design.part_features.overall_length}mm
             </span>
             <span
               className={`px-2 py-0.5 rounded text-xs font-medium ${CONF_COLORS[design.confidence] ?? "bg-gray-100 text-gray-500"}`}

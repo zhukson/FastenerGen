@@ -1,0 +1,142 @@
+{
+  "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+  "source_kind": "case_dwg",
+  "source_file": "DJGS-22-2-四方通孔-105S - 过模图",
+  "product_name_zh": "四方底座(通孔)",
+  "product_category": "through_hole_part",
+  "standard_ref": null,
+  "material": "105S",
+  "part_features": {
+    "part_number": "B106-0054",
+    "description": "Square base with through hole, four-station cold heading",
+    "overall_length": 6.0,
+    "material_grade": "105S",
+    "strength_grade": "",
+    "head": {
+      "type": "flange",
+      "diameter": 15.05,
+      "height": 1.0
+    },
+    "shank": {
+      "diameter": 5.11,
+      "length": 5.0
+    },
+    "thread": null,
+    "tail": null,
+    "hardness_min_hv": null,
+    "hardness_max_hv": null,
+    "surface_treatment": null,
+    "standard": null,
+    "tolerance_class": null,
+    "drawing_scale": null,
+    "notes": [
+      "四方法兰外形, 4-R1.5 圆角",
+      "中心通孔 ø约4mm",
+      "机型 YT-105S"
+    ]
+  },
+  "process_forming": {
+    "part_name_zh": "四方底座(通孔)",
+    "material": "105S",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 12.3,
+      "max_diameter_mm": 8.9
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 6.6,
+          "max_diameter_mm": 12.82
+        },
+        "key_dimensions": {
+          "L": 6.6,
+          "D": 12.82,
+          "d_shank": 7.0
+        },
+        "notes_zh": "镦粗成型预制头, 下端预成形带锥度"
+      },
+      {
+        "n": 2,
+        "operation": "combined",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 4.5,
+          "max_diameter_mm": 12.88
+        },
+        "key_dimensions": {
+          "L": 4.5,
+          "D_head": 12.88,
+          "D_round": 9.95,
+          "d_shank": 7.58,
+          "R": 2.0
+        },
+        "notes_zh": "进一步镦粗成型法兰圆形外轮廓, 反挤压形成下端柄部"
+      },
+      {
+        "n": 3,
+        "operation": "combined",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 6.0,
+          "max_diameter_mm": 10.0
+        },
+        "key_dimensions": {
+          "H": 10.0,
+          "side": 10.0,
+          "R": 1.5,
+          "d_shank": 5.12,
+          "L_shank": 5.3,
+          "L_total": 6.3
+        },
+        "notes_zh": "镦四方外形(10×10, 4-R1.5), 中心反挤压预成型孔, 下端正挤压形成柄部"
+      },
+      {
+        "n": 4,
+        "operation": "piercing",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 6.0,
+          "max_diameter_mm": 20.5
+        },
+        "key_dimensions": {
+          "D_outer": 20.5,
+          "side": 10.04,
+          "R": 1.5,
+          "d_shank": 5.11,
+          "t_flange": 1.0,
+          "L_shank": 6.0
+        },
+        "notes_zh": "中心冲通孔, 法兰外圆 ø20.5 保留四方轮廓"
+      },
+      {
+        "n": 5,
+        "operation": "trimming",
+        "workpiece": {
+          "type": "flanged",
+          "overall_length_mm": 6.0,
+          "max_diameter_mm": 15.05
+        },
+        "key_dimensions": {
+          "side": 15.05,
+          "side_inner": 10.1,
+          "R": 1.5,
+          "d_shank": 5.11,
+          "t_flange": 1.0,
+          "L_shank": 6.0
+        },
+        "notes_zh": "切边修整为最终四方法兰外形 15.05×15.05, 4-R1.5"
+      }
+    ],
+    "post_processes": [],
+    "reasoning_zh": "工件为四方法兰带中心通孔零件, 采用5工位冷镦成型: 下料圆柱坯料(ø8.9×12.3), 工位1镦粗预成形, 工位2进一步镦圆头并反挤柄部, 工位3镦出四方外形并预成型中心孔, 工位4冲通孔(ø20.5外圆保留), 工位5切边为最终15.05方形外形。机型YT-105S, 材料105S。",
+    "cited_case_ids": [],
+    "confidence": "medium"
+  },
+  "extraction_confidence": "medium",
+  "extracted_by": "llm_draft",
+  "notes_zh": null
+}

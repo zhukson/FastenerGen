@@ -1,5 +1,8 @@
-from pydantic import Field
-from pydantic_settings import BaseSettings, SettingsConfigDict
+import json
+from typing import Annotated
+
+from pydantic import Field, field_validator
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -9,7 +12,29 @@ class Settings(BaseSettings):
     environment: str = "development"
     log_level: str = "INFO"
     secret_key: str = Field(default="dev-secret-change-in-prod")
-    allowed_origins: list[str] = ["http://localhost:3000"]
+    # NoDecode prevents pydantic-settings from JSON-decoding the env value
+    # (shell stripping quotes from `["a","b"]` would otherwise crash).
+    # The validator below normalizes both JSON and comma-separated forms.
+    allowed_origins: Annotated[list[str], NoDecode] = ["http://localhost:3000"]
+
+    @field_validator("allowed_origins", mode="before")
+    @classmethod
+    def _parse_allowed_origins(cls, v):
+        if v is None or isinstance(v, list):
+            return v
+        if isinstance(v, str):
+            s = v.strip()
+            if not s:
+                return []
+            if s.startswith("["):
+                # Try JSON first; fall back to bracket-stripping if quotes
+                # were eaten by the shell (`[a,b]` -> ['a','b']).
+                try:
+                    return json.loads(s)
+                except json.JSONDecodeError:
+                    s = s.strip("[]")
+            return [item.strip().strip('"').strip("'") for item in s.split(",") if item.strip()]
+        return v
 
     # Database
     database_url: str = "postgresql+asyncpg://dev:dev@localhost:5432/fastenergpt"

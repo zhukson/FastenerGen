@@ -1,0 +1,143 @@
+{
+  "case_id": "BG30060-P05-DIN933-M22-P2-5",
+  "source_kind": "standard_pdf",
+  "source_file": "BG30060-P05-DIN933 M22 P2.5",
+  "product_name_zh": "DIN933 M22×2.5 六角头螺栓",
+  "product_category": "hex_bolt_DIN933",
+  "standard_ref": "DIN933",
+  "material": "1025",
+  "part_features": {
+    "part_number": "BG30060-P05S01",
+    "description": "M22×2.5 hex head bolt, DIN933, full thread, grade 6.8",
+    "overall_length": 40.0,
+    "material_grade": "1025",
+    "strength_grade": "6.8",
+    "head": {
+      "type": "hex",
+      "diameter": 24.4,
+      "height": 14.0,
+      "across_flats": 30.0,
+      "across_corners": 35.72
+    },
+    "shank": {
+      "diameter": 21.7,
+      "length": 40.0
+    },
+    "thread": {
+      "spec": "M22×2.5",
+      "nominal_diameter": 22.0,
+      "pitch": 2.5,
+      "length": 40.0,
+      "thread_class": "6g",
+      "thread_type": "metric",
+      "is_full_length": true
+    },
+    "tail": null,
+    "hardness_min_hv": null,
+    "hardness_max_hv": null,
+    "surface_treatment": null,
+    "standard": "DIN 933",
+    "tolerance_class": null,
+    "drawing_scale": "1:1.5",
+    "notes": [
+      "MARK: TASK 6.8 凸字 0.25 mm",
+      "线径 Ø21.7",
+      "倒角 45°×17.8",
+      "可选长度 L=40~200"
+    ]
+  },
+  "process_forming": {
+    "part_name_zh": "DIN933 M22×2.5 六角头螺栓",
+    "material": "1025",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 95.0,
+      "max_diameter_mm": 21.7
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "combined",
+        "workpiece": {
+          "type": "cylinder",
+          "overall_length_mm": 95.0,
+          "max_diameter_mm": 21.7
+        },
+        "key_dimensions": {
+          "L": 95.0,
+          "D": 21.7
+        },
+        "notes_zh": "下料：Ø21.7 线材切断，长度按成品体积估算"
+      },
+      {
+        "n": 2,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 80.0,
+          "max_diameter_mm": 27.0,
+          "head_diameter_mm": 27.0,
+          "head_height_mm": 16.0,
+          "shank_diameter_mm": 21.7,
+          "shank_length_mm": 64.0
+        },
+        "key_dimensions": {
+          "L": 80.0,
+          "D_head": 27.0,
+          "H_head": 16.0
+        },
+        "notes_zh": "预镦：将头部料团预聚成圆台"
+      },
+      {
+        "n": 3,
+        "operation": "heading",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 56.0,
+          "max_diameter_mm": 35.72,
+          "head_diameter_mm": 35.72,
+          "head_height_mm": 14.0,
+          "shank_diameter_mm": 21.7,
+          "shank_length_mm": 42.0
+        },
+        "key_dimensions": {
+          "L": 56.0,
+          "D_head": 35.72,
+          "H_head": 14.0
+        },
+        "notes_zh": "终镦：成形六角头雏形（带圆角），头顶刻字 TASK 6.8"
+      },
+      {
+        "n": 4,
+        "operation": "trimming",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 56.0,
+          "max_diameter_mm": 30.0,
+          "head_diameter_mm": 30.0,
+          "head_height_mm": 14.0,
+          "shank_diameter_mm": 21.7,
+          "shank_length_mm": 42.0,
+          "across_flats_mm": 30.0,
+          "across_corners_mm": 35.72
+        },
+        "key_dimensions": {
+          "S": 30.0,
+          "E": 35.72,
+          "H": 14.0
+        },
+        "notes_zh": "切边：将头部圆周修剪为六角形，对边距 30，对角距 35.72，杆端 45° 倒角"
+      }
+    ],
+    "post_processes": [
+      "thread_rolling",
+      "heat_treatment"
+    ],
+    "reasoning_zh": "DIN933 全螺纹六角头螺栓常规四工位冷镦：下料→预镦→终镦带 TASK 6.8 标识→切边成六角；随后滚丝形成 M22×2.5 螺纹，按 6.8 级要求进行调质热处理。",
+    "cited_case_ids": [],
+    "confidence": "medium"
+  },
+  "extraction_confidence": "medium",
+  "extracted_by": "llm_draft",
+  "notes_zh": null
+}
