@@ -12,15 +12,20 @@ from __future__ import annotations
 
 import uuid
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import FileResponse
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 from app.core.config import settings
 from app.core.logging import get_logger
-from app.data.schemas import ConfidenceLevel, DesignResult, DesignStatus, PartFeatures, ProcessForming
+from app.data.schemas import (
+    DesignResult,
+    DesignStatus,
+    PartFeatures,
+    VerificationResult,
+)
 
 router = APIRouter()
 logger = get_logger(__name__)
@@ -228,23 +233,31 @@ async def dxf_preview(design_id: str, file_name: str) -> Any:
     for output_file in design.output_files:
         fp = Path(output_file.file_path)
         fp_norm = str(output_file.file_path).replace("\\", "/")
-        if (fp.name == norm_name
+        if (
+            (
+                fp.name == norm_name
                 or fp_norm.endswith("/" + norm_name)
-                or output_file.file_type == norm_name):
-            if fp.suffix.lower() == ".dxf" and fp.exists():
-                target_fp = fp
-                break
+                or output_file.file_type == norm_name
+            )
+            and fp.suffix.lower() == ".dxf"
+            and fp.exists()
+        ):
+            target_fp = fp
+            break
 
     if target_fp is None:
         raise HTTPException(status_code=404, detail=f"DXF '{file_name}' not found")
 
     try:
         import io
+
         import ezdxf
         import matplotlib
+
         matplotlib.use("Agg")
-        import matplotlib.pyplot as plt
-        from ezdxf.addons.drawing import RenderContext, Frontend
+        import matplotlib.pyplot as plt  # noqa: I001
+
+        from ezdxf.addons.drawing import Frontend, RenderContext
         from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
 
         doc = ezdxf.readfile(str(target_fp))
@@ -274,7 +287,7 @@ async def dxf_preview(design_id: str, file_name: str) -> Any:
         )
     except Exception as exc:
         logger.error("dxf_preview_failed", error=str(exc), file=str(target_fp))
-        raise HTTPException(status_code=500, detail=f"Render failed: {exc}")
+        raise HTTPException(status_code=500, detail=f"Render failed: {exc}") from exc
 
 
 @router.get("/rag/stats", tags=["designs"])
@@ -369,7 +382,12 @@ async def submit_feedback(design_id: str, feedback: DesignFeedback) -> dict[str,
 class V2GenerateRequest(BaseModel):
     drawing_id: str
     prefer_category: str | None = None
-    self_consistency_runs: int = 3
+    self_consistency_runs: int = Field(1, ge=1, le=3)
+    exclude_case_ids: list[str] = []
+    candidate_count: int = Field(1, ge=1, le=3)
+    max_design_attempts: int = Field(1, ge=1, le=2)
+    include_step3_images: bool = False
+    design_model: Literal["sonnet", "opus"] = "sonnet"
 
 
 class V2GenerateResponse(BaseModel):
@@ -384,6 +402,8 @@ class V2GenerateResponse(BaseModel):
     parameters_url: str
     reasoning_url: str
     preview_url: str
+    gong_review_url: str
+    verification: VerificationResult
 
 
 @router.post("/designs/v2/generate", response_model=V2GenerateResponse, tags=["designs-v2"])
@@ -398,13 +418,22 @@ async def v2_generate(request: V2GenerateRequest) -> V2GenerateResponse:
 
     design_id = uuid.uuid4().hex[:12]
     output_dir = V2_OUTPUT_ROOT / design_id
-    designer = ProcessDesigner()
+    model = (
+        settings.primary_model
+        if request.design_model == "opus"
+        else settings.claude_model_die_design
+    )
+    designer = ProcessDesigner(model=model)
     try:
         artifacts = await designer.design(
             product_drawing_path=drawing_path,
             output_dir=output_dir,
             prefer_category=request.prefer_category,
             self_consistency_runs=request.self_consistency_runs,
+            exclude_case_ids=request.exclude_case_ids,
+            candidate_count=request.candidate_count,
+            max_design_attempts=request.max_design_attempts,
+            include_step3_images=request.include_step3_images,
         )
     except Exception as exc:
         logger.error("v2_design_failed", error=str(exc), drawing_id=request.drawing_id)
@@ -416,8 +445,10 @@ async def v2_generate(request: V2GenerateRequest) -> V2GenerateResponse:
         "dxf": artifacts.dxf_path,
         "params": artifacts.parameters_path,
         "reasoning": artifacts.reasoning_path,
+        "gong_review": artifacts.gong_review_path,
         "cited": artifacts.cited_case_ids,
         "drawing_id": request.drawing_id,
+        "verification": artifacts.verification,
     }
     base = f"/api/v1/designs/v2/{design_id}"
     return V2GenerateResponse(
@@ -432,6 +463,8 @@ async def v2_generate(request: V2GenerateRequest) -> V2GenerateResponse:
         parameters_url=f"{base}/parameters",
         reasoning_url=f"{base}/reasoning",
         preview_url=f"{base}/preview",
+        gong_review_url=f"{base}/gong-review",
+        verification=artifacts.verification,
     )
 
 
@@ -450,6 +483,7 @@ async def v2_get(design_id: str) -> dict[str, Any]:
         "cited_case_ids": record["cited"],
         "process_forming": record["forming"].model_dump(mode="json"),
         "part_features": record["part"].model_dump(mode="json", exclude_none=True),
+        "verification": record["verification"].model_dump(mode="json"),
     }
 
 
@@ -481,6 +515,16 @@ async def v2_reasoning(design_id: str) -> FileResponse:
     rec = _v2_record(design_id)
     fp: Path = rec["reasoning"]
     return FileResponse(path=str(fp), filename=fp.name, media_type="text/markdown")
+
+
+@router.get("/designs/v2/{design_id}/gong-review", tags=["designs-v2"])
+async def v2_gong_review(design_id: str) -> FileResponse:
+    """Free-form Gong-style critique the LLM produced before committing JSON."""
+    rec = _v2_record(design_id)
+    fp: Path | None = rec.get("gong_review")
+    if fp is None or not Path(fp).exists():
+        raise HTTPException(status_code=404, detail="No gong_review available for this design")
+    return FileResponse(path=str(fp), filename=Path(fp).name, media_type="text/markdown")
 
 
 @router.get("/designs/v2/{design_id}/preview", tags=["designs-v2"])

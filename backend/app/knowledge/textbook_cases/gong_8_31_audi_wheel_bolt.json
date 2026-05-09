@@ -1,0 +1,120 @@
+{
+  "id": "audi_wheel_bolt_case_8_31",
+  "source": "gong_maoliang_Page371_374:372",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "奥迪车用轮胎螺栓",
+  "product_category": "汽车轮胎螺栓（Wheel Bolt）",
+  "why_it_matters": "奥迪车用轮胎螺栓为典型的冷镦成形汽车紧固件，头部带锥面或球面座，杆部带螺纹，要求高强度与精密外形，展示多工位冷镦逐步成形头部形状的典型工艺路线。",
+  "visible_process_summary_zh": "共展示4个工位截面图（含端视图），从棒料剪切坯料开始，经预镦、镦头（形成六角或法兰形头部）、终成形（含锥面/球面座），最终得到带法兰/球面座的轮胎螺栓。每工位均示出杆部直径与头部外形变化。",
+  "visible_dimensions": {
+    "blank_diameter_mm": 15,
+    "blank_length_mm": 45,
+    "station1_body_dia_large_mm": 15.2,
+    "station1_body_dia_small_mm": 10.8,
+    "station1_length_large_section_mm": 29.8,
+    "station1_length_small_section_mm": 24,
+    "station1_chamfer_angle_deg": 45,
+    "station2_hex_dia_mm": 11.8,
+    "station2_shank_dia_mm": 10.85,
+    "station2_intermediate_dia_mm": 16.38,
+    "station2_head_length_mm": 4.1,
+    "station2_mid_length_mm": 12.3,
+    "station2_shank_length_mm": 24,
+    "station2_head_section_total_mm": 14.305,
+    "station2_end_view_across_flats_mm": 16.6,
+    "station2_end_view_dia_mm": "19.168 (unclear, possibly 19.168)",
+    "station3_hex_dia_mm": 11.8,
+    "station3_shank_dia_mm": 10.88,
+    "station3_intermediate_dia_mm": 16.6,
+    "station3_head_length_mm": 4.1,
+    "station3_section1_length_mm": 13.2,
+    "station3_section2_length_mm": 12,
+    "station3_shank_length_mm": 24,
+    "station3_end_view_across_flats_mm": 16.7,
+    "station3_end_view_dia_mm": 19.27,
+    "station4_shank_dia_mm": 10.92,
+    "station4_flange_dia_mm": 23,
+    "station4_small_dia_mm": 12,
+    "station4_spherical_radius_mm": "SR14.3",
+    "station4_section1_length_mm": 12.7,
+    "station4_section2_length_mm": 7.3,
+    "station4_shank_length_mm": 24,
+    "station4_offset1_mm": 1.2,
+    "station4_offset2_mm": 2.5,
+    "station4_offset3_mm": 3,
+    "station4_offset4_mm": 2,
+    "station4_end_view_across_flats_mm": 16.9,
+    "station4_end_view_feature": "法兰带齿或花纹（unclear细节）"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆棒料，直径φ15 mm，长度45 mm",
+      "dimensions": {
+        "diameter_mm": 15,
+        "length_mm": 45
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "预镦（一次镦粗/缩径）",
+      "geometry_zh": "坯料一端缩径至φ10.8 mm（长24 mm），另端保持φ15.2 mm（长29.8 mm），端部45°倒角",
+      "dimensions": {
+        "large_dia_mm": 15.2,
+        "small_dia_mm": 10.8,
+        "large_section_length_mm": 29.8,
+        "small_section_length_mm": 24,
+        "chamfer_deg": 45
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "镦头（第二工位，形成初步六角头）",
+      "geometry_zh": "头部镦成φ11.8 mm六角外形，头部过渡段φ16.38 mm，杆部φ10.85 mm×24 mm，头部总长14.305 mm（含4.1+12.3分段），端面对边16.6 mm",
+      "dimensions": {
+        "hex_dia_mm": 11.8,
+        "transition_dia_mm": 16.38,
+        "shank_dia_mm": 10.85,
+        "head_chamfer_length_mm": 4.1,
+        "head_mid_length_mm": 12.3,
+        "head_total_length_mm": 14.305,
+        "shank_length_mm": 24,
+        "across_flats_mm": 16.6,
+        "end_view_outer_dia_mm": "~19.168 (uncertain)"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "镦头（第三工位，精整六角头）",
+      "geometry_zh": "头部φ11.8 mm六角，过渡段φ16.6 mm，杆φ10.88 mm×24 mm，头部分段13.2+12+24，对边16.7 mm，端视外径19.27 mm",
+      "dimensions": {
+        "hex_dia_mm": 11.8,
+        "transition_dia_mm": 16.6,
+        "shank_dia_mm": 10.88,
+        "section1_length_mm": 13.2,
+        "section2_length_mm": 12,
+        "shank_length_mm": 24,
+        "across_flats_mm": 16.7,
+        "end_view_outer_dia_mm": 19.27
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "终成形（法兰球面座成形）",
+      "geometry_zh": "头部成形为法兰形，法兰φ23 mm，球面半径SR14.3，小径φ12 mm，杆φ10.92 mm×24 mm，头部分段12.7+7.3，对边16.9 mm，法兰端面带花纹（unclear）",
+      "dimensions": {
+        "flange_dia_mm": 23,
+        "spherical_radius_mm": "SR14.3",
+        "small_dia_mm": 12,
+        "shank_dia_mm": 10.92,
+        "section1_length_mm": 12.7,
+        "section2_length_mm": 7.3,
+        "shank_length_mm": 24,
+        "across_flats_mm": 16.9,
+        "offset_dims_mm": [1.2, 2.5, 3, 2]
+      }
+    }
+  ],
+  "usage_in_prompt": "用于说明汽车用轮胎螺栓（奥迪型）4工位冷镦成形工艺：坯料φ15×45 mm，逐步镦粗缩径→初镦六角头→精整六角→终成形法兰球面座，各工位关键直径与长度如上表所示。注意第4工位法兰外径φ23 mm、SR14.3球面座为该零件关键特征。"
+}

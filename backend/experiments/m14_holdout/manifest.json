@@ -1,0 +1,22 @@
+{
+  "experiment": "m14_holdout",
+  "source_pdf": "/Users/bobchen/Desktop/fasternerData/标准件/BD19046-P03-DIN912 M14 P2.0.pdf",
+  "source_pdf_total_pages": 96,
+  "input": {
+    "file": "experiments/m14_holdout/input/m14_product_input_page_001.pdf",
+    "preview_png": "experiments/m14_holdout/input/m14_product_input_page_001.png",
+    "source_page_1_based": 1,
+    "meaning": "customer product drawing only; no forming process answer"
+  },
+  "ground_truth": {
+    "visual_pdf": "experiments/m14_holdout/ground_truth/m14_forming_process_ground_truth_page_003_60-140L.pdf",
+    "visual_png": "experiments/m14_holdout/ground_truth/m14_forming_process_ground_truth_page_003_60-140L.png",
+    "source_page_1_based": 3,
+    "meaning": "factory forming process drawing for DIN912 M14 60-140L; withheld from LLM runtime"
+  },
+  "excluded_from_runtime_knowledge": "BD19046-P03-DIN912-M14-P2-0",
+  "notes": [
+    "Original 96-page standard pack is not used as pipeline input.",
+    "Page 2 is the 40-60L forming process. Page 3 is the 60-140L forming process used for the length=100 holdout comparison."
+  ]
+}

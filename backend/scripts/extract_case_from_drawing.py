@@ -36,9 +36,11 @@ from app.ai.prompts.case_extraction import (
     SYSTEM_PROMPT,
     build_user_prompt,
 )
+from app.core.env import load_local_env
 from app.data.schemas import CaseRecord, PostProcess
 
 ALLOWED_POST_PROCESSES = {p.value for p in PostProcess}
+load_local_env(Path(__file__).resolve().parents[1])
 
 
 def sanitize_post_processes(obj: dict) -> dict:
@@ -73,6 +75,7 @@ def sanitize_thread(obj: dict) -> dict:
         pf["thread"] = None
         obj["part_features"] = pf
     return obj
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PNG_DIR = REPO_ROOT / "fasternerGenData" / "png"
@@ -187,7 +190,10 @@ def main() -> int:
     args = ap.parse_args()
 
     if not PNG_DIR.exists():
-        print(f"ERROR: {PNG_DIR} does not exist. Run render_drawings_to_png.py first.", file=sys.stderr)
+        print(
+            f"ERROR: {PNG_DIR} does not exist. Run render_drawings_to_png.py first.",
+            file=sys.stderr,
+        )
         return 2
 
     pngs = sorted(PNG_DIR.glob("*.png"))
@@ -231,16 +237,16 @@ def main() -> int:
             obj = sanitize_thread(obj)
             # Validate against CaseRecord (fail loudly if drift)
             CaseRecord.model_validate(obj)
-            out_path.write_text(
-                json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8"
-            )
+            out_path.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
             saved.append(out_path)
             print(f"    -> {out_path.relative_to(REPO_ROOT)}")
         except (ValidationError, json.JSONDecodeError, anthropic.APIError) as exc:
             failed.append((png.name, str(exc)[:300]))
             print(f"    ! FAILED: {type(exc).__name__}: {str(exc)[:200]}", file=sys.stderr)
 
-    print(f"\nSaved: {len(saved)}    Failed: {len(failed)}    Skipped existing: {len(pngs) - len(saved) - len(failed)}")
+    print(
+        f"\nSaved: {len(saved)}    Failed: {len(failed)}    Skipped existing: {len(pngs) - len(saved) - len(failed)}"
+    )
     if failed:
         print("\nFailures:")
         for name, err in failed:

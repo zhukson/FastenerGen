@@ -1,0 +1,89 @@
+{
+  "id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+  "source": "gong_maoliang_Page371_374:374",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "摩托车、电瓶车减振活塞杆",
+  "product_category": "减振活塞杆 (shock absorber piston rod for motorcycle / e-bike)",
+  "why_it_matters": "展示了细长杆类零件的多工步冷镦成形工艺，包括杆部、端头法兰/台阶及螺纹端的渐进成形过程，对细长轴类冷镦工艺设计具有参考价值。",
+  "visible_process_summary_zh": "页面展示约6个中间工序截面图，从原始棒料逐步成形出带法兰头部、细长杆部和端部螺纹结构的活塞杆。各工步显示杆部长度逐步延伸、头部形状逐渐成形，最终达到成品尺寸。",
+  "visible_dimensions": {
+    "blank_diameter_mm": "unclear (约φ10~12，图像模糊)",
+    "overall_length_mm_approx": "180 (最终工步约180±)",
+    "station_1_length_mm": "53 (第一工步毛坯总长，OCR与图像基本一致)",
+    "station_2_length_mm": "52.99",
+    "station_3_key_lengths_mm": ["72.06", "76.65"],
+    "station_4_key_lengths_mm": ["76.05", "3.56 (头部凸台高)", "1.51 (unclear)"],
+    "station_5_key_lengths_mm": ["170.99", "176.97", "8.96", "5.98", "76.05+2.5"],
+    "station_6_key_lengths_mm": ["167.89", "7.96"],
+    "station_7_key_lengths_mm": ["160.29", "168.1", "180 (总长)", "11.9+0.1 (螺纹端)", "1.9+0.1 (unclear)"],
+    "chamfer_or_radius_mm": "0.5 (多处倒角，图像可见)",
+    "flange_detail_mm": {
+      "diameter_approx": "unclear (~φ22~24)",
+      "thickness_approx": "1.3 (station 6区域标注)"
+    },
+    "thread_end_note": "N=0.8 或 N1.2 (螺纹规格unclear，OCR噪声大)",
+    "head_end_diameters_mm": "unclear (约φ10~18系列台阶，图像分辨率不足)"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆棒料切断，直径和长度待确认",
+      "dimensions": {"length_mm": "unclear", "diameter_mm": "unclear"}
+    },
+    {
+      "n": 1,
+      "label_zh": "第1工步 — 初步整形",
+      "geometry_zh": "棒料端部初镦，总长约53mm，端头开始成形",
+      "dimensions": {"length_mm": 53, "diameter_mm": "unclear"}
+    },
+    {
+      "n": 2,
+      "label_zh": "第2工步 — 头部预成形",
+      "geometry_zh": "头部法兰台阶进一步压缩，总长52.99mm，两端0.5mm倒角出现",
+      "dimensions": {"length_mm": 52.99, "chamfer_mm": 0.5}
+    },
+    {
+      "n": 3,
+      "label_zh": "第3工步 — 杆部拉长/减径",
+      "geometry_zh": "通过正挤压使杆部延伸，关键长度72.06和76.65mm",
+      "dimensions": {"inner_length_mm": 72.06, "outer_length_mm": 76.65}
+    },
+    {
+      "n": 4,
+      "label_zh": "第4工步 — 头部法兰成形",
+      "geometry_zh": "法兰头部基本定形，总杆长76.05mm，头部凸台高3.56mm",
+      "dimensions": {"rod_length_mm": 76.05, "head_boss_height_mm": 3.56}
+    },
+    {
+      "n": 5,
+      "label_zh": "第5工步 — 细长杆成形",
+      "geometry_zh": "正挤压大幅延伸杆部，总长176.97mm，有效杆长170.99mm，尾端预留8.96mm成形区",
+      "dimensions": {
+        "total_length_mm": 176.97,
+        "rod_effective_length_mm": 170.99,
+        "tail_zone_mm": 8.96,
+        "note": "76.05+2.5标注疑为头部尺寸公差"
+      }
+    },
+    {
+      "n": 6,
+      "label_zh": "第6工步 — 尾端预成形",
+      "geometry_zh": "尾端进行螺纹底径预成形，总长167.89mm，尾端区域7.96mm，法兰厚度约1.3mm",
+      "dimensions": {"total_length_mm": 167.89, "tail_zone_mm": 7.96, "flange_thickness_mm": 1.3}
+    },
+    {
+      "n": 7,
+      "label_zh": "第7工步 — 成品件",
+      "geometry_zh": "最终工步，总体长180mm，有效段168.1mm，螺纹端长11.9+0.1mm，头部带六角或圆法兰，螺纹规格unclear",
+      "dimensions": {
+        "total_length_mm": 180,
+        "main_body_length_mm": 168.1,
+        "thread_end_length_mm": "11.9+0.1",
+        "thread_spec": "unclear (N=0.8 or N1.2)",
+        "head_flat_size_mm": "unclear (~S=5.5或更大)"
+      }
+    }
+  ],
+  "usage_in_prompt": "用于细长杆类冷镦工艺设计参考：活塞杆从短坯料经多工步正挤压延伸杆部，同时成形头部法兰和尾部螺纹预型。关键控制点：各工步杆部伸长量、头部法兰成形时机、尾端螺纹预成形余量。具体尺寸因图像质量有限，应以实际工艺图纸为准。"
+}

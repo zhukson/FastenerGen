@@ -1,0 +1,109 @@
+{
+  "id": "rivet_gun_hex_through_core_bolt_8_35",
+  "source": "gong_maoliang_Page375_378:376",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "铆枪六角穿芯螺钉",
+  "product_category": "冷镦六角头螺钉（穿芯型）",
+  "why_it_matters": "铆枪专用六角穿芯螺钉，需在头部成形凹模面（凹槽），并在杆部预留穿芯孔，工艺复杂，典型6工位冷镦成形案例。",
+  "visible_process_summary_zh": "共7个工位（0#~6#），从坯料剪切开始，经逐步镦粗、预成形六角头、成形凹模面、整形，最终得到带凹模面的六角穿芯螺钉。",
+  "visible_dimensions": {
+    "blank_diameter_mm": 6.5,
+    "blank_length_mm": 21,
+    "station_1_diameter_mm": 6.7,
+    "station_1_length_mm": 20,
+    "head_across_flats_mm": 9.8,
+    "shank_diameter_mm": 3.2,
+    "head_height_approx_mm": "~2.2",
+    "concave_face_note": "凹模面（顶部凹槽）",
+    "flange_angle_deg": 30,
+    "taper_angle_station3_deg": "105（uncertain）",
+    "station2_overall_length_mm": "unclear",
+    "station3_body_length_mm": "~5.9",
+    "station4_shank_length_mm": "~12.96",
+    "station5_shank_length_mm": "~9.1",
+    "head_chamfer_or_recess_depth_mm": "~0.8"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料（坯料）",
+      "geometry_zh": "圆柱坯料",
+      "dimensions": {
+        "diameter_mm": 6.5,
+        "length_mm": 21
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "剪切/整形坯料",
+      "geometry_zh": "略修整端面，直径略减",
+      "dimensions": {
+        "diameter_mm": 6.7,
+        "length_mm": 20
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "预镦粗头部",
+      "geometry_zh": "头部初步镦粗，杆部成形，头部直径约9.3",
+      "dimensions": {
+        "head_diameter_mm": 9.3,
+        "shank_diameter_mm": "~6.75（unclear）",
+        "overall_length_mm": "unclear",
+        "recess_depth_mm": 1.85,
+        "shoulder_length_mm": 1.8,
+        "total_shoulder_mm": 3.25
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "预成形六角头及锥面",
+      "geometry_zh": "头部逐步成形六角外形，锥角约105°，杆部延伸",
+      "dimensions": {
+        "head_diameter_mm": 9.7,
+        "taper_angle_deg": "105（uncertain）",
+        "body_length_mm": "~5.9",
+        "step_lengths_mm": ["~3.9", "~2.3"],
+        "cone_angle_deg": 40
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "成形六角头+杆部整形",
+      "geometry_zh": "六角头基本成形，头部带预凹，杆部长度成形",
+      "dimensions": {
+        "head_across_flats_mm": 9.8,
+        "shank_diameter_mm": 3.2,
+        "shank_length_mm": "~12.96",
+        "recess_depth_mm": 0.8,
+        "step_mm": ["~2.56", "~3.6"],
+        "flange_taper_deg": 30
+      }
+    },
+    {
+      "n": 5,
+      "label_zh": "精整六角头及凹模面",
+      "geometry_zh": "六角头精整，顶部凹模面成形，杆部精整",
+      "dimensions": {
+        "head_across_flats_mm": 9.8,
+        "shank_length_mm": "~9.1",
+        "recess_depth_mm": 0.8,
+        "step_lengths_mm": ["~4.8", "~5.6"],
+        "head_fillet_or_chamfer_mm": "unclear"
+      }
+    },
+    {
+      "n": 6,
+      "label_zh": "最终成形（凹模面完成）",
+      "geometry_zh": "完整六角穿芯螺钉，头顶凹模面清晰，杆部φ3.2",
+      "dimensions": {
+        "head_across_flats_mm": 9.8,
+        "shank_diameter_mm": 3.2,
+        "head_height_mm": "~2.2",
+        "concave_face": "成形完毕",
+        "total_length_mm": "unclear"
+      }
+    }
+  ],
+  "usage_in_prompt": "用于说明铆枪六角穿芯螺钉的多工位冷镦工艺，重点在头部凹模面成形与六角头逐步成形的工序安排，可作为类似带凹槽六角头零件的工艺设计参考。部分尺寸因扫描图像模糊，标注为unclear，使用时需结合原图核实。"
+}

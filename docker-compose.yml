@@ -65,7 +65,7 @@ services:
     ports:
       - "8080:8080"
     env_file:
-      - .env
+      - ./backend/.env.local
     environment:
       DATABASE_URL: postgresql+asyncpg://dev:dev@postgres:5432/fastenergpt
       REDIS_URL: redis://redis:6379
@@ -104,7 +104,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      NEXT_PUBLIC_API_URL: http://localhost:8080
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8080
     depends_on:
       - backend
     restart: unless-stopped

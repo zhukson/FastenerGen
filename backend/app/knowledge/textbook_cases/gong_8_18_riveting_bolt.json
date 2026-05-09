@@ -1,0 +1,99 @@
+{
+  "id": "riveting_bolt_8_18_p358",
+  "source": "gong_maoliang_Page355_358:358",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "铆接螺栓",
+  "product_category": "铆接螺栓 (riveting bolt)",
+  "why_it_matters": "铆接螺栓是典型的复合成形冷镦件，头部需形成铆接凸缘或焊点结构，工艺包含多道次预成形与最终头部成形，代表了带台阶异形头部零件的冷镦工艺设计思路。",
+  "visible_process_summary_zh": "5工位冷镦成形（0#~4#）：0#下料→1#预镦（初步整形）→2#预成形头部锥面→3#进一步缩径成形颈部→4#终镦完成头部（含150°锥面及孔深，8焊点SR1均布）。材质：08AL。",
+  "visible_dimensions": {
+    "material": "08AL",
+    "finish_head_OD": "Φ13 ± 0.1",
+    "finish_shank_OD_1": "Φ11 +0.02/0",
+    "finish_shank_OD_2": "Φ9 +0.02/0 (unclear, approx 7.4±0.02)",
+    "finish_flange_OD": "Φ25.23 +0.02/+0.05 (uncertain)",
+    "finish_pilot_OD": "Φ9.9 +0.05/0 (uncertain)",
+    "finish_total_length": "16 (approx)",
+    "finish_head_angle": "150°",
+    "finish_hole_depth": "4 -0.10/-0.20 (孔深)",
+    "weld_points": "8-焊点 SR1 均布",
+    "finish_dim_3_5": "3.5 -0.05/-0.08 (uncertain)",
+    "finish_dim_4": "4 +0.05/+0.03 (uncertain)",
+    "finish_dim_2_8": "2.8 +0.05/+0.02"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆柱坯料",
+      "dimensions": {
+        "OD": "Φ8.45",
+        "length": "15.9"
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "预镦整形",
+      "geometry_zh": "初步整形，一端局部镦粗，形成小台阶",
+      "dimensions": {
+        "OD_body": "Φ8.8",
+        "OD_end": "Φ7 (approx, unclear)",
+        "length": "14.7"
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "头部预成形",
+      "geometry_zh": "镦出头部雏形，锥角约139°，形成颈部与头部过渡",
+      "dimensions": {
+        "OD_head": "Φ8.85",
+        "OD_neck": "Φ7.5",
+        "OD_shank": "Φ5.16 (uncertain)",
+        "cone_angle": "139° (approx)",
+        "total_length": "20.513",
+        "head_length": "3.25",
+        "mid_length": "15.3",
+        "end_length": "5.213",
+        "fillet": "R3.2 (uncertain)"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "缩径成形颈部",
+      "geometry_zh": "进一步成形颈部与杆部，头部轮廓逐渐清晰，底部10°锥",
+      "dimensions": {
+        "OD_head": "Φ8.9",
+        "OD_neck": "Φ7.45",
+        "OD_shank": "Φ5.2",
+        "OD_pilot": "Φ9.64 (uncertain)",
+        "total_length": "18.5",
+        "head_zone_length": "3.3",
+        "mid_length": "13",
+        "end_length": "5.5",
+        "bottom_angle": "10°",
+        "bottom_offset": "2.8",
+        "fillet": "R2 (unclear)"
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "终镦成形",
+      "geometry_zh": "终镦完成头部（150°锥面）、颈部、杆部及盲孔，8焊点SR1均布",
+      "dimensions": {
+        "head_OD": "Φ13 ± 0.1",
+        "shank_OD_1": "Φ11 +0.02/0",
+        "shank_OD_2": "Φ7.4 ± 0.02 (uncertain label)",
+        "pilot_OD": "Φ9.9 +0.05/0 (uncertain)",
+        "flange_OD": "Φ25.23 +0.02/+0.05 (uncertain)",
+        "head_angle": "150°",
+        "hole_depth": "4 -0.10/-0.20",
+        "total_length": "16",
+        "dim_4_step": "4 +0.05/+0.03 (uncertain)",
+        "dim_3_5": "3.5 -0.05/-0.08 (uncertain)",
+        "dim_2_8": "2.8 +0.05/+0.02",
+        "weld_points": "8× SR1 均布"
+      }
+    }
+  ],
+  "usage_in_prompt": "本案例可用于：（1）说明带铆接凸缘/焊点头部螺栓的冷镦多工位工艺设计；（2）展示08AL低碳钢适合冷镦复杂头部形状；（3）说明终镦工位中盲孔与焊点一次成形的工艺可行性；（4）作为铆接螺栓类零件工艺排布的参考案例。注意：OCR噪声较大，部分尺寸（尤其4#工位法兰OD及公差）置信度较低，应以图纸原件为准。"
+}

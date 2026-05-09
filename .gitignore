@@ -63,6 +63,9 @@ Thumbs.db
 *.dwg
 *.png
 !backend/app/drawings/templates/
+fasternerGenData/png/
+fasternerGenData/textbook_pages/
+fasternerGenData/textbook_ocr/
 
 # Data
 chroma_data/

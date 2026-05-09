@@ -91,10 +91,13 @@ Output schema (strict JSON, all dimensions in mm):
   "thread": {
     "spec": string,
     "nominal_diameter": number,
-    "pitch": number,
+    "pitch": number or null,           // null for self-tap (Delta PT, Taptite,
+                                       //   Plastite, PowerLock) and trade-name
+                                       //   threads where the drawing does not
+                                       //   show a standard pitch
     "length": number,
-    "thread_class": string,
-    "thread_type": "metric"|"unified"|"bsp"|"acme",
+    "thread_class": string or null,    // null for self-tap / trade-name threads
+    "thread_type": "metric"|"unified"|"bsp"|"acme"|"self_tap"|"trade_name",
     "is_full_length": boolean
   },
   "tail": null or {

@@ -37,6 +37,9 @@ ODA_MAC_PATH = Path(
 def find_oda() -> Path | None:
     if ODA_MAC_PATH.exists():
         return ODA_MAC_PATH
+    mounted = sorted(Path("/Volumes").glob("*/ODAFileConverter.app/Contents/MacOS/ODAFileConverter"))
+    if mounted:
+        return mounted[0]
     on_path = shutil.which("ODAFileConverter")
     return Path(on_path) if on_path else None
 

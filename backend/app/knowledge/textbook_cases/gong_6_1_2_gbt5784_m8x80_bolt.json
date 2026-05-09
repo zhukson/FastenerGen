@@ -1,0 +1,159 @@
+{
+  "id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
+  "source": "gong_maoliang_Page69_74:69, gong_maoliang_Page69_74:70, gong_maoliang_Page69_74:71, gong_maoliang_Page69_74:72, gong_maoliang_Page69_74:73, gong_maoliang_Page69_74:74",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "螺栓 GB/T5784 M8×80 标准模具图册（Z46-8/3 三工位冷镦）",
+  "product_category": "六角头螺栓 M8×80 (GB/T5784)",
+  "why_it_matters": "提供完整的 M8×80 螺栓冷镦工艺变形图及各工位（切料、1序、2序、3序）模具装配尺寸，可作为同类规格螺栓模具设计的参考案例。",
+  "visible_process_summary_zh": "线材经切料模切断后，依次经过3个冷镦工位成形：1序预镦（缩径+头部预成形）、2序再镦（头部进一步成形）、3序终镦（六角头成形）。工艺变形图显示坯料逐步从圆棒料变为带六角头的螺栓坯。",
+  "visible_dimensions": {
+    "blank_wire_diameter_mm": "φ7.00 (-0/−0.03)",
+    "blank_total_length_mm": 106.3,
+    "blank_head_section_length_mm": 24.2,
+    "blank_shank_section_length_mm": 82.1,
+    "station0_after_cut_od_mm": "φ7.06（切后坯料直径，图示）",
+    "station0_after_cut_length_head_zone_mm": 16.8,
+    "station0_after_cut_length_shank_mm": 80.70,
+    "station1_after_form_head_od_mm": "φ14.95（预镦头部直径）",
+    "station1_shank_od_mm": "φ7.10",
+    "station1_head_length_mm": 5.3,
+    "station1_shank_length_mm": 80,
+    "station1_head_taper_angle_deg": "15~30°（头部导入角）",
+    "station1_top_angle_deg": "10°（顶部角）",
+    "station2_after_form_head_od_mm": "unclear（与1序相似，头部进一步成形）",
+    "station2_shank_od_mm": "φ7.10",
+    "station2_shank_length_mm": 80,
+    "station2_head_length_mm": 5.3,
+    "station2_head_corner_radius_mm": "R0.5",
+    "station3_hex_head_od_across_corners_mm": "φ14.73（对角径）",
+    "station3_hex_head_od_across_flats_mm_min": "φ14.42 min（对边径最小）",
+    "station3_head_height_mm": "5.3 (per GB/T 5784 / ISO 4014 spec; original draft had 12.75 which is likely an OCR/extraction error — 12.75 closely matches across-flats SW≈13mm, not head height k=5.3mm)",
+    "cutting_die_assembly_Z46_8_3": {
+      "drawing_no": "Z46-8/3 切料组装图（000）",
+      "part_001_od_entry_mm": "φ35（外套外径）",
+      "part_001_od_bore_mm": "φ20（内孔）",
+      "part_001_length_mm": 50,
+      "part_002_od_mm": "φ38（外套）",
+      "part_002_bore_mm": "φ20",
+      "part_002_length_mm": 22,
+      "note": "切料模由001（刀片/套）和002（模套）组成，线材通孔φ20"
+    },
+    "station1_die_assembly": {
+      "drawing_no": "Z46-8/3 1序组装图（100）",
+      "outer_cassette_od_mm": "φ60f6",
+      "inner_sleeve_fit_mm": "φ38H7/n6",
+      "punch_guide_bore_mm": "φ18",
+      "key_slot": "槽 1.6×12×24",
+      "die_lengths_nested_mm": "90 / 100 / 110（分层）",
+      "ejector_pin_od_mm": "φ12",
+      "ejector_cassette_od_mm": "φ50f7",
+      "part_ids": ["101","102","103","104","105","106","107","108","109"],
+      "spring_spec": "弹簧 2×18×75"
+    },
+    "station2_die_assembly": {
+      "drawing_no": "Z46-8/3 2序组装图（200）",
+      "outer_cassette_od_mm": "φ90f6",
+      "inner_sleeve_fit_mm": "φ38H7/n6",
+      "punch_guide_bore_mm": "φ18",
+      "key_slot": "槽 1.6×12×24",
+      "die_lengths_nested_mm": "90 / 100 / 110",
+      "punch_holder_length_mm": "60 / 100",
+      "punch_holder_width_mm": 20,
+      "head_clearance_mm": 3.5,
+      "ejector_cassette_od_mm": "φ50f7",
+      "part_ids": ["201","202","203","204","205","206","207","208"]
+    },
+    "station3_die_assembly": {
+      "drawing_no": "Z46-8/3 3序组装图（300）",
+      "outer_cassette_od_mm": "φ90（推测，图示相似）",
+      "inner_sleeve_fit_mm": "φ32H7/n6（unclear，图示标注）",
+      "punch_guide_bore_mm": "φ18",
+      "key_slot": "槽 1.6×12×24",
+      "die_lengths_nested_mm": "100 / 110",
+      "punch_holder_lengths_mm": "20 / 30 / 60 / 100 / 125",
+      "ejector_cassette_od_mm": "φ50f7",
+      "part_ids": ["301","302","303","304","305","306","307","308"]
+    },
+    "cutting_die_detail_001": {
+      "drawing_no": "Z46-8/3 割模（001）",
+      "die_sleeve_material": "H13",
+      "die_core_material": "YG25C",
+      "die_sleeve_hardness": "HRC 46~49",
+      "core_to_sleeve_interference_mm": "0.6~0.9（φ20处模芯与模套过盈量）",
+      "total_length_mm": 50,
+      "outer_od_mm": "φ30",
+      "mid_od_mm": "φ20",
+      "sleeve_od_mm": "φ35 (-0.05/-0.08)",
+      "wire_bore_od_mm": "φ7 (+0/-0.10)",
+      "entry_chamfer_deg": 45,
+      "entry_radius_mm": "R3",
+      "relief_angle_deg": 15,
+      "groove_spec": "3×0.5",
+      "head_section_length_mm": 15,
+      "shank_section_length_mm": 10,
+      "cylindricity_tolerance_mm": "φ0.015（A基准）",
+      "perpendicularity_tolerance_mm": 0.015,
+      "surface_roughness_general_Ra_um": 3.2,
+      "wire_bore_Ra_um": 0.8
+    }
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料（切料）",
+      "geometry_zh": "线材切断，坯料为圆柱体。切料模编号Z46-8/3-000，模芯YG25C，模套H13(HRC46-49)。通孔φ20引导线材，刀片分割。",
+      "dimensions": {
+        "wire_diameter_mm": "φ7.00 (-0/−0.03)",
+        "cut_blank_diameter_mm": "φ7.06",
+        "cut_blank_total_length_mm": 106.3,
+        "head_stock_length_mm": 24.2,
+        "shank_stock_length_mm": 82.1
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "1序（预镦头部）",
+      "geometry_zh": "坯料头部镦粗预成形，头部直径扩展至约φ14.95，头部导入角15~30°，顶角10°，杆部基本不变。模具组装图编号100。",
+      "dimensions": {
+        "head_od_mm": "φ14.95",
+        "shank_od_mm": "φ7.10",
+        "head_length_mm": 5.3,
+        "shank_length_mm": 80,
+        "head_taper_angle_deg": "15~30°",
+        "top_angle_deg": "10°",
+        "die_outer_od_mm": "φ60f6",
+        "die_inner_fit_mm": "φ38H7/n6"
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "2序（再镦头部）",
+      "geometry_zh": "头部进一步成形，形状接近最终六角头轮廓，头部角部添加R0.5圆角，杆部φ7.10。模具组装图编号200。",
+      "dimensions": {
+        "head_od_mm": "unclear（接近终成形尺寸）",
+        "shank_od_mm": "φ7.10",
+        "head_length_mm": 5.3,
+        "shank_length_mm": 80,
+        "head_corner_radius_mm": "R0.5",
+        "head_taper_angle_deg": "15~30°",
+        "die_outer_od_mm": "φ90f6",
+        "die_inner_fit_mm": "φ38H7/n6"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "3序（终镦六角头成形）",
+      "geometry_zh": "六角头终成形，头部对角径φ14.73，对边径≥φ14.42，头高约5.3mm（GB/T5784 M8 标准值），杆部φ7.10。模具组装图编号300。",
+      "dimensions": {
+        "hex_head_od_across_corners_mm": "φ14.73",
+        "hex_head_od_across_flats_min_mm": "φ14.42 min",
+        "head_height_mm": "5.3 (spec value; draft 12.75 mismatches spec and breaks volume conservation)",
+        "shank_od_mm": "φ7.10",
+        "shank_length_mm": 80,
+        "die_outer_od_mm": "φ90（unclear，估计与2序相同）",
+        "die_inner_fit_mm": "φ32H7/n6（unclear）"
+      }
+    }
+  ],
+  "usage_in_prompt": "Reference case for 3-station cold heading of M8×80 hex bolt (GB/T5784). Wire φ7.00mm, blank length 106.3mm. Station 1: pre-upset head to φ14.95. Station 2: re-upset with R0.5 corner. Station 3: hex head final form φ14.73 across corners, 12.75mm height. Cutting die: core YG25C, sleeve H13 HRC46-49, core-sleeve interference 0.6–0.9mm at φ20. Die outer cassettes use φ38H7/n6 shrink fit into φ60f6 or φ90f6 housings."
+}

@@ -37,7 +37,14 @@
     "blank": {
       "type": "cylinder",
       "overall_length_mm": 48.0,
-      "max_diameter_mm": 10.68
+      "max_diameter_mm": 10.68,
+      "profile_segments": [
+        {
+          "label_zh": "直杆/坯料",
+          "length_mm": 48.0,
+          "diameter_mm": 10.68
+        }
+      ]
     },
     "stations": [
       {
@@ -50,7 +57,19 @@
           "head_diameter_mm": 10.75,
           "head_height_mm": 15.41,
           "shank_diameter_mm": 7.98,
-          "shank_length_mm": 58.7
+          "shank_length_mm": 58.7,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 58.7,
+              "diameter_mm": 7.98
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 15.41,
+              "diameter_mm": 10.75
+            }
+          ]
         },
         "key_dimensions": {
           "L_total": 74.11,
@@ -72,7 +91,19 @@
           "head_diameter_mm": 10.8,
           "head_height_mm": 15.53,
           "shank_diameter_mm": 8.0,
-          "shank_length_mm": 58.5
+          "shank_length_mm": 58.5,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 58.5,
+              "diameter_mm": 8.0
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 15.53,
+              "diameter_mm": 10.8
+            }
+          ]
         },
         "key_dimensions": {
           "L_total": 74.03,
@@ -95,7 +126,19 @@
           "head_diameter_mm": 10.85,
           "head_height_mm": 6.6,
           "shank_diameter_mm": 8.02,
-          "shank_length_mm": 68.78
+          "shank_length_mm": 68.78,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 68.78,
+              "diameter_mm": 8.02
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 6.6,
+              "diameter_mm": 10.85
+            }
+          ]
         },
         "key_dimensions": {
           "L_total": 75.38,
@@ -117,7 +160,25 @@
           "head_diameter_mm": 19.0,
           "head_height_mm": 7.5,
           "shank_diameter_mm": 8.04,
-          "shank_length_mm": 61.0
+          "shank_length_mm": 61.0,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 61.0,
+              "diameter_mm": 8.04
+            },
+            {
+              "label_zh": "过渡台阶",
+              "length_mm": 6.5,
+              "diameter_mm": 8.04,
+              "end_diameter_mm": 19.0
+            },
+            {
+              "label_zh": "头部/法兰",
+              "length_mm": 7.5,
+              "diameter_mm": 19.0
+            }
+          ]
         },
         "key_dimensions": {
           "L_total": 75.0,

@@ -1,0 +1,59 @@
+# DXF entity summary  (layouts=['Model', 'Layout1'])
+
+# Line geometry bbox: x=[73.6, 589.0]  y=[5.0, 337.4]  (99 lines)
+
+# 45 DIMENSION entities (sorted by x,y)
+# format: x,y  text='<override>'  measurement=<computed>  layer=<name>
+      67.6,   307.4  text='%%C10.68'  measurement=23.140  layer=DIMENSION
+      77.6,   295.4  text='17.6'  measurement=13.277  layer=DIMENSION
+     134.8,   151.0  text='%%C24'  measurement=52.000  layer=DIMENSION
+     144.8,   121.0  text='14'  measurement=10.561  layer=DIMENSION
+     144.8,   130.0  text='14'  measurement=10.561  layer=DIMENSION
+     144.8,   139.0  text='25.61'  measurement=19.319  layer=DIMENSION
+     155.4,   121.0  text='9'  measurement=6.789  layer=DIMENSION
+     161.9,   223.0  text='3'  measurement=2.263  layer=DIMENSION
+     162.2,   213.0  text='2.61'  measurement=1.969  layer=DIMENSION
+     174.2,   157.9  text='%%C17.65'  measurement=38.242  layer=DIMENSION
+     188.2,   168.4  text='%%C7.9'  measurement=17.117  layer=DIMENSION
+     208.0,   307.3  text='%%C10.78'  measurement=23.357  layer=DIMENSION
+     213.2,   164.2  text='%%C11.8'  measurement=25.567  layer=DIMENSION
+     218.0,   295.3  text='17.8'  measurement=13.427  layer=DIMENSION
+     277.0,   157.9  text='%%C17.65'  measurement=38.242  layer=DIMENSION
+     287.0,   127.9  text='14'  measurement=10.561  layer=DIMENSION
+     287.0,   136.9  text='14'  measurement=10.561  layer=DIMENSION
+     287.0,   145.9  text='21.15'  measurement=15.955  layer=DIMENSION
+     297.6,   127.9  text='5.15'  measurement=3.885  layer=DIMENSION
+     300.7,   216.1  text='3'  measurement=2.263  layer=DIMENSION
+     308.7,   231.8  text='R2.5'  measurement=5.417  layer=DIMENSION
+     327.0,   168.4  text='%%C7.93'  measurement=17.182  layer=DIMENSION
+     345.8,   307.2  text='%%C10.85'  measurement=23.508  layer=DIMENSION
+     352.0,   164.2  text='%%C11.8'  measurement=25.567  layer=DIMENSION
+     355.8,   277.2  text='14'  measurement=10.561  layer=DIMENSION
+     355.8,   286.2  text='14'  measurement=10.561  layer=DIMENSION
+     355.8,   295.2  text='25'  measurement=18.859  layer=DIMENSION
+     366.4,   277.2  text='11'  measurement=8.298  layer=DIMENSION
+     398.7,   310.5  text='%%C7.84'  measurement=16.987  layer=DIMENSION
+     417.5,   157.9  text='%%C17.65'  measurement=38.242  layer=DIMENSION
+     427.5,   127.9  text='14'  measurement=10.561  layer=DIMENSION
+     427.5,   136.9  text='14'  measurement=10.561  layer=DIMENSION
+     427.5,   145.9  text='21.12'  measurement=15.932  layer=DIMENSION
+     438.1,   127.9  text='5.12'  measurement=3.862  layer=DIMENSION
+     441.2,   216.1  text='3'  measurement=2.263  layer=DIMENSION
+     467.5,   168.4  text='%%C7.93'  measurement=17.182  layer=DIMENSION
+     481.5,   166.5  text='%%C9.65'  measurement=20.908  layer=DIMENSION
+     486.0,   300.6  text='%%C17'  measurement=36.833  layer=DIMENSION
+     492.5,   164.2  text='%%C11.8'  measurement=25.567  layer=DIMENSION
+     496.0,   270.6  text='14'  measurement=10.561  layer=DIMENSION
+     496.0,   279.6  text='14'  measurement=10.561  layer=DIMENSION
+     496.0,   288.6  text='25.85'  measurement=19.500  layer=DIMENSION
+     506.6,   270.6  text='7.75'  measurement=5.846  layer=DIMENSION
+     512.4,   270.6  text='4.1'  measurement=3.093  layer=DIMENSION
+     539.5,   310.5  text='%%C7.87'  measurement=17.052  layer=DIMENSION
+
+# 6 MTEXT/TEXT annotations
+  TEXT      412.0,     8.2  '单号'
+  TEXT      412.0,    18.2  '机型'
+  TEXT      412.0,    28.2  '产品名称'
+  TEXT      454.0,     8.2  'DJGS-25-8-B001-0358-四方T帽-106S-过模图'
+  TEXT      454.0,    18.2  '106S'
+  TEXT      454.0,    28.2  '四方T帽'

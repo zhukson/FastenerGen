@@ -1,0 +1,329 @@
+{
+  "part_name_zh": "DIN 912 内六角圆柱头螺钉 M14×2.0×140L",
+  "material": "10B21",
+  "blank": {
+    "type": "cylinder",
+    "overall_length_mm": 176.0,
+    "max_diameter_mm": 13.7,
+    "head_diameter_mm": null,
+    "head_height_mm": null,
+    "shank_diameter_mm": null,
+    "shank_length_mm": null,
+    "head_recess_diameter_mm": null,
+    "head_recess_depth_mm": null,
+    "through_hole_diameter_mm": null,
+    "corner_radius_mm": null,
+    "chamfer_c_mm": null,
+    "fillet_r_mm": null,
+    "profile_segments": [],
+    "extra_dims_mm": {},
+    "notes_zh": null
+  },
+  "stations": [
+    {
+      "n": 1,
+      "operation": "combined",
+      "workpiece": {
+        "type": "cylinder",
+        "overall_length_mm": 176.0,
+        "max_diameter_mm": 13.7,
+        "head_diameter_mm": null,
+        "head_height_mm": null,
+        "shank_diameter_mm": 13.7,
+        "shank_length_mm": 176.0,
+        "head_recess_diameter_mm": null,
+        "head_recess_depth_mm": null,
+        "through_hole_diameter_mm": null,
+        "corner_radius_mm": null,
+        "chamfer_c_mm": 1.5,
+        "fillet_r_mm": null,
+        "profile_segments": [
+          {
+            "label_zh": "杆部坯料",
+            "length_mm": 174.0,
+            "diameter_mm": 13.7,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "尾端锥角",
+            "length_mm": 2.0,
+            "diameter_mm": 13.7,
+            "end_diameter_mm": 10.8,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          }
+        ],
+        "extra_dims_mm": {
+          "tail_chamfer_angle_deg": 45.0,
+          "tail_chamfer_end_D_mm": 10.8,
+          "wire_diameter_mm": 13.7
+        },
+        "notes_zh": "从Ø13.7盘元剪切定长坯料，尾端同步成形45°倒锥至Ø10.8，端面整平"
+      },
+      "key_dimensions": {
+        "L": 176.0,
+        "D": 13.7,
+        "tail_cone_D": 10.8,
+        "tail_cone_angle": 45.0
+      },
+      "notes_zh": "切料工位：Ø13.7线材剪切为L≈176mm坯料（按体积守恒计算），尾端同步成形45°锥倒角至Ø10.8，前端面整平，为后续预镦头部做定位准备"
+    },
+    {
+      "n": 2,
+      "operation": "upsetting",
+      "workpiece": {
+        "type": "headed",
+        "overall_length_mm": 163.0,
+        "max_diameter_mm": 17.5,
+        "head_diameter_mm": 17.5,
+        "head_height_mm": 18.0,
+        "shank_diameter_mm": 13.7,
+        "shank_length_mm": 145.0,
+        "head_recess_diameter_mm": null,
+        "head_recess_depth_mm": null,
+        "through_hole_diameter_mm": null,
+        "corner_radius_mm": 1.5,
+        "chamfer_c_mm": null,
+        "fillet_r_mm": 1.5,
+        "profile_segments": [
+          {
+            "label_zh": "杆部",
+            "length_mm": 145.0,
+            "diameter_mm": 13.7,
+            "end_diameter_mm": null,
+            "fillet_r_mm": 1.5,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "头部预成形",
+            "length_mm": 18.0,
+            "diameter_mm": 17.5,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          }
+        ],
+        "extra_dims_mm": {
+          "head_preform_cone_angle_deg": 20.0,
+          "upset_ratio": 1.277
+        },
+        "notes_zh": "头部聚料预镦：Ø13.7→Ø17.5，镦粗比1.28，头部锥形预成形，为终镦圆柱头积累体积"
+      },
+      "key_dimensions": {
+        "L": 163.0,
+        "D_head": 17.5,
+        "D_shank": 13.7,
+        "H_head": 18.0,
+        "upset_ratio": 1.277
+      },
+      "notes_zh": "预镦工位：聚料头部扩径至Ø17.5，锥形过渡，单道镦粗比1.28<2.3安全，杆部保持Ø13.7"
+    },
+    {
+      "n": 3,
+      "operation": "heading",
+      "workpiece": {
+        "type": "headed",
+        "overall_length_mm": 156.0,
+        "max_diameter_mm": 21.33,
+        "head_diameter_mm": 21.33,
+        "head_height_mm": 14.0,
+        "shank_diameter_mm": 13.7,
+        "shank_length_mm": 142.0,
+        "head_recess_diameter_mm": null,
+        "head_recess_depth_mm": null,
+        "through_hole_diameter_mm": null,
+        "corner_radius_mm": 0.6,
+        "chamfer_c_mm": null,
+        "fillet_r_mm": 0.6,
+        "profile_segments": [
+          {
+            "label_zh": "杆部",
+            "length_mm": 142.0,
+            "diameter_mm": 13.7,
+            "end_diameter_mm": null,
+            "fillet_r_mm": 0.6,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "头下圆角过渡",
+            "length_mm": 1.0,
+            "diameter_mm": 13.7,
+            "end_diameter_mm": 21.33,
+            "fillet_r_mm": 0.6,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "圆柱头部",
+            "length_mm": 13.0,
+            "diameter_mm": 21.33,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          }
+        ],
+        "extra_dims_mm": {
+          "head_top_chamfer_angle_deg": 20.0,
+          "underhead_radius_R_mm": 0.6,
+          "mark_depth_mm": 0.2,
+          "mark_text": "TASK 8.8"
+        },
+        "notes_zh": "终镦圆柱头：Ø21.33×14.0mm，头顶20°倒角，头下R0.6圆角，冲头模印TASK 8.8标识（深0.2mm）"
+      },
+      "key_dimensions": {
+        "L": 156.0,
+        "D_head": 21.33,
+        "H_head": 14.0,
+        "D_shank": 13.7,
+        "R_underhead": 0.6,
+        "chamfer_top_deg": 20.0
+      },
+      "notes_zh": "终镦头部工位：成形最终圆柱头Ø21.33×H14.0，头顶20°倒角，头下Ø13.7~Ø21.33过渡R0.6，冲头刻TASK 8.8字样"
+    },
+    {
+      "n": 4,
+      "operation": "backward_extrusion",
+      "workpiece": {
+        "type": "headed",
+        "overall_length_mm": 156.0,
+        "max_diameter_mm": 21.33,
+        "head_diameter_mm": 21.33,
+        "head_height_mm": 14.0,
+        "shank_diameter_mm": 13.7,
+        "shank_length_mm": 142.0,
+        "head_recess_diameter_mm": 12.21,
+        "head_recess_depth_mm": 9.0,
+        "through_hole_diameter_mm": null,
+        "corner_radius_mm": 0.6,
+        "chamfer_c_mm": null,
+        "fillet_r_mm": 0.6,
+        "profile_segments": [
+          {
+            "label_zh": "杆部",
+            "length_mm": 142.0,
+            "diameter_mm": 13.7,
+            "end_diameter_mm": null,
+            "fillet_r_mm": 0.6,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "头部（含内六角孔）",
+            "length_mm": 14.0,
+            "diameter_mm": 21.33,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          }
+        ],
+        "extra_dims_mm": {
+          "hex_socket_AF_mm": 12.0,
+          "hex_socket_across_corners_mm": 12.21,
+          "hex_socket_depth_mm": 9.0,
+          "hex_punch_entry_angle_deg": 30.0,
+          "socket_bottom_radius_mm": 0.5,
+          "depth_to_diameter_ratio": 0.75
+        },
+        "notes_zh": "反挤内六角孔：对边AF12.0mm（对角12.21mm），深度≥9.0mm，深径比0.75<<4安全"
+      },
+      "key_dimensions": {
+        "L": 156.0,
+        "D_head": 21.33,
+        "H_head": 14.0,
+        "socket_AF": 12.0,
+        "socket_corners": 12.21,
+        "socket_depth": 9.0
+      },
+      "notes_zh": "反挤压成形内六角孔：对边AF=12mm，对角=12.21mm，孔深≥9mm（tmin per DIN 912 M14）；30°锥角导入冲头，孔底R0.5；深径比<1，远低于4的极限"
+    },
+    {
+      "n": 5,
+      "operation": "forward_extrusion",
+      "workpiece": {
+        "type": "stepped",
+        "overall_length_mm": 154.0,
+        "max_diameter_mm": 21.33,
+        "head_diameter_mm": 21.33,
+        "head_height_mm": 14.0,
+        "shank_diameter_mm": 12.5,
+        "shank_length_mm": 97.8,
+        "head_recess_diameter_mm": 12.21,
+        "head_recess_depth_mm": 9.0,
+        "through_hole_diameter_mm": null,
+        "corner_radius_mm": 0.6,
+        "chamfer_c_mm": null,
+        "fillet_r_mm": 0.6,
+        "profile_segments": [
+          {
+            "label_zh": "螺纹坯段（正挤缩径至搓丝径）",
+            "length_mm": 97.8,
+            "diameter_mm": 12.5,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "光杆段",
+            "length_mm": 43.0,
+            "diameter_mm": 15.7,
+            "end_diameter_mm": null,
+            "fillet_r_mm": 0.6,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "头下圆角",
+            "length_mm": 1.0,
+            "diameter_mm": 15.7,
+            "end_diameter_mm": 21.33,
+            "fillet_r_mm": 0.6,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "圆柱头部",
+            "length_mm": 14.0,
+            "diameter_mm": 21.33,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          }
+        ],
+        "extra_dims_mm": {
+          "thread_blank_D_mm": 12.5,
+          "thread_L_mm": 97.8,
+          "shank_D_mm": 15.7,
+          "shank_L_mm": 43.0,
+          "forward_extrusion_reduction_ratio_pct": 36.6,
+          "tail_chamfer_angle_deg": 45.0,
+          "tail_end_D_mm": 10.8
+        },
+        "notes_zh": "正挤螺纹坯段至Ø12.5（搓丝前坯径），光杆段Ø15.7保留，减面率37%<70%安全；尾端45°×Ø10.8倒锥已在站1形成"
+      },
+      "key_dimensions": {
+        "L": 154.0,
+        "D_head": 21.33,
+        "H_head": 14.0,
+        "D_shank": 15.7,
+        "L_shank": 43.0,
+        "thread_blank_D": 12.5,
+        "thread_L": 97.8,
+        "socket_AF": 12.0,
+        "socket_depth": 9.0,
+        "extrusion_reduction_pct": 36.6
+      },
+      "notes_zh": "正挤杆部工位：螺纹段从Ø13.7正挤缩径至搓丝坯径Ø12.5（减面率37%），光杆段Ø15.7×43mm保持，成品总长≈154mm（头14+光杆43+螺纹坯97），尾端倒锥Ø10.8×45°"
+    }
+  ],
+  "post_processes": [
+    "thread_rolling",
+    "heat_treatment",
+    "phosphating",
+    "knurling"
+  ],
+  "reasoning_zh": "特征识别：DIN 912标准内六角圆柱头螺钉，drive_type=hex_socket确认，头径21.33mm对应M14规格标准值，内六角对边12mm（12.21为对角径）。材料10B21冷镦硼钢，强度8.8级需热处理。工位数推导：头径/线径=21.33/13.7=1.56>1.4需预镦（+1），内六角反挤（+1），螺纹段正挤缩径（+1），合计5工位。坯料：按体积守恒，V_头=π/4×21.33²×14≈4994mm³，V_光杆=π/4×15.7²×43≈8305mm³，V_螺纹=π/4×12.5²×97.8≈11994mm³，总V≈25293mm³，坯料V=π/4×13.7²×L，L≈171mm，加5%余量取176mm；工序：①切料整形（L176/Ø13.7，尾端45°锥至Ø10.8）→②预镦头部（Ø17.5×18，镦粗比1.28）→③终镦圆柱头（Ø21.33×14，刻TASK 8.8）→④反挤内六角孔（AF12/深9mm）→⑤正挤螺纹坯（Ø12.5，光杆Ø15.7×43保留）。物理验证：单道镦粗比最大1.56（两道分担后<1.3），正挤减面率37%，反挤深径比0.75，全部安全。后处理：滚丝M14×2.0（6g）、热处理至8.8级、磷化皂化（预处理）、头部侧面T:90滚花。参考案例：BG30060-P03-DIN912-M20-P2-5（DIN912 M20 5工位，同工序模板等比缩放至M14）；shcs_m8x18_gb_t70_1_2000_3station_coldheading（内六角反挤工艺参数参考）。",
+  "cited_case_ids": [
+    "BG30060-P03-DIN912-M20-P2-5",
+    "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+    "japanese_hex_socket_short_screw_m12x1_part1"
+  ],
+  "confidence": "medium"
+}

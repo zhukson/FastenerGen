@@ -17,6 +17,9 @@ export function DrawingUploader() {
   const [features, setFeatures] = useState<PartFeatures | null>(null);
   const [designId, setDesignId] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  // Vision self-consistency: 1x is fast/cheap (~$0.11), 3x votes for accuracy (~$0.33)
+  const [visionRuns, setVisionRuns] = useState<1 | 3>(1);
+  const [qualityMode, setQualityMode] = useState(false);
 
   const handleFile = useCallback((f: File) => {
     setFile(f);
@@ -46,7 +49,13 @@ export function DrawingUploader() {
     setStep("generating");
     setError(null);
     try {
-      const result = await apiClient.v2GenerateDesign(drawingId);
+      const result = await apiClient.v2GenerateDesign(drawingId, {
+        selfConsistencyRuns: visionRuns,
+        candidateCount: qualityMode ? 3 : 1,
+        maxDesignAttempts: qualityMode ? 2 : 1,
+        includeStep3Images: qualityMode,
+        designModel: qualityMode ? "opus" : "sonnet",
+      });
       setDesignId(result.design_id);
       window.location.href = `/designs/v2/${result.design_id}`;
     } catch (e) {
@@ -141,19 +150,75 @@ export function DrawingUploader() {
         <ProgressCard label="Uploading drawing…" />
       )}
 
-      {/* Uploaded — ready to analyze */}
+      {/* Uploaded — ready to generate */}
       {step === "uploaded" && drawingId && (
-        <div className="bg-green-50 border border-green-200 rounded-lg px-4 py-3 flex items-center justify-between">
+        <div className="bg-green-50 border border-green-200 rounded-lg px-4 py-3">
           <div>
             <p className="font-medium text-sm text-green-700">Drawing uploaded ✓</p>
             <p className="text-xs text-gray-400 mt-0.5">ID: {drawingId}</p>
           </div>
-          <button
-            onClick={handleUnderstand}
-            className="px-4 py-1.5 bg-indigo-600 text-white text-sm rounded-lg hover:bg-indigo-700 transition-colors"
-          >
-            Analyze Drawing
-          </button>
+
+          {/* Vision self-consistency toggle */}
+          <div className="mt-3 flex items-center gap-3 text-xs">
+            <span className="text-gray-600">Vision 准确度:</span>
+            <div className="inline-flex rounded-md border border-green-300 overflow-hidden">
+              <button
+                type="button"
+                onClick={() => setVisionRuns(1)}
+                className={cn(
+                  "px-3 py-1 transition-colors",
+                  visionRuns === 1
+                    ? "bg-green-600 text-white"
+                    : "bg-white text-green-700 hover:bg-green-50"
+                )}
+              >
+                1× <span className="opacity-70">(~$0.11)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setVisionRuns(3)}
+                className={cn(
+                  "px-3 py-1 border-l border-green-300 transition-colors",
+                  visionRuns === 3
+                    ? "bg-green-600 text-white"
+                    : "bg-white text-green-700 hover:bg-green-50"
+                )}
+              >
+                3× 投票 <span className="opacity-70">(~$0.33)</span>
+              </button>
+            </div>
+            <span className="text-gray-400">
+              {visionRuns === 1
+                ? "单次抽取,适合常规图纸"
+                : "三次投票,推荐用于关键尺寸/异形件"}
+            </span>
+          </div>
+
+          <label className="mt-3 flex items-center gap-2 text-xs text-gray-600">
+            <input
+              type="checkbox"
+              checked={qualityMode}
+              onChange={(e) => setQualityMode(e.target.checked)}
+              className="h-3.5 w-3.5 rounded border-gray-300"
+            />
+            High quality mode: Opus + 3 design candidates + retry + Step 3 image
+            <span className="text-gray-400">(slower, much higher cost)</span>
+          </label>
+
+          <div className="mt-3 flex gap-2">
+            <button
+              onClick={handleGenerateV2}
+              className="px-4 py-1.5 bg-amber-600 text-white text-sm rounded-lg hover:bg-amber-700 transition-colors"
+            >
+              Generate 过模图 DXF
+            </button>
+            <button
+              onClick={handleUnderstand}
+              className="px-4 py-1.5 bg-white border border-green-300 text-green-700 text-sm rounded-lg hover:bg-green-100 transition-colors"
+            >
+              Analyze First
+            </button>
+          </div>
         </div>
       )}
 
@@ -164,7 +229,7 @@ export function DrawingUploader() {
 
       {/* Generating design */}
       {step === "generating" && (
-        <ProgressCard label="Generating die design… Step 2: Retrieving cases → Step 3: Planning process → Step 4: Designing dies…" />
+        <ProgressCard label="Generating 过模图 DXF… reading drawing → loading 经验库/textbook rules → planning stations → rendering DXF…" />
       )}
 
       {/* Error */}
@@ -190,20 +255,6 @@ export function DrawingUploader() {
         />
       )}
 
-      {/* v2 quick path — skip features review, go straight to 过模图 */}
-      {step === "uploaded" && drawingId && (
-        <div className="bg-amber-50 border border-amber-200 rounded-lg px-4 py-3">
-          <p className="text-xs text-amber-700 font-medium mb-1.5">
-            Or skip review and run the v2 单输出过模图 pipeline directly
-          </p>
-          <button
-            onClick={handleGenerateV2}
-            className="px-4 py-1.5 bg-amber-600 text-white text-sm rounded-lg hover:bg-amber-700 transition-colors"
-          >
-            Generate 过模图 (v2)
-          </button>
-        </div>
-      )}
     </div>
   );
 }
@@ -246,8 +297,8 @@ function FeaturesPanel({
     ["Grade", features.strength_grade],
     ["HRC (core)", features.core_hardness_min_hrc != null && features.core_hardness_max_hrc != null
       ? `${features.core_hardness_min_hrc}–${features.core_hardness_max_hrc}` : null],
-    ["Surface", features.surface_treatment],
-    ["Standard", features.standard],
+    ["Surface", features.surface_treatment ?? null],
+    ["Standard", features.standard ?? null],
   ];
 
   return (

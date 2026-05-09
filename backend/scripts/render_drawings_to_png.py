@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import sys
 from pathlib import Path
+from typing import Any
 
 import matplotlib.pyplot as plt
 import pypdfium2
@@ -101,7 +102,7 @@ def _dump_dxf_summary(doc, out_path: Path) -> None:
     # Any MTEXT/TEXT (annotations)
     texts = []
     for t in msp.query("MTEXT"):
-        texts.append(("MTEXT", t.dxf.insert.x, t.dxf.insert.y, t.text))
+        texts.append(("MTEXT", t.dxf.insert.x, t.dxf.insert.y, _plain_mtext(t)))
     for t in msp.query("TEXT"):
         texts.append(("TEXT", t.dxf.insert.x, t.dxf.insert.y, t.dxf.text))
     if texts:
@@ -111,7 +112,45 @@ def _dump_dxf_summary(doc, out_path: Path) -> None:
             txt_clean = txt.replace("\n", " ").strip()
             lines.append(f"  {kind:5s}  {x:8.1f},{y:8.1f}  {txt_clean!r}")
 
+    # Title blocks in the real factory DWGs are often INSERTs whose block
+    # definitions contain MTEXT. Include those nested labels/values in the
+    # sidecar even when the preview PNG is cropped to the process geometry.
+    block_texts = []
+    for ins in msp.query("INSERT"):
+        block_name = ins.dxf.name
+        if block_name not in doc.blocks:
+            continue
+        block = doc.blocks[block_name]
+        for e in block:
+            if e.dxftype() == "MTEXT":
+                block_texts.append((block_name, "MTEXT", _insert_xy(ins), _plain_mtext(e)))
+            elif e.dxftype() == "TEXT":
+                block_texts.append((block_name, "TEXT", _insert_xy(ins), e.dxf.text))
+            elif e.dxftype() == "ATTDEF":
+                block_texts.append((block_name, "ATTDEF", _insert_xy(ins), e.dxf.text))
+    if block_texts:
+        lines.append("")
+        lines.append(f"# {len(block_texts)} nested block text entries")
+        lines.append("# format: block kind insert_x,insert_y text")
+        for block_name, kind, (x, y), txt in block_texts:
+            txt_clean = txt.replace("\n", " ").strip()
+            lines.append(f"  {block_name:16s} {kind:6s} {x:8.1f},{y:8.1f}  {txt_clean!r}")
+
     out_path.write_text("\n".join(lines), encoding="utf-8")
+
+
+def _plain_mtext(entity: Any) -> str:
+    """Return readable MTEXT while stripping common AutoCAD inline markup."""
+    try:
+        text = entity.plain_text()
+    except Exception:
+        text = entity.text
+    return str(text).replace("\\P", " ")
+
+
+def _insert_xy(entity: Any) -> tuple[float, float]:
+    insert = entity.dxf.insert
+    return float(insert.x), float(insert.y)
 
 
 def render_pdf(pdf_path: Path, out_path: Path) -> None:

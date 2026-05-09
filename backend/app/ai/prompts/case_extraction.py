@@ -47,7 +47,7 @@ Conventions (must follow):
   - Use empty string "" or null for non-numeric fields when not visible.
   - For numeric workpiece dimensions (overall_length_mm, max_diameter_mm,
     head_*_mm, shank_*_mm): make a best-effort engineering estimate from what
-    you CAN see (e.g., for an M14 socket cap: blank wire ~14 mm dia, blank
+    you CAN see (e.g., for a socket cap screw: blank wire near shank dia, blank
     length ~5× shank length is typical). If you truly cannot estimate, use
     0.0 as a placeholder — humans will correct in review. Never invent
     fictitious precise dimensions like 14.7 when you have no basis.
@@ -114,13 +114,13 @@ Output a single JSON object with this exact shape (CaseRecord):
   "material": "...",
   "part_features": {{
     "part_number": "<from drawing title block; if absent, reuse case_id>",
-    "description": "<short English description, e.g. 'M14 socket cap screw, DIN912'>",
+    "description": "<short English description, e.g. 'socket cap screw, DIN912'>",
     "overall_length": <float, mm — total length of finished part>,
     "material_grade": "<as on drawing, e.g. '10B21', '106S'>",
     "strength_grade": "<e.g. '8.8', '10.9', or empty string if not shown>",
     "head": {{ "type": "<flat|hex|button|pan|socket|truss|flange|oval>", "diameter": <float>, "height": <float>, ... }} | null,
     "shank": {{ "diameter": <float>, "length": <float> }} | null,
-    "thread": {{ "spec": "<e.g. 'M14×2.0'>", "nominal_diameter": <float>, "pitch": <float>, "length": <float>, "thread_class": "6g", "thread_type": "metric", "is_full_length": false }} | null,
+    "thread": {{ "spec": "<e.g. 'M16×2.0'>", "nominal_diameter": <float>, "pitch": <float>, "length": <float>, "thread_class": "6g", "thread_type": "metric", "is_full_length": false }} | null,
     "tail": null,
     "hardness_min_hv": <float|null>,
     "hardness_max_hv": <float|null>,

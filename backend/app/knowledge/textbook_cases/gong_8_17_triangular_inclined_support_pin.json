@@ -1,0 +1,55 @@
+{
+  "id": "triangular_bevel_support_pin_8_17",
+  "source": "gong_maoliang_Page355_358:357",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "三角形斜面支撑钉",
+  "product_category": "异形支撑钉 / special-profile support pin",
+  "why_it_matters": "该零件头部为三角形斜面形状，需在冷镦机上通过多工位成形实现异形头部，代表非圆头类紧固件冷镦工艺的典型案例。",
+  "visible_process_summary_zh": "4工位冷镦成形：下料→预成形（初步镦粗杆部与头部）→中间成形（逐步形成三角斜面头部轮廓）→终成形（精整三角形斜面头部及杆部）。机器类型为多工位冷镦机（图示4个工位冲头可见）。",
+  "visible_dimensions": {
+    "head_width_mm": 19,
+    "head_radius_R_mm": 7.5,
+    "shank_diameter_mm": "Φ8.4±0.1",
+    "shank_length_1_mm": 8.15,
+    "shank_length_2_mm": "8.5±0.3",
+    "head_height_mm": "3.65 +0.00/-0.05 (tolerance partially unclear)",
+    "intermediate_diameter_mm": "Φ6 (unclear, possibly Φ6.x)"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "线材剪切成坯料，直径及长度依杆部尺寸确定",
+      "dimensions": {"wire_diameter_mm": "unclear"}
+    },
+    {
+      "n": 1,
+      "label_zh": "第一工位：预镦",
+      "geometry_zh": "初步镦粗一端，形成头部雏形，杆部基本整形",
+      "dimensions": {}
+    },
+    {
+      "n": 2,
+      "label_zh": "第二工位：中间成形",
+      "geometry_zh": "进一步压制头部，逐渐形成三角形斜面轮廓",
+      "dimensions": {}
+    },
+    {
+      "n": 3,
+      "label_zh": "第三工位：终成形",
+      "geometry_zh": "精整三角形斜面头部（宽19mm，R7.5），确定杆部最终直径Φ8.4±0.1及各段长度",
+      "dimensions": {
+        "head_width_mm": 19,
+        "head_R_mm": 7.5,
+        "shank_diameter_mm": "Φ8.4±0.1"
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "第四工位：整形/切边（推测）",
+      "geometry_zh": "图示有第4工位冲头，具体工序unclear，可能为整形或缩杆",
+      "dimensions": {}
+    }
+  ],
+  "usage_in_prompt": "Use as a reference case for cold-heading non-round (triangular bevel) head support pins with a 4-station multi-die cold header. Key finished dimensions: head width 19 mm, head radius R7.5, shank Φ8.4±0.1 mm, total shank length ~16.65 mm (8.15+8.5). Head height ~3.65 mm (tolerance partially unclear). Station details at intermediate stations are not fully legible."
+}

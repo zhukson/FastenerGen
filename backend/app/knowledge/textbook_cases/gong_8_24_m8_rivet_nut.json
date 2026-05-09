@@ -1,0 +1,120 @@
+{
+  "id": "m8_rivet_nut_cold_heading_case_8_24",
+  "source": "gong_maoliang_Page363_366:365",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "M8 铆螺母（冷镦成形工序图）",
+  "product_category": "铆螺母 / rivet nut",
+  "why_it_matters": "展示M8铆螺母六工位冷镦成形全过程，包含翻边、缩径、预成形凸缘及最终整形各工序的典型截面尺寸，是冷镦工艺设计的参考案例。",
+  "visible_process_summary_zh": "共6个工位（0#~5#），从圆柱坯料依次经过：下料→预镦头（25°锥面）→缩径扩口成形→外径整形→镦挤凸缘→最终整形/减薄得到铆螺母轮廓。材质SWRCH6A。",
+  "visible_dimensions": {
+    "material": "SWRCH6A",
+    "blank_OD_mm": 10.25,
+    "blank_OD_tolerance_mm": "-0/+0.03 (approx, OCR unclear)",
+    "blank_length_mm": 9.8,
+    "final_flange_OD_mm": 10.4,
+    "final_body_OD_mm": 7.37,
+    "final_total_length_mm": 17,
+    "final_flange_thickness_mm": "1.9~2.2",
+    "thread_nominal": "M8"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料（坯料）",
+      "geometry_zh": "圆柱坯料",
+      "dimensions": {
+        "OD_mm": 10.25,
+        "OD_tolerance": "-0/+0.03 (uncertain)",
+        "length_mm": 9.8
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "预镦 / 端面成形",
+      "geometry_zh": "两端各25°倒锥面；顶端内凹；一端成形160°锥坑",
+      "dimensions": {
+        "cone_angle_top_deg": 25,
+        "cone_angle_bottom_deg": 25,
+        "inner_cone_deg": 160,
+        "top_flat_width_mm": 10,
+        "OD_mm": 8.6,
+        "small_OD_mm": 0.65,
+        "depth_2_3_mm": 2.3,
+        "step_0_5_mm": 0.5,
+        "step_0_76_mm": 0.76
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "缩径 / 扩口成形",
+      "geometry_zh": "上端20°锥扩口，内腔60°锥；中段缩径；凸缘初步成形",
+      "dimensions": {
+        "flare_angle_deg": 20,
+        "inner_cone_deg": 60,
+        "OD_flange_mm": 13.1,
+        "OD_body_upper_mm": 9.63,
+        "OD_body_lower_mm": 8.6,
+        "inner_OD_mm": 10.72,
+        "bore_OD_mm": 0.8,
+        "length_upper_mm": "3 +0.3/-0",
+        "length_2_8_mm": 2.8,
+        "step_1_6_mm": 1.6,
+        "step_0_5_mm": 0.5
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "外径整形 / 镦平",
+      "geometry_zh": "整体外径整形，形成均匀柱段和端部台阶",
+      "dimensions": {
+        "OD_main_mm": 9.62,
+        "OD_flange_mm": 10.8,
+        "bore_OD_mm": 0.8,
+        "total_length_mm": 16,
+        "top_length_mm": "9.5 +0.2/-0",
+        "top_step_mm": 2.1
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "镦挤凸缘 / 预成形",
+      "geometry_zh": "镦挤底部凸缘，形成8.5°锥底及各级台阶",
+      "dimensions": {
+        "OD_outer_mm": 9.6,
+        "OD_body_mm": 7.39,
+        "bore_OD_mm": 0.8,
+        "flange_OD_mm": 10.4,
+        "flange_small_OD_mm": 10.85,
+        "total_length_mm": 18.6,
+        "upper_length_mm": 15.96,
+        "step_1_54_mm": 1.54,
+        "step_9_6_mm": 9.6,
+        "step_0_5_mm": 0.5,
+        "step_0_6_mm": 0.6,
+        "taper_angle_deg": 8.5,
+        "step_1_6_mm": 1.6
+      }
+    },
+    {
+      "n": 5,
+      "label_zh": "最终整形（成品形状）",
+      "geometry_zh": "最终铆螺母外形：凸缘减薄至1.9~2.2 mm，体部OD 7.37，8.5°底锥，内孔4.5",
+      "dimensions": {
+        "total_length_mm": 17,
+        "flange_thickness_mm": "1.9~2.2",
+        "body_OD_mm": 7.37,
+        "flange_OD_mm": 10.4,
+        "flange_OD_alt_mm": 10.9,
+        "inner_bore_OD_mm": 4.5,
+        "bore_step_mm": 9.55,
+        "body_lower_OD_mm": 7.3,
+        "taper_angle_deg": 8.5,
+        "upper_length_mm": 8,
+        "step_0_5_mm": 0.5,
+        "step_1_5_mm": 1.5,
+        "step_1_6_mm": 1.6
+      }
+    }
+  ],
+  "usage_in_prompt": "当用户询问M8铆螺母冷镦工艺设计、各工位尺寸变化规律、SWRCH6A材料冷镦铆螺母的坯料计算或工序数量时，可引用本案例作为参考。注意部分尺寸因原图扫描质量有限，存在读数不确定性，使用前建议核对原始资料。"
+}

@@ -38,7 +38,14 @@
       "type": "cylinder",
       "overall_length_mm": 12.5,
       "max_diameter_mm": 11.5,
-      "notes_zh": "下料：方形/圆形坯料 11.5×12.5"
+      "notes_zh": "下料：方形/圆形坯料 11.5×12.5",
+      "profile_segments": [
+        {
+          "label_zh": "直杆/坯料",
+          "length_mm": 12.5,
+          "diameter_mm": 11.5
+        }
+      ]
     },
     "stations": [
       {
@@ -48,7 +55,19 @@
           "type": "stepped",
           "overall_length_mm": 10.7,
           "max_diameter_mm": 12.6,
-          "notes_zh": "正镦倒角整形，形成 C12.6 头部，下端 φ9 杆部"
+          "notes_zh": "正镦倒角整形，形成 C12.6 头部，下端 φ9 杆部",
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 7.704,
+              "diameter_mm": 9.072
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 2.996,
+              "diameter_mm": 12.6
+            }
+          ]
         },
         "key_dimensions": {
           "L": 10.7,
@@ -64,7 +83,19 @@
           "type": "stepped",
           "overall_length_mm": 11.0,
           "max_diameter_mm": 12.85,
-          "notes_zh": "进一步镦头，C12.85 头部，下端 φ10"
+          "notes_zh": "进一步镦头，C12.85 头部，下端 φ10",
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 7.92,
+              "diameter_mm": 9.252
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 3.08,
+              "diameter_mm": 12.85
+            }
+          ]
         },
         "key_dimensions": {
           "L": 11.0,
@@ -80,7 +111,19 @@
           "type": "flanged",
           "overall_length_mm": 12.8,
           "max_diameter_mm": 12.9,
-          "notes_zh": "镦出凸缘，下部预成形 φ5.1 凸出"
+          "notes_zh": "镦出凸缘，下部预成形 φ5.1 凸出",
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 9.216,
+              "diameter_mm": 9.288
+            },
+            {
+              "label_zh": "头部/法兰",
+              "length_mm": 3.584,
+              "diameter_mm": 12.9
+            }
+          ]
         },
         "key_dimensions": {
           "L": 12.8,
@@ -96,7 +139,19 @@
           "type": "custom",
           "overall_length_mm": 8.05,
           "max_diameter_mm": 15.9,
-          "notes_zh": "中间法兰 φ15.9，上下 φ12.95，两端凸出 φ5.1，凸缘厚 3，台阶 2.5"
+          "notes_zh": "中间法兰 φ15.9，上下 φ12.95，两端凸出 φ5.1，凸缘厚 3，台阶 2.5",
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 5.796,
+              "diameter_mm": 11.448
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 2.254,
+              "diameter_mm": 15.9
+            }
+          ]
         },
         "key_dimensions": {
           "L": 8.05,
@@ -115,7 +170,19 @@
           "type": "custom",
           "overall_length_mm": 8.05,
           "max_diameter_mm": 15.9,
-          "notes_zh": "切边/整形成最终轮廓"
+          "notes_zh": "切边/整形成最终轮廓",
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 5.796,
+              "diameter_mm": 11.448
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 2.254,
+              "diameter_mm": 15.9
+            }
+          ]
         },
         "key_dimensions": {
           "L": 8.05,

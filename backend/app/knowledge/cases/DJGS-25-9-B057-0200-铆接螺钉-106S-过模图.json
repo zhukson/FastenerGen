@@ -45,7 +45,14 @@
     "blank": {
       "type": "cylinder",
       "overall_length_mm": 16.6,
-      "max_diameter_mm": 6.9
+      "max_diameter_mm": 6.9,
+      "profile_segments": [
+        {
+          "label_zh": "直杆/坯料",
+          "length_mm": 16.6,
+          "diameter_mm": 6.9
+        }
+      ]
     },
     "stations": [
       {
@@ -54,7 +61,14 @@
         "workpiece": {
           "type": "cylinder",
           "overall_length_mm": 16.6,
-          "max_diameter_mm": 6.9
+          "max_diameter_mm": 6.9,
+          "profile_segments": [
+            {
+              "label_zh": "直杆/坯料",
+              "length_mm": 16.6,
+              "diameter_mm": 6.9
+            }
+          ]
         },
         "key_dimensions": {
           "L": 16.6,
@@ -68,7 +82,15 @@
         "workpiece": {
           "type": "tapered",
           "overall_length_mm": 16.8,
-          "max_diameter_mm": 6.94
+          "max_diameter_mm": 6.94,
+          "profile_segments": [
+            {
+              "label_zh": "锥形段",
+              "length_mm": 16.8,
+              "diameter_mm": 6.94,
+              "end_diameter_mm": 0.0
+            }
+          ]
         },
         "key_dimensions": {
           "L": 16.8,
@@ -84,7 +106,19 @@
         "workpiece": {
           "type": "stepped",
           "overall_length_mm": 16.6,
-          "max_diameter_mm": 6.98
+          "max_diameter_mm": 6.98,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 11.952,
+              "diameter_mm": 5.026
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 4.648,
+              "diameter_mm": 6.98
+            }
+          ]
         },
         "key_dimensions": {
           "L": 16.6,
@@ -99,7 +133,19 @@
         "workpiece": {
           "type": "stepped",
           "overall_length_mm": 18.1,
-          "max_diameter_mm": 7.02
+          "max_diameter_mm": 7.02,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 13.032,
+              "diameter_mm": 5.054
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 5.068,
+              "diameter_mm": 7.02
+            }
+          ]
         },
         "key_dimensions": {
           "L": 18.1,
@@ -115,7 +161,19 @@
         "workpiece": {
           "type": "stepped",
           "overall_length_mm": 13.3,
-          "max_diameter_mm": 7.07
+          "max_diameter_mm": 7.07,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 9.576,
+              "diameter_mm": 5.09
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 3.724,
+              "diameter_mm": 7.07
+            }
+          ]
         },
         "key_dimensions": {
           "L_head": 13.3,
@@ -133,7 +191,19 @@
         "workpiece": {
           "type": "headed",
           "overall_length_mm": 13.33,
-          "max_diameter_mm": 7.1
+          "max_diameter_mm": 7.1,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 9.598,
+              "diameter_mm": 5.112
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 3.732,
+              "diameter_mm": 7.1
+            }
+          ]
         },
         "key_dimensions": {
           "L": 13.33,
@@ -150,7 +220,19 @@
         "workpiece": {
           "type": "custom",
           "overall_length_mm": 17.8,
-          "max_diameter_mm": 7.13
+          "max_diameter_mm": 7.13,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 12.816,
+              "diameter_mm": 5.134
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 4.984,
+              "diameter_mm": 7.13
+            }
+          ]
         },
         "key_dimensions": {
           "L_total": 17.8,

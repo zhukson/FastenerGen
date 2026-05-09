@@ -1,0 +1,104 @@
+{
+  "id": "japanese_hex_socket_short_screw_m12x1_part1",
+  "source": "gong_maoliang_Page359_362:359",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "日本内六角短螺钉 (M12×1) 冷镦工艺 第1部分",
+  "product_category": "内六角圆柱头螺钉 / Hex Socket Cap Screw",
+  "why_it_matters": "展示M12细牙内六角短螺钉的多工位冷镦成形顺序，包括头部预成形、内六角孔冲压及杆部成形各阶段的关键尺寸控制。",
+  "visible_process_summary_zh": "共5工位（0#~4#）加工，最终产品图标注螺纹M10×1-6g（OCR疑似，图面显示M12×1）。材质SWRCH10A。工序：切料→预镦→头部粗成形→头部精成形+内六角预冲→内六角终成形+杆部整形。",
+  "visible_dimensions": {
+    "wire_diameter_mm": 9.2,
+    "wire_length_mm": 25.6,
+    "head_diameter_final_mm": "Ø15±0.15",
+    "head_height_final_mm": "unclear (approx 5+0.105/+0.030)",
+    "shank_diameter_mm": "Ø12 (nominal)",
+    "thread_spec": "M12×1 (产品标注；OCR读出M10×1-6g存疑，以图面标题为准)",
+    "hex_socket_diameter_mm": "Ø7 (内六角对角/冲头径)",
+    "product_material": "SWRCH10A"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料（切料）",
+      "geometry_zh": "圆柱坯料，直径Ø9.2 mm，长度25.6 mm",
+      "dimensions": {
+        "billet_diameter_mm": 9.2,
+        "billet_length_mm": 25.6
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "预镦（一次镦粗）",
+      "geometry_zh": "坯料端部初步镦粗，头部直径扩大至约Ø10.66，形成锥形过渡；杆端直径Ø9.9，总长约11.1 mm（含头部）；头部顶面凸台约Ø9.5，小端台阶1.05、3 mm段",
+      "dimensions": {
+        "head_diameter_approx_mm": 10.66,
+        "shank_diameter_mm": 9.9,
+        "head_top_diameter_mm": 9.5,
+        "step_lengths_mm": [1.05, 3],
+        "overall_head_length_mm": "~11.1 (uncertain)"
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "二次镦粗（头部粗成形）",
+      "geometry_zh": "头部进一步扩径至Ø15，端面出现SR16球面；头部高度约7.9 mm；内腔预成形，内径Ø10.5；六角孔预冲孔径Ø4.5~4.3；杆部Ø7；头顶凸台1.5、1.2 mm台阶",
+      "dimensions": {
+        "head_diameter_mm": 15,
+        "head_cavity_diameter_mm": 10.5,
+        "head_height_mm": 7.9,
+        "hex_pre_punch_diameter_mm": "Ø4.5~4.3",
+        "shank_diameter_mm": 7,
+        "top_relief_radii": "SR16",
+        "top_step_mm": [1.5, 1.2]
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "三次镦粗（头部精成形+六角孔冲深）",
+      "geometry_zh": "头部保持Ø15，外端面台阶1.5/1.2/3 mm；头腔内径Ø9.2，外壁Ø11.3~11.92；杆径Ø7/Ø5；底部圆角R0.5、R0.8；SR16球头；六角孔深度扩展，腔深约2.3 mm段",
+      "dimensions": {
+        "head_diameter_mm": 15,
+        "head_cavity_diameters_mm": [9.2, 11.3, 11.92],
+        "shank_diameters_mm": [7, 5],
+        "corner_radii_mm": [0.5, 0.8],
+        "top_step_mm": [1.5, 1.2, 3],
+        "cavity_step_depth_mm": 2.3,
+        "top_relief_radii": "SR16"
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "终成形（内六角终冲+杆部整形）",
+      "geometry_zh": "内六角孔终成形Ø7，头部Ø15±0.15，头高5+0.105/+0.030 mm；杆部整形至Ø12；头顶SR16；端面台阶2.7~3、1.3~1.5 mm；整体六角孔深5±0.3/-0.5 mm；腔径Ø8.5、Ø9.27",
+      "dimensions": {
+        "hex_socket_diameter_mm": 7,
+        "head_diameter_mm": "Ø15±0.15",
+        "head_height_mm": "5 +0.105/+0.030",
+        "shank_diameter_mm": 12,
+        "hex_depth_mm": "5 +0.3/-0.5 (approx)",
+        "cavity_diameters_mm": [8.5, 9.27],
+        "top_steps_mm": ["2.7~3", "1.3~1.5"],
+        "top_relief_radii": "SR16"
+      }
+    },
+    {
+      "n": 5,
+      "label_zh": "产品图（成品）",
+      "geometry_zh": "内六角头M12×1螺钉成品；头部Ø15±0.15，高5+0.105/+0.030；内六角Ø7，深5+0.3/-0.5；螺纹段Ø8（小径）至Ø12，螺纹M12×1-6g（标题标注，OCR另读M10×1-6g存疑）；头顶C0.4倒角；材质SWRCH10A",
+      "dimensions": {
+        "thread_spec": "M12×1-6g (标题) / M10×1-6g (OCR，存疑)",
+        "thread_minor_diameter_mm": 8,
+        "thread_major_diameter_mm": 12,
+        "head_diameter_mm": "Ø15±0.15",
+        "head_height_mm": "5 +0.105/+0.030",
+        "hex_socket_diameter_mm": 7,
+        "hex_depth_mm": "5 +0.3/-0.5",
+        "chamfer_mm": "C0.4",
+        "grip_length_mm": "unclear (14~8.5 range noted)",
+        "total_length_mm": "6.79~8.15 (uncertain)",
+        "material": "SWRCH10A"
+      }
+    }
+  ],
+  "usage_in_prompt": "用于M12内六角短螺钉冷镦多工位工艺设计参考：各站尺寸演变、内六角孔冲压时序、头部成形SR16球面控制，以及SWRCH10A材质适用性说明。注意部分尺寸（特别是总长、螺纹规格）OCR与图面存在不一致，使用时应以原图纸为准。"
+}

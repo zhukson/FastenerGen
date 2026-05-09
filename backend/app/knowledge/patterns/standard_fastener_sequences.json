@@ -1,0 +1,58 @@
+{
+  "pattern_id": "standard_fastener_sequences_v1",
+  "source": "one_die_two_blow_tutorial+persistent_cases",
+  "status": "demo_seed",
+  "patterns": [
+    {
+      "name": "hex_head_bolt",
+      "applies_to": ["DIN933", "hex_bolt_DIN933", "六角头螺栓"],
+      "station_sequence": [
+        "combined: 切料/整形",
+        "upsetting: 初镦聚料",
+        "heading: 终镦头部",
+        "trimming: 切边成六角"
+      ],
+      "post_processes": ["thread_rolling", "heat_treatment"],
+      "notes_zh": "来自 1模2冲教程的六角头螺栓流程，并与现有 DIN933 M18/M22 cases 一致。"
+    },
+    {
+      "name": "socket_cap_screw",
+      "applies_to": ["DIN912", "socket_cap_screw_DIN912", "内六角螺钉"],
+      "station_sequence": [
+        "combined: 切料/整形",
+        "upsetting: 初镦",
+        "heading: 终镦圆柱头",
+        "backward_extrusion: 反挤/镦内六角孔",
+        "forward_extrusion: 杆部或螺纹坯调整"
+      ],
+      "post_processes": ["thread_rolling", "heat_treatment"],
+      "notes_zh": "教程给出内六角螺钉少工位模板；本项目标准件 cases 补充了正挤螺纹坯/杆部调整。"
+    },
+    {
+      "name": "hex_nut_or_hollow_part",
+      "applies_to": ["六角螺母", "空心件", "through_hole_part"],
+      "station_sequence": [
+        "combined: 切料",
+        "upsetting: 镦球/预成形",
+        "heading: 镦外形",
+        "piercing: 冲孔"
+      ],
+      "post_processes": [],
+      "notes_zh": "空心/螺母/通孔件必须显式包含冲孔，不能只画实心成品。"
+    },
+    {
+      "name": "large_head_small_shank",
+      "applies_to": ["凸缘螺栓", "方头", "T头", "大头小杆异形件"],
+      "station_sequence": [
+        "combined: 切料/整形",
+        "upsetting: 初镦聚料",
+        "upsetting: 二镦分配头部体积",
+        "heading: 终镦头部/外形",
+        "trimming_or_piercing: 视最终形状切边或冲孔"
+      ],
+      "post_processes": [],
+      "notes_zh": "当 blank_L/blank_D 偏大或 head/shank 直径比大时，采用二次镦粗，不把头部一次镦成。"
+    }
+  ]
+}
+

@@ -38,7 +38,14 @@
       "type": "cylinder",
       "overall_length_mm": 38.3,
       "max_diameter_mm": 9.76,
-      "notes_zh": "下料圆棒，线材直径Φ9.76，倒角C14.8（端面倒角参考）"
+      "notes_zh": "下料圆棒，线材直径Φ9.76，倒角C14.8（端面倒角参考）",
+      "profile_segments": [
+        {
+          "label_zh": "直杆/坯料",
+          "length_mm": 38.3,
+          "diameter_mm": 9.76
+        }
+      ]
     },
     "stations": [
       {
@@ -48,7 +55,19 @@
           "type": "stepped",
           "overall_length_mm": 49.37,
           "max_diameter_mm": 14.9,
-          "notes_zh": "正挤压细杆+顶端预镦头部，杆径约10.94，头部Φ14.9，长度23.3"
+          "notes_zh": "正挤压细杆+顶端预镦头部，杆径约10.94，头部Φ14.9，长度23.3",
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 35.546,
+              "diameter_mm": 10.94
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 13.824,
+              "diameter_mm": 14.9
+            }
+          ]
         },
         "key_dimensions": {
           "L": 49.37,
@@ -65,7 +84,19 @@
           "type": "headed",
           "overall_length_mm": 41.0,
           "max_diameter_mm": 17.32,
-          "notes_zh": "进一步镦粗成型六角头雏形，头部Φ17.32，杆径10.98"
+          "notes_zh": "进一步镦粗成型六角头雏形，头部Φ17.32，杆径10.98",
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 22.48,
+              "diameter_mm": 10.98
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 18.52,
+              "diameter_mm": 17.32
+            }
+          ]
         },
         "key_dimensions": {
           "L": 41.0,
@@ -82,7 +113,19 @@
           "type": "headed",
           "overall_length_mm": 41.0,
           "max_diameter_mm": 22.0,
-          "notes_zh": "终镦成型，头部带球面/锥面过渡，外接圆Φ22，对边Φ17.42，头高约17.02"
+          "notes_zh": "终镦成型，头部带球面/锥面过渡，外接圆Φ22，对边Φ17.42，头高约17.02",
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 23.98,
+              "diameter_mm": 11.02
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 17.02,
+              "diameter_mm": 22.0
+            }
+          ]
         },
         "key_dimensions": {
           "L": 41.0,
@@ -103,7 +146,25 @@
           "head_height_mm": 13.77,
           "shank_diameter_mm": 11.05,
           "shank_length_mm": 23.0,
-          "notes_zh": "六角切边成型，对边Φ17.42，头部高13.77，杆径Φ11.05，杆长23"
+          "notes_zh": "六角切边成型，对边Φ17.42，头部高13.77，杆径Φ11.05，杆长23",
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 23.0,
+              "diameter_mm": 11.05
+            },
+            {
+              "label_zh": "过渡台阶",
+              "length_mm": 4.23,
+              "diameter_mm": 11.05,
+              "end_diameter_mm": 17.42
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 13.77,
+              "diameter_mm": 17.42
+            }
+          ]
         },
         "key_dimensions": {
           "L": 41.0,

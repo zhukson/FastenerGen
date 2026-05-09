@@ -14,32 +14,38 @@ export default function DashboardPage() {
     <div className="max-w-5xl mx-auto">
       <h1 className="text-3xl font-bold mb-2">FastenerGPT</h1>
       <p className="text-gray-500 mb-8">
-        AI-powered die design for cold-heading fasteners
+        Upload a fastener drawing and generate one editable 过模图 DXF.
       </p>
 
       {/* Status cards */}
       <div className="grid grid-cols-2 gap-4 mb-8 sm:grid-cols-4">
         <StatusCard label="API" value={health?.status ?? "…"} ok={health?.status === "ok"} />
         <StatusCard label="Designs" value="0" />
-        <StatusCard label="Cases in RAG" value="0" />
-        <StatusCard label="Eval Score" value="—" />
+        <StatusCard label="Tier 1 Cases" value="11" />
+        <StatusCard label="Textbook Refs" value="27+" />
       </div>
 
       {/* Quick actions */}
       <div className="bg-white rounded-xl border border-gray-200 p-6">
         <h2 className="text-lg font-semibold mb-4">Quick Start</h2>
-        <div className="grid gap-3 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-3">
           <ActionCard
             href="/upload"
             title="Upload Drawing"
-            description="Upload a product drawing PDF or DWG to generate die designs"
+            description="Generate a process-forming drawing from PDF, DWG, DXF, or image"
             icon="↑"
           />
           <ActionCard
             href="/designs"
             title="View Designs"
-            description="Review generated die designs and provide feedback"
+            description="Review generated DXF outputs, reasoning, and cited cases"
             icon="⚙"
+          />
+          <ActionCard
+            href="/experiment"
+            title="Experiment"
+            description="Run the DIN912 M14 leave-one-out demo with the held-out answer key"
+            icon="◎"
           />
         </div>
       </div>

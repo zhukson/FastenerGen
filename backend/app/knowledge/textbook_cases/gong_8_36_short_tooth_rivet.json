@@ -1,0 +1,91 @@
+{
+  "id": "带齿短铆钉_8_36",
+  "source": "gong_maoliang_Page375_378:377",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "带齿短铆钉",
+  "product_category": "铆钉 / 带齿铆钉 (toothed short rivet)",
+  "why_it_matters": "带齿铆钉头部周边带有锯齿，冷镦成形难点在于齿形头部的挤压成形与杆部尺寸控制，是典型的多工位冷镦异形头铆钉案例。",
+  "visible_process_summary_zh": "多工位冷镦成形，共约6个工位（含下料）。工位序列大致为：下料棒料 → 预成形缩径/镦粗 → 逐步镦出带齿头部轮廓 → 终镦成形齿形头 → 切边/整形（推测）。头部外径约Ø14~15 mm，杆径约Ø3.5 mm，总长约16.5 mm（部分尺寸不确定）。",
+  "visible_dimensions": {
+    "head_outer_dia_mm": "~14（含齿，标注疑似Ø14.1或Ø15，unclear）",
+    "shank_dia_mm": "~3.5（标注Ø3.5±0.25，较清晰）",
+    "shank_length_mm": "~16.5（unclear）",
+    "flange_or_intermediate_dia_mm": "Ø2.3（中间某工位，unclear）",
+    "head_height_mm": "~5.7（unclear）",
+    "tooth_undercut_depth_mm": "0.8 MAX（标注较清晰）",
+    "blank_dia_mm": "Ø5.2（下料直径，unclear）",
+    "blank_length_mm": "~16.5（unclear）"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆棒料，直径约Ø5.2 mm，长度约16.5 mm",
+      "dimensions": {
+        "dia_mm": "~5.2（unclear）",
+        "length_mm": "~16.5（unclear）"
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "第一工位：预镦粗/缩径",
+      "geometry_zh": "杆部缩径至约Ø3.5 mm，头部端面开始镦粗，头端直径约Ø2.3（unclear），总体轮廓初步建立",
+      "dimensions": {
+        "shank_dia_mm": "~3.5",
+        "head_end_dia_mm": "~2.3（unclear）",
+        "overall_length_mm": "unclear"
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "第二工位：镦头预成形",
+      "geometry_zh": "头部进一步扩径，直径约Ø22（unclear），头部高度约8.2 mm，杆部长约6.3 mm",
+      "dimensions": {
+        "head_dia_mm": "~22（unclear）",
+        "head_height_mm": "~8.2（unclear）",
+        "shank_length_mm": "~6.3（unclear）"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "第三工位：齿形头部粗成形",
+      "geometry_zh": "头部外径扩至约Ø15，头内侧开始成形齿形轮廓，杆端带凹坑或导引形状，多个直径标注（Ø10.3、Ø2.8、Ø8.7等，unclear）",
+      "dimensions": {
+        "head_dia_mm": "~15（unclear）",
+        "inner_step_dia_mm": "Ø10.3（unclear）",
+        "shank_dia_mm": "~2.8（unclear）",
+        "ref_dia_mm": "Ø8.7（unclear）"
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "第四工位：齿形头部半精成形",
+      "geometry_zh": "头部直径约Ø4.6，齿形进一步压入，头高约11.5 mm，宽约5.5 mm（unclear），杆端成形",
+      "dimensions": {
+        "head_dia_mm": "~4.6（unclear）",
+        "overall_length_mm": "~11.5（unclear）",
+        "width_mm": "~5.5（unclear）"
+      }
+    },
+    {
+      "n": 5,
+      "label_zh": "第五工位：终镦成形带齿头",
+      "geometry_zh": "头部外径达到最终尺寸约Ø10，齿形完整压出，总长约11.66 mm，头厚约6.54 mm，底部直径约Ø4（unclear）",
+      "dimensions": {
+        "head_outer_dia_mm": "~10（unclear）",
+        "total_length_mm": "~11.66（unclear）",
+        "head_thickness_mm": "~6.54（unclear）"
+      }
+    },
+    {
+      "n": 6,
+      "label_zh": "第六工位（推测）：整形/切料",
+      "geometry_zh": "最终整形，杆径Ø5.2（unclear），总长16.5 mm（unclear），头部齿形最终定形",
+      "dimensions": {
+        "shank_dia_mm": "~5.2（unclear）",
+        "total_length_mm": "~16.5（unclear）"
+      }
+    }
+  ],
+  "usage_in_prompt": "当用户询问带齿铆钉（锯齿头铆钉）冷镦工艺、多工位头部成形顺序、齿形头挤压控制要点时，可引用此案例作为参考示例。注意：本案例尺寸读取置信度低，仅供工艺路线参考，不应作为精确设计依据。"
+}

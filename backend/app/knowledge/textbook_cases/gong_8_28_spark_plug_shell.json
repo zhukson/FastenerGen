@@ -1,0 +1,136 @@
+{
+  "id": "spark_plug_shell_cold_heading_8_28",
+  "source": "gong_maoliang_Page367_370:369",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "汽车火花塞壳体",
+  "product_category": "汽车点火系统零件 / 火花塞壳体",
+  "why_it_matters": "火花塞壳体是典型的复杂冷镦件，需多工位成形六角外形、螺纹预制段及内孔，代表冷镦工艺在汽车零件上的高难度应用案例。",
+  "visible_process_summary_zh": "共6个工位（含下料）：线材下料→预成形（初步镦粗）→镦六角外形并粗成形内孔→进一步成形内腔与外径台阶→精整内孔及外形→终成形（六角定形、内孔贯通、总长定型）。各工位通过前视图与端面六角视图对应展示。",
+  "visible_dimensions": {
+    "blank_outer_diameter_mm": 17.1,
+    "blank_length_mm": 17,
+    "final_total_length_mm": 32.6,
+    "final_hex_across_flats_mm": 18.5,
+    "station2_outer_dia_mm": 17.45,
+    "station2_inner_dia_mm": "φ9 (unclear, ~9)",
+    "station2_shoulder_dia_mm": 15.1,
+    "station2_length_mm": 17.2,
+    "station2_chamfer_depth_mm": 2.15,
+    "station2_chamfer_land_mm": 1.6,
+    "station2_cone_angle_deg": "3.5 (unclear)",
+    "station3_outer_dia_mm": 17.5,
+    "station3_hex_flats_mm": 15,
+    "station3_inner_dia_step1_mm": "φ6.8 (unclear)",
+    "station3_inner_dia_step2_mm": "φ9.4 (unclear)",
+    "station3_hex_af_end_mm": 18.4,
+    "station3_seg_lengths_mm": [3.2, 6.7, 9.1, 2.5],
+    "station3_base_lengths_mm": [8.18, 1.72],
+    "station3_hex_view_af_mm": 18.5,
+    "station4_outer_dia_mm": 17.55,
+    "station4_body_dia_mm": 14.95,
+    "station4_inner_dia1_mm": "φ8.5 (unclear)",
+    "station4_inner_dia2_mm": "φ3.5 (unclear, ~3.5)",
+    "station4_nose_dia_mm": 3,
+    "station4_hex_dia_mm": 18.45,
+    "station4_seg_lengths_mm": [3.2, 6.7, 11.7, 7, 1.7],
+    "station4_base_lengths_mm": [13.2, 3],
+    "station4_land_mm": 1.44,
+    "station4_hex_view_af_mm": 18.6,
+    "station5_outer_dia_mm": 17.6,
+    "station5_body_dia_mm": 14.95,
+    "station5_inner_dia1_mm": "φ13.5 (unclear)",
+    "station5_inner_dia2_mm": "φ8.42 (unclear)",
+    "station5_nose_od_mm": "φ15.08 (unclear)",
+    "station5_hex_dia_mm": 18.5,
+    "station5_seg_lengths_mm": [3.2, 6.7, 11.7, 11],
+    "station5_base_lengths_mm": [13.2, 3, 3.5],
+    "station5_hex_view_af_mm": 18.7,
+    "station6_outer_dia_mm": 17.6,
+    "station6_body_dia_mm": 14.95,
+    "station6_inner_dia1_mm": "φ13.5 (unclear)",
+    "station6_inner_dia2_mm": "φ8.42 (unclear)",
+    "station6_nose_od_mm": "φ15.08 (unclear)",
+    "station6_hex_dia_mm": 18.5,
+    "station6_total_length_mm": 32.6,
+    "station6_seg_lengths_mm": [3.2, 6.7, 11.7, 11],
+    "station6_hex_view_af_mm": 18.8
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆柱坯料，外径φ17.1 mm，长度17 mm",
+      "dimensions": {
+        "diameter_mm": 17.1,
+        "length_mm": 17
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "预成形（镦粗+初步成形内孔）",
+      "geometry_zh": "外径φ17.45 mm，内孔初步成形约φ9 mm，肩部φ15.1 mm，总长17.2 mm，端部有锥角及倒角",
+      "dimensions": {
+        "outer_dia_mm": 17.45,
+        "inner_dia_mm": "~9 (unclear)",
+        "shoulder_dia_mm": 15.1,
+        "total_length_mm": 17.2,
+        "chamfer_depth_mm": 2.15,
+        "land_mm": 1.6
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "镦六角外形+成形内腔",
+      "geometry_zh": "外径φ17.5 mm，六角对边距约18.4~18.5 mm，内孔两段（φ6.8、φ9.4 unclear），各分段长度3.2+6.7+9.1+2.5 mm",
+      "dimensions": {
+        "outer_dia_mm": 17.5,
+        "hex_af_mm": "18.4~18.5",
+        "seg_lengths_mm": [3.2, 6.7, 9.1, 2.5],
+        "base_lengths_mm": [8.18, 1.72]
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "成形内腔台阶+外径精整",
+      "geometry_zh": "外径φ17.55 mm，杆部φ14.95 mm，内孔φ8.5+φ3.5（unclear），末端细颈约φ3 mm，六角对边18.45~18.6 mm，总分段3.2+6.7+11.7+7+1.7 mm",
+      "dimensions": {
+        "outer_dia_mm": 17.55,
+        "body_dia_mm": 14.95,
+        "inner_dia_mm": "~8.5 / ~3.5 (unclear)",
+        "hex_af_mm": "18.45~18.6",
+        "seg_lengths_mm": [3.2, 6.7, 11.7, 7, 1.7],
+        "base_lengths_mm": [13.2, 3],
+        "land_mm": 1.44
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "精整内孔+外形",
+      "geometry_zh": "外径φ17.6 mm，杆部φ14.95 mm，内孔φ13.5（unclear）+φ8.42（unclear），前端外径φ15.08（unclear），六角对边18.5 mm，总分段3.2+6.7+11.7+11 mm",
+      "dimensions": {
+        "outer_dia_mm": 17.6,
+        "body_dia_mm": 14.95,
+        "inner_dia_mm": "~13.5 / ~8.42 (unclear)",
+        "nose_od_mm": "~15.08 (unclear)",
+        "hex_af_mm": 18.5,
+        "seg_lengths_mm": [3.2, 6.7, 11.7, 11],
+        "base_lengths_mm": [13.2, 3, 3.5]
+      }
+    },
+    {
+      "n": 5,
+      "label_zh": "终成形（六角定形+内孔贯通+总长定型）",
+      "geometry_zh": "外径φ17.6 mm，杆部φ14.95 mm，内孔φ13.5+φ8.42（unclear），前端φ15.08（unclear），六角对边18.5 mm，总长32.6 mm",
+      "dimensions": {
+        "outer_dia_mm": 17.6,
+        "body_dia_mm": 14.95,
+        "inner_dia_mm": "~13.5 / ~8.42 (unclear)",
+        "nose_od_mm": "~15.08 (unclear)",
+        "hex_af_mm": 18.5,
+        "total_length_mm": 32.6,
+        "seg_lengths_mm": [3.2, 6.7, 11.7, 11]
+      }
+    }
+  ],
+  "usage_in_prompt": "用于说明汽车火花塞壳体的多工位冷镦成形工艺，展示从圆柱坯料逐步成形六角外形、内孔台阶和螺纹预制段的典型工序安排及各工位关键尺寸变化。部分内孔尺寸因图像扫描质量有限，标注为不确定值，使用时需结合原图核对。"
+}

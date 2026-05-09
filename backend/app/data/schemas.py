@@ -23,8 +23,7 @@ from datetime import UTC, datetime
 from enum import Enum
 from typing import Any, Literal
 
-from pydantic import BaseModel, Field, field_validator, model_validator
-
+from pydantic import AliasChoices, BaseModel, Field, field_validator, model_validator
 
 # ===========================================================================
 # Enums
@@ -69,13 +68,18 @@ class OperationType(str, Enum):
 
 class PostProcess(str, Enum):
     thread_rolling = "thread_rolling"
+    thread_tapping = "thread_tapping"  # for internal threads (cut or rolled)
     knurling = "knurling"
     heat_treatment = "heat_treatment"
-    annealing = "annealing"
+    annealing = "annealing"  # incl. mid-process anneal for stainless
     plating = "plating"
     phosphating = "phosphating"
     zinc_plating = "zinc_plating"
     black_oxide = "black_oxide"
+    passivation = "passivation"  # mandatory for 304/316 stainless
+    saponification = "saponification"  # 皂化 — required after phosphating for cold heading
+    oxalate_coating = "oxalate_coating"  # 草酸盐覆膜 — stainless lubrication path
+    hardness_inspection = "hardness_inspection"  # 100% sampling for medical grades
 
 
 class DieGeometryType(str, Enum):
@@ -197,19 +201,40 @@ class ThreadFeatures(BaseModel):
 
     spec: str = Field(..., description="Full thread spec string e.g. 'M6×1.0'", examples=["M6×1.0"])
     nominal_diameter: float = Field(..., gt=0, description="Nominal thread diameter (mm)", examples=[6.0])
-    pitch: float = Field(..., gt=0, description="Thread pitch (mm)", examples=[1.0])
+    pitch: float | None = Field(
+        None,
+        gt=0,
+        description=(
+            "Thread pitch (mm). Optional because self-tap families (Delta PT, "
+            "Taptite, Plastite, Tapflex) and some non-metric threads do not "
+            "expose a standard pitch on the customer drawing."
+        ),
+        examples=[1.0],
+    )
     length: float = Field(..., gt=0, description="Thread length (mm)", examples=[20.0])
-    thread_class: str = Field("6g", description="Thread tolerance class", examples=["6g"])
-    thread_type: Literal["metric", "unified", "bsp", "acme"] = Field(
-        "metric", description="Thread standard"
+    thread_class: str | None = Field(
+        None,
+        description=(
+            "Thread tolerance class (e.g. 6g). Optional — many self-tap or "
+            "trade-name threads (Delta PT, Taptite) have no standard class."
+        ),
+        examples=["6g"],
+    )
+    thread_type: Literal["metric", "unified", "bsp", "acme", "self_tap", "trade_name"] = Field(
+        "metric",
+        description=(
+            "Thread standard. Use 'self_tap' for Delta PT/Taptite/PowerLock-style "
+            "thread-forming screws, 'trade_name' for proprietary names without a "
+            "public spec."
+        ),
     )
     is_full_length: bool = Field(False, description="Thread runs full length of shank")
 
     @field_validator("pitch")
     @classmethod
-    def pitch_must_be_standard(cls, v: float, info: Any) -> float:
-        # Coarse pitch for common metric sizes — warn if unusual
-        standard_pitches = {3: 0.5, 4: 0.7, 5: 0.8, 6: 1.0, 8: 1.25, 10: 1.5, 12: 1.75}
+    def pitch_must_be_standard(cls, v: float | None, info: Any) -> float | None:
+        # Pitch is optional for self-tap / trade-name threads. When provided,
+        # we only sanity-check the value (Pydantic's gt=0 already handles 0).
         return v
 
     model_config = {"json_schema_extra": {"example": {
@@ -868,6 +893,33 @@ class EvalReport(BaseModel):
 # ===========================================================================
 
 
+class ProfileSegment(BaseModel):
+    """One axial segment in a station workpiece side profile."""
+
+    label_zh: str | None = Field(None, description="Segment label, e.g. 头部/颈部/杆部/凹槽")
+    length_mm: float = Field(..., ge=0, description="Axial segment length")
+    diameter_mm: float = Field(..., ge=0, description="Diameter at segment start")
+    end_diameter_mm: float | None = Field(
+        None,
+        ge=0,
+        description="Diameter at segment end; use when the segment is tapered",
+    )
+    fillet_r_mm: float | None = Field(
+        None,
+        ge=0,
+        description="Exit fillet radius R after this segment",
+        validation_alias=AliasChoices("fillet_R_mm", "fillet_r_mm"),
+        serialization_alias="fillet_R_mm",
+    )
+    chamfer_c_mm: float | None = Field(
+        None,
+        ge=0,
+        description="Chamfer size C at this segment boundary",
+        validation_alias=AliasChoices("chamfer_C_mm", "chamfer_c_mm"),
+        serialization_alias="chamfer_C_mm",
+    )
+
+
 class WorkpieceGeometry(BaseModel):
     """Geometry of an intermediate workpiece at one station of a 过模图.
 
@@ -896,9 +948,57 @@ class WorkpieceGeometry(BaseModel):
     head_height_mm: float | None = Field(None, ge=0)
     shank_diameter_mm: float | None = Field(None, ge=0)
     shank_length_mm: float | None = Field(None, ge=0)
-    extra_dims_mm: dict[str, float] = Field(
+    head_recess_diameter_mm: float | None = Field(
+        None,
+        ge=0,
+        description="Diameter/width of a blind head recess or socket preform shown in side view",
+    )
+    head_recess_depth_mm: float | None = Field(
+        None,
+        ge=0,
+        description="Axial depth of a blind head recess or socket preform",
+    )
+    through_hole_diameter_mm: float | None = Field(
+        None,
+        ge=0,
+        description="Diameter of an axial through hole formed by piercing",
+    )
+    corner_radius_mm: float | None = Field(
+        None,
+        ge=0,
+        description="Plan-view corner radius, e.g. 4-R2.5 on a square/T head",
+    )
+    chamfer_c_mm: float | None = Field(
+        None,
+        ge=0,
+        description="Chamfer size C in mm",
+        validation_alias=AliasChoices("chamfer_C_mm", "chamfer_c_mm"),
+        serialization_alias="chamfer_C_mm",
+    )
+    fillet_r_mm: float | None = Field(
+        None,
+        ge=0,
+        description="Fillet radius R in mm",
+        validation_alias=AliasChoices("fillet_R_mm", "fillet_r_mm"),
+        serialization_alias="fillet_R_mm",
+    )
+    profile_segments: list[ProfileSegment] = Field(
+        default_factory=list,
+        description=(
+            "Optional fine-grained axial profile. Use when a station has more "
+            "than a simple head+shank primitive: multiple steps, grooves, "
+            "tapers, necks, recess shoulders, or visible R/C transitions."
+        ),
+    )
+    # Accept float | str | int — LLMs sometimes emit annotated dimensions like
+    # "ISO 13715 -0.1/-0.3" or tolerance ranges. Strict float-only blocks
+    # otherwise-valid plans on real-world drawings.
+    extra_dims_mm: dict[str, float | str | int] = Field(
         default_factory=dict,
-        description="Open-ended named dimensions (e.g., 方头边长, 圆角R, 倒角C)",
+        description=(
+            "Open-ended named dimensions (e.g., 方头边长, 圆角R, 倒角C). "
+            "Values may be numeric (mm) or string-annotated (tolerance/spec)."
+        ),
     )
     notes_zh: str | None = Field(None, description="Chinese-language notes / shape detail")
 

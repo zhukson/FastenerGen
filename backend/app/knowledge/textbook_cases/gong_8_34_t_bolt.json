@@ -1,0 +1,68 @@
+{
+  "id": "t_bolt_cold_heading_8_34",
+  "source": "gong_maoliang_Page375_378:375",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "T形螺栓冷镦工艺",
+  "product_category": "T形螺栓 (T-bolt)",
+  "why_it_matters": "T形螺栓头部为T字形，需要横向扩展成形，与普通六角头螺栓工艺差异显著，是冷镦成形的典型复杂件案例。",
+  "visible_process_summary_zh": "页面展示T形螺栓从线材到成品的多工位冷镦成形工序图，包含下料、预成形及最终T形头成形等阶段。图中标注有各工步毛坯及模具尺寸，但因扫描质量较差，大部分数值难以可靠读取。注记含材料利用率信息（疑似约82.7%或类似值）。",
+  "visible_dimensions": {
+    "blank_length_approx": "79.22 (unclear, read from top drawing)",
+    "blank_diameter_approx": "φ6.2 (unclear)",
+    "head_width_approx": "26.25 (unclear)",
+    "shank_length_approx": "50 (unclear)",
+    "overall_length_approx": "unclear",
+    "T_head_height_approx": "unclear",
+    "thread_spec": "unclear",
+    "material_utilization_rate": "约82.7%或约75% (unclear, two candidate values visible)",
+    "station_count": "4–5 (estimated from drawing layout)"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "线材剪切，圆柱形坯料",
+      "dimensions": {
+        "diameter": "φ6.2 (unclear)",
+        "length": "约79.22 (unclear)"
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "预镦/整形",
+      "geometry_zh": "坯料端部初步墩粗，形成头部雏形",
+      "dimensions": {
+        "head_diameter": "unclear",
+        "shank_diameter": "unclear"
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "T形头预成形",
+      "geometry_zh": "横向扩展，形成T字形头部轮廓",
+      "dimensions": {
+        "head_width": "unclear",
+        "head_thickness": "unclear"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "T形头终成形",
+      "geometry_zh": "精整T形头部，达到设计尺寸",
+      "dimensions": {
+        "head_width": "unclear",
+        "head_height": "unclear",
+        "shank_length": "约50 (unclear)"
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "搓丝/滚丝（后续工序）",
+      "geometry_zh": "杆部搓制螺纹",
+      "dimensions": {
+        "thread_spec": "unclear"
+      }
+    }
+  ],
+  "usage_in_prompt": "当用户询问T形螺栓冷镦工艺、T形头成形方案或异形头螺栓冷镦工序设计时，可引用本案例说明T形头多工位成形的基本思路，但所有具体尺寸数值需结合原图核实，不可直接用于生产。"
+}

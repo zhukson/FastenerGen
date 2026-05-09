@@ -1,0 +1,140 @@
+{
+  "id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+  "source": "gong_maoliang_Page99_104:99, gong_maoliang_Page99_104:100, gong_maoliang_Page99_104:101, gong_maoliang_Page99_104:102, gong_maoliang_Page99_104:103, gong_maoliang_Page99_104:104",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "内六角圆柱头螺钉 GB/T70.1-2000 M8×18 三工位冷镦成形工艺与标准模具图册",
+  "product_category": "内六角圆柱头螺钉 (SHCS), M5–M20, GB/T70.1-2000",
+  "why_it_matters": "提供了从M5到M20全系列内六角圆柱头螺钉的冷镦关键尺寸参数表（含模片厚H、合模间隙n、头部dk/da/ds、六角对边S、螺纹小径d1/d2等），以及M8×18三工位典型工艺变形图和切料、1序、2序、3序完整模具组装图（图号Z46-8/3），是该类紧固件冷镦模具设计与工艺规划的重要参考。",
+  "visible_process_summary_zh": "三工位（3序）冷镦工艺：0序切料→1序镦头预成形→2序正挤杆部/缩径→3序终成形头部（含六角孔成形，模片角度12°/7°，头部入口角30°）；后道工序为搓丝/滚丝。成形工序图显示头部采用120°对称分模，模片厚H随规格变化（M5:4.3mm～M20:14.0mm），合模间隙(n)可调（M5:0.5mm～M20:5.5mm）。",
+  "visible_dimensions": {
+    "standard": "GB/T70.1-2000",
+    "thread_tolerance": "6g",
+    "head_angle_forming_die": "12° (模片侧角), 7° (外斜), 30° (杆部入口角)",
+    "head_split_angle": "120°",
+    "size_table": {
+      "columns": ["螺纹规格(6g)", "D", "H(模片厚)", "n(合模间隙)", "dk", "damax", "ds", "emin", "kmax", "rmin", "S(中间值)", "tmin", "wmin", "lsmin", "lgmax", "(b)参考", "l", "d2(螺纹小径小0.2)", "d1(滚搓丝直径)"],
+      "rows": {
+        "M5":  {"D":25, "H":4.3,  "n":0.5, "dk":8.32,  "damax":5.7,  "ds":4.85,  "emin":4.58,  "kmax":5,  "rmin":0.20, "S":4.06,  "tmin":2.5, "wmin":1.9, "lsmin":4,    "lgmax":8,  "b":22, "l":30, "d2":3.9,  "d1":4.40},
+        "M6":  {"D":25, "H":5.1,  "n":0.6, "dk":9.82,  "damax":6.8,  "ds":5.85,  "emin":5.72,  "kmax":6,  "rmin":0.25, "S":5.08,  "tmin":3,   "wmin":2.3, "lsmin":6,    "lgmax":11, "b":24, "l":35, "d2":4.7,  "d1":5.25},
+        "M8":  {"D":35, "H":6.8,  "n":0.8, "dk":12.78, "damax":9.2,  "ds":7.85,  "emin":6.86,  "kmax":8,  "rmin":0.40, "S":6.08,  "tmin":4,   "wmin":3.3, "lsmin":5.75, "lgmax":12, "b":28, "l":40, "d2":6.4,  "d1":7.10},
+        "M10": {"D":35, "H":8.6,  "n":1.0, "dk":15.78, "damax":11.2, "ds":9.85,  "emin":9.15,  "kmax":10, "rmin":0.4,  "S":8.10,  "tmin":5,   "wmin":4,   "lsmin":5.5,  "lgmax":13, "b":32, "l":45, "d2":8.1,  "d1":8.93},
+        "M12": {"D":45, "H":10.4, "n":1.2, "dk":17.78, "damax":13.7, "ds":11.85, "emin":11.43, "kmax":12, "rmin":0.6,  "S":10.10, "tmin":6,   "wmin":4.8, "lsmin":10.25,"lgmax":19, "b":36, "l":55, "d2":9.8,  "d1":10.75},
+        "M16": {"D":50, "H":12.2, "n":3.4, "dk":23.74, "damax":17.7, "ds":15.85, "emin":16.00, "kmax":16, "rmin":0.6,  "S":14.10, "tmin":8,   "wmin":6.8, "lsmin":11,   "lgmax":21, "b":44, "l":65, "d2":13.5, "d1":14.60},
+        "M20": {"D":60, "H":14.0, "n":5.5, "dk":29.74, "damax":22.4, "ds":19.8,  "emin":19.44, "kmax":20, "rmin":0.8,  "S":17.15, "tmin":10,  "wmin":8.6, "lsmin":15.5, "lgmax":28, "b":52, "l":80, "d2":17,   "d1":18.25}
+      },
+      "notes": {
+        "S": "小于12.9级",
+        "b": "参考值，部分b时最短l",
+        "d2": "螺纹小径小0.2",
+        "d1": "滚、搓丝直径"
+      }
+    },
+    "M8x18_blank": {
+      "blank_diameter": "φ7.7 mm",
+      "blank_length": "30 mm (总长约15.3+余量, 标注30)"
+    },
+    "M8x18_station1_after": {
+      "head_od": "φ9.2 mm",
+      "shank_od_upper": "φ7.7 mm",
+      "shank_od_lower": "φ8.5 mm (unclear)",
+      "head_length": "8.5 mm (uncertain — likely includes pre-form taper that is compressed in later stations; final spec k=8mm)",
+      "shank_length_segments": ["13.028 mm", "17.7 mm"]
+    },
+    "M8x18_station2_after": {
+      "head_od": "φ12.76 mm",
+      "inner_punch_od": "φ7.5 mm (pre-hex cavity)",
+      "punch_cone_angle": "100°",
+      "head_height_approx": "6.3 mm (uncertain — possibly socket-cavity bottom thickness or an extraction error; final head height per GB/T 70.1 spec is k=8mm)",
+      "shank_od_stepped": ["φ7.04 mm", "φ10.9 mm"],
+      "shank_length": "17.5 mm",
+      "excess_flash": "1.05 mm"
+    },
+    "M8x18_station3_final": {
+      "head_od": "φ13 mm (-0/+0.07 unclear)",
+      "head_height": "8.0 mm per GB/T 70.1 spec (kmax=8); draft value 6.5 mm is likely OCR/extraction error and contradicts the size table earlier in this case",
+      "hex_depth": "4 mm (-0/-0.3)",
+      "punch_cone_angle": "30°",
+      "shank_od": "φ5.3 / φ7.08 mm",
+      "thread_rolling_diameter_d1": "7.10 mm",
+      "hex_across_flats_S": "6 mm (-0.07/-0.11)",
+      "e_min": "6.9 mm (unclear)"
+    }
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "切料 (下料)",
+      "geometry_zh": "剪切圆棒料为坯料；切料模组装图号 Z46-8/3-000，切料组件含件001(外套φ35/φ20)和件002(内衬φ38/φ20)，切料长度方向尺寸50mm(外)/22mm，内孔定位直径φ20mm",
+      "dimensions": {
+        "blank_diameter_mm": 7.7,
+        "blank_length_mm": 30,
+        "cutting_die_outer_od_mm": 35,
+        "cutting_die_inner_od_mm": 20,
+        "cutting_sleeve_od_mm": 38,
+        "drawing_number": "Z46-8/3-000"
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "1序 — 镦头预成形（缩径+头部初成形）",
+      "geometry_zh": "将坯料镦粗头部，同时对杆部进行缩径预成形。模具组装图号Z46-8/3-100，含件101~113，整体高度约110mm(模座)，冲头侧φ60mm，外套φ50mm。头部外径从φ7.7镦至φ9.2，杆部形成上下台阶。",
+      "dimensions": {
+        "head_od_after_mm": 9.2,
+        "shank_upper_od_mm": 7.7,
+        "shank_lower_od_mm": "8.5 (uncertain)",
+        "head_length_mm": 8.5,
+        "shank_segment1_mm": 13.028,
+        "shank_segment2_mm": 17.7,
+        "die_assembly_height_approx_mm": 110,
+        "drawing_number": "Z46-8/3-100",
+        "part_count": "101–113 (13 parts)"
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "2序 — 正挤杆部/头部扩径+六角预冲",
+      "geometry_zh": "进一步镦大头部至φ12.76，用100°锥角冲头预冲六角孔，杆部正挤缩径。模具组装图号Z46-8/3-200，含件101~104(共用)及205~211，整体高度约110mm(上)/115mm(下)，φ60mm导柱。",
+      "dimensions": {
+        "head_od_after_mm": 12.76,
+        "hex_pre_punch_cone_angle_deg": 100,
+        "inner_punch_od_mm": 7.5,
+        "head_height_mm": "6.3 (uncertain — possibly cavity-bottom thickness or extraction error; final spec k=8mm)",
+        "shank_step_od_mm": [7.04, 10.9],
+        "shank_length_mm": 17.5,
+        "flash_height_mm": 1.05,
+        "die_assembly_height_mm": [110, 115],
+        "guidepost_od_mm": 60,
+        "drawing_number": "Z46-8/3-200",
+        "part_count": "101–104 (shared) + 205–211"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "3序 — 终成形（头部精整+六角孔精冲）",
+      "geometry_zh": "终成形头部至最终尺寸φ13mm、高约8mm（GB/T70.1 M8 spec kmax=8；草稿数据 6.5 与 size table kmax 矛盾，已改用 spec 值）；30°入口角精冲六角孔至深4mm、对边S=6mm；杆部终缩径至φ7.08(搓丝前)。模具组装图号Z46-8/3-300。",
+      "dimensions": {
+        "head_od_mm": "13 -0/+0.07 (uncertain)",
+        "head_height_mm": "8.0 per GB/T 70.1 kmax (uncertain — draft 6.5 contradicts size table)",
+        "hex_depth_mm": "4 (-0/-0.3)",
+        "hex_punch_cone_angle_deg": 30,
+        "hex_S_across_flats_mm": "6 (-0.07/-0.11)",
+        "shank_pre_thread_od_d1_mm": 7.08,
+        "shank_upper_od_mm": 5.3,
+        "die_assembly_outer_od_mm": 50,
+        "drawing_number": "Z46-8/3-300",
+        "part_count": "101–103 (shared) + 301–318"
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "后工序 — 搓丝/滚丝",
+      "geometry_zh": "使用d1尺寸杆部进行搓丝或滚丝，得到最终螺纹M8×1.25（6g）。M8对应d1=7.10mm，d2(螺纹小径)=6.4mm。",
+      "dimensions": {
+        "thread": "M8×1.25-6g",
+        "d1_rolling_diameter_mm": 7.10,
+        "d2_minor_diameter_mm": 6.4
+      }
+    }
+  ],
+  "usage_in_prompt": "Use this case for: (1) M5–M20 SHCS GB/T70.1-2000 cold-heading dimension lookup (dk, ds, S, k, t, w, ls, lg, d1, d2); (2) 3-station cold-heading process planning for M8 SHCS including blank size, station geometry progression, and hex-punch angles; (3) modular die assembly numbering convention (Z46-8/3 series: -000 cut-off, -100 station-1, -200 station-2, -300 station-3); (4) die plate thickness H and parting-gap n values as function of bolt size. Note: several final-station tolerances and some assembly part labels are uncertain due to scan quality."
+}

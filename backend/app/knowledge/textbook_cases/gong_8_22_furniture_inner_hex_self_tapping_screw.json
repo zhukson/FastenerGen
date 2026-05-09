@@ -1,0 +1,79 @@
+{
+  "id": "furniture_hex_self_tapping_screw_8_22",
+  "source": "gong_maoliang_Page363_366:363",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "家具连接内六角自攻螺钉",
+  "product_category": "内六角自攻螺钉 / Furniture hex socket self-tapping screw",
+  "why_it_matters": "典型家具连接件冷镦工艺案例，展示从坯料到成品（内六角头+自攻牙）的多工位成形过程，材质为08AL低碳铝镇静钢。",
+  "visible_process_summary_zh": "5工位冷镦成形（0#~4#），从圆棒料逐步镦出凸缘/头部，再挤压内六角孔，最终总长48.3±0.4 mm，头部外径φ10.3，杆部φ4.09~4.99，材质08AL。",
+  "visible_dimensions": {
+    "material": "08AL",
+    "finished_total_length_mm": "48.3±0.4",
+    "head_outer_dia_mm": "φ10.3",
+    "hex_socket_dia_mm": "φ6.75 (station 4#)",
+    "shank_dia_finished_mm": "φ4.09 / φ4.99 (station 4#)",
+    "head_height_approx_mm": "4 (end-view label, stations 3# & 4#)",
+    "blank_length_mm": "47.1",
+    "blank_dia_mm": "φ5.4"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料 / 坯料",
+      "geometry_zh": "圆棒料，光滑圆柱",
+      "dimensions": {
+        "length_mm": 47.1,
+        "diameter_mm": 5.4
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "一次镦头",
+      "geometry_zh": "一端开始镦粗形成头部雏形，杆部变细",
+      "dimensions": {
+        "head_zone_length_mm": 12.7,
+        "shank_length_mm": 36.4,
+        "shank_dia_mm": "φ4.95"
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "二次镦头",
+      "geometry_zh": "头部进一步成形，锥面/凸缘更明显",
+      "dimensions": {
+        "head_zone_length_mm": "11.077 (OCR uncertain)",
+        "shank_length_mm": 37.5,
+        "shank_dia_outer_mm": "φ4.5",
+        "shank_dia_inner_mm": "φ4.97"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "预冲内六角 / 整形",
+      "geometry_zh": "头部外径φ10.3成形，预冲内孔，端面可见圆形轮廓",
+      "dimensions": {
+        "head_outer_dia_mm": "φ10.3",
+        "head_zone_length_mm": 10.8,
+        "socket_depth_zone_mm": 4.2,
+        "shank_length_mm": 37.5,
+        "end_view_ref_mm": 4
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "终成形（冲内六角孔）",
+      "geometry_zh": "内六角孔φ6.75完全成形，头部φ10.3，总长48.3±0.4，端面内六角可见",
+      "dimensions": {
+        "total_length_mm": "48.3±0.4",
+        "head_outer_dia_mm": "φ10.3",
+        "hex_socket_dia_mm": "φ6.75",
+        "head_zone_length_mm": 10.8,
+        "socket_depth_mm": 6.7,
+        "shank_dia_min_mm": "φ4.09",
+        "shank_dia_max_mm": "φ4.99",
+        "end_view_ref_mm": 4
+      }
+    }
+  ],
+  "usage_in_prompt": "当用户询问家具连接内六角自攻螺钉冷镦工艺、08AL材质多工位成形、或总长约48 mm头径φ10.3内六角螺钉的工步设计时，引用本案例作为参考。注意OCR数值部分存疑，以图纸标注为准。"
+}

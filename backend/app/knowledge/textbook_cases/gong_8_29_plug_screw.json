@@ -1,0 +1,101 @@
+{
+  "id": "螺塞_cold_heading_case_p370",
+  "source": "gong_maoliang_Page367_370:370",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "螺塞 (Plug / Threaded Plug)",
+  "product_category": "螺塞 / 管堵",
+  "why_it_matters": "螺塞是典型的带法兰盘或六角头的实心/空心冷镦件，成形工序涉及镦粗、正挤压、内孔成形及六角形外形挤压，是多工位冷镦工艺的代表案例。",
+  "visible_process_summary_zh": "从圆柱坯料依次经过镦粗扩径、预成形收颈（形成台阶）、正挤压内孔及六角外形、最终镦出法兰盘，共约5~6个工位。图示从上到下展示各工位毛坯形状变化。",
+  "visible_dimensions": {
+    "blank_diameter_mm": 23.6,
+    "blank_length_mm": 34.2,
+    "station2_outer_dia_mm": 26.1,
+    "station3_outer_dia_mm": 26.3,
+    "station4_hex_outer_dia_mm": 26.4,
+    "station4_inner_bore_dia_mm": 16.4,
+    "station4_shank_dia_mm": 19.2,
+    "station5_inner_bore_dia_mm": 16.45,
+    "station5_hex_dia_mm": 25.2,
+    "station5_outer_dia_mm": 26.5,
+    "station5_end_face_width_mm": 16.6,
+    "final_flange_outer_dia_mm": 36.0,
+    "final_hex_dia_mm": 25.2,
+    "final_inner_bore_dia_mm": 16.3,
+    "final_shank_dia_mm": 26.6,
+    "final_total_dia_mm": 27.2,
+    "final_flange_thickness_mm": 3.0,
+    "final_body_length_mm": 11.8,
+    "final_total_length_mm": 38.0,
+    "final_step_length_mm": 7.54,
+    "final_hex_land_length_mm": 22.0,
+    "final_end_face_width_mm": 16.9,
+    "notes": "部分尺寸（如7.54、station4 shank径19.2、总长38）依据图像判读，OCR噪声较大，置信度中等"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆柱形棒料坯",
+      "dimensions": {
+        "diameter_mm": 23.6,
+        "length_mm": 34.2
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "一次镦粗",
+      "geometry_zh": "整体镦粗，直径增大，端面平整",
+      "dimensions": {
+        "outer_diameter_mm": 26.1
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "二次镦粗 / 预成形",
+      "geometry_zh": "继续镦粗至目标外径，头部略成形",
+      "dimensions": {
+        "outer_diameter_mm": 26.3
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "正挤压内孔 + 六角外形预成形",
+      "geometry_zh": "上端挤出六角形外廓，下端收颈形成杆部，顶部开始冲内孔",
+      "dimensions": {
+        "hex_outer_diameter_mm": 26.4,
+        "inner_bore_diameter_mm": 16.4,
+        "shank_diameter_mm": 19.2
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "内孔精整 + 六角精整",
+      "geometry_zh": "内孔加深至最终尺寸，六角形外形精整，端面成形",
+      "dimensions": {
+        "inner_bore_diameter_mm": 16.45,
+        "hex_outer_diameter_mm": 25.2,
+        "body_outer_diameter_mm": 26.5,
+        "end_face_reference_mm": 16.6
+      }
+    },
+    {
+      "n": 5,
+      "label_zh": "镦法兰盘 / 最终成形",
+      "geometry_zh": "镦出外法兰盘，形成台阶外形，六角形完整，内孔贯通",
+      "dimensions": {
+        "flange_outer_diameter_mm": 36.0,
+        "flange_thickness_mm": 3.0,
+        "body_length_mm": 11.8,
+        "total_length_mm": 38.0,
+        "hex_body_length_mm": 22.0,
+        "inner_bore_diameter_mm": 16.3,
+        "hex_diameter_mm": 25.2,
+        "outer_body_diameter_mm": 26.6,
+        "max_outer_diameter_mm": 27.2,
+        "step_length_mm": "~7.54 (unclear)",
+        "end_face_reference_mm": 16.9
+      }
+    }
+  ],
+  "usage_in_prompt": "用于说明螺塞类零件的多工位冷镦工艺路线：坯料→镦粗→预成形→内孔挤压+六角外形挤压→精整→法兰镦出。关键工艺要点：六角形孔型挤压需控制减面率，内孔冲挤需分步进行以避免开裂；法兰镦制在最后工位完成以保证同轴度。"
+}

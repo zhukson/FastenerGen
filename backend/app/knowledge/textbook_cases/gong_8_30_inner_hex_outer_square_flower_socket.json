@@ -1,0 +1,15 @@
+{
+  "id": "gong_8_30_inner_hex_outer_square_flower_socket",
+  "source": "gong_maoliang_Page371_374:p371",
+  "status": "image_indexed_low_confidence",
+  "title_zh": "8.30 内六角外四角花形套筒工具",
+  "product_category": "inner_hex_outer_square_socket_tool",
+  "why_it_matters": "这是内孔/内六角 + 外四角/花形 + 长杆过渡的复杂异形件案例，可补充现有 8 个工厂 case 中较少覆盖的套筒类零件。",
+  "visible_process_summary_zh": "页面显示从圆柱坯料开始，经过阶梯杆成形、头部加粗、内孔/内六角相关特征成形、外四角/花形终成形的多步变形图。",
+  "visible_dimensions": {
+    "blank": {"diameter_mm": 12.5, "length_mm": 48.0},
+    "notable_callouts_mm": ["Ø12.7", "Ø10.2", "Ø13.7", "Ø10.5", "Ø13.8", "9.5", "13.5", "30", "12.2", "29"]
+  },
+  "usage_in_prompt": "低权重参考。不要直接复制尺寸；用于提醒模型：内六角/外方花形套筒应拆成预成形、内孔/内六角、外形终成形多个工位。"
+}
+

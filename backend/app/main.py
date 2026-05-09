@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.v1 import designs, drawings, eval, health
+from app.api.v1 import designs, drawings, eval, experiments, health
 from app.core.config import settings
 from app.core.exceptions import FastenerGPTError, fastenergpt_exception_handler
 from app.core.logging import configure_logging, get_logger
@@ -62,3 +62,4 @@ app.include_router(health.router, prefix="/api")
 app.include_router(drawings.router, prefix="/api/v1")
 app.include_router(designs.router, prefix="/api/v1")
 app.include_router(eval.router, prefix="/api/v1")
+app.include_router(experiments.router, prefix="/api/v1")

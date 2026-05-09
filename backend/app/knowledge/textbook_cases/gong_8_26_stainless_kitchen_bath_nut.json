@@ -1,0 +1,87 @@
+{
+  "id": "stainless_kitchen_sanitary_nut_8_26",
+  "source": "gong_maoliang_Page367_370:367",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "不锈钢厨卫螺母",
+  "product_category": "螺母 / Nut (厨卫用途)",
+  "why_it_matters": "展示不锈钢302HQ材质厨卫螺母的5工位冷镦成形工序，含头部球面成形与杆部挤压过程，适合小直径深孔类螺母工艺参考。",
+  "visible_process_summary_zh": "共5个工位（0#～4#），从圆柱毛坯下料开始，经预成形锥面、局部镦粗头部、挤压杆孔，最终成形带SR球面头部和内孔的厨卫螺母。",
+  "visible_dimensions": {
+    "final_product_head_diameter_mm": "Ø10.8 +0.2/-0 (unclear, read as ~Ø10.8)",
+    "final_product_head_sphere_radius_mm": "SR6.8",
+    "final_product_shank_diameter_mm": "Ø6.2 -0/-0.1 (approx)",
+    "final_product_bore_diameter_mm": "Ø4.3 ±0.05",
+    "final_product_total_length_mm": "18-0.5 (approx 18.2±0.2 body + 3.1 head protrusion)",
+    "final_product_body_length_mm": "18.2 ±0.2",
+    "final_product_head_height_mm": "3.1",
+    "final_product_end_feature_diameter_mm": "Ø6 (approx), depth 5.08",
+    "material": "302HQ (不锈钢)"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆柱毛坯，直径Ø5.9，长度17.15",
+      "dimensions": {
+        "wire_diameter_mm": "Ø5.9",
+        "blank_length_mm": "17.15"
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "一次预成形",
+      "geometry_zh": "头部端面倒锥45°预成形，局部压出R0.8圆角，杆端锥角30°；杆径Ø5.3，总长16.73，头部外径Ø6.04",
+      "dimensions": {
+        "shank_diameter_mm": "Ø5.3",
+        "head_diameter_mm": "Ø6.04",
+        "total_length_mm": "16.73",
+        "taper_angle_deg": "30",
+        "chamfer_angle_deg": "45",
+        "corner_radius_mm": "R0.8"
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "二次成形（镦头+预挤孔）",
+      "geometry_zh": "头部进一步镦粗，外径Ø6.08，杆端挤出预孔Ø3.8，孔深约10.2，端面留余量0.4，锥角30°，头侧面锥5°；杆径Ø6.07（unclear），Ø5.3保留段",
+      "dimensions": {
+        "head_outer_diameter_mm": "Ø6.08",
+        "pre_bore_diameter_mm": "Ø3.8",
+        "pre_bore_depth_mm": "~10.2",
+        "end_flat_mm": "0.4",
+        "shank_diameter_upper_mm": "Ø5.3",
+        "shank_diameter_lower_mm": "Ø6.07 (uncertain)",
+        "body_taper_angle_deg": "30",
+        "head_taper_deg": "5"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "三次成形（杆部定径+孔延伸）",
+      "geometry_zh": "杆外径整形至Ø6.1，内孔延伸，头部平台长4，体长18.2，孔深约17",
+      "dimensions": {
+        "shank_outer_diameter_mm": "Ø6.1",
+        "body_length_mm": "18.2",
+        "bore_depth_mm": "~17",
+        "head_platform_length_mm": "4"
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "四次成形（头部球面成形+最终孔）",
+      "geometry_zh": "头部成形SR6.8球面，头部外径Ø10.8，头高3.1，杆外径Ø6.13（uncertain），内孔Ø4.3，孔深17，体长18.2，端部特征Ø6深5.08",
+      "dimensions": {
+        "head_sphere_radius_mm": "SR6.8",
+        "head_outer_diameter_mm": "Ø10.8",
+        "head_height_mm": "3.1",
+        "shank_outer_diameter_mm": "Ø6.13 (uncertain)",
+        "bore_diameter_mm": "Ø4.3",
+        "bore_depth_mm": "17",
+        "body_length_mm": "18.2",
+        "end_diameter_mm": "Ø6",
+        "end_depth_mm": "5.08"
+      }
+    }
+  ],
+  "usage_in_prompt": "当用户询问不锈钢302HQ厨卫螺母冷镦工艺、球面头部成形工序设计、或类似带内孔螺母多工位成形时，可引用此案例的工位序列与关键尺寸作为参考。注意部分尺寸因扫描模糊存在不确定性，使用时需结合实际产品图纸核实。"
+}

@@ -1,0 +1,60 @@
+{
+  "id": "double_head_hex_blind_hole_rivet_blank_8_16",
+  "source": "gong_maoliang_Page355_358:356",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "双头六角切边头部盲孔钉坯",
+  "product_category": "双头六角盲孔铆钉坯（fastener blank）",
+  "why_it_matters": "展示多工位冷镦成形双头六角切边头部盲孔钉坯的工艺路线及关键尺寸，供同类产品工艺设计参考。",
+  "visible_process_summary_zh": "线材下料后经多工位冷镦（推测4工位）依次完成预成形、六角头部镦粗、切边、盲孔正挤或反挤，最终成形双头六角带盲孔钉坯。模具截面图显示左侧为冲头侧，右侧为凹模侧，各工位坯料形态逐步发育。",
+  "visible_dimensions": {
+    "blank_overall_length_mm": 51.5,
+    "head_length_mm": 16.5,
+    "shank_step_length_mm": 5,
+    "head_top_feature_height_mm": 10,
+    "outer_diameter_d1_mm": 11,
+    "inner_diameter_d2_mm": 7.7,
+    "shank_diameter_mm": 8,
+    "hex_across_flats_mm": 13,
+    "notes": "φ11/φ7.7为头部外径与盲孔口径（读数基于图面标注，OCR噪声较大，请核实原图）；φ8为杆部直径；对边距13为六角对边尺寸（unclear精度）"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆柱线材剪切，长度按体积计算",
+      "dimensions": {"wire_diameter_mm": "unclear", "cut_length_mm": "unclear"}
+    },
+    {
+      "n": 1,
+      "label_zh": "预成形（镦粗端部）",
+      "geometry_zh": "一端局部镦粗，形成预头部凸台，坯料轴线保持",
+      "dimensions": {}
+    },
+    {
+      "n": 2,
+      "label_zh": "六角头部镦粗",
+      "geometry_zh": "将预头部在六角凹模中镦入六角外形，对边距约13 mm",
+      "dimensions": {"across_flats_mm": 13}
+    },
+    {
+      "n": 3,
+      "label_zh": "切边整形",
+      "geometry_zh": "六角头部切边，去除飞边，确保头部高度约10 mm",
+      "dimensions": {"head_height_mm": 10}
+    },
+    {
+      "n": 4,
+      "label_zh": "盲孔反挤（头部盲孔成形）",
+      "geometry_zh": "在头部端面反挤盲孔，孔口径约φ7.7 mm，头部外径φ11 mm，杆部φ8 mm，总长51.5 mm",
+      "dimensions": {
+        "blind_hole_diameter_mm": 7.7,
+        "head_outer_diameter_mm": 11,
+        "shank_diameter_mm": 8,
+        "total_length_mm": 51.5,
+        "head_section_length_mm": 16.5,
+        "transition_length_mm": 5
+      }
+    }
+  ],
+  "usage_in_prompt": "可用于检索双头六角盲孔铆钉冷镦工艺、多工位成形站序设计、盲孔反挤参数以及六角切边头部尺寸规划等场景。注意：OCR质量差，数值以图面标注为准，建议与原书第356页对照核实。"
+}

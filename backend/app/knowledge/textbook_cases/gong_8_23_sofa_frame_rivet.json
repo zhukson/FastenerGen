@@ -1,0 +1,84 @@
+{
+  "id": "folding_sofa_frame_rivet_small_stock_large_deformation_8_23",
+  "source": "gong_maoliang_Page363_366:364",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "折叠沙发架铆钉（小料大变形）",
+  "product_category": "铆钉 / rivet",
+  "why_it_matters": "典型小料大变形冷镦案例：坯料直径仅φ6.25mm，经4道次成形后头部扩径至φ15.5mm（扩径比≈2.48），展示多工位渐进镦粗头部的工艺路线。",
+  "visible_process_summary_zh": "5工位冷镦（0#下料→1#→2#→3#→4#成品），材料08AL。坯料逐步镦粗一端形成大凸缘头部，同时另一端保持杆部尺寸，最终头部φ15.5±0.38mm、杆部φ6.35±0.05mm、颈部φ4.06±0.13mm，头部带45°倒角。",
+  "visible_dimensions": {
+    "material": "08AL",
+    "blank_diameter_mm": 6.25,
+    "blank_length_mm": 31,
+    "final_head_diameter_mm": "15.5±0.38",
+    "final_shank_diameter_mm": "6.35±0.05",
+    "final_neck_diameter_mm": "4.06±0.13",
+    "final_overall_diameter_ref_mm": "8.08±0.05",
+    "final_head_height_mm": "2±0.10",
+    "final_shank_length_mm": "7.5±0.13",
+    "final_total_length_ref_mm": "6.48±0.13",
+    "head_chamfer_angle_deg": 45
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆柱坯料，两端平齐",
+      "dimensions": {
+        "diameter_mm": 6.25,
+        "length_mm": 31,
+        "exposed_length_mm": 23
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "一次预镦",
+      "geometry_zh": "一端开始镦粗，直径略增，长度缩短",
+      "dimensions": {
+        "head_end_diameter_mm": 6.8,
+        "shank_diameter_mm": 6.28,
+        "overall_length_mm": 27.2,
+        "exposed_length_mm": 19.5
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "二次镦粗",
+      "geometry_zh": "头部继续扩径，形状渐成凸缘",
+      "dimensions": {
+        "head_end_diameter_mm": 7.2,
+        "shank_diameter_mm": 6.31,
+        "overall_length_mm": 25,
+        "exposed_length_mm": 17.4
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "三次镦粗",
+      "geometry_zh": "头部明显扩径，颈部开始成形",
+      "dimensions": {
+        "head_end_diameter_mm": 7.9,
+        "shank_diameter_mm": 6.34,
+        "overall_length_mm": 22,
+        "head_zone_length_mm": 14.4,
+        "neck_zone_length_mm": 7.5
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "终镦成形",
+      "geometry_zh": "大凸缘头部终成形，带45°倒角，颈部及杆部至最终尺寸",
+      "dimensions": {
+        "head_diameter_mm": "15.5±0.38",
+        "head_height_mm": "2±0.10",
+        "neck_diameter_mm": "4.06±0.13",
+        "shank_diameter_mm": "6.35±0.05",
+        "outer_ref_diameter_mm": "8.08±0.05",
+        "shank_length_mm": "7.5±0.13",
+        "total_length_ref_mm": "6.48±0.13",
+        "head_chamfer_deg": 45
+      }
+    }
+  ],
+  "usage_in_prompt": "查询小料大变形铆钉冷镦工艺、多工位渐进镦粗头部扩径设计、08AL材料铆钉成形方案时可引用此案例。注意：OCR质量差，部分中间工位尺寸依据图纸读取，存在一定不确定性。"
+}

@@ -1,0 +1,105 @@
+{
+  "id": "stainless_flange_bolt_with_washer_8_27",
+  "source": "gong_maoliang_Page367_370:368",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "不锈钢法兰带垫螺栓",
+  "product_category": "法兰螺栓 / Flange Bolt with Integrated Washer",
+  "why_it_matters": "展示302HQ不锈钢材质法兰带垫螺栓的4工位冷镦成形工艺，体现法兰盘与杆部的多步成形要点",
+  "visible_process_summary_zh": "4工位冷镦：0#下料→1#预镦头部→2#镦法兰锥形预成形→3#镦法兰终成形（带25°锥角）→4#终镦法兰盘定形，杆部同步挤压至成品尺寸",
+  "visible_dimensions": {
+    "blank_length_mm": 44.7,
+    "blank_diameter_mm": "6.96 (+0.02/-0.0, approximate)",
+    "station_1_head_diameter_mm": 9.2,
+    "station_1_neck_diameter_mm": 7.05,
+    "station_1_neck_length_mm": 14.4,
+    "station_1_shank_diameter_mm": 6.99,
+    "station_2_outer_diameter_mm": 11.1,
+    "station_2_inner_cone_diameter_mm": 9.0,
+    "station_2_flange_length_mm": 6.5,
+    "station_2_step_mm": 0.7,
+    "station_2_top_offsets_mm": {"a": 0.7, "b": 0.6},
+    "station_2_SR_radius_mm": 15,
+    "station_2_total_length_mm": 25,
+    "station_2_shank_diameter_mm": 7.02,
+    "station_3_flange_height_mm": 1.5,
+    "station_3_flange_cone_angle_deg": 25,
+    "station_3_flange_outer_diameter_mm": 11.5,
+    "station_3_body_length_mm": 7.9,
+    "station_3_shank_diameter_mm": 7.05,
+    "station_3_across_flats_or_od_mm": 9.7,
+    "station_4_flange_height_mm": 1.5,
+    "station_4_flange_outer_diameter_mm": 14.4,
+    "station_4_body_length_mm": 7.0,
+    "station_4_total_shank_length_mm": 25,
+    "station_4_shank_diameter_mm": 7.08,
+    "station_4_across_flats_or_od_mm": 9.9,
+    "station_4_washer_od_mm": 11.4
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆棒料切断，圆柱形坯料",
+      "dimensions": {
+        "length_mm": 44.7,
+        "diameter_mm": "6.96 (+0.02/-0.0)"
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "预镦头部",
+      "geometry_zh": "头部镦粗成直径9.2的预成形头，颈部直径7.05，颈长14.4，杆部直径6.99",
+      "dimensions": {
+        "head_diameter_mm": 9.2,
+        "neck_diameter_mm": 7.05,
+        "neck_length_mm": 14.4,
+        "shank_diameter_mm": 6.99
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "法兰锥形预成形",
+      "geometry_zh": "镦出锥形法兰预成形，外径11.1，内锥径约9.0，SR15球面，法兰段长6.5，杆径7.02，总长25",
+      "dimensions": {
+        "flange_outer_diameter_mm": 11.1,
+        "cone_inner_diameter_mm": 9.0,
+        "SR_radius_mm": 15,
+        "flange_length_mm": 6.5,
+        "shank_diameter_mm": 7.02,
+        "total_length_mm": 25,
+        "offset_a_mm": 0.7,
+        "offset_b_mm": 0.6,
+        "step_mm": 0.7
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "法兰终成形（带25°锥角）",
+      "geometry_zh": "镦出带25°锥角的法兰盘，高1.5，外径11.5，杆部直径7.05，端面六角形轮廓约9.7",
+      "dimensions": {
+        "flange_height_mm": 1.5,
+        "flange_cone_angle_deg": 25,
+        "flange_outer_diameter_mm": 11.5,
+        "body_length_mm": 7.9,
+        "shank_diameter_mm": 7.05,
+        "hex_or_od_mm": 9.7
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "终镦法兰盘定形",
+      "geometry_zh": "法兰盘终成形，外径14.4，高1.5，杆部挤压至直径7.08，杆长25，垫圈外轮廓11.4，端面9.9",
+      "dimensions": {
+        "flange_outer_diameter_mm": 14.4,
+        "flange_height_mm": 1.5,
+        "body_length_mm": 7.0,
+        "shank_length_mm": 25,
+        "shank_diameter_mm": 7.08,
+        "washer_od_mm": 11.4,
+        "hex_or_od_mm": 9.9
+      }
+    }
+  ],
+  "material": "302HQ（不锈钢）",
+  "usage_in_prompt": "当用户询问不锈钢法兰带垫螺栓冷镦工艺、多工位成形顺序、法兰盘预成形与终成形尺寸变化、302HQ材料成形要点时，可参考此案例。注意部分尺寸因图纸扫描质量有限，读取存在一定不确定性。"
+}

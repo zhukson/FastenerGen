@@ -1,0 +1,85 @@
+{
+  "id": "automotive_wheel_nut_ml40cr_8_21",
+  "source": "gong_maoliang_Page359_362:362",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "汽车轮胎螺母",
+  "product_category": "汽车紧固件 / 六角螺母",
+  "why_it_matters": "展示汽车轮胎螺母从圆棒料经多工位冷镦成形的典型工艺，包含头部镦粗与杆部缩径的组合变形序列，材质为ML40Cr。",
+  "visible_process_summary_zh": "5个工位（含下料）逐步将圆棒料镦出六角头并形成带锥面的杆部，最终件头部外径约Φ21.8 mm、杆部Φ11.92 mm，总长约43 mm（11+32）。",
+  "visible_dimensions": {
+    "blank_length_mm": 43.7,
+    "blank_diameter_mm": "Φ11.7~11.8（公差约±0.05，OCR读数约11.7±0.03）",
+    "final_total_length_mm": 43,
+    "final_head_length_mm": 11,
+    "final_shank_length_mm": 32,
+    "final_head_od_mm": 21.8,
+    "final_shank_od_mm": 11.92,
+    "final_flange_od_mm": "13.683（OCR/图像一致）",
+    "final_hex_across_flats_approx_mm": 11.85,
+    "collar_od_mm": 6.5,
+    "material": "ML40Cr"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料（坯料）",
+      "geometry_zh": "圆棒料，两端平切",
+      "dimensions": {
+        "length_mm": 43.7,
+        "diameter_mm": "Φ11.7（图像标注约11.7~11.8，公差±0.03 unclear）"
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "第1工位：局部缩径预成形",
+      "geometry_zh": "坯料前端缩径，形成两段：粗段+细段",
+      "dimensions": {
+        "section1_length_mm": 17,
+        "section2_length_mm": 24,
+        "section2_diameter_mm": "Φ11.75"
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "第2工位：头部初镦",
+      "geometry_zh": "头部镦粗至Φ13.5，杆部保持，端部出现锥形预型",
+      "dimensions": {
+        "head_od_mm": 13.5,
+        "head_length_mm": 14.5,
+        "shank_length_mm": 24,
+        "shank_od_mm": "Φ11.80（unclear，约11.8）"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "第3工位：六角头预成形",
+      "geometry_zh": "头部锻出六角外形，外径约Φ13.8，杆部端面锥形进一步成形",
+      "dimensions": {
+        "head_od_mm": 13.8,
+        "head_length_mm": 15.2,
+        "shank_length_mm": 24,
+        "shank_od_mm": "Φ11.85",
+        "end_view_od_mm": 13.5,
+        "end_view_af_mm": 11.7
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "第4工位（终镦）：六角头终成形+法兰+杆部最终尺寸",
+      "geometry_zh": "头部终成六角带法兰，杆部最终缩径，端面锥孔成形，侧视与端视均达成品形状",
+      "dimensions": {
+        "flange_section_length_mm": 2.4,
+        "hex_section_length_mm": 26,
+        "total_length_mm": 43,
+        "head_total_length_mm": 11,
+        "shank_length_mm": 32,
+        "head_od_mm": 21.8,
+        "collar_od_mm": "Φ6.5（unclear）",
+        "shank_od_mm": "Φ11.92",
+        "flange_od_end_view_mm": "13.683",
+        "hex_af_end_view_mm": 11.85
+      }
+    }
+  ],
+  "usage_in_prompt": "当用户询问汽车轮胎螺母（ML40Cr）的冷镦工艺、坯料尺寸、工位序列或各工位变形量时，可引用本案例作为参考。注意各工位尺寸部分来自图像判读，存在一定读数不确定性，应结合实际工艺验证。"
+}

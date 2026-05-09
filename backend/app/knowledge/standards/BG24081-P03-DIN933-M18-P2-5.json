@@ -51,7 +51,14 @@
     "blank": {
       "type": "cylinder",
       "overall_length_mm": 95.0,
-      "max_diameter_mm": 17.7
+      "max_diameter_mm": 17.7,
+      "profile_segments": [
+        {
+          "label_zh": "直杆/坯料",
+          "length_mm": 95.0,
+          "diameter_mm": 17.7
+        }
+      ]
     },
     "stations": [
       {
@@ -60,7 +67,14 @@
         "workpiece": {
           "type": "cylinder",
           "overall_length_mm": 95.0,
-          "max_diameter_mm": 17.7
+          "max_diameter_mm": 17.7,
+          "profile_segments": [
+            {
+              "label_zh": "直杆/坯料",
+              "length_mm": 95.0,
+              "diameter_mm": 17.7
+            }
+          ]
         },
         "key_dimensions": {
           "L": 95.0,
@@ -74,7 +88,19 @@
         "workpiece": {
           "type": "stepped",
           "overall_length_mm": 75.0,
-          "max_diameter_mm": 22.0
+          "max_diameter_mm": 22.0,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 54.0,
+              "diameter_mm": 17.7
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 21.0,
+              "diameter_mm": 22.0
+            }
+          ]
         },
         "key_dimensions": {
           "D_head_pre": 22.0,
@@ -92,7 +118,19 @@
           "head_diameter_mm": 30.14,
           "head_height_mm": 11.5,
           "shank_diameter_mm": 17.7,
-          "shank_length_mm": 25.0
+          "shank_length_mm": 25.0,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 25.0,
+              "diameter_mm": 17.7
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 11.5,
+              "diameter_mm": 30.14
+            }
+          ]
         },
         "key_dimensions": {
           "H_head": 11.5,
@@ -111,7 +149,19 @@
           "head_diameter_mm": 26.67,
           "head_height_mm": 11.5,
           "shank_diameter_mm": 17.7,
-          "shank_length_mm": 25.0
+          "shank_length_mm": 25.0,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 25.0,
+              "diameter_mm": 17.7
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 11.5,
+              "diameter_mm": 26.67
+            }
+          ]
         },
         "key_dimensions": {
           "S_flats": 27.0,

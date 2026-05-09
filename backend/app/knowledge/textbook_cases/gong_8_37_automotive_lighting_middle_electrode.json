@@ -1,0 +1,103 @@
+{
+  "id": "siemens_c615_middle_electrode_cold_heading",
+  "source": "gong_maoliang_Page375_378:378",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "西门子汽车照明 C615 中间电极冷镦工艺",
+  "product_category": "汽车照明电极零件（中间电极）",
+  "why_it_matters": "展示铁镍合金或紫铜材料在多工位冷镦中逐步成形复杂轴类电极零件的典型工艺路线，含锥面、小孔及凸台等特征。",
+  "visible_process_summary_zh": "6工位冷镦（0#下料至5#终镦）：坯料切断后经多次镦粗、预成形和终成形，逐步形成φ8外圆凸台、φ2.4小径杆、45°锥面及5°锥孔等特征，最终达到公差要求。",
+  "visible_dimensions": {
+    "blank_diameter_mm": 4.6,
+    "blank_length_mm": 6.15,
+    "final_flange_od_mm": "8±0.05",
+    "final_small_od_mm": "2.4±0.05",
+    "final_shank_od_mm": "4.9±0.05",
+    "final_cone_half_angle_deg": 5,
+    "final_chamfer_angle_deg": 45,
+    "final_dim_1_2_mm": 1.2,
+    "final_dim_0_6_mm": 0.6,
+    "final_dim_1_5_mm": "1.5±0.03",
+    "material": "铁镍合金 FeNi40（或紫铜）"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料（坯料）",
+      "geometry_zh": "圆棒料切断，直径×长度",
+      "dimensions": {
+        "diameter_mm": 4.6,
+        "length_mm": 6.15
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "1#预镦",
+      "geometry_zh": "镦出头部凸台雏形，端面形成45°倒角，头部径向扩展；预留中心凹坑深约0.6mm",
+      "dimensions": {
+        "head_od_mm": 4.7,
+        "shank_od_mm": 3.5,
+        "center_cavity_depth_mm": 0.6,
+        "chamfer_angle_deg": 45,
+        "length_ref_mm": 6
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "2#镦粗",
+      "geometry_zh": "头部继续扩大至φ4.75，45°锥面成形，长度基准6.15mm，中心凹坑保留约0.6mm",
+      "dimensions": {
+        "head_od_mm": 4.75,
+        "shank_od_mm": 3.5,
+        "center_cavity_depth_mm": 0.6,
+        "chamfer_angle_deg": 45,
+        "length_ref_mm": 6.15
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "3#预成形",
+      "geometry_zh": "成形φ2.5小径台阶及40°锥面，前端φ3.5过渡，外端φ4.8，轴向尺寸6.5mm，锥顶偏置0.65mm，45°前锥",
+      "dimensions": {
+        "small_od_mm": 2.5,
+        "mid_od_mm": 3.5,
+        "outer_od_mm": 4.8,
+        "taper_angle_deg": 40,
+        "front_taper_angle_deg": 45,
+        "length_mm": 6.5,
+        "offset_dim_mm": 0.65,
+        "step_dim_mm": 1.5
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "4#终镦预形",
+      "geometry_zh": "镦出φ8大凸台，小径φ2.4，中径φ4.9，前端5°锥及45°倒角，轴向尺寸1.2/0.6/1.5",
+      "dimensions": {
+        "flange_od_mm": 8,
+        "small_od_mm": 2.4,
+        "mid_od_mm": 4.9,
+        "cone_half_angle_deg": 5,
+        "chamfer_angle_deg": 45,
+        "dim_1_2_mm": 1.2,
+        "dim_0_6_mm": 0.6,
+        "dim_1_5_mm": 1.5
+      }
+    },
+    {
+      "n": 5,
+      "label_zh": "5#终成形（终镦）",
+      "geometry_zh": "终成形至图纸尺寸，各径加公差，5°锥孔及45°锥面精整",
+      "dimensions": {
+        "flange_od_mm": "8±0.05",
+        "small_od_mm": "2.4±0.05",
+        "mid_od_mm": "4.9±0.05",
+        "cone_half_angle_deg": 5,
+        "chamfer_angle_deg": 45,
+        "dim_1_2_mm": 1.2,
+        "dim_0_6_mm": 0.6,
+        "dim_1_5_mm": "1.5±0.03"
+      }
+    }
+  ],
+  "usage_in_prompt": "当用户询问铁镍合金电极零件冷镦工艺、汽车照明部件多工位成形方案、或含锥孔/小径台阶复杂轴类零件工步设计时，可引用本案例作为参考。注意各中间工步尺寸因图纸扫描质量较差，部分数值存在不确定性，应结合实际工艺验证。"
+}

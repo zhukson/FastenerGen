@@ -1,0 +1,81 @@
+{
+  "id": "automotive_clutch_double_head_rivet_8_32",
+  "source": "gong_maoliang_Page371_374:373",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "汽车离合器用双头铆钉",
+  "product_category": "双头铆钉 / double-headed rivet for automotive clutch",
+  "why_it_matters": "汽车离合器用双头铆钉是典型的多工位冷镦产品，两端均需成形头部，工艺设计需兼顾两端成形及孔的加工，代表性较强。",
+  "visible_process_summary_zh": "5工位冷镦成形工艺，材料为35K钢。工序0为下料，工序1为预成形（φ≈29.85%开式火焰），工序2为一次镦头，工序3为主机带驱动凸模双孔成形，工序4、5为后续整形及最终成形。",
+  "visible_dimensions": {
+    "wire_diameter_approx": "unclear, estimated ~6mm range",
+    "blank_length_approx": "35.5 (uncertain)",
+    "material": "35K",
+    "overall_length_approx": "~50 (unclear)",
+    "head_diameter_approx": "unclear",
+    "shank_diameter_approx": "unclear"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "切断原材料棒料，获得坯料",
+      "dimensions": {
+        "length": "35.5 (uncertain)",
+        "diameter": "unclear"
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "预成形（φ=29.85%开式火焰）",
+      "geometry_zh": "一端预镦粗，形成头部预型体，φ≈29.85%减面率",
+      "dimensions": {
+        "preform_head_diameter": "~9.85 (uncertain)",
+        "length": "unclear",
+        "shank_length_segments": "8.57 / 10.01 / 8 / 8.57 (uncertain, OCR noisy)"
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "一次镦头",
+      "geometry_zh": "正式镦出一端头部，另一端保持",
+      "dimensions": {
+        "head_diameter": "unclear, ~φ14–16 range",
+        "head_height": "unclear",
+        "total_length": "unclear",
+        "shank_segments": "8.7/8 / 17.76 / 2×0.8 (uncertain)"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "主机带驱动凸模双孔成形",
+      "geometry_zh": "双向凸模同时冲出两端孔或镦出双头，关键特征工步",
+      "dimensions": {
+        "hole_diameter": "unclear, ~φ10 (uncertain)",
+        "head_dimensions": "unclear",
+        "lengths": "90.6 / 18 / 9.05 / 2×5 (uncertain)"
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "整形",
+      "geometry_zh": "两端头部整形，保证外径和高度精度",
+      "dimensions": {
+        "head_diameter": "unclear",
+        "overall_length": "unclear",
+        "shank_segments": "9.0 / 18.87 / 2×5 (uncertain)"
+      }
+    },
+    {
+      "n": 5,
+      "label_zh": "最终成形",
+      "geometry_zh": "最终尺寸定形，两端头部完成",
+      "dimensions": {
+        "head_diameter": "~φ14–16 (unclear)",
+        "overall_length": "~50 (unclear)",
+        "shank_length": "~21 (unclear)",
+        "segments": "6 / 21 / 13.6 / 50×(unclear) (very uncertain)"
+      }
+    }
+  ],
+  "usage_in_prompt": "用于演示汽车离合器双头铆钉的5工位冷镦成形工艺设计，包含预成形、双头镦制和双孔成形等典型工步。尺寸数值因扫描质量较差，仅供参考，需以原图为准。"
+}

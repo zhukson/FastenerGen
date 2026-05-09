@@ -1,0 +1,203 @@
+{
+  "id": "gong_chapter8_case_index",
+  "source": "gong_maoliang_contents+p355-p378",
+  "status": "image_indexed_not_fully_extracted",
+  "title_zh": "龚茂良第8章经典需工艺变形图案例索引",
+  "product_category": "textbook_case_index",
+  "why_it_matters": "第8章 p355-p378 包含大量复杂异形件冷镦变形图，是 demo 阶段弥补真实 DWG 数量不足的重要低权重参考。该索引用于提醒模型存在相关案例，并驱动后续 vision 精抽。",
+  "usage_in_prompt": "仅作为案例存在性索引，不作为尺寸 ground truth。若某个新零件匹配这里的标题类别，应优先参考已精抽的 textbook_case；如果尚未精抽，则在 reasoning_zh 中说明依据为龚书图例类别而非真实工厂 case。",
+  "cases": [
+    {
+      "section": "8.15",
+      "title_zh": "细长中间大盘半空芯销",
+      "logical_page": 355,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page355_358/p001_book355.png",
+      "category_hint": "long_pin_large_mid_flange_semi_hollow",
+      "relevance_zh": "细长杆 + 中部大盘 + 半空芯，适合补充长杆稳定性、局部大法兰和冲孔/空心件变形顺序。"
+    },
+    {
+      "section": "8.16",
+      "title_zh": "双头六角切边头部盲孔针环",
+      "logical_page": 356,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page355_358/p002_book356.png",
+      "category_hint": "double_head_hex_trimmed_blind_hole_pin_ring",
+      "relevance_zh": "双头、六角切边、盲孔，适合补充两端体积分配和孔特征成形。"
+    },
+    {
+      "section": "8.17",
+      "title_zh": "三角形斜面支承钉",
+      "logical_page": 357,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page355_358/p003_book357.png",
+      "category_hint": "triangular_inclined_support_pin",
+      "relevance_zh": "非轴对称支承面，提示最终异形面通常应放在后段终成形/整形工位。"
+    },
+    {
+      "section": "8.18",
+      "title_zh": "铆接螺栓",
+      "logical_page": 358,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page355_358/p004_book358.png",
+      "category_hint": "riveting_bolt",
+      "relevance_zh": "与现有铆接螺钉/轴销 case 相邻，可增强铆接类零件站序判断。"
+    },
+    {
+      "section": "8.19",
+      "title_zh": "日本内六角短螺钉 M12x1",
+      "logical_page": 359,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page359_362/p001_book359.png",
+      "category_hint": "short_socket_cap_screw",
+      "relevance_zh": "内六角短螺钉案例，和 DIN912 标准件强相关。"
+    },
+    {
+      "section": "8.19",
+      "title_zh": "日本内六角短螺钉 M12x1 关键模具",
+      "logical_page": 360,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page359_362/p002_book360.png",
+      "category_hint": "short_socket_cap_screw_tooling",
+      "relevance_zh": "关键模具页，Phase 1 仅作工艺理解，Phase 2 可用于模具设计。"
+    },
+    {
+      "section": "8.20",
+      "title_zh": "自行车刹车穿芯六角螺钉",
+      "logical_page": 361,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page359_362/p003_book361.png",
+      "category_hint": "through_core_hex_screw",
+      "relevance_zh": "穿芯/孔特征 + 六角螺钉，适合补充冲孔和六角头组合站序。"
+    },
+    {
+      "section": "8.21",
+      "title_zh": "汽车轮胎螺母",
+      "logical_page": 362,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page359_362/p004_book362.png",
+      "category_hint": "automotive_wheel_nut",
+      "relevance_zh": "螺母/通孔/六角外形，适合补充空心件和冲孔流程。"
+    },
+    {
+      "section": "8.22",
+      "title_zh": "家具连接内六角自攻螺钉",
+      "logical_page": 363,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page363_366/p001_book363.png",
+      "category_hint": "furniture_inner_hex_self_tapping_screw",
+      "relevance_zh": "内六角 + 自攻螺钉，适合补充螺钉尾部/杆部成形。"
+    },
+    {
+      "section": "8.23",
+      "title_zh": "折叠沙发架铆钉",
+      "logical_page": 364,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page363_366/p002_book364.png",
+      "category_hint": "sofa_frame_rivet",
+      "relevance_zh": "铆钉类，适合补充短杆/头部镦粗/可能冲孔特征。"
+    },
+    {
+      "section": "8.24",
+      "title_zh": "M8 铆螺母",
+      "logical_page": 365,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page363_366/p003_book365.png",
+      "category_hint": "M8_rivet_nut",
+      "relevance_zh": "铆螺母/空心件，和冲孔、内孔、外形整形高度相关。"
+    },
+    {
+      "section": "8.25",
+      "title_zh": "不锈钢抽芯铆钉",
+      "logical_page": 366,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page363_366/p004_book366.png",
+      "category_hint": "stainless_blind_rivet",
+      "relevance_zh": "不锈钢 + 抽芯铆钉，提示材料和空心/细杆工艺难度更高。"
+    },
+    {
+      "section": "8.26",
+      "title_zh": "不锈钢厨卫螺母",
+      "logical_page": 367,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page367_370/p001_book367.png",
+      "category_hint": "stainless_kitchen_bath_nut",
+      "relevance_zh": "不锈钢螺母类，补充空心螺母和较高材料难度。"
+    },
+    {
+      "section": "8.27",
+      "title_zh": "不锈钢法兰带垫螺栓",
+      "logical_page": 368,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page367_370/p002_book368.png",
+      "category_hint": "stainless_flange_bolt_with_washer",
+      "relevance_zh": "法兰/垫圈特征，补充大法兰和局部薄边成形。"
+    },
+    {
+      "section": "8.28",
+      "title_zh": "汽车火花塞壳体",
+      "logical_page": 369,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page367_370/p003_book369.png",
+      "category_hint": "spark_plug_shell",
+      "relevance_zh": "壳体/空心件，复杂度高，Phase 1 仅低权重参考。"
+    },
+    {
+      "section": "8.29",
+      "title_zh": "螺塞",
+      "logical_page": 370,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page367_370/p004_book370.png",
+      "category_hint": "plug_screw",
+      "relevance_zh": "螺塞类，适合补充短粗件和端部特征。"
+    },
+    {
+      "section": "8.30",
+      "title_zh": "内六角外四角花形套筒工具",
+      "logical_page": 371,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page371_374/p001_book371.png",
+      "category_hint": "inner_hex_outer_square_flower_socket_tool",
+      "relevance_zh": "已单独精简成 textbook_case；内孔/内六角 + 外方/花形套筒。"
+    },
+    {
+      "section": "8.31",
+      "title_zh": "奥迪车用轮胎螺栓",
+      "logical_page": 372,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page371_374/p002_book372.png",
+      "category_hint": "audi_wheel_bolt",
+      "relevance_zh": "汽车轮胎螺栓，和高强度六角/法兰螺栓类相关。"
+    },
+    {
+      "section": "8.32",
+      "title_zh": "汽车离合器用双头铆钉",
+      "logical_page": 373,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page371_374/p003_book373.png",
+      "category_hint": "double_head_rivet",
+      "relevance_zh": "已单独精简成 textbook_case；双头体积分配。"
+    },
+    {
+      "section": "8.33",
+      "title_zh": "摩托车、电瓶车减振活塞杆",
+      "logical_page": 374,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page371_374/p004_book374.png",
+      "category_hint": "shock_absorber_piston_rod",
+      "relevance_zh": "长杆/台阶/端部特征，适合补充长杆稳定性和局部头部成形。"
+    },
+    {
+      "section": "8.34",
+      "title_zh": "T 型螺栓",
+      "logical_page": 375,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page375_378/p001_book375.png",
+      "category_hint": "T_bolt",
+      "relevance_zh": "T 型头，与现有四方 T 帽相邻，适合补充 T 头/切边/成形顺序。"
+    },
+    {
+      "section": "8.35",
+      "title_zh": "铆枪六角穿芯螺钉",
+      "logical_page": 376,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page375_378/p002_book376.png",
+      "category_hint": "rivet_gun_hex_through_core_screw",
+      "relevance_zh": "六角 + 穿芯 + 铆接用途，适合补充冲孔/六角外形组合。"
+    },
+    {
+      "section": "8.36",
+      "title_zh": "带齿短铆钉",
+      "logical_page": 377,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page375_378/p003_book377.png",
+      "category_hint": "short_tooth_rivet",
+      "relevance_zh": "短铆钉 + 齿形，提示齿形通常作为后段整形/压齿特征处理。"
+    },
+    {
+      "section": "8.37",
+      "title_zh": "西门子汽车照明中间电极",
+      "logical_page": 378,
+      "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page375_378/p004_book378.png",
+      "category_hint": "automotive_lighting_middle_electrode",
+      "relevance_zh": "细小电极/台阶件，和细长小直径稳定性相关。"
+    }
+  ]
+}

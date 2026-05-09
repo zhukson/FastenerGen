@@ -50,7 +50,14 @@
     "blank": {
       "type": "cylinder",
       "overall_length_mm": 230.0,
-      "max_diameter_mm": 19.7
+      "max_diameter_mm": 19.7,
+      "profile_segments": [
+        {
+          "label_zh": "直杆/坯料",
+          "length_mm": 230.0,
+          "diameter_mm": 19.7
+        }
+      ]
     },
     "stations": [
       {
@@ -59,7 +66,14 @@
         "workpiece": {
           "type": "cylinder",
           "overall_length_mm": 230.0,
-          "max_diameter_mm": 19.7
+          "max_diameter_mm": 19.7,
+          "profile_segments": [
+            {
+              "label_zh": "直杆/坯料",
+              "length_mm": 230.0,
+              "diameter_mm": 19.7
+            }
+          ]
         },
         "key_dimensions": {
           "L": 230.0,
@@ -73,7 +87,19 @@
         "workpiece": {
           "type": "headed",
           "overall_length_mm": 215.0,
-          "max_diameter_mm": 25.0
+          "max_diameter_mm": 25.0,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 154.8,
+              "diameter_mm": 18.0
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 60.2,
+              "diameter_mm": 25.0
+            }
+          ]
         },
         "key_dimensions": {
           "L": 215.0,
@@ -89,7 +115,19 @@
           "overall_length_mm": 205.0,
           "max_diameter_mm": 30.33,
           "head_diameter_mm": 30.33,
-          "head_height_mm": 20.0
+          "head_height_mm": 20.0,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 185.0,
+              "diameter_mm": 21.838
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 20.0,
+              "diameter_mm": 30.33
+            }
+          ]
         },
         "key_dimensions": {
           "L": 205.0,
@@ -106,7 +144,19 @@
           "overall_length_mm": 205.0,
           "max_diameter_mm": 30.33,
           "head_diameter_mm": 30.33,
-          "head_height_mm": 20.0
+          "head_height_mm": 20.0,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 185.0,
+              "diameter_mm": 21.838
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 20.0,
+              "diameter_mm": 30.33
+            }
+          ]
         },
         "key_dimensions": {
           "socket_size": 17.05,
@@ -124,7 +174,19 @@
           "head_diameter_mm": 30.33,
           "head_height_mm": 20.0,
           "shank_diameter_mm": 19.67,
-          "shank_length_mm": 180.0
+          "shank_length_mm": 180.0,
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 180.0,
+              "diameter_mm": 19.67
+            },
+            {
+              "label_zh": "头部",
+              "length_mm": 20.0,
+              "diameter_mm": 30.33
+            }
+          ]
         },
         "key_dimensions": {
           "D_head": 30.33,

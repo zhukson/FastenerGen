@@ -1,0 +1,95 @@
+{
+  "id": "bicycle_brake_hollow_hex_bolt_8_20",
+  "source": "gong_maoliang_Page359_362:361",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "自行车刹车穿芯六角螺钉",
+  "product_category": "空心六角螺钉 / hollow-core hex bolt (bicycle brake cable anchor)",
+  "why_it_matters": "典型的穿芯（通孔）六角螺钉冷镦案例，用于自行车刹车线固定，展示了从圆棒料到带六角头+通孔成品的多工位冷镦工艺流程。",
+  "visible_process_summary_zh": "4工位冷镦（0#下料 → 1#预成形 → 2#镦头/初形六角 → 3#精整六角头 → 4#最终整形+穿芯孔）；材质 SWRCH10A；各站逐步形成六角头外形并在头部压制穿芯孔。",
+  "visible_dimensions": {
+    "material": "SWRCH10A",
+    "blank_diameter_mm": 5.15,
+    "blank_length_mm": 23.24,
+    "shank_diameter_after_st1_mm": 5.18,
+    "shank_diameter_after_st2_mm": 5.22,
+    "shank_diameter_final_mm": 5.25,
+    "head_hex_across_flats_mm": "6.5 ± 0.05",
+    "head_length_mm": 5.1,
+    "total_length_st1_mm": 19.12,
+    "total_length_st3_mm": 25,
+    "total_length_st4_mm": 25,
+    "core_hole_step_diameter_mm": 2.57,
+    "core_hole_outer_step_mm": 5.25,
+    "hex_head_inscribed_circle_end_view_mm": 7.85,
+    "hex_corner_to_corner_approx_mm": "(9.1)",
+    "core_hole_depth_note": "4.532 mm depth visible at st4 (uncertain)",
+    "flange_or_chamfer_at_head_mm": "1.93 (uncertain)"
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆棒料，两端平切",
+      "dimensions": {
+        "diameter_mm": 5.15,
+        "length_mm": 23.24
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "一次预成形（镦粗头部雏形）",
+      "geometry_zh": "头部局部镦粗，直径约 φ7.7，杆部缩径至 φ5.18；头部长 4.8 mm，杆部长 14.32 mm，总长 19.12 mm",
+      "dimensions": {
+        "head_diameter_mm": 7.7,
+        "head_length_mm": 4.8,
+        "shank_diameter_mm": 5.18,
+        "shank_length_mm": 14.32,
+        "total_length_mm": 19.12
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "二次成形（初形六角头）",
+      "geometry_zh": "头部压入六角模，对边距 6.5±0.05 mm；头部长约 5.1 mm，杆径 φ5.22，总杆长约 14.12 mm；端视图可见四点冲印迹（预穿孔定位），对角约 (9.08) mm",
+      "dimensions": {
+        "hex_across_flats_mm": "6.5 ± 0.05",
+        "head_length_mm": 5.1,
+        "shank_diameter_mm": 5.22,
+        "shank_length_mm": 14.12,
+        "end_view_corner_mm": "(9.08) unclear"
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "三次精整（精形六角头+穿芯孔初步）",
+      "geometry_zh": "六角头精整，对边距 6.5±0.05 mm；头部带台阶孔 φ2.6/φ5.25；头部长 5.1 mm，总长 25 mm，杆长约 18 mm；端视图对角约 (9.1) mm，对边 7.85 mm",
+      "dimensions": {
+        "hex_across_flats_mm": "6.5 ± 0.05",
+        "head_length_mm": 5.1,
+        "total_length_mm": 25,
+        "shank_section_mm": 18,
+        "core_step_small_dia_mm": 2.6,
+        "core_step_large_dia_mm": 5.25,
+        "end_view_across_flats_mm": 7.85,
+        "end_view_corner_mm": "(9.1) unclear"
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "四次最终整形（完成穿芯孔）",
+      "geometry_zh": "六角头对边距 6.5±0.05 mm；头部穿芯孔 φ2.57/φ5.25，孔深约 4.532 mm（不确定）；头部长 5.1 mm，总长 25 mm，头长段 18±0.2 mm；端视图对边 7.85 mm，角部尺寸约 1.93 mm（不确定）",
+      "dimensions": {
+        "hex_across_flats_mm": "6.5 ± 0.05",
+        "head_length_mm": 5.1,
+        "total_length_mm": 25,
+        "controlled_length_mm": "18 ± 0.2",
+        "core_hole_small_dia_mm": 2.57,
+        "core_hole_large_dia_mm": 5.25,
+        "core_hole_depth_mm": "4.532 (uncertain)",
+        "end_view_across_flats_mm": 7.85,
+        "chamfer_or_step_mm": "1.93 (uncertain)"
+      }
+    }
+  ],
+  "usage_in_prompt": "当用户询问自行车刹车螺钉或穿芯六角螺钉的冷镦工艺、工位设计或 SWRCH10A 材料应用时，可引用本案例的工位序列、尺寸演变及穿芯孔成形方法。注意部分尺寸（孔深、倒角）OCR 与图像一致性较低，使用时应核对原图。"
+}

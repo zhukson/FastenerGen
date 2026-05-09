@@ -1,0 +1,41 @@
+# DXF entity summary  (layouts=['Model', 'Layout1'])
+
+# Line geometry bbox: x=[71.1, 589.0]  y=[5.0, 345.0]  (64 lines)
+
+# 27 DIMENSION entities (sorted by x,y)
+# format: x,y  text='<override>'  measurement=<computed>  layer=<name>
+      65.1,   318.6  text='%%C4.7'  measurement=17.227  layer=DIMENSION
+      75.1,   306.6  text='25'  measurement=18.327  layer=DIMENSION
+     205.6,   318.6  text='%%C4.7'  measurement=17.227  layer=DIMENSION
+     215.6,   306.6  text='25'  measurement=18.327  layer=DIMENSION
+     256.2,   196.2  text='%%C3'  measurement=10.996  layer=DIMENSION
+     264.2,   195.1  text='%%C3.6'  measurement=13.195  layer=DIMENSION
+     275.2,   183.9  text='%%C9.7'  measurement=35.555  layer=DIMENSION
+     285.2,   153.9  text='9.31'  measurement=6.622  layer=DIMENSION
+     285.2,   162.9  text='24'  measurement=17.071  layer=DIMENSION
+     285.2,   171.9  text='26.6'  measurement=18.921  layer=DIMENSION
+     291.9,   153.9  text='6.3'  measurement=4.481  layer=DIMENSION
+     296.4,   153.9  text='7.6'  measurement=5.406  layer=DIMENSION
+     302.3,   239.4  text='2.7'  measurement=1.921  layer=DIMENSION
+     328.2,   193.6  text='%%C4.4'  measurement=16.128  layer=DIMENSION
+     346.6,   313.5  text='%%C7.5'  measurement=27.491  layer=DIMENSION
+     353.2,   190.7  text='%%C6'  measurement=21.992  layer=DIMENSION
+     356.6,   283.5  text='20.1'  measurement=14.735  layer=DIMENSION
+     356.6,   292.5  text='20.1'  measurement=14.735  layer=DIMENSION
+     356.6,   301.5  text='23.5'  measurement=17.227  layer=DIMENSION
+     397.9,   318.7  text='%%C4.65'  measurement=17.044  layer=DIMENSION
+     487.5,   309.4  text='%%C9.7'  measurement=35.555  layer=DIMENSION
+     497.5,   279.4  text='19.95'  measurement=14.625  layer=DIMENSION
+     497.5,   288.4  text='19.95'  measurement=14.625  layer=DIMENSION
+     497.5,   297.4  text='22.6'  measurement=16.568  layer=DIMENSION
+     512.1,   365.0  text='2.7'  measurement=1.979  layer=DIMENSION
+     538.0,   318.8  text='%%C4.6'  measurement=16.861  layer=DIMENSION
+     563.0,   316.2  text='%%C6'  measurement=21.992  layer=DIMENSION
+
+# 6 MTEXT/TEXT annotations
+  TEXT      412.0,     8.2  '单号'
+  TEXT      412.0,    18.2  '机型'
+  TEXT      412.0,    28.2  '产品名称'
+  TEXT      454.0,     8.2  'F50010790'
+  TEXT      454.0,    18.2  '-'
+  TEXT      454.0,    28.2  'Detent pin 内六角自攻定位销 (Delta PT 40)'

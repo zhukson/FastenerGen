@@ -1,0 +1,113 @@
+{
+  "id": "hex_socket_square_spline_sleeve_tool_p371",
+  "source": "gong_maoliang_Page371_374:371",
+  "status": "llm_draft_low_confidence",
+  "title_zh": "内六角外四角花形套筒工具",
+  "product_category": "套筒工具 / socket tool (hex-internal, square-external spline)",
+  "why_it_matters": "展示多工位冷镦成形套筒类工具的各工序毛坯形状演变，从圆棒料逐步成形出内六角、外四角花形结构。",
+  "visible_process_summary_zh": "共约5个工序图示：①原始圆棒料；②预缩径分段；③进一步阶梯成形；④外花形轮廓成形+端面端头；⑤最终形态含内六角孔及外四角花形，附截面端视图。",
+  "visible_dimensions": {
+    "blank_diameter_mm": 12.5,
+    "blank_length_mm": 48,
+    "station2_large_dia_mm": 12.7,
+    "station2_small_dia_mm": 10.2,
+    "station2_seg1_length_mm": 35.5,
+    "station2_seg2_length_mm": 19,
+    "station3_large_dia_mm": 13.7,
+    "station3_mid_dia_mm": 10.3,
+    "station3_small_dia_mm": 12.76,
+    "station3_seg1_length_mm": 18.5,
+    "station3_seg2_length_mm": 15,
+    "station3_seg3_length_mm": 19,
+    "station4_large_dia_mm": 13.8,
+    "station4_mid_dia_mm": 10.4,
+    "station4_hex_od_mm": 12.82,
+    "station4_seg1_length_mm": 23,
+    "station4_seg2_length_mm": 15,
+    "station4_seg3_length_mm": 19,
+    "station4_end_view_across_flats_mm": 9.8,
+    "station5_large_dia_mm": 13.8,
+    "station5_inner_dia_mm": 9.5,
+    "station5_hex_od_mm": 12.9,
+    "station5_seg1_length_mm": 30,
+    "station5_seg2_length_mm": 12.2,
+    "station5_seg3_length_mm": 29,
+    "station5_nose_length_mm": 11,
+    "station5_collar_length_mm": 13.5,
+    "station5_end_view_hex_af_mm": 9.8,
+    "station5_end_view_od_mm": 13.8,
+    "punch_tip_od_mm": 10.5,
+    "punch_tip_length_mm": 3.2,
+    "punch_tip_wall_or_detail_mm": 1.6
+  },
+  "station_sequence": [
+    {
+      "n": 0,
+      "label_zh": "下料",
+      "geometry_zh": "圆棒料，均匀直径",
+      "dimensions": {
+        "diameter_mm": 12.5,
+        "length_mm": 48
+      }
+    },
+    {
+      "n": 1,
+      "label_zh": "预缩径（一次挤压）",
+      "geometry_zh": "两段阶梯圆柱，前段大径、后段小径",
+      "dimensions": {
+        "large_dia_mm": 12.7,
+        "small_dia_mm": 10.2,
+        "large_seg_length_mm": 35.5,
+        "small_seg_length_mm": 19
+      }
+    },
+    {
+      "n": 2,
+      "label_zh": "三段阶梯成形",
+      "geometry_zh": "三段阶梯，头部扩大，中段过渡，尾段外花形预成形",
+      "dimensions": {
+        "head_dia_mm": 13.7,
+        "mid_dia_mm": 10.3,
+        "tail_dia_mm": 12.76,
+        "seg1_length_mm": 18.5,
+        "seg2_length_mm": 15,
+        "seg3_length_mm": 19
+      }
+    },
+    {
+      "n": 3,
+      "label_zh": "外花形轮廓成形",
+      "geometry_zh": "头部外花形区域成形，尾端出现六角形截面，端视图对边距9.8 mm",
+      "dimensions": {
+        "head_spline_dia_mm": 13.8,
+        "mid_dia_mm": 10.4,
+        "hex_od_mm": 12.82,
+        "seg1_length_mm": 23,
+        "seg2_length_mm": 15,
+        "seg3_length_mm": 19,
+        "end_view_af_mm": 9.8
+      }
+    },
+    {
+      "n": 4,
+      "label_zh": "最终成形（含内六角孔）",
+      "geometry_zh": "头部外四角花形区域完成，内部冲出六角孔，尾端六角外形，附冲头形状",
+      "dimensions": {
+        "head_spline_dia_mm": 13.8,
+        "inner_hex_dia_mm": 9.5,
+        "tail_hex_od_mm": 12.9,
+        "nose_length_mm": 11,
+        "collar_length_mm": 13.5,
+        "seg1_length_mm": 30,
+        "seg2_length_mm": 12.2,
+        "seg3_length_mm": 29,
+        "end_view_hex_af_mm": 9.8,
+        "end_view_body_od_mm": 13.8,
+        "punch_tip_od_mm": 10.5,
+        "punch_tip_length_mm": 3.2,
+        "punch_detail_mm": 1.6
+      }
+    }
+  ],
+  "usage_in_prompt": "Reference for multi-station cold heading of socket tools with internal hex and external square/spline features; provides station-by-station diameter and length progressions for a ~Ø12.5×48 mm blank."
+}

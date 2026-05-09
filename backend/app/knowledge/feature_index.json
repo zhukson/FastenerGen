@@ -1,0 +1,2868 @@
+{
+  "version": "feature_index_v1",
+  "counts": {
+    "cases": 8,
+    "standards": 3,
+    "textbook_cases": 26,
+    "skipped": 0
+  },
+  "by_feature": {
+    "external_ball_head": [
+      {
+        "case_id": "12齿车削球头",
+        "kind": "cases"
+      },
+      {
+        "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_blind_rivet_302hq_8_25",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_kitchen_sanitary_nut_8_26",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_flange_bolt_with_washer_8_27",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "audi_wheel_bolt_case_8_31",
+        "kind": "textbook_cases"
+      }
+    ],
+    "op_forward_extrude_taper": [
+      {
+        "case_id": "12齿车削球头",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "BG30060-P03-DIN912-M20-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "slim_large_flange_semi_hollow_pin_8_15",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "double_head_hex_blind_hole_rivet_blank_8_16",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "螺塞_cold_heading_case_p370",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+        "kind": "textbook_cases"
+      }
+    ],
+    "op_predeform_conical": [
+      {
+        "case_id": "12齿车削球头",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "BG24081-P03-DIN933-M18-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "BG30060-P03-DIN912-M20-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "BG30060-P05-DIN933-M22-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "triangular_bevel_support_pin_8_17",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "riveting_bolt_8_18_p358",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "folding_sofa_frame_rivet_small_stock_large_deformation_8_23",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_blind_rivet_302hq_8_25",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_flange_bolt_with_washer_8_27",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "audi_wheel_bolt_case_8_31",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "automotive_clutch_double_head_rivet_8_32",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "t_bolt_cold_heading_8_34",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "rivet_gun_hex_through_core_bolt_8_35",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "带齿短铆钉_8_36",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "siemens_c615_middle_electrode_cold_heading",
+        "kind": "textbook_cases"
+      }
+    ],
+    "op_trim_polygon": [
+      {
+        "case_id": "12齿车削球头",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "BG24081-P03-DIN933-M18-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "BG30060-P05-DIN933-M22-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "double_head_hex_blind_hole_rivet_blank_8_16",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "triangular_bevel_support_pin_8_17",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "带齿短铆钉_8_36",
+        "kind": "textbook_cases"
+      }
+    ],
+    "external_flange_head": [
+      {
+        "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "automotive_wheel_nut_ml40cr_8_21",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_flange_bolt_with_washer_8_27",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "螺塞_cold_heading_case_p370",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "audi_wheel_bolt_case_8_31",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+        "kind": "textbook_cases"
+      }
+    ],
+    "external_pan_head": [
+      {
+        "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "BG24081-P03-DIN933-M18-P2-5",
+        "kind": "standards"
+      }
+    ],
+    "op_backward_extrude_socket": [
+      {
+        "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "BG24081-P03-DIN933-M18-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "BG30060-P03-DIN912-M20-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "BG30060-P05-DIN933-M22-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "double_head_hex_blind_hole_rivet_blank_8_16",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "bicycle_brake_hollow_hex_bolt_8_20",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "furniture_hex_self_tapping_screw_8_22",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "gong_8_30_inner_hex_outer_square_flower_socket",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "hex_socket_square_spline_sleeve_tool_p371",
+        "kind": "textbook_cases"
+      }
+    ],
+    "op_pierce_through": [
+      {
+        "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "slim_large_flange_semi_hollow_pin_8_15",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+        "kind": "textbook_cases"
+      }
+    ],
+    "through_hole": [
+      {
+        "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
+        "kind": "textbook_cases"
+      }
+    ],
+    "shoulder_step": [
+      {
+        "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "riveting_bolt_8_18_p358",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "bicycle_brake_hollow_hex_bolt_8_20",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_blind_rivet_302hq_8_25",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "spark_plug_shell_cold_heading_8_28",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "螺塞_cold_heading_case_p370",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "gong_8_30_inner_hex_outer_square_flower_socket",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "hex_socket_square_spline_sleeve_tool_p371",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "siemens_c615_middle_electrode_cold_heading",
+        "kind": "textbook_cases"
+      }
+    ],
+    "taper_end": [
+      {
+        "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "BG24081-P03-DIN933-M18-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "BG30060-P03-DIN912-M20-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "BG30060-P05-DIN933-M22-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "folding_sofa_frame_rivet_small_stock_large_deformation_8_23",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_kitchen_sanitary_nut_8_26",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "spark_plug_shell_cold_heading_8_28",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "audi_wheel_bolt_case_8_31",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "siemens_c615_middle_electrode_cold_heading",
+        "kind": "textbook_cases"
+      }
+    ],
+    "op_two_blow_upset": [
+      {
+        "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "BG24081-P03-DIN933-M18-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "folding_sofa_frame_rivet_small_stock_large_deformation_8_23",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "螺塞_cold_heading_case_p370",
+        "kind": "textbook_cases"
+      }
+    ],
+    "internal_hex_head": [
+      {
+        "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "BG30060-P03-DIN912-M20-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "furniture_hex_self_tapping_screw_8_22",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "gong_8_30_inner_hex_outer_square_flower_socket",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "hex_socket_square_spline_sleeve_tool_p371",
+        "kind": "textbook_cases"
+      }
+    ],
+    "external_square_head": [
+      {
+        "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+        "kind": "cases"
+      }
+    ],
+    "thread_external": [
+      {
+        "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "BG24081-P03-DIN933-M18-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "BG30060-P03-DIN912-M20-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "BG30060-P05-DIN933-M22-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "t_bolt_cold_heading_8_34",
+        "kind": "textbook_cases"
+      }
+    ],
+    "thread_internal": [
+      {
+        "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+        "kind": "cases"
+      }
+    ],
+    "rivet_tail": [
+      {
+        "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+        "kind": "cases"
+      },
+      {
+        "case_id": "double_head_hex_blind_hole_rivet_blank_8_16",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "riveting_bolt_8_18_p358",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "folding_sofa_frame_rivet_small_stock_large_deformation_8_23",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_blind_rivet_302hq_8_25",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "automotive_clutch_double_head_rivet_8_32",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "带齿短铆钉_8_36",
+        "kind": "textbook_cases"
+      }
+    ],
+    "external_hex_head": [
+      {
+        "case_id": "BG24081-P03-DIN933-M18-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "BG30060-P05-DIN933-M22-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "bicycle_brake_hollow_hex_bolt_8_20",
+        "kind": "textbook_cases"
+      }
+    ],
+    "long_thin_shank": [
+      {
+        "case_id": "BG30060-P03-DIN912-M20-P2-5",
+        "kind": "standards"
+      }
+    ],
+    "internal_recess": [
+      {
+        "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+        "kind": "textbook_cases"
+      }
+    ]
+  },
+  "by_case": {
+    "12齿车削球头": [
+      "external_ball_head",
+      "op_forward_extrude_taper",
+      "op_predeform_conical",
+      "op_trim_polygon"
+    ],
+    "DJGS-22-2-四方通孔-105S-过模图": [
+      "external_flange_head",
+      "external_pan_head",
+      "op_backward_extrude_socket",
+      "op_forward_extrude_taper",
+      "op_pierce_through",
+      "op_trim_polygon",
+      "through_hole"
+    ],
+    "DJGS-24-6-冲铆轴销-YT105S-过模图": [
+      "external_flange_head",
+      "op_forward_extrude_taper",
+      "op_trim_polygon",
+      "shoulder_step",
+      "taper_end"
+    ],
+    "DJGS-25-2-B120-0044-YT105S-过模图": [
+      "external_flange_head",
+      "op_backward_extrude_socket",
+      "op_trim_polygon",
+      "op_two_blow_upset",
+      "taper_end"
+    ],
+    "DJGS-25-5-B144-0056-106S-过模图": [
+      "external_flange_head",
+      "internal_hex_head",
+      "op_backward_extrude_socket",
+      "op_pierce_through",
+      "op_predeform_conical",
+      "op_trim_polygon",
+      "taper_end",
+      "through_hole"
+    ],
+    "DJGS-25-7-21023C-00808-106S-过模图": [
+      "internal_hex_head",
+      "op_backward_extrude_socket",
+      "op_forward_extrude_taper",
+      "op_predeform_conical"
+    ],
+    "DJGS-25-8-B001-0358-四方T帽-106S-过模图": [
+      "external_pan_head",
+      "external_square_head",
+      "op_forward_extrude_taper",
+      "op_pierce_through",
+      "op_trim_polygon",
+      "shoulder_step",
+      "thread_external",
+      "thread_internal",
+      "through_hole"
+    ],
+    "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图": [
+      "internal_hex_head",
+      "op_backward_extrude_socket",
+      "op_forward_extrude_taper",
+      "op_predeform_conical",
+      "rivet_tail",
+      "shoulder_step",
+      "taper_end"
+    ],
+    "BG24081-P03-DIN933-M18-P2-5": [
+      "external_hex_head",
+      "external_pan_head",
+      "op_backward_extrude_socket",
+      "op_predeform_conical",
+      "op_trim_polygon",
+      "op_two_blow_upset",
+      "taper_end",
+      "thread_external"
+    ],
+    "BG30060-P03-DIN912-M20-P2-5": [
+      "internal_hex_head",
+      "long_thin_shank",
+      "op_backward_extrude_socket",
+      "op_forward_extrude_taper",
+      "op_predeform_conical",
+      "taper_end",
+      "thread_external"
+    ],
+    "BG30060-P05-DIN933-M22-P2-5": [
+      "external_hex_head",
+      "op_backward_extrude_socket",
+      "op_predeform_conical",
+      "op_trim_polygon",
+      "taper_end",
+      "thread_external"
+    ],
+    "gb_t5784_m8x80_bolt_cold_heading_tooling": [
+      "op_predeform_conical",
+      "thread_external",
+      "through_hole"
+    ],
+    "shcs_m8x18_gb_t70_1_2000_3station_coldheading": [
+      "internal_hex_head",
+      "op_backward_extrude_socket",
+      "op_forward_extrude_taper",
+      "shoulder_step",
+      "thread_external"
+    ],
+    "slim_large_flange_semi_hollow_pin_8_15": [
+      "op_forward_extrude_taper",
+      "op_pierce_through"
+    ],
+    "double_head_hex_blind_hole_rivet_blank_8_16": [
+      "op_backward_extrude_socket",
+      "op_forward_extrude_taper",
+      "op_trim_polygon",
+      "rivet_tail"
+    ],
+    "triangular_bevel_support_pin_8_17": [
+      "op_predeform_conical",
+      "op_trim_polygon"
+    ],
+    "riveting_bolt_8_18_p358": [
+      "op_predeform_conical",
+      "rivet_tail",
+      "shoulder_step"
+    ],
+    "japanese_hex_socket_short_screw_m12x1_part1": [
+      "external_ball_head",
+      "internal_hex_head",
+      "op_backward_extrude_socket",
+      "op_pierce_through",
+      "op_predeform_conical",
+      "op_two_blow_upset",
+      "shoulder_step",
+      "taper_end",
+      "thread_external"
+    ],
+    "bicycle_brake_hollow_hex_bolt_8_20": [
+      "external_hex_head",
+      "op_backward_extrude_socket",
+      "shoulder_step"
+    ],
+    "automotive_wheel_nut_ml40cr_8_21": [
+      "external_flange_head"
+    ],
+    "furniture_hex_self_tapping_screw_8_22": [
+      "internal_hex_head",
+      "op_backward_extrude_socket"
+    ],
+    "folding_sofa_frame_rivet_small_stock_large_deformation_8_23": [
+      "op_predeform_conical",
+      "op_two_blow_upset",
+      "rivet_tail",
+      "taper_end"
+    ],
+    "m8_rivet_nut_cold_heading_case_8_24": [
+      "internal_recess",
+      "op_predeform_conical",
+      "shoulder_step",
+      "taper_end"
+    ],
+    "stainless_blind_rivet_302hq_8_25": [
+      "external_ball_head",
+      "op_predeform_conical",
+      "rivet_tail",
+      "shoulder_step"
+    ],
+    "stainless_kitchen_sanitary_nut_8_26": [
+      "external_ball_head",
+      "taper_end"
+    ],
+    "stainless_flange_bolt_with_washer_8_27": [
+      "external_ball_head",
+      "external_flange_head",
+      "op_predeform_conical"
+    ],
+    "spark_plug_shell_cold_heading_8_28": [
+      "shoulder_step",
+      "taper_end"
+    ],
+    "螺塞_cold_heading_case_p370": [
+      "external_flange_head",
+      "op_forward_extrude_taper",
+      "op_two_blow_upset",
+      "shoulder_step"
+    ],
+    "gong_8_30_inner_hex_outer_square_flower_socket": [
+      "internal_hex_head",
+      "op_backward_extrude_socket",
+      "shoulder_step"
+    ],
+    "hex_socket_square_spline_sleeve_tool_p371": [
+      "internal_hex_head",
+      "op_backward_extrude_socket",
+      "shoulder_step"
+    ],
+    "audi_wheel_bolt_case_8_31": [
+      "external_ball_head",
+      "external_flange_head",
+      "op_predeform_conical",
+      "taper_end"
+    ],
+    "automotive_clutch_double_head_rivet_8_32": [
+      "op_predeform_conical",
+      "rivet_tail"
+    ],
+    "motorcycle_ebike_shock_absorber_piston_rod_8_33": [
+      "external_flange_head",
+      "op_forward_extrude_taper",
+      "shoulder_step",
+      "taper_end",
+      "thread_external"
+    ],
+    "t_bolt_cold_heading_8_34": [
+      "op_predeform_conical",
+      "thread_external"
+    ],
+    "rivet_gun_hex_through_core_bolt_8_35": [
+      "op_predeform_conical"
+    ],
+    "带齿短铆钉_8_36": [
+      "op_predeform_conical",
+      "op_trim_polygon",
+      "rivet_tail"
+    ],
+    "siemens_c615_middle_electrode_cold_heading": [
+      "op_predeform_conical",
+      "shoulder_step",
+      "taper_end"
+    ]
+  },
+  "station_index": [
+    {
+      "case_id": "12齿车削球头",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_forward_extrude_taper",
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "一工位：缩径正挤压形成杆部并预镦头部",
+      "kind": "cases"
+    },
+    {
+      "case_id": "12齿车削球头",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "二工位：镦粗形成头部圆形雏形",
+      "kind": "cases"
+    },
+    {
+      "case_id": "12齿车削球头",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "三工位：终镦成型六角头部及球头过渡面",
+      "kind": "cases"
+    },
+    {
+      "case_id": "12齿车削球头",
+      "station_n": 4,
+      "operation": "trimming",
+      "features": [
+        "op_trim_polygon",
+        "raw_op:trimming"
+      ],
+      "summary": "四工位：六角切边，形成最终六角头外形",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "镦粗成型预制头, 下端预成形带锥度",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+      "station_n": 2,
+      "operation": "combined",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:combined"
+      ],
+      "summary": "进一步镦粗成型法兰圆形外轮廓, 反挤压形成下端柄部",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+      "station_n": 3,
+      "operation": "combined",
+      "features": [
+        "op_backward_extrude_socket",
+        "op_forward_extrude_taper",
+        "raw_op:combined"
+      ],
+      "summary": "镦四方外形(10×10, 4-R1.5), 中心反挤压预成型孔, 下端正挤压形成柄部",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+      "station_n": 4,
+      "operation": "piercing",
+      "features": [
+        "op_pierce_through",
+        "raw_op:piercing"
+      ],
+      "summary": "中心冲通孔, 法兰外圆 ø20.5 保留四方轮廓",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+      "station_n": 5,
+      "operation": "trimming",
+      "features": [
+        "op_trim_polygon",
+        "raw_op:trimming"
+      ],
+      "summary": "切边修整为最终四方法兰外形 15.05×15.05, 4-R1.5",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+      "station_n": 1,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "正向挤压细杆部，保留头部坯料；R1.5/R0.5 过渡圆角",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+      "station_n": 2,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "二次挤压成形，头部出现 φ9.2 阶梯（预成形凸台）",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+      "station_n": 3,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "镦粗成型头部，形成短粗法兰预形，头顶预留 φ8.35 凹槽",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+      "station_n": 4,
+      "operation": "combined",
+      "features": [
+        "op_trim_polygon",
+        "raw_op:combined"
+      ],
+      "summary": "终镦+切边：法兰外径成形 φ19、头部凸台 φ10.95，杆端倒角 1.2×φ6.6；六角切边在最后一序完成",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "第一次镦粗整形",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_two_blow_upset",
+        "raw_op:upsetting"
+      ],
+      "summary": "二次镦粗，头部成形",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+      "station_n": 3,
+      "operation": "combined",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:combined"
+      ],
+      "summary": "镦凸缘+反挤预成形",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+      "station_n": 4,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "终成形：双向挤压+法兰镦粗",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+      "station_n": 5,
+      "operation": "trimming",
+      "features": [
+        "op_trim_polygon",
+        "raw_op:trimming"
+      ],
+      "summary": "切边整形，得到成品",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "整形/倒角，料杆端部修整准备聚料",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦头部，形成球冠形预成形头",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "终镦扁平大法兰头部，初步形成头部轮廓",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+      "station_n": 4,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "头部反挤压，预冲内孔",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+      "station_n": 5,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "op_trim_polygon",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "切边修整外缘，反挤压成型内六角孔",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+      "station_n": 6,
+      "operation": "piercing",
+      "features": [
+        "op_pierce_through",
+        "raw_op:piercing"
+      ],
+      "summary": "冲通内孔/最终成型，孔径5.15",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "整形坯料,直径轻微胀粗,端面平整",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+      "station_n": 2,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "正挤压成型杆部Φ5.17,长度13mm,头部段保留Φ6.66",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+      "station_n": 3,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "二次正挤压继续延长杆部至21.15mm,直径Φ5.15",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+      "station_n": 4,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦头部成圆柱形,Φ9.4×6.4",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+      "station_n": 5,
+      "operation": "combined",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:combined"
+      ],
+      "summary": "终镦头部成形+反挤压预成内六角凹槽",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+      "station_n": 6,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "反挤压成形内六角孔Φ7.17,头部Φ9.6×6.45定型",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "整形镦粗,料径校正至 10.78",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+      "station_n": 2,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "正挤压成型,挤出 φ7.84 杆部,头部预成形 φ10.85×11.08",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "镦粗成圆形大头(C17),头厚 4.1,杆部 φ7.87×14",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+      "station_n": 4,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "压扁四方成形+正面凹坑(C7.2 凹槽,深 3.0),四方对边 17.65,毛边外径 24",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+      "station_n": 5,
+      "operation": "trimming",
+      "features": [
+        "op_trim_polygon",
+        "raw_op:trimming"
+      ],
+      "summary": "切边修整成四方头 17.65×17.65,4-R2.5 圆角,头厚 2.0",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+      "station_n": 6,
+      "operation": "piercing",
+      "features": [
+        "op_pierce_through",
+        "raw_op:piercing"
+      ],
+      "summary": "冲通孔 φ9.65 为后续攻丝做准备",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+      "station_n": 1,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料：剪切棒料为圆柱坯，长度16.6mm，直径6.9mm",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+      "station_n": 2,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "整形并倒锥端：下端缩径至3.94，过渡圆角R2.83，便于后续挤压定位",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+      "station_n": 3,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "正挤压：形成主体直径6.98与端部缩径3.98的台阶过渡",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+      "station_n": 4,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "继续正挤：拉伸下端形成铆接杆部，杆径3.86，杆长6.3",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+      "station_n": 5,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "op_predeform_conical",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "上端预镦平准备六角成形，下端形成铆接台肩6.36×3.03，末端铆杆3.93×3.1",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+      "station_n": 6,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "整形头部并修整六角轮廓预备，下端铆接台肩定型",
+      "kind": "cases"
+    },
+    {
+      "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+      "station_n": 7,
+      "operation": "combined",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:combined"
+      ],
+      "summary": "成形六角头(对边7.13)、内六角孔4.13×深度、铆接台肩6.36与铆接尾杆2.95×1.5",
+      "kind": "cases"
+    },
+    {
+      "case_id": "BG24081-P03-DIN933-M18-P2-5",
+      "station_n": 1,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "切料：从 Ø17.7 线材切取所需长度坯料，端部倒角",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG24081-P03-DIN933-M18-P2-5",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "一次镦粗：聚料形成头部预成形（锥形过渡）",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG24081-P03-DIN933-M18-P2-5",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "op_two_blow_upset",
+        "raw_op:heading"
+      ],
+      "summary": "二次镦粗成形六角头（头顶 30° 倒角，R0.6 圆角）",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG24081-P03-DIN933-M18-P2-5",
+      "station_n": 4,
+      "operation": "trimming",
+      "features": [
+        "op_trim_polygon",
+        "raw_op:trimming"
+      ],
+      "summary": "切边：将圆头切成六角形，对边 27 mm，对角 26.67 mm",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG30060-P03-DIN912-M20-P2-5",
+      "station_n": 1,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料：将盘元剪切成定长坯料，线径Ø19.7",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG30060-P03-DIN912-M20-P2-5",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦：粗镦聚料，形成头部预成形料球",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG30060-P03-DIN912-M20-P2-5",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "终镦头：成形圆柱头外形，头径Ø30.33，头高约20",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG30060-P03-DIN912-M20-P2-5",
+      "station_n": 4,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "反挤压成形内六角孔，对边17.05，深度≥10",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG30060-P03-DIN912-M20-P2-5",
+      "station_n": 5,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "正挤压杆部至搓牙底径Ø19.67，并倒角50°/30°",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG30060-P05-DIN933-M22-P2-5",
+      "station_n": 1,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料：Ø21.7 线材切断，长度按成品体积估算",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG30060-P05-DIN933-M22-P2-5",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦：将头部料团预聚成圆台",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG30060-P05-DIN933-M22-P2-5",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "终镦：成形六角头雏形（带圆角），头顶刻字 TASK 6.8",
+      "kind": "standards"
+    },
+    {
+      "case_id": "BG30060-P05-DIN933-M22-P2-5",
+      "station_n": 4,
+      "operation": "trimming",
+      "features": [
+        "op_trim_polygon",
+        "raw_op:trimming"
+      ],
+      "summary": "切边：将头部圆周修剪为六角形，对边距 30，对角距 35.72，杆端 45° 倒角",
+      "kind": "standards"
+    },
+    {
+      "case_id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
+      "station_n": 0,
+      "operation": "piercing",
+      "features": [
+        "raw_op:piercing"
+      ],
+      "summary": "下料（切料） 线材切断，坯料为圆柱体。切料模编号Z46-8/3-000，模芯YG25C，模套H13(HRC46-49)。通孔φ20引导线材，刀片分割。",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "1序（预镦头部） 坯料头部镦粗预成形，头部直径扩展至约φ14.95，头部导入角15~30°，顶角10°，杆部基本不变。模具组装图编号100。",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "2序（再镦头部） 头部进一步成形，形状接近最终六角头轮廓，头部角部添加R0.5圆角，杆部φ7.10。模具组装图编号200。",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "3序（终镦六角头成形） 六角头终成形，头部对角径φ14.73，对边径≥φ14.42，头高约5.3mm（GB/T5784 M8 标准值），杆部φ7.10。模具组装图编号300。",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "切料 (下料) 剪切圆棒料为坯料；切料模组装图号 Z46-8/3-000，切料组件含件001(外套φ35/φ20)和件002(内衬φ38/φ20)，切料长度方向尺寸50mm(外)/22mm，内孔定位直径φ20mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+      "station_n": 1,
+      "operation": "forward_extrusion",
+      "features": [
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "1序 — 镦头预成形（缩径+头部初成形） 将坯料镦粗头部，同时对杆部进行缩径预成形。模具组装图号Z46-8/3-100，含件101~113，整体高度约110mm(模座)，冲头侧φ60mm，外套φ50mm。头部外径从φ7.7镦至φ9.2，杆部形成上下台阶。",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+      "station_n": 2,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "op_forward_extrude_taper",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "2序 — 正挤杆部/头部扩径+六角预冲 进一步镦大头部至φ12.76，用100°锥角冲头预冲六角孔，杆部正挤缩径。模具组装图号Z46-8/3-200，含件101~104(共用)及205~211，整体高度约110mm(上)/115mm(下)，φ60mm导柱。",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+      "station_n": 3,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "3序 — 终成形（头部精整+六角孔精冲） 终成形头部至最终尺寸φ13mm、高约8mm（GB/T70.1 M8 spec kmax=8；草稿数据 6.5 与 size table kmax 矛盾，已改用 spec 值）；30°入口角精冲六角孔至深4mm、对边S=6mm；杆部终缩径至φ7.08(搓丝前)。模具组装图号Z46-8/3-300。",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+      "station_n": 4,
+      "operation": "",
+      "features": [],
+      "summary": "后工序 — 搓丝/滚丝 使用d1尺寸杆部进行搓丝或滚丝，得到最终螺纹M8×1.25（6g）。M8对应d1=7.10mm，d2(螺纹小径)=6.4mm。",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "slim_large_flange_semi_hollow_pin_8_15",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 线材切断，直径φ12，长度按体积计算",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "slim_large_flange_semi_hollow_pin_8_15",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "预成形 / 头部初镦 坯料整形，端面平整，初步建立杆部与头部过渡区",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "slim_large_flange_semi_hollow_pin_8_15",
+      "station_n": 2,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "中间大盘凸缘镦粗 在杆部中间位置正挤+局部镦粗形成大直径凸缘，杆两侧分别缩径至φ5.3与φ7",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "slim_large_flange_semi_hollow_pin_8_15",
+      "station_n": 3,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "杆部整形 / 缩径 正挤压使杆部达到最终直径，总体长度趋近72.55 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "slim_large_flange_semi_hollow_pin_8_15",
+      "station_n": 4,
+      "operation": "piercing",
+      "features": [
+        "op_pierce_through",
+        "raw_op:piercing"
+      ],
+      "summary": "半空心穿孔 尾端冲孔形成半空心盲孔，孔深19.4 mm，孔径φ5.3",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "double_head_hex_blind_hole_rivet_blank_8_16",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆柱线材剪切，长度按体积计算",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "double_head_hex_blind_hole_rivet_blank_8_16",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "预成形（镦粗端部） 一端局部镦粗，形成预头部凸台，坯料轴线保持",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "double_head_hex_blind_hole_rivet_blank_8_16",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "六角头部镦粗 将预头部在六角凹模中镦入六角外形，对边距约13 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "double_head_hex_blind_hole_rivet_blank_8_16",
+      "station_n": 3,
+      "operation": "trimming",
+      "features": [
+        "op_trim_polygon",
+        "raw_op:trimming"
+      ],
+      "summary": "切边整形 六角头部切边，去除飞边，确保头部高度约10 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "double_head_hex_blind_hole_rivet_blank_8_16",
+      "station_n": 4,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "盲孔反挤（头部盲孔成形） 在头部端面反挤盲孔，孔口径约φ7.7 mm，头部外径φ11 mm，杆部φ8 mm，总长51.5 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "triangular_bevel_support_pin_8_17",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 线材剪切成坯料，直径及长度依杆部尺寸确定",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "triangular_bevel_support_pin_8_17",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "第一工位：预镦 初步镦粗一端，形成头部雏形，杆部基本整形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "triangular_bevel_support_pin_8_17",
+      "station_n": 2,
+      "operation": "",
+      "features": [],
+      "summary": "第二工位：中间成形 进一步压制头部，逐渐形成三角形斜面轮廓",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "triangular_bevel_support_pin_8_17",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "第三工位：终成形 精整三角形斜面头部（宽19mm，R7.5），确定杆部最终直径Φ8.4±0.1及各段长度",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "triangular_bevel_support_pin_8_17",
+      "station_n": 4,
+      "operation": "trimming",
+      "features": [
+        "op_trim_polygon",
+        "raw_op:trimming"
+      ],
+      "summary": "第四工位：整形/切边（推测） 图示有第4工位冲头，具体工序unclear，可能为整形或缩杆",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "riveting_bolt_8_18_p358",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆柱坯料",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "riveting_bolt_8_18_p358",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦整形 初步整形，一端局部镦粗，形成小台阶",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "riveting_bolt_8_18_p358",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "头部预成形 镦出头部雏形，锥角约139°，形成颈部与头部过渡",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "riveting_bolt_8_18_p358",
+      "station_n": 3,
+      "operation": "forward_extrusion",
+      "features": [
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "缩径成形颈部 进一步成形颈部与杆部，头部轮廓逐渐清晰，底部10°锥",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "riveting_bolt_8_18_p358",
+      "station_n": 4,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "终镦成形 终镦完成头部（150°锥面）、颈部、杆部及盲孔，8焊点SR1均布",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料（切料） 圆柱坯料，直径Ø9.2 mm，长度25.6 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦（一次镦粗） 坯料端部初步镦粗，头部直径扩大至约Ø10.66，形成锥形过渡；杆端直径Ø9.9，总长约11.1 mm（含头部）；头部顶面凸台约Ø9.5，小端台阶1.05、3 mm段",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+      "station_n": 2,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "op_pierce_through",
+        "op_two_blow_upset",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "二次镦粗（头部粗成形） 头部进一步扩径至Ø15，端面出现SR16球面；头部高度约7.9 mm；内腔预成形，内径Ø10.5；六角孔预冲孔径Ø4.5~4.3；杆部Ø7；头顶凸台1.5、1.2 mm台阶",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+      "station_n": 3,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "三次镦粗（头部精成形+六角孔冲深） 头部保持Ø15，外端面台阶1.5/1.2/3 mm；头腔内径Ø9.2，外壁Ø11.3~11.92；杆径Ø7/Ø5；底部圆角R0.5、R0.8；SR16球头；六角孔深度扩展，腔深约2.3 mm段",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+      "station_n": 4,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "终成形（内六角终冲+杆部整形） 内六角孔终成形Ø7，头部Ø15±0.15，头高5+0.105/+0.030 mm；杆部整形至Ø12；头顶SR16；端面台阶2.7~3、1.3~1.5 mm；整体六角孔深5±0.3/-0.5 mm；腔径Ø8.5、Ø9.27",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
+      "station_n": 5,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "产品图（成品） 内六角头M12×1螺钉成品；头部Ø15±0.15，高5+0.105/+0.030；内六角Ø7，深5+0.3/-0.5；螺纹段Ø8（小径）至Ø12，螺纹M12×1-6g（标题标注，OCR另读M10×1-6g存疑）；头顶C0.4倒角；材质SWRCH10A",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "bicycle_brake_hollow_hex_bolt_8_20",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆棒料，两端平切",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "bicycle_brake_hollow_hex_bolt_8_20",
+      "station_n": 1,
+      "operation": "forward_extrusion",
+      "features": [
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "一次预成形（镦粗头部雏形） 头部局部镦粗，直径约 φ7.7，杆部缩径至 φ5.18；头部长 4.8 mm，杆部长 14.32 mm，总长 19.12 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "bicycle_brake_hollow_hex_bolt_8_20",
+      "station_n": 2,
+      "operation": "",
+      "features": [],
+      "summary": "二次成形（初形六角头） 头部压入六角模，对边距 6.5±0.05 mm；头部长约 5.1 mm，杆径 φ5.22，总杆长约 14.12 mm；端视图可见四点冲印迹（预穿孔定位），对角约 (9.08) mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "bicycle_brake_hollow_hex_bolt_8_20",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "三次精整（精形六角头+穿芯孔初步） 六角头精整，对边距 6.5±0.05 mm；头部带台阶孔 φ2.6/φ5.25；头部长 5.1 mm，总长 25 mm，杆长约 18 mm；端视图对角约 (9.1) mm，对边 7.85 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "bicycle_brake_hollow_hex_bolt_8_20",
+      "station_n": 4,
+      "operation": "",
+      "features": [],
+      "summary": "四次最终整形（完成穿芯孔） 六角头对边距 6.5±0.05 mm；头部穿芯孔 φ2.57/φ5.25，孔深约 4.532 mm（不确定）；头部长 5.1 mm，总长 25 mm，头长段 18±0.2 mm；端视图对边 7.85 mm，角部尺寸约 1.93 mm（不确定）",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_wheel_nut_ml40cr_8_21",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料（坯料） 圆棒料，两端平切",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_wheel_nut_ml40cr_8_21",
+      "station_n": 1,
+      "operation": "forward_extrusion",
+      "features": [
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "第1工位：局部缩径预成形 坯料前端缩径，形成两段：粗段+细段",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_wheel_nut_ml40cr_8_21",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "第2工位：头部初镦 头部镦粗至Φ13.5，杆部保持，端部出现锥形预型",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_wheel_nut_ml40cr_8_21",
+      "station_n": 3,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "第3工位：六角头预成形 头部锻出六角外形，外径约Φ13.8，杆部端面锥形进一步成形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_wheel_nut_ml40cr_8_21",
+      "station_n": 4,
+      "operation": "forward_extrusion",
+      "features": [
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "第4工位（终镦）：六角头终成形+法兰+杆部最终尺寸 头部终成六角带法兰，杆部最终缩径，端面锥孔成形，侧视与端视均达成品形状",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "furniture_hex_self_tapping_screw_8_22",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 / 坯料 圆棒料，光滑圆柱",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "furniture_hex_self_tapping_screw_8_22",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "一次镦头 一端开始镦粗形成头部雏形，杆部变细",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "furniture_hex_self_tapping_screw_8_22",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "二次镦头 头部进一步成形，锥面/凸缘更明显",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "furniture_hex_self_tapping_screw_8_22",
+      "station_n": 3,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "预冲内六角 / 整形 头部外径φ10.3成形，预冲内孔，端面可见圆形轮廓",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "furniture_hex_self_tapping_screw_8_22",
+      "station_n": 4,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "终成形（冲内六角孔） 内六角孔φ6.75完全成形，头部φ10.3，总长48.3±0.4，端面内六角可见",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "folding_sofa_frame_rivet_small_stock_large_deformation_8_23",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆柱坯料，两端平齐",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "folding_sofa_frame_rivet_small_stock_large_deformation_8_23",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "一次预镦 一端开始镦粗，直径略增，长度缩短",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "folding_sofa_frame_rivet_small_stock_large_deformation_8_23",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_two_blow_upset",
+        "raw_op:upsetting"
+      ],
+      "summary": "二次镦粗 头部继续扩径，形状渐成凸缘",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "folding_sofa_frame_rivet_small_stock_large_deformation_8_23",
+      "station_n": 3,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "三次镦粗 头部明显扩径，颈部开始成形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "folding_sofa_frame_rivet_small_stock_large_deformation_8_23",
+      "station_n": 4,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "终镦成形 大凸缘头部终成形，带45°倒角，颈部及杆部至最终尺寸",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料（坯料） 圆柱坯料",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦 / 端面成形 两端各25°倒锥面；顶端内凹；一端成形160°锥坑",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+      "station_n": 2,
+      "operation": "forward_extrusion",
+      "features": [
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "缩径 / 扩口成形 上端20°锥扩口，内腔60°锥；中段缩径；凸缘初步成形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+      "station_n": 3,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "外径整形 / 镦平 整体外径整形，形成均匀柱段和端部台阶",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+      "station_n": 4,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "镦挤凸缘 / 预成形 镦挤底部凸缘，形成8.5°锥底及各级台阶",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+      "station_n": 5,
+      "operation": "",
+      "features": [],
+      "summary": "最终整形（成品形状） 最终铆螺母外形：凸缘减薄至1.9~2.2 mm，体部OD 7.37，8.5°底锥，内孔4.5",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_blind_rivet_302hq_8_25",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料（坯料） 圆棒料，无变形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_blind_rivet_302hq_8_25",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "1#工位：预镦头部锥台 头部开始扩展形成锥形预成形区，杆部保持；头部球形面初步出现；杆端外径略减",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_blind_rivet_302hq_8_25",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "2#工位：成形大头及内锥 头部镦至目标直径Ø12.7，顶部球面SR/3成形，头高1.9mm；杆部内孔初成形，杆端有锥口；两侧各约20°锥角（unclear）",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_blind_rivet_302hq_8_25",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "3#工位：整形头部及杆部内孔 头部形状固定，杆部内孔精整，内径4.4→4.7过渡，外径收至6.3；杆长16.7mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_blind_rivet_302hq_8_25",
+      "station_n": 4,
+      "operation": "",
+      "features": [],
+      "summary": "4#工位：最终整形（含端面凸缘） 与3#相似，头部端面增加2.1mm凸缘或定位台阶；杆部尺寸与3#一致，完成最终成品形状",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_kitchen_sanitary_nut_8_26",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆柱毛坯，直径Ø5.9，长度17.15",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_kitchen_sanitary_nut_8_26",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "一次预成形 头部端面倒锥45°预成形，局部压出R0.8圆角，杆端锥角30°；杆径Ø5.3，总长16.73，头部外径Ø6.04",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_kitchen_sanitary_nut_8_26",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "二次成形（镦头+预挤孔） 头部进一步镦粗，外径Ø6.08，杆端挤出预孔Ø3.8，孔深约10.2，端面留余量0.4，锥角30°，头侧面锥5°；杆径Ø6.07（unclear），Ø5.3保留段",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_kitchen_sanitary_nut_8_26",
+      "station_n": 3,
+      "operation": "",
+      "features": [],
+      "summary": "三次成形（杆部定径+孔延伸） 杆外径整形至Ø6.1，内孔延伸，头部平台长4，体长18.2，孔深约17",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_kitchen_sanitary_nut_8_26",
+      "station_n": 4,
+      "operation": "",
+      "features": [],
+      "summary": "四次成形（头部球面成形+最终孔） 头部成形SR6.8球面，头部外径Ø10.8，头高3.1，杆外径Ø6.13（uncertain），内孔Ø4.3，孔深17，体长18.2，端部特征Ø6深5.08",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_flange_bolt_with_washer_8_27",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆棒料切断，圆柱形坯料",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_flange_bolt_with_washer_8_27",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦头部 头部镦粗成直径9.2的预成形头，颈部直径7.05，颈长14.4，杆部直径6.99",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_flange_bolt_with_washer_8_27",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "法兰锥形预成形 镦出锥形法兰预成形，外径11.1，内锥径约9.0，SR15球面，法兰段长6.5，杆径7.02，总长25",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_flange_bolt_with_washer_8_27",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "法兰终成形（带25°锥角） 镦出带25°锥角的法兰盘，高1.5，外径11.5，杆部直径7.05，端面六角形轮廓约9.7",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "stainless_flange_bolt_with_washer_8_27",
+      "station_n": 4,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "终镦法兰盘定形 法兰盘终成形，外径14.4，高1.5，杆部挤压至直径7.08，杆长25，垫圈外轮廓11.4，端面9.9",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "spark_plug_shell_cold_heading_8_28",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆柱坯料，外径φ17.1 mm，长度17 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "spark_plug_shell_cold_heading_8_28",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "预成形（镦粗+初步成形内孔） 外径φ17.45 mm，内孔初步成形约φ9 mm，肩部φ15.1 mm，总长17.2 mm，端部有锥角及倒角",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "spark_plug_shell_cold_heading_8_28",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "镦六角外形+成形内腔 外径φ17.5 mm，六角对边距约18.4~18.5 mm，内孔两段（φ6.8、φ9.4 unclear），各分段长度3.2+6.7+9.1+2.5 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "spark_plug_shell_cold_heading_8_28",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "成形内腔台阶+外径精整 外径φ17.55 mm，杆部φ14.95 mm，内孔φ8.5+φ3.5（unclear），末端细颈约φ3 mm，六角对边18.45~18.6 mm，总分段3.2+6.7+11.7+7+1.7 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "spark_plug_shell_cold_heading_8_28",
+      "station_n": 4,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "精整内孔+外形 外径φ17.6 mm，杆部φ14.95 mm，内孔φ13.5（unclear）+φ8.42（unclear），前端外径φ15.08（unclear），六角对边18.5 mm，总分段3.2+6.7+11.7+11 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "spark_plug_shell_cold_heading_8_28",
+      "station_n": 5,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "终成形（六角定形+内孔贯通+总长定型） 外径φ17.6 mm，杆部φ14.95 mm，内孔φ13.5+φ8.42（unclear），前端φ15.08（unclear），六角对边18.5 mm，总长32.6 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "螺塞_cold_heading_case_p370",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆柱形棒料坯",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "螺塞_cold_heading_case_p370",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "一次镦粗 整体镦粗，直径增大，端面平整",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "螺塞_cold_heading_case_p370",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_two_blow_upset",
+        "raw_op:upsetting"
+      ],
+      "summary": "二次镦粗 / 预成形 继续镦粗至目标外径，头部略成形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "螺塞_cold_heading_case_p370",
+      "station_n": 3,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "正挤压内孔 + 六角外形预成形 上端挤出六角形外廓，下端收颈形成杆部，顶部开始冲内孔",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "螺塞_cold_heading_case_p370",
+      "station_n": 4,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "内孔精整 + 六角精整 内孔加深至最终尺寸，六角形外形精整，端面成形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "螺塞_cold_heading_case_p370",
+      "station_n": 5,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "镦法兰盘 / 最终成形 镦出外法兰盘，形成台阶外形，六角形完整，内孔贯通",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "hex_socket_square_spline_sleeve_tool_p371",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆棒料，均匀直径",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "hex_socket_square_spline_sleeve_tool_p371",
+      "station_n": 1,
+      "operation": "forward_extrusion",
+      "features": [
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "预缩径（一次挤压） 两段阶梯圆柱，前段大径、后段小径",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "hex_socket_square_spline_sleeve_tool_p371",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "三段阶梯成形 三段阶梯，头部扩大，中段过渡，尾段外花形预成形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "hex_socket_square_spline_sleeve_tool_p371",
+      "station_n": 3,
+      "operation": "",
+      "features": [],
+      "summary": "外花形轮廓成形 头部外花形区域成形，尾端出现六角形截面，端视图对边距9.8 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "hex_socket_square_spline_sleeve_tool_p371",
+      "station_n": 4,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "最终成形（含内六角孔） 头部外四角花形区域完成，内部冲出六角孔，尾端六角外形，附冲头形状",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "audi_wheel_bolt_case_8_31",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆棒料，直径φ15 mm，长度45 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "audi_wheel_bolt_case_8_31",
+      "station_n": 1,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "预镦（一次镦粗/缩径） 坯料一端缩径至φ10.8 mm（长24 mm），另端保持φ15.2 mm（长29.8 mm），端部45°倒角",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "audi_wheel_bolt_case_8_31",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "镦头（第二工位，形成初步六角头） 头部镦成φ11.8 mm六角外形，头部过渡段φ16.38 mm，杆部φ10.85 mm×24 mm，头部总长14.305 mm（含4.1+12.3分段），端面对边16.6 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "audi_wheel_bolt_case_8_31",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "镦头（第三工位，精整六角头） 头部φ11.8 mm六角，过渡段φ16.6 mm，杆φ10.88 mm×24 mm，头部分段13.2+12+24，对边16.7 mm，端视外径19.27 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "audi_wheel_bolt_case_8_31",
+      "station_n": 4,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "终成形（法兰球面座成形） 头部成形为法兰形，法兰φ23 mm，球面半径SR14.3，小径φ12 mm，杆φ10.92 mm×24 mm，头部分段12.7+7.3，对边16.9 mm，法兰端面带花纹（unclear）",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_clutch_double_head_rivet_8_32",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 切断原材料棒料，获得坯料",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_clutch_double_head_rivet_8_32",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预成形（φ=29.85%开式火焰） 一端预镦粗，形成头部预型体，φ≈29.85%减面率",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_clutch_double_head_rivet_8_32",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "一次镦头 正式镦出一端头部，另一端保持",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_clutch_double_head_rivet_8_32",
+      "station_n": 3,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "主机带驱动凸模双孔成形 双向凸模同时冲出两端孔或镦出双头，关键特征工步",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_clutch_double_head_rivet_8_32",
+      "station_n": 4,
+      "operation": "",
+      "features": [],
+      "summary": "整形 两端头部整形，保证外径和高度精度",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "automotive_clutch_double_head_rivet_8_32",
+      "station_n": 5,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "最终成形 最终尺寸定形，两端头部完成",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆棒料切断，直径和长度待确认",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "第1工步 — 初步整形 棒料端部初镦，总长约53mm，端头开始成形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "第2工步 — 头部预成形 头部法兰台阶进一步压缩，总长52.99mm，两端0.5mm倒角出现",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+      "station_n": 3,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "第3工步 — 杆部拉长/减径 通过正挤压使杆部延伸，关键长度72.06和76.65mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+      "station_n": 4,
+      "operation": "",
+      "features": [],
+      "summary": "第4工步 — 头部法兰成形 法兰头部基本定形，总杆长76.05mm，头部凸台高3.56mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+      "station_n": 5,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "第5工步 — 细长杆成形 正挤压大幅延伸杆部，总长176.97mm，有效杆长170.99mm，尾端预留8.96mm成形区",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+      "station_n": 6,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "第6工步 — 尾端预成形 尾端进行螺纹底径预成形，总长167.89mm，尾端区域7.96mm，法兰厚度约1.3mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "motorcycle_ebike_shock_absorber_piston_rod_8_33",
+      "station_n": 7,
+      "operation": "",
+      "features": [],
+      "summary": "第7工步 — 成品件 最终工步，总体长180mm，有效段168.1mm，螺纹端长11.9+0.1mm，头部带六角或圆法兰，螺纹规格unclear",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "t_bolt_cold_heading_8_34",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 线材剪切，圆柱形坯料",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "t_bolt_cold_heading_8_34",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦/整形 坯料端部初步墩粗，形成头部雏形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "t_bolt_cold_heading_8_34",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "T形头预成形 横向扩展，形成T字形头部轮廓",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "t_bolt_cold_heading_8_34",
+      "station_n": 3,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "T形头终成形 精整T形头部，达到设计尺寸",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "t_bolt_cold_heading_8_34",
+      "station_n": 4,
+      "operation": "",
+      "features": [],
+      "summary": "搓丝/滚丝（后续工序） 杆部搓制螺纹",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "rivet_gun_hex_through_core_bolt_8_35",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料（坯料） 圆柱坯料",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "rivet_gun_hex_through_core_bolt_8_35",
+      "station_n": 1,
+      "operation": "",
+      "features": [],
+      "summary": "剪切/整形坯料 略修整端面，直径略减",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "rivet_gun_hex_through_core_bolt_8_35",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦粗头部 头部初步镦粗，杆部成形，头部直径约9.3",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "rivet_gun_hex_through_core_bolt_8_35",
+      "station_n": 3,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "预成形六角头及锥面 头部逐步成形六角外形，锥角约105°，杆部延伸",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "rivet_gun_hex_through_core_bolt_8_35",
+      "station_n": 4,
+      "operation": "",
+      "features": [],
+      "summary": "成形六角头+杆部整形 六角头基本成形，头部带预凹，杆部长度成形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "rivet_gun_hex_through_core_bolt_8_35",
+      "station_n": 5,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "精整六角头及凹模面 六角头精整，顶部凹模面成形，杆部精整",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "rivet_gun_hex_through_core_bolt_8_35",
+      "station_n": 6,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "最终成形（凹模面完成） 完整六角穿芯螺钉，头顶凹模面清晰，杆部φ3.2",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "带齿短铆钉_8_36",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料 圆棒料，直径约Ø5.2 mm，长度约16.5 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "带齿短铆钉_8_36",
+      "station_n": 1,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "第一工位：预镦粗/缩径 杆部缩径至约Ø3.5 mm，头部端面开始镦粗，头端直径约Ø2.3（unclear），总体轮廓初步建立",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "带齿短铆钉_8_36",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "第二工位：镦头预成形 头部进一步扩径，直径约Ø22（unclear），头部高度约8.2 mm，杆部长约6.3 mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "带齿短铆钉_8_36",
+      "station_n": 3,
+      "operation": "",
+      "features": [],
+      "summary": "第三工位：齿形头部粗成形 头部外径扩至约Ø15，头内侧开始成形齿形轮廓，杆端带凹坑或导引形状，多个直径标注（Ø10.3、Ø2.8、Ø8.7等，unclear）",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "带齿短铆钉_8_36",
+      "station_n": 4,
+      "operation": "",
+      "features": [],
+      "summary": "第四工位：齿形头部半精成形 头部直径约Ø4.6，齿形进一步压入，头高约11.5 mm，宽约5.5 mm（unclear），杆端成形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "带齿短铆钉_8_36",
+      "station_n": 5,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "第五工位：终镦成形带齿头 头部外径达到最终尺寸约Ø10，齿形完整压出，总长约11.66 mm，头厚约6.54 mm，底部直径约Ø4（unclear）",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "带齿短铆钉_8_36",
+      "station_n": 6,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "第六工位（推测）：整形/切料 最终整形，杆径Ø5.2（unclear），总长16.5 mm（unclear），头部齿形最终定形",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "siemens_c615_middle_electrode_cold_heading",
+      "station_n": 0,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料（坯料） 圆棒料切断，直径×长度",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "siemens_c615_middle_electrode_cold_heading",
+      "station_n": 1,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "1#预镦 镦出头部凸台雏形，端面形成45°倒角，头部径向扩展；预留中心凹坑深约0.6mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "siemens_c615_middle_electrode_cold_heading",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "2#镦粗 头部继续扩大至φ4.75，45°锥面成形，长度基准6.15mm，中心凹坑保留约0.6mm",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "siemens_c615_middle_electrode_cold_heading",
+      "station_n": 3,
+      "operation": "upsetting",
+      "features": [
+        "raw_op:upsetting"
+      ],
+      "summary": "3#预成形 成形φ2.5小径台阶及40°锥面，前端φ3.5过渡，外端φ4.8，轴向尺寸6.5mm，锥顶偏置0.65mm，45°前锥",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "siemens_c615_middle_electrode_cold_heading",
+      "station_n": 4,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "4#终镦预形 镦出φ8大凸台，小径φ2.4，中径φ4.9，前端5°锥及45°倒角，轴向尺寸1.2/0.6/1.5",
+      "kind": "textbook_cases"
+    },
+    {
+      "case_id": "siemens_c615_middle_electrode_cold_heading",
+      "station_n": 5,
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "5#终成形（终镦） 终成形至图纸尺寸，各径加公差，5°锥孔及45°锥面精整",
+      "kind": "textbook_cases"
+    }
+  ]
+}
