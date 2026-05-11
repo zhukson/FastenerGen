@@ -51,27 +51,6 @@ class LLMError(FastenerGPTError):
     error_code = "LLM_ERROR"
 
 
-class RAGError(FastenerGPTError):
-    """RAG retrieval failed."""
-
-    status_code = 500
-    error_code = "RAG_ERROR"
-
-
-class GeometryGenerationError(FastenerGPTError):
-    """3D geometry generation failed."""
-
-    status_code = 500
-    error_code = "GEOMETRY_ERROR"
-
-
-class StorageError(FastenerGPTError):
-    """Object storage operation failed."""
-
-    status_code = 500
-    error_code = "STORAGE_ERROR"
-
-
 class NotFoundError(FastenerGPTError):
     """Requested resource not found."""
 

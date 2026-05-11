@@ -1,13 +1,14 @@
-"""v2 4-step pipeline orchestrator: input drawing -> 过模图 DXF.
+"""Gong-style process-forming schema orchestrator.
 
-Replaces the v1 designer.py orchestration. Produces ONE output artifact.
+Produces ProcessForming JSON plus reasoning sidecars. DXF rendering lives in
+the separate FastenerDrawingEngine repository.
 
 Steps:
   1. Drawing Understanding       (DrawingReader, Claude Opus 4.7 vision)
   2. Knowledge Retrieval         (knowledge.loader — load all 经验库 cases)
   3. Process Forming Design      (Claude Opus 4.7 + few-shot)
-  4. 过模图 DXF Generation        (process_forming_generator, ezdxf)
-  5. Rule verification           (textbook formula guardrails + retry)
+  4. Rule verification           (textbook formula guardrails + retry)
+  5. Persist schema/reasoning    (renderer consumes ProcessForming JSON)
 """
 
 from __future__ import annotations
@@ -38,7 +39,6 @@ from app.data.schemas import (
     ProcessForming,
     VerificationResult,
 )
-from app.drawings.process_forming_generator import render_process_forming_dxf
 from app.knowledge.loader import compute_neighbor_density, format_for_prompt, load_library
 
 logger = logging.getLogger(__name__)
@@ -53,7 +53,6 @@ class DesignArtifacts:
     part_features: PartFeatures
     process_forming: ProcessForming
     verification: VerificationResult
-    dxf_path: Path
     parameters_path: Path
     reasoning_path: Path
     cited_case_ids: list[str]
@@ -65,7 +64,7 @@ class DesignArtifacts:
 
 
 class ProcessDesigner:
-    """The v2 pipeline: drawing -> PartFeatures -> ProcessForming -> 过模图.
+    """The v2 pipeline: drawing -> PartFeatures -> ProcessForming schema.
 
     No vector retrieval (Tier 1 is full-context few-shot at N=12).
     """
@@ -107,11 +106,10 @@ class ProcessDesigner:
         max_design_attempts: int = 1,
         include_step3_images: bool = False,
     ) -> DesignArtifacts:
-        """Run the full pipeline and write artifacts to output_dir."""
+        """Run drawing understanding + process design and write artifacts."""
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
 
-        # Step 1
         part_features = await self._reader.read_drawing(
             file_path=product_drawing_path,
             self_consistency_runs=self_consistency_runs,
@@ -127,6 +125,31 @@ class ProcessDesigner:
                 drawing_images = await self._reader._to_images(product_drawing_path)
             except Exception as exc:
                 logger.warning("P1_image_for_step3_failed", error=str(exc))
+
+        return await self.design_from_part_features(
+            part_features=part_features,
+            output_dir=output_dir,
+            prefer_category=prefer_category,
+            exclude_case_ids=exclude_case_ids,
+            candidate_count=candidate_count,
+            max_design_attempts=max_design_attempts,
+            drawing_images=drawing_images,
+        )
+
+    async def design_from_part_features(
+        self,
+        *,
+        part_features: PartFeatures,
+        output_dir: Path,
+        prefer_category: str | None = None,
+        exclude_case_ids: list[str] | None = None,
+        candidate_count: int = 1,
+        max_design_attempts: int = 1,
+        drawing_images: list[dict] | None = None,
+    ) -> DesignArtifacts:
+        """Run process design from already-extracted product/final-station features."""
+        output_dir = Path(output_dir)
+        output_dir.mkdir(parents=True, exist_ok=True)
 
         # Step 2 — load full library + feature-targeted sub-process snippets (优化 3)
         knowledge_xml = format_for_prompt(
@@ -165,7 +188,11 @@ class ProcessDesigner:
 
         # 优化 4 — override LLM-reported confidence with measurable neighbor density.
         llm_confidence = process_forming.confidence.value
-        density_signal = compute_neighbor_density(self._library, part_features)
+        density_signal = compute_neighbor_density(
+            self._library,
+            part_features,
+            exclude_case_ids=exclude_case_ids,
+        )
         measured_confidence = ConfidenceLevel(density_signal["confidence"])
         if measured_confidence != process_forming.confidence:
             logger.info(
@@ -176,15 +203,8 @@ class ProcessDesigner:
             )
         process_forming.confidence = measured_confidence
 
-        # Step 4
-        dxf_path = output_dir / "process_forming.dxf"
-        render_process_forming_dxf(
-            process_forming,
-            output_path=dxf_path,
-            case_id=part_features.part_number,
-        )
-
-        # Persist JSON + reasoning sidecars
+        # Persist JSON + reasoning sidecars. DXF rendering is intentionally
+        # outside this repo; pass `process_parameters.json` to FastenerDrawingEngine.
         params_path = output_dir / "process_parameters.json"
         params_path.write_text(
             process_forming.model_dump_json(indent=2),
@@ -220,13 +240,12 @@ class ProcessDesigner:
                 "see design_reasoning.md for the condensed reasoning.)_\n",
                 encoding="utf-8",
             )
-        logger.info("Step 4 complete: %s", dxf_path)
+        logger.info("Step 4 complete: %s", params_path)
 
         return DesignArtifacts(
             part_features=part_features,
             process_forming=process_forming,
             verification=verification,
-            dxf_path=dxf_path,
             parameters_path=params_path,
             reasoning_path=reasoning_path,
             cited_case_ids=list(process_forming.cited_case_ids),

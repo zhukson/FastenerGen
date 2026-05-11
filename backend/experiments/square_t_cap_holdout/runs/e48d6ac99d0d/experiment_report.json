@@ -1,0 +1,266 @@
+{
+  "experiment_id": "square_t_cap_holdout",
+  "input_path": "experiments/square_t_cap_holdout/input/part_features.json",
+  "output_dir": "experiments/square_t_cap_holdout/runs/e48d6ac99d0d",
+  "holdout_case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+  "prefer_category": "square_T_head",
+  "schema_contract": {
+    "producer": "FastenerGen",
+    "consumer": "FastenerDrawingEngine",
+    "renderer_repo": "/Users/bobchen/FastenerDrawingEngine",
+    "note": "FastenerGen emits ProcessForming JSON. FastenerDrawingEngine accepts this base schema and can produce better drawings when stations also include geometry_25d and optional drawing views/tables.",
+    "base_schema_path": "backend/app/data/schemas.py::ProcessForming",
+    "renderer_schema_path": "src/fastener_drawing_engine/schema/process.py::ProcessForming"
+  },
+  "summary": {
+    "part_name_zh": "四方法兰T形头内螺纹嵌件（四方头带R2.5圆角+十字凹槽）",
+    "material": "106S",
+    "station_count": 6,
+    "confidence": "medium",
+    "llm_self_reported_confidence": "medium",
+    "cited_case_ids": [
+      "DJGS-22-2-四方通孔-105S-过模图",
+      "DJGS-25-5-B144-0056-106S-过模图",
+      "t_bolt_cold_heading_8_34"
+    ],
+    "verification_passed": true,
+    "flagged_for_review": true
+  },
+  "metrics": [
+    {
+      "metric_name": "station_count_error",
+      "value": 0.0,
+      "passed": true,
+      "threshold": 0.0,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "operation_sequence_similarity",
+      "value": 0.6666666666666667,
+      "passed": false,
+      "threshold": 0.75,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "station_operation_alignment",
+      "value": 0.6666666666666666,
+      "passed": false,
+      "threshold": 0.7,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "key_dimension_coverage",
+      "value": 1.0,
+      "passed": true,
+      "threshold": 0.8,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "renderer_geometry_readiness",
+      "value": 1.0,
+      "passed": true,
+      "threshold": 0.8,
+      "case_id": null,
+      "notes": null
+    }
+  ],
+  "confidence_signal": {
+    "confidence": "medium",
+    "score": 23,
+    "detected_features": [
+      "external_flange_head",
+      "external_square_head",
+      "thread_external"
+    ],
+    "same_category_cases": [],
+    "feature_coverage": 19,
+    "feature_hits": {
+      "DJGS-22-2-四方通孔-105S-过模图": 1,
+      "DJGS-24-6-冲铆轴销-YT105S-过模图": 1,
+      "DJGS-25-2-B120-0044-YT105S-过模图": 1,
+      "DJGS-25-5-B144-0056-106S-过模图": 1,
+      "DJGS-25-8-B001-0358-四方T帽-106S-过模图": 2,
+      "BG24081-P03-DIN933-M18-P2-5": 1,
+      "BG30060-P03-DIN912-M20-P2-5": 1,
+      "BG30060-P05-DIN933-M22-P2-5": 1,
+      "gb_t5784_m8x80_bolt_cold_heading_tooling": 1,
+      "shcs_m8x18_gb_t70_1_2000_3station_coldheading": 1,
+      "japanese_hex_socket_short_screw_m12x1_part1": 1,
+      "automotive_wheel_nut_ml40cr_8_21": 1,
+      "stainless_flange_bolt_with_washer_8_27": 1,
+      "螺塞_cold_heading_case_p370": 1,
+      "audi_wheel_bolt_case_8_31": 1,
+      "motorcycle_ebike_shock_absorber_piston_rod_8_33": 2,
+      "t_bolt_cold_heading_8_34": 1
+    },
+    "geometric_neighbors": [
+      "DJGS-25-5-B144-0056-106S-过模图",
+      "DJGS-25-8-B001-0358-四方T帽-106S-过模图"
+    ],
+    "rationale": "no same-category factory case; feature overlap: DJGS-25-8-B001-0358-四方T帽-106S-过模图(2), motorcycle_ebike_shock_absorber_piston_rod_8_33(2), DJGS-22-2-四方通孔-105S-过模图(1); 2 case(s) within ±67% L/D: ['DJGS-25-5-B144-0056-106S-过模图', 'DJGS-25-8-B001-0358-四方T帽-106S-过模图']"
+  },
+  "verification": {
+    "passed": true,
+    "checks": [
+      {
+        "check_name": "v2_positive_dimensions",
+        "passed": true,
+        "severity": "error",
+        "message": "All blank/station dimensions are positive",
+        "expected": "all in-use lengths/diameters > 0",
+        "actual": null
+      },
+      {
+        "check_name": "v2_station_numbering",
+        "passed": true,
+        "severity": "error",
+        "message": "Station numbers are sequential",
+        "expected": "[1, 2, 3, 4, 5, 6]",
+        "actual": "[1, 2, 3, 4, 5, 6]"
+      },
+      {
+        "check_name": "v2_reference_citations",
+        "passed": true,
+        "severity": "error",
+        "message": "Design cites at least one Tier 1 worked case",
+        "expected": ">= 1 case_id",
+        "actual": "['DJGS-22-2-四方通孔-105S-过模图', 'DJGS-25-5-B144-0056-106S-过模图', 't_bolt_cold_heading_8_34']"
+      },
+      {
+        "check_name": "v2_final_length_vs_product",
+        "passed": true,
+        "severity": "info",
+        "message": "Final station length is within 0.0% of product length",
+        "expected": "near 17.000 mm",
+        "actual": "17.000 mm"
+      },
+      {
+        "check_name": "v2_volume_conservation",
+        "passed": true,
+        "severity": "warning",
+        "message": "Blank/final volume ratio 1.57 needs engineer review",
+        "expected": "0.75-1.45 target, 0.50-2.00 hard guardrail",
+        "actual": "blank≈2238 mm^3, final≈1425 mm^3"
+      },
+      {
+        "check_name": "v2_station_deformation_s1",
+        "passed": true,
+        "severity": "info",
+        "message": "Station 1 deformation is within demo guardrails",
+        "expected": "D_out/D_in <= 2.30 and extrusion area reduction <= 75%",
+        "actual": "D ratio=1.01, area reduction≈0.0%"
+      },
+      {
+        "check_name": "v2_station_deformation_s2",
+        "passed": true,
+        "severity": "info",
+        "message": "Station 2 deformation is within demo guardrails",
+        "expected": "D_out/D_in <= 2.30 and extrusion area reduction <= 75%",
+        "actual": "D ratio=1.34, area reduction≈10.6%"
+      },
+      {
+        "check_name": "v2_station_deformation_s3",
+        "passed": true,
+        "severity": "info",
+        "message": "Station 3 deformation is within demo guardrails",
+        "expected": "D_out/D_in <= 2.30 and extrusion area reduction <= 75%",
+        "actual": "D ratio=1.44, area reduction≈19.9%"
+      },
+      {
+        "check_name": "v2_station_deformation_s4",
+        "passed": true,
+        "severity": "info",
+        "message": "Station 4 deformation is within demo guardrails",
+        "expected": "D_out/D_in <= 2.30 and extrusion area reduction <= 75%",
+        "actual": "D ratio=1.00, area reduction≈13.0%"
+      },
+      {
+        "check_name": "v2_station_deformation_s5",
+        "passed": true,
+        "severity": "info",
+        "message": "Station 5 deformation is within demo guardrails",
+        "expected": "D_out/D_in <= 2.30 and extrusion area reduction <= 75%",
+        "actual": "D ratio=0.91, area reduction≈0.0%"
+      },
+      {
+        "check_name": "v2_station_deformation_s6",
+        "passed": true,
+        "severity": "info",
+        "message": "Station 6 deformation is within demo guardrails",
+        "expected": "D_out/D_in <= 2.30 and extrusion area reduction <= 75%",
+        "actual": "D ratio=1.00, area reduction≈0.0%"
+      },
+      {
+        "check_name": "v2_material_allowable_upset_rate",
+        "passed": true,
+        "severity": "info",
+        "message": "Max single-station upset shortening 22.8% is within material Ep≈68%",
+        "expected": "Ep≈68% for 106S",
+        "actual": "station=2, E≈22.8%"
+      },
+      {
+        "check_name": "v2_ld_blow_count",
+        "passed": true,
+        "severity": "info",
+        "message": "Blank L/D=2.85; forming blow count is plausible",
+        "expected": "2 forming blows by l/dm rule when upsetting dominates",
+        "actual": "3 forming blows, head/shank ratio≈2.23"
+      },
+      {
+        "check_name": "v2_socket_or_recess_operation",
+        "passed": true,
+        "severity": "info",
+        "message": "No socket/recess-specific station required",
+        "expected": "backward_extrusion for 内六角/socket parts",
+        "actual": "forward_extrusion, heading, piercing, trimming, upsetting"
+      },
+      {
+        "check_name": "v2_hole_or_internal_thread_operation",
+        "passed": true,
+        "severity": "info",
+        "message": "Hole/internal-thread feature has a matching piercing/tapping station or note",
+        "expected": "piercing/冲孔 for through-hole or internal-thread parts",
+        "actual": "forward_extrusion, heading, piercing, trimming, upsetting"
+      },
+      {
+        "check_name": "v2_large_head_staging",
+        "passed": true,
+        "severity": "info",
+        "message": "Large head/shank ratio 2.23 is split across staged preforming",
+        "expected": ">=4 stations and >=2 upsetting/heading/combined stages for large-head parts",
+        "actual": "stations=6, staged_ops=3"
+      },
+      {
+        "check_name": "v2_material_surface_prep",
+        "passed": false,
+        "severity": "warning",
+        "message": "Difficult material/forming should mention annealing/phosphating/lubrication risk",
+        "expected": "annealing/phosphating/lubrication note for stainless/nonferrous or difficult forming",
+        "actual": "missing"
+      }
+    ],
+    "retry_count": 0,
+    "flagged_for_review": true
+  },
+  "artifacts": {
+    "process_parameters": "experiments/square_t_cap_holdout/runs/e48d6ac99d0d/process_parameters.json",
+    "design_reasoning": "experiments/square_t_cap_holdout/runs/e48d6ac99d0d/design_reasoning.md",
+    "gong_review": "experiments/square_t_cap_holdout/runs/e48d6ac99d0d/gong_review.md"
+  },
+  "expected_summary": {
+    "part_name_zh": "四方T帽",
+    "station_count": 6,
+    "operations": [
+      "upsetting",
+      "forward_extrusion",
+      "heading",
+      "combined",
+      "trimming",
+      "piercing"
+    ]
+  }
+}

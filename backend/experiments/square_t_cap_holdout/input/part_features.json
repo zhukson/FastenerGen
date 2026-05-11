@@ -1,0 +1,29 @@
+{
+  "part_number": "DJGS-25-8-B001-0358",
+  "description": "Square T-head fastener with internal thread (square flange T-head nut/insert)",
+  "overall_length": 17.0,
+  "material_grade": "106S",
+  "strength_grade": "",
+  "head": {
+    "type": "flange",
+    "diameter": 17.65,
+    "height": 3.0
+  },
+  "shank": {
+    "diameter": 7.93,
+    "length": 14.0
+  },
+  "thread": null,
+  "tail": null,
+  "hardness_min_hv": null,
+  "hardness_max_hv": null,
+  "surface_treatment": null,
+  "standard": null,
+  "tolerance_class": null,
+  "drawing_scale": null,
+  "notes": [
+    "机型 YT-106S",
+    "四方头带 4-R2.5 圆角",
+    "头部带十字凹槽特征"
+  ]
+}

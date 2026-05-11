@@ -48,7 +48,7 @@ def configure_logging() -> None:
     root_logger.setLevel(log_level)
 
     # Suppress noisy third-party loggers
-    for name in ("uvicorn.access", "httpx", "chromadb"):
+    for name in ("uvicorn.access", "httpx"):
         logging.getLogger(name).setLevel(logging.WARNING)
 
 

@@ -1,0 +1,18 @@
+{
+  "experiment": "square_t_cap_holdout",
+  "input": {
+    "file": "experiments/square_t_cap_holdout/input/part_features.json",
+    "meaning": "Final product/final-station product features for 四方T帽. This skips Claude Vision and tests Gong-style reverse process reasoning directly."
+  },
+  "ground_truth": {
+    "case_record": "experiments/square_t_cap_holdout/ground_truth/case_record_ground_truth.json",
+    "process_forming": "experiments/square_t_cap_holdout/ground_truth/process_parameters_ground_truth.json",
+    "meaning": "The factory-derived ProcessForming answer key, withheld from runtime prompt."
+  },
+  "excluded_from_runtime_knowledge": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+  "prefer_category": "square_T_head",
+  "notes": [
+    "The source case stays in backend/app/knowledge for normal development but must be excluded with --exclude-case for this experiment.",
+    "app.knowledge.loader removes excluded case ids from both full-context cases and relevant station snippets."
+  ]
+}

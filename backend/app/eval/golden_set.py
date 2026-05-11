@@ -1,26 +1,16 @@
-"""
-Golden test set management.
+"""Golden case helpers for Gong reasoning evaluation."""
 
-Loads and manages hand-verified test cases from datasets/golden/*.json.
-Each golden case has known-correct process plans and die parameters for
-regression testing the design pipeline.
+from __future__ import annotations
 
-Implemented in Session 5.
-"""
-
-from pathlib import Path
-
-from app.data.schemas import EvalReport, ExpectedDecisions, PartFeatures
+from app.data.schemas import CaseRecord
+from app.knowledge.loader import load_library
 
 
-GOLDEN_DIR = Path(__file__).parent / "datasets" / "golden"
+def load_factory_cases() -> list[CaseRecord]:
+    """Return real factory DWG cases that can be used for leave-one-out eval."""
+    return load_library().cases
 
 
-def load_golden_cases() -> list[dict[str, object]]:
-    """Load all golden test cases from the datasets/golden directory."""
-    raise NotImplementedError("Implemented in Session 5")
-
-
-def run_golden_eval() -> EvalReport:
-    """Run the full pipeline on all golden cases and produce an eval report."""
-    raise NotImplementedError("Implemented in Session 5")
+def load_standard_cases() -> list[CaseRecord]:
+    """Return standard-part cases that can be used for smoke tests."""
+    return load_library().standards

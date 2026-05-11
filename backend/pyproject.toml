@@ -1,7 +1,7 @@
 [project]
 name = "fastenergpt-backend"
 version = "0.1.0"
-description = "FastenerGPT backend — AI-powered die design for cold-heading fasteners"
+description = "FastenerGPT backend — Gong-style process reasoning and ProcessForming schema generation"
 requires-python = ">=3.12,<3.14"
 dependencies = [
     # Core API
@@ -14,33 +14,12 @@ dependencies = [
     "structlog>=24.4.0",
     # AI / LLM
     "anthropic>=0.40.0",
-    "google-generativeai>=0.8.0",
-    "voyageai>=0.3.0",
-    # Data layer
-    "sqlalchemy[asyncio]>=2.0.36",
-    "asyncpg>=0.30.0",
-    "alembic>=1.14.0",
-    "chromadb>=0.6.0",
-    "redis>=5.2.0",
-    # Drawing / Geometry
+    # Drawing input parsing / rasterization for vision
     "ezdxf>=1.3.0",
     "matplotlib>=3.9.0",
-    "trimesh>=4.5.0",
-    "numpy>=2.1.0",
-    "scipy>=1.14.0",
-    # Task queue
-    "celery[redis]>=5.4.0",
     # Utilities
-    "python-jose[cryptography]>=3.3.0",
-    "boto3>=1.35.0",
     "tqdm>=4.67.0",
     "pypdfium2>=4.30.0",
-    "networkx>=3.0",
-]
-
-[project.optional-dependencies]
-cad = [
-    "cadquery>=2.4.0",
 ]
 
 dev = [
@@ -50,8 +29,6 @@ dev = [
     "httpx>=0.28.0",
     "ruff>=0.8.0",
     "mypy>=1.13.0",
-    "types-redis>=4.6.0",
-    "aiosqlite>=0.21.0",
 ]
 
 [tool.hatch.build.targets.wheel]
@@ -62,15 +39,15 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.uv]
-dev-dependencies = [
+
+[dependency-groups]
+dev = [
     "pytest>=8.3.0",
     "pytest-asyncio>=0.24.0",
     "pytest-cov>=6.0.0",
     "httpx>=0.28.0",
     "ruff>=0.8.0",
     "mypy>=1.13.0",
-    "types-redis>=4.6.0",
-    "aiosqlite>=0.21.0",
 ]
 
 [tool.ruff]

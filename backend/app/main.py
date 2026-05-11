@@ -20,12 +20,11 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     logger.info(
         "startup",
         environment=settings.environment,
-        database_url=settings.database_url.split("@")[-1],  # hide credentials
+        role="gong_reasoning_schema_api",
     )
 
-    # Pre-warm ezdxf's system font cache so DXF rendering finds
-    # installed TTFs instead of falling back to txt.shx and logging
-    # "no fonts available" on every render.
+    # Input DWG/DXF parsing still uses ezdxf. Building the font cache once keeps
+    # uploaded drawing rasterization stable for Claude Vision preprocessing.
     try:
         from ezdxf.fonts import fonts as ezdxf_fonts
         ezdxf_fonts.build_system_font_cache()
@@ -39,7 +38,10 @@ async def lifespan(app: FastAPI) -> AsyncIterator[None]:
 
 app = FastAPI(
     title="FastenerGPT API",
-    description="AI-powered die design for cold-heading fasteners",
+    description=(
+        "Gong-style cold-heading reasoning API. Produces ProcessForming JSON "
+        "for the separate FastenerDrawingEngine renderer."
+    ),
     version="0.1.0",
     lifespan=lifespan,
     docs_url="/api/docs",

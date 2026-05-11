@@ -225,6 +225,8 @@ def detect_input_features(part_features: Any) -> list[str]:
 def compute_neighbor_density(
     library: Library,
     part_features: Any,
+    *,
+    exclude_case_ids: list[str] | set[str] | None = None,
 ) -> dict[str, Any]:
     """Replace LLM-reported confidence with a measurable, explainable signal.
 
@@ -237,6 +239,7 @@ def compute_neighbor_density(
     show "why" the system is (un)sure, instead of trusting the LLM's
     self-report.
     """
+    excluded = set(exclude_case_ids or [])
     detected = detect_input_features(part_features)
     needed = set(detected)
 
@@ -267,8 +270,13 @@ def compute_neighbor_density(
     if "T帽" in desc or "T头" in desc or "四方" in desc:
         cat_keywords.append("square_T_head")
 
-    by_case = library.feature_index.get("by_case") or {}
-    for record in library.cases + library.standards:
+    by_case = {
+        case_id: features
+        for case_id, features in (library.feature_index.get("by_case") or {}).items()
+        if case_id not in excluded
+    }
+    records = [r for r in library.cases + library.standards if r.case_id not in excluded]
+    for record in records:
         cat = (record.product_category or "").lower()
         if any(kw in cat for kw in cat_keywords):
             same_cat.append(record.case_id)
@@ -286,7 +294,7 @@ def compute_neighbor_density(
     target_d = (data.get("shank") or {}).get("diameter") or 0
     geom_neighbors: list[str] = []
     if target_l > 0 and target_d > 0:
-        for record in library.cases + library.standards:
+        for record in records:
             feats = record.part_features
             if feats.overall_length <= 0:
                 continue

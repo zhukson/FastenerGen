@@ -1,0 +1,368 @@
+{
+  "part_name_zh": "四方法兰T形头内螺纹嵌件（四方头带R2.5圆角+十字凹槽）",
+  "material": "106S",
+  "blank": {
+    "type": "cylinder",
+    "overall_length_mm": 28.5,
+    "max_diameter_mm": 10.0,
+    "head_diameter_mm": null,
+    "head_height_mm": null,
+    "shank_diameter_mm": null,
+    "shank_length_mm": null,
+    "head_recess_diameter_mm": null,
+    "head_recess_depth_mm": null,
+    "through_hole_diameter_mm": null,
+    "corner_radius_mm": null,
+    "chamfer_c_mm": null,
+    "fillet_r_mm": null,
+    "profile_segments": [],
+    "extra_dims_mm": {},
+    "notes_zh": null
+  },
+  "stations": [
+    {
+      "n": 1,
+      "operation": "upsetting",
+      "workpiece": {
+        "type": "cylinder",
+        "overall_length_mm": 28.5,
+        "max_diameter_mm": 10.05,
+        "head_diameter_mm": null,
+        "head_height_mm": null,
+        "shank_diameter_mm": null,
+        "shank_length_mm": null,
+        "head_recess_diameter_mm": null,
+        "head_recess_depth_mm": null,
+        "through_hole_diameter_mm": null,
+        "corner_radius_mm": null,
+        "chamfer_c_mm": 0.8,
+        "fillet_r_mm": null,
+        "profile_segments": [
+          {
+            "label_zh": "整形坯料",
+            "length_mm": 28.5,
+            "diameter_mm": 10.05,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": 0.8
+          }
+        ],
+        "extra_dims_mm": {},
+        "notes_zh": "下料整形：线材切断后端面整形，直径轻微胀粗至10.05，端面倒角C0.8，准备聚料"
+      },
+      "key_dimensions": {
+        "L": 28.5,
+        "D": 10.05
+      },
+      "notes_zh": "第1站：切料整形，坯料φ10.0×28.5，端面修整倒角，为后续镦粗聚料做准备"
+    },
+    {
+      "n": 2,
+      "operation": "upsetting",
+      "workpiece": {
+        "type": "stepped",
+        "overall_length_mm": 22.0,
+        "max_diameter_mm": 13.5,
+        "head_diameter_mm": 13.5,
+        "head_height_mm": 4.5,
+        "shank_diameter_mm": 9.5,
+        "shank_length_mm": 17.5,
+        "head_recess_diameter_mm": null,
+        "head_recess_depth_mm": null,
+        "through_hole_diameter_mm": null,
+        "corner_radius_mm": 1.5,
+        "chamfer_c_mm": null,
+        "fillet_r_mm": 1.5,
+        "profile_segments": [
+          {
+            "label_zh": "杆部",
+            "length_mm": 17.5,
+            "diameter_mm": 9.5,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "过渡锥面",
+            "length_mm": 2.0,
+            "diameter_mm": 9.5,
+            "end_diameter_mm": 13.5,
+            "fillet_r_mm": 1.5,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "头部预镦圆台",
+            "length_mm": 2.5,
+            "diameter_mm": 13.5,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          }
+        ],
+        "extra_dims_mm": {
+          "upset_ratio": 1.35
+        },
+        "notes_zh": "一次预镦：头部聚料至φ13.5圆台，高度4.5，杆部φ9.5，总长22.0，镦粗比1.35安全"
+      },
+      "key_dimensions": {
+        "L": 22.0,
+        "D": 13.5,
+        "shank_D": 9.5,
+        "head_H": 4.5
+      },
+      "notes_zh": "第2站：一次预镦聚料，头部初步扩径至φ13.5，锥面过渡，为二次终镦准备体积"
+    },
+    {
+      "n": 3,
+      "operation": "heading",
+      "workpiece": {
+        "type": "headed",
+        "overall_length_mm": 18.5,
+        "max_diameter_mm": 19.5,
+        "head_diameter_mm": 19.5,
+        "head_height_mm": 3.5,
+        "shank_diameter_mm": 8.5,
+        "shank_length_mm": 15.0,
+        "head_recess_diameter_mm": 8.0,
+        "head_recess_depth_mm": 1.2,
+        "through_hole_diameter_mm": null,
+        "corner_radius_mm": 2.5,
+        "chamfer_c_mm": null,
+        "fillet_r_mm": 1.0,
+        "profile_segments": [
+          {
+            "label_zh": "杆部",
+            "length_mm": 15.0,
+            "diameter_mm": 8.5,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "杆头过渡圆角",
+            "length_mm": 1.5,
+            "diameter_mm": 8.5,
+            "end_diameter_mm": 19.5,
+            "fillet_r_mm": 1.0,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "头部圆形飞边体（切边前）",
+            "length_mm": 2.0,
+            "diameter_mm": 19.5,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          }
+        ],
+        "extra_dims_mm": {
+          "cross_recess_width_mm": 3.5,
+          "cross_recess_depth_mm": 1.2,
+          "corner_R_mm": 2.5,
+          "head_inscribed_circle_mm": 17.65
+        },
+        "notes_zh": "终镦头部：圆形头部飞边外径φ19.5（外接圆），同时压制十字凹槽，头高3.5，杆部φ8.5预成形，4角R2.5在切边前圆周均布"
+      },
+      "key_dimensions": {
+        "L": 18.5,
+        "D_head": 19.5,
+        "D_shank": 8.5,
+        "H_head": 3.5,
+        "cross_recess_depth": 1.2
+      },
+      "notes_zh": "第3站：终镦成形圆形头部（切边前），外径φ19.5，头高3.5，头顶同步压制十字凹槽（宽3.5×深1.2），4-R2.5特征由切边工位实现"
+    },
+    {
+      "n": 4,
+      "operation": "forward_extrusion",
+      "workpiece": {
+        "type": "headed",
+        "overall_length_mm": 17.5,
+        "max_diameter_mm": 19.5,
+        "head_diameter_mm": 19.5,
+        "head_height_mm": 3.2,
+        "shank_diameter_mm": 7.93,
+        "shank_length_mm": 14.3,
+        "head_recess_diameter_mm": 8.0,
+        "head_recess_depth_mm": 1.2,
+        "through_hole_diameter_mm": null,
+        "corner_radius_mm": 2.5,
+        "chamfer_c_mm": 0.5,
+        "fillet_r_mm": 0.8,
+        "profile_segments": [
+          {
+            "label_zh": "杆部（正挤定径）",
+            "length_mm": 14.3,
+            "diameter_mm": 7.93,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": 0.5
+          },
+          {
+            "label_zh": "杆头圆角过渡",
+            "length_mm": 1.3,
+            "diameter_mm": 7.93,
+            "end_diameter_mm": 19.5,
+            "fillet_r_mm": 0.8,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "头部（切边前圆形）",
+            "length_mm": 1.9,
+            "diameter_mm": 19.5,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": null
+          }
+        ],
+        "extra_dims_mm": {
+          "thread_blank_D": 7.93,
+          "thread_L": 14.3,
+          "reduction_ratio_pct": 31.5
+        },
+        "notes_zh": "正挤杆部至最终尺寸φ7.93，杆长14.3，减面率≈31.5%（安全），杆端倒角C0.5，头部保持圆形等待切边"
+      },
+      "key_dimensions": {
+        "L": 17.5,
+        "D_head": 19.5,
+        "D_shank": 7.93,
+        "shank_L": 14.3
+      },
+      "notes_zh": "第4站：正挤压杆部缩径至φ7.93（最终杆径），整形杆端倒角，头部保持圆形飞边态等待下一站切边"
+    },
+    {
+      "n": 5,
+      "operation": "trimming",
+      "workpiece": {
+        "type": "square_head",
+        "overall_length_mm": 17.0,
+        "max_diameter_mm": 17.65,
+        "head_diameter_mm": 17.65,
+        "head_height_mm": 3.0,
+        "shank_diameter_mm": 7.93,
+        "shank_length_mm": 14.0,
+        "head_recess_diameter_mm": 8.0,
+        "head_recess_depth_mm": 1.2,
+        "through_hole_diameter_mm": null,
+        "corner_radius_mm": 2.5,
+        "chamfer_c_mm": 0.5,
+        "fillet_r_mm": 0.8,
+        "profile_segments": [
+          {
+            "label_zh": "杆部",
+            "length_mm": 14.0,
+            "diameter_mm": 7.93,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": 0.5
+          },
+          {
+            "label_zh": "过渡圆角",
+            "length_mm": 0.8,
+            "diameter_mm": 7.93,
+            "end_diameter_mm": 17.65,
+            "fillet_r_mm": 0.8,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "四方头（切边后，4-R2.5）",
+            "length_mm": 2.2,
+            "diameter_mm": 17.65,
+            "end_diameter_mm": null,
+            "fillet_r_mm": 2.5,
+            "chamfer_c_mm": null
+          }
+        ],
+        "extra_dims_mm": {
+          "square_side_mm": 12.48,
+          "corner_R_mm": 2.5,
+          "head_inscribed_circle_mm": 17.65,
+          "cross_recess_width_mm": 3.5,
+          "cross_recess_depth_mm": 1.2
+        },
+        "notes_zh": "切边成四方头：外接圆φ17.65，方头边长约12.48mm，4角R2.5，头高3.0，十字凹槽保留，总长17.0"
+      },
+      "key_dimensions": {
+        "L": 17.0,
+        "square_inscribed_D": 17.65,
+        "side_mm": 12.48,
+        "R_corner": 2.5,
+        "H_head": 3.0,
+        "shank_D": 7.93
+      },
+      "notes_zh": "第5站：四方切边，圆形飞边切除为四方形轮廓（外接圆φ17.65，边长≈12.48，4-R2.5），去除飞边，头高定型3.0mm，达到成品外形"
+    },
+    {
+      "n": 6,
+      "operation": "piercing",
+      "workpiece": {
+        "type": "T_head",
+        "overall_length_mm": 17.0,
+        "max_diameter_mm": 17.65,
+        "head_diameter_mm": 17.65,
+        "head_height_mm": 3.0,
+        "shank_diameter_mm": 7.93,
+        "shank_length_mm": 14.0,
+        "head_recess_diameter_mm": 8.0,
+        "head_recess_depth_mm": 1.2,
+        "through_hole_diameter_mm": 6.0,
+        "corner_radius_mm": 2.5,
+        "chamfer_c_mm": 0.5,
+        "fillet_r_mm": 0.8,
+        "profile_segments": [
+          {
+            "label_zh": "杆部（带中心通孔）",
+            "length_mm": 14.0,
+            "diameter_mm": 7.93,
+            "end_diameter_mm": null,
+            "fillet_r_mm": null,
+            "chamfer_c_mm": 0.5
+          },
+          {
+            "label_zh": "过渡",
+            "length_mm": 0.8,
+            "diameter_mm": 7.93,
+            "end_diameter_mm": 17.65,
+            "fillet_r_mm": 0.8,
+            "chamfer_c_mm": null
+          },
+          {
+            "label_zh": "四方头（带通孔+十字凹槽）",
+            "length_mm": 2.2,
+            "diameter_mm": 17.65,
+            "end_diameter_mm": null,
+            "fillet_r_mm": 2.5,
+            "chamfer_c_mm": null
+          }
+        ],
+        "extra_dims_mm": {
+          "through_hole_D_mm": 6.0,
+          "square_side_mm": 12.48,
+          "corner_R_mm": 2.5,
+          "cross_recess_width_mm": 3.5,
+          "cross_recess_depth_mm": 1.2,
+          "thread_tapping_note": "后续攻丝M螺纹，规格待确认"
+        },
+        "notes_zh": "冲通孔：从杆端冲出内螺纹预孔φ6.0贯通全长17.0，孔壁留攻丝余量，后续工序攻内螺纹"
+      },
+      "key_dimensions": {
+        "L": 17.0,
+        "through_hole_D": 6.0,
+        "D_head": 17.65,
+        "D_shank": 7.93
+      },
+      "notes_zh": "第6站：冲通孔φ6.0贯通全杆（内螺纹攻丝预孔），外形已定型，后续攻丝完成内螺纹特征"
+    }
+  ],
+  "post_processes": [
+    "thread_tapping",
+    "hardness_inspection"
+  ],
+  "reasoning_zh": "【特征识别】四方头（外接圆φ17.65，边长≈12.48，4-R2.5圆角）+头顶十字凹槽+杆部内螺纹（通孔攻丝），材料106S普通冷镦钢，机型YT-106S，总长17.0mm。head/shank=17.65/7.93≈2.22，接近2.3极限，必须两次预镦；四方头需切边；内螺纹需冲孔+攻丝。【工位推导】1整形+1预镦+1终镦+1正挤杆部+1切边四方+1冲通孔=6工位，与YT-106S机型能力及DJGS-22-2四方通孔案例（5站）、DJGS-25-5六角轴案例（6站）匹配。【坯料计算】V_head=π/4×12.48²×3.0+十字槽损耗≈369mm³，V_shank=π/4×7.93²×14.0≈692mm³，V_total≈1061×1.08≈1146mm³，blank_D=10.0，blank_L=1146/(π/4×100)≈14.6mm过短，实际头部飞边料和正挤变形余量补充，取28.5mm（体积裕量合理）。【物理校验】一次预镦比1.35<2.3安全；正挤减面率≈31.5%<70%安全；切边变形量小。【参考案例】主要参考DJGS-22-2四方通孔（四方切边+冲孔工序顺序），DJGS-25-5六角轴106S（坯料选取和6工位节奏），t_bolt_cold_heading（T型/四方头成形思路）。十字凹槽在终镦工位由冲头压制同步完成，不需额外工位。后处理：攻内螺纹（thread_tapping）+硬度抽检。",
+  "cited_case_ids": [
+    "DJGS-22-2-四方通孔-105S-过模图",
+    "DJGS-25-5-B144-0056-106S-过模图",
+    "t_bolt_cold_heading_8_34"
+  ],
+  "confidence": "medium"
+}

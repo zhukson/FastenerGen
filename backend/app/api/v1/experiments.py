@@ -50,16 +50,13 @@ class M14ExperimentResponse(BaseModel):
     confidence: str
     cited_case_ids: list[str]
     experiment_folder: str
-    dxf_url: str
     parameters_url: str
     reasoning_url: str
-    preview_url: str
     gong_review_url: str
     input_pdf_url: str
     input_preview_url: str
     ground_truth_pdf_url: str
     ground_truth_preview_url: str
-    ground_truth_dxf_url: str
     ground_truth_parameters_url: str
     verification: VerificationResult
 
@@ -150,7 +147,6 @@ async def run_m14_experiment(request: M14ExperimentRequest) -> M14ExperimentResp
     designs_api._v2_designs[design_id] = {
         "forming": artifacts.process_forming,
         "part": artifacts.part_features,
-        "dxf": artifacts.dxf_path,
         "params": artifacts.parameters_path,
         "reasoning": artifacts.reasoning_path,
         "gong_review": artifacts.gong_review_path,
@@ -170,16 +166,13 @@ async def run_m14_experiment(request: M14ExperimentRequest) -> M14ExperimentResp
         confidence=artifacts.process_forming.confidence.value,
         cited_case_ids=artifacts.cited_case_ids,
         experiment_folder=str(EXPERIMENT_ROOT),
-        dxf_url=f"{base}/dxf",
         parameters_url=f"{base}/parameters",
         reasoning_url=f"{base}/reasoning",
-        preview_url=f"{base}/preview",
         gong_review_url=f"{base}/gong-review",
         input_pdf_url="/api/v1/experiments/m14/input-pdf",
         input_preview_url="/api/v1/experiments/m14/input-preview",
         ground_truth_pdf_url="/api/v1/experiments/m14/ground-truth/pdf",
         ground_truth_preview_url="/api/v1/experiments/m14/ground-truth/preview",
-        ground_truth_dxf_url="/api/v1/experiments/m14/ground-truth/dxf",
         ground_truth_parameters_url="/api/v1/experiments/m14/ground-truth/parameters",
         verification=artifacts.verification,
     )
@@ -227,14 +220,6 @@ async def m14_ground_truth_preview() -> FileResponse:
         filename=M14_GROUND_TRUTH_PREVIEW.name,
         media_type="image/png",
     )
-
-
-@router.get("/experiments/m14/ground-truth/dxf", tags=["experiments"])
-async def m14_ground_truth_dxf() -> FileResponse:
-    path = EXPERIMENT_ROOT / "ground_truth" / "process_forming_ground_truth.dxf"
-    if not path.exists():
-        raise HTTPException(status_code=404, detail="M14 ground-truth DXF missing")
-    return FileResponse(path=str(path), filename=path.name, media_type="application/octet-stream")
 
 
 @router.get("/experiments/m14/ground-truth/parameters", tags=["experiments"])

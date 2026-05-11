@@ -4,10 +4,9 @@ WORKDIR /app
 
 RUN pip install uv
 
-# Install system deps needed for some packages
+# Install system deps for drawing rasterization and Chinese font support.
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
-    libpq-dev \
     curl \
     libgl1 \
     libglib2.0-0 \

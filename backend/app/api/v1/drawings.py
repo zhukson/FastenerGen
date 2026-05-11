@@ -6,7 +6,6 @@ from __future__ import annotations
 
 import uuid
 from pathlib import Path
-from typing import Annotated
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 from pydantic import BaseModel
@@ -29,16 +28,6 @@ class DrawingUploadResponse(BaseModel):
     filename: str
     file_type: str
     upload_path: str
-
-
-class GeometryPreviewRequest(BaseModel):
-    die_params: dict  # DieComponentParams JSON
-    component_type: str = "punch"  # "punch" or "die"
-
-
-class GeometryPreviewResponse(BaseModel):
-    stl_path: str
-    step_path: str
 
 
 # ---------------------------------------------------------------------------
@@ -191,51 +180,6 @@ async def get_drawing_preview(drawing_id: str) -> dict:
     path = _find_drawing(drawing_id)
     # For now: return the file path; full preview generation in Session 3
     return {"drawing_id": drawing_id, "file_path": str(path), "format": path.suffix.lstrip(".")}
-
-
-# ---------------------------------------------------------------------------
-# Geometry preview (3D model from DieComponentParams)
-# ---------------------------------------------------------------------------
-
-@router.post("/geometry/preview", response_model=GeometryPreviewResponse, tags=["geometry"])
-async def geometry_preview(request: GeometryPreviewRequest) -> GeometryPreviewResponse:
-    """
-    Generate a 3D model (STEP + STL) from DieComponentParams JSON.
-
-    Used by the frontend 3D viewer to display a die component preview.
-    """
-    from app.data.schemas import DieComponentParams
-    from app.geometry.exporter import GeometryExporter
-
-    try:
-        params = DieComponentParams(**request.die_params)
-    except Exception as e:
-        raise HTTPException(status_code=422, detail=f"Invalid DieComponentParams: {e}") from e
-
-    output_dir = Path("/tmp/fastenergpt/geometry") / str(uuid.uuid4())
-    output_dir.mkdir(parents=True, exist_ok=True)
-
-    try:
-        if request.component_type == "punch":
-            from app.geometry.punch_templates import build_punch
-            shape = build_punch(params)
-        else:
-            from app.geometry.die_templates import build_die
-            shape = build_die(params)
-
-        exporter = GeometryExporter()
-        stl_path = exporter.to_stl(shape, output_dir / "preview.stl")
-        step_path = exporter.to_step(shape, output_dir / "preview.step")
-
-        return GeometryPreviewResponse(
-            stl_path=str(stl_path),
-            step_path=str(step_path),
-        )
-    except ImportError as e:
-        raise HTTPException(status_code=503, detail=str(e)) from e
-    except Exception as e:
-        logger.error("geometry_preview_failed", error=str(e))
-        raise HTTPException(status_code=500, detail=f"Geometry generation failed: {e}") from e
 
 
 # ---------------------------------------------------------------------------
