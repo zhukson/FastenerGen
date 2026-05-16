@@ -42,7 +42,7 @@ FEATURE_KEYWORDS: dict[str, list[str]] = {
     "long_thin_shank": [],  # filled by numeric rule below (L/D > 5)
     "thread_external": [r"外螺纹", r"螺纹", r"thread_rolling", r"M\d+×", r"M\d+x"],
     "thread_internal": [r"内螺纹", r"攻丝", r"thread_tapping", r"内攻"],
-    "through_hole": [r"通孔", r"through_hole", r"through hole"],
+    "through_hole": [r"通孔", r"through_hole", r"through hole", r"空心", r"内孔", r"bore", r"hollow"],
     "rivet_tail": [r"铆接", r"铆钉", r"riveting"],
     # === Process features (operations seen in stations) ===
     "op_predeform_conical": [r"预镦", r"聚料", r"锥形过渡", r"锥形预成形"],

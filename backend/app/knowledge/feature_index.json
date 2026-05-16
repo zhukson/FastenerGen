@@ -2,8 +2,8 @@
   "version": "feature_index_v1",
   "counts": {
     "cases": 8,
-    "standards": 3,
-    "textbook_cases": 26,
+    "standards": 5,
+    "textbook_cases": 27,
     "skipped": 0
   },
   "by_feature": {
@@ -63,6 +63,14 @@
         "kind": "standards"
       },
       {
+        "case_id": "STD-DIN912-M14-P2.0-40-60L",
+        "kind": "standards"
+      },
+      {
+        "case_id": "STD-DIN912-M14-P2.0-60-140L",
+        "kind": "standards"
+      },
+      {
         "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
         "kind": "textbook_cases"
       },
@@ -113,15 +121,23 @@
         "kind": "standards"
       },
       {
+        "case_id": "STD-DIN912-M14-P2.0-40-60L",
+        "kind": "standards"
+      },
+      {
+        "case_id": "STD-DIN912-M14-P2.0-60-140L",
+        "kind": "standards"
+      },
+      {
         "case_id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
         "kind": "textbook_cases"
       },
       {
-        "case_id": "triangular_bevel_support_pin_8_17",
+        "case_id": "slim_large_flange_semi_hollow_pin_8_15",
         "kind": "textbook_cases"
       },
       {
-        "case_id": "riveting_bolt_8_18_p358",
+        "case_id": "triangular_bevel_support_pin_8_17",
         "kind": "textbook_cases"
       },
       {
@@ -301,6 +317,14 @@
         "kind": "standards"
       },
       {
+        "case_id": "STD-DIN912-M14-P2.0-40-60L",
+        "kind": "standards"
+      },
+      {
+        "case_id": "STD-DIN912-M14-P2.0-60-140L",
+        "kind": "standards"
+      },
+      {
         "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
         "kind": "textbook_cases"
       },
@@ -343,10 +367,6 @@
         "kind": "cases"
       },
       {
-        "case_id": "slim_large_flange_semi_hollow_pin_8_15",
-        "kind": "textbook_cases"
-      },
-      {
         "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
         "kind": "textbook_cases"
       }
@@ -367,6 +387,46 @@
       {
         "case_id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
         "kind": "textbook_cases"
+      },
+      {
+        "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "slim_large_flange_semi_hollow_pin_8_15",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "bicycle_brake_hollow_hex_bolt_8_20",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "furniture_hex_self_tapping_screw_8_22",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "m8_rivet_nut_cold_heading_case_8_24",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_blind_rivet_302hq_8_25",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "stainless_kitchen_sanitary_nut_8_26",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "spark_plug_shell_cold_heading_8_28",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "螺塞_cold_heading_case_p370",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "gong_8_30_inner_hex_outer_square_flower_socket",
+        "kind": "textbook_cases"
       }
     ],
     "shoulder_step": [
@@ -383,7 +443,15 @@
         "kind": "cases"
       },
       {
+        "case_id": "STD-DIN912-M14-P2.0-40-60L",
+        "kind": "standards"
+      },
+      {
         "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
+        "kind": "textbook_cases"
+      },
+      {
+        "case_id": "slim_large_flange_semi_hollow_pin_8_15",
         "kind": "textbook_cases"
       },
       {
@@ -461,6 +529,14 @@
         "kind": "standards"
       },
       {
+        "case_id": "STD-DIN912-M14-P2.0-40-60L",
+        "kind": "standards"
+      },
+      {
+        "case_id": "STD-DIN912-M14-P2.0-60-140L",
+        "kind": "standards"
+      },
+      {
         "case_id": "japanese_hex_socket_short_screw_m12x1_part1",
         "kind": "textbook_cases"
       },
@@ -470,10 +546,6 @@
       },
       {
         "case_id": "m8_rivet_nut_cold_heading_case_8_24",
-        "kind": "textbook_cases"
-      },
-      {
-        "case_id": "stainless_kitchen_sanitary_nut_8_26",
         "kind": "textbook_cases"
       },
       {
@@ -533,6 +605,14 @@
         "kind": "standards"
       },
       {
+        "case_id": "STD-DIN912-M14-P2.0-40-60L",
+        "kind": "standards"
+      },
+      {
+        "case_id": "STD-DIN912-M14-P2.0-60-140L",
+        "kind": "standards"
+      },
+      {
         "case_id": "shcs_m8x18_gb_t70_1_2000_3station_coldheading",
         "kind": "textbook_cases"
       },
@@ -574,6 +654,14 @@
       },
       {
         "case_id": "BG30060-P05-DIN933-M22-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "STD-DIN912-M14-P2.0-40-60L",
+        "kind": "standards"
+      },
+      {
+        "case_id": "STD-DIN912-M14-P2.0-60-140L",
         "kind": "standards"
       },
       {
@@ -650,6 +738,10 @@
     "long_thin_shank": [
       {
         "case_id": "BG30060-P03-DIN912-M20-P2-5",
+        "kind": "standards"
+      },
+      {
+        "case_id": "STD-DIN912-M14-P2.0-60-140L",
         "kind": "standards"
       }
     ],
@@ -753,6 +845,24 @@
       "taper_end",
       "thread_external"
     ],
+    "STD-DIN912-M14-P2.0-40-60L": [
+      "internal_hex_head",
+      "op_backward_extrude_socket",
+      "op_forward_extrude_taper",
+      "op_predeform_conical",
+      "shoulder_step",
+      "taper_end",
+      "thread_external"
+    ],
+    "STD-DIN912-M14-P2.0-60-140L": [
+      "internal_hex_head",
+      "long_thin_shank",
+      "op_backward_extrude_socket",
+      "op_forward_extrude_taper",
+      "op_predeform_conical",
+      "taper_end",
+      "thread_external"
+    ],
     "gb_t5784_m8x80_bolt_cold_heading_tooling": [
       "op_predeform_conical",
       "thread_external",
@@ -763,11 +873,14 @@
       "op_backward_extrude_socket",
       "op_forward_extrude_taper",
       "shoulder_step",
-      "thread_external"
+      "thread_external",
+      "through_hole"
     ],
     "slim_large_flange_semi_hollow_pin_8_15": [
       "op_forward_extrude_taper",
-      "op_pierce_through"
+      "op_predeform_conical",
+      "shoulder_step",
+      "through_hole"
     ],
     "double_head_hex_blind_hole_rivet_blank_8_16": [
       "op_backward_extrude_socket",
@@ -780,7 +893,6 @@
       "op_trim_polygon"
     ],
     "riveting_bolt_8_18_p358": [
-      "op_predeform_conical",
       "rivet_tail",
       "shoulder_step"
     ],
@@ -798,14 +910,16 @@
     "bicycle_brake_hollow_hex_bolt_8_20": [
       "external_hex_head",
       "op_backward_extrude_socket",
-      "shoulder_step"
+      "shoulder_step",
+      "through_hole"
     ],
     "automotive_wheel_nut_ml40cr_8_21": [
       "external_flange_head"
     ],
     "furniture_hex_self_tapping_screw_8_22": [
       "internal_hex_head",
-      "op_backward_extrude_socket"
+      "op_backward_extrude_socket",
+      "through_hole"
     ],
     "folding_sofa_frame_rivet_small_stock_large_deformation_8_23": [
       "op_predeform_conical",
@@ -817,17 +931,19 @@
       "internal_recess",
       "op_predeform_conical",
       "shoulder_step",
-      "taper_end"
+      "taper_end",
+      "through_hole"
     ],
     "stainless_blind_rivet_302hq_8_25": [
       "external_ball_head",
       "op_predeform_conical",
       "rivet_tail",
-      "shoulder_step"
+      "shoulder_step",
+      "through_hole"
     ],
     "stainless_kitchen_sanitary_nut_8_26": [
       "external_ball_head",
-      "taper_end"
+      "through_hole"
     ],
     "stainless_flange_bolt_with_washer_8_27": [
       "external_ball_head",
@@ -836,18 +952,21 @@
     ],
     "spark_plug_shell_cold_heading_8_28": [
       "shoulder_step",
-      "taper_end"
+      "taper_end",
+      "through_hole"
     ],
     "螺塞_cold_heading_case_p370": [
       "external_flange_head",
       "op_forward_extrude_taper",
       "op_two_blow_upset",
-      "shoulder_step"
+      "shoulder_step",
+      "through_hole"
     ],
     "gong_8_30_inner_hex_outer_square_flower_socket": [
       "internal_hex_head",
       "op_backward_extrude_socket",
-      "shoulder_step"
+      "shoulder_step",
+      "through_hole"
     ],
     "hex_socket_square_spline_sleeve_tool_p371": [
       "internal_hex_head",
@@ -887,7 +1006,8 @@
       "op_predeform_conical",
       "shoulder_step",
       "taper_end"
-    ]
+    ],
+    "gong_chapter8_manual_review_manifest": []
   },
   "station_index": [
     {
@@ -1491,6 +1611,92 @@
       "kind": "standards"
     },
     {
+      "case_id": "STD-DIN912-M14-P2.0-40-60L",
+      "station_n": 1,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料：线材剪切为定长坯料，线径约Ø12.55 图面#1标注PUNCH=Ø16.4、DIE=Ø16.2，右侧最终杆径Ø13.7。",
+      "kind": "standards"
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-40-60L",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦聚料，形成圆柱头预成形体；图面#2带俯视圆环/中心线。 图面#2有俯视环形视图，剖面标Ø20.6/Ø18.5/Ø14.8/Ø10.5、16°、40°、R1.1。",
+      "kind": "standards"
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-40-60L",
+      "station_n": 3,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "反挤压成形内六角孔，对边约12；图面#3带俯视内六角/T:90标注。 图面#3有内六角俯视图，标12.2公差、T:90、Ø3，并有R1过渡。",
+      "kind": "standards"
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-40-60L",
+      "station_n": 4,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "正挤/校准杆部至搓牙前坯径，并形成端部倒角。 图面#4为最长剖面，尾端Ø10.8并标45°，头部台阶处标30°。",
+      "kind": "standards"
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-60-140L",
+      "station_n": 1,
+      "operation": "combined",
+      "features": [
+        "raw_op:combined"
+      ],
+      "summary": "下料：线材剪切为定长坯料，线径约Ø13.83 图面#1标注PUNCH=Ø16.9、DIE=Ø16.8，右侧最终杆径Ø13.7。",
+      "kind": "standards"
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-60-140L",
+      "station_n": 2,
+      "operation": "upsetting",
+      "features": [
+        "op_predeform_conical",
+        "raw_op:upsetting"
+      ],
+      "summary": "预镦聚料，形成圆柱头预成形体；图面#2带俯视圆环/中心线。 图面#2标Ø20.6/Ø18.5/Ø14.8/Ø10.5、16°、40°、R0.8。",
+      "kind": "standards"
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-60-140L",
+      "station_n": 3,
+      "operation": "backward_extrusion",
+      "features": [
+        "op_backward_extrude_socket",
+        "raw_op:backward_extrusion"
+      ],
+      "summary": "反挤压成形内六角孔，对边约12；图面#3带俯视内六角/T:90标注。 图面#3有内六角俯视图，标12.2公差、T:90、Ø3，并有R0.7过渡。",
+      "kind": "standards"
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-60-140L",
+      "station_n": 4,
+      "operation": "forward_extrusion",
+      "features": [
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
+      ],
+      "summary": "正挤/校准杆部至搓牙前坯径，并形成端部倒角。 图面#4为长杆剖面，尾端Ø10.8并标45°，内段长度43，头部处30°。",
+      "kind": "standards"
+    },
+    {
       "case_id": "gb_t5784_m8x80_bolt_cold_heading_tooling",
       "station_n": 0,
       "operation": "piercing",
@@ -1585,54 +1791,46 @@
     {
       "case_id": "slim_large_flange_semi_hollow_pin_8_15",
       "station_n": 0,
-      "operation": "combined",
-      "features": [
-        "raw_op:combined"
-      ],
-      "summary": "下料 线材切断，直径φ12，长度按体积计算",
+      "operation": "",
+      "features": [],
+      "summary": "多工位模具排布/坯料进入 主图展示长细坯料在多工位模具中的成形路径；该页未给出0#坯料尺寸。",
       "kind": "textbook_cases"
     },
     {
       "case_id": "slim_large_flange_semi_hollow_pin_8_15",
       "station_n": 1,
-      "operation": "upsetting",
+      "operation": "forward_extrusion",
       "features": [
-        "raw_op:upsetting"
+        "op_forward_extrude_taper",
+        "raw_op:forward_extrusion"
       ],
-      "summary": "预成形 / 头部初镦 坯料整形，端面平整，初步建立杆部与头部过渡区",
+      "summary": "细长杆正挤/定径 最终产品有Ø5.3细长杆和45.2长杆段，说明工艺中需要长杆正挤或定径。",
       "kind": "textbook_cases"
     },
     {
       "case_id": "slim_large_flange_semi_hollow_pin_8_15",
       "station_n": 2,
-      "operation": "forward_extrusion",
+      "operation": "",
       "features": [
-        "op_forward_extrude_taper",
-        "raw_op:forward_extrusion"
+        "op_predeform_conical"
       ],
-      "summary": "中间大盘凸缘镦粗 在杆部中间位置正挤+局部镦粗形成大直径凸缘，杆两侧分别缩径至φ5.3与φ7",
+      "summary": "中部大盘/左端台阶成形 最终产品左侧有Ø12大径区、Ø7台阶和Ø5.3杆部，需局部聚料/整形形成中间大盘和过渡台阶。",
       "kind": "textbook_cases"
     },
     {
       "case_id": "slim_large_flange_semi_hollow_pin_8_15",
       "station_n": 3,
-      "operation": "forward_extrusion",
-      "features": [
-        "op_forward_extrude_taper",
-        "raw_op:forward_extrusion"
-      ],
-      "summary": "杆部整形 / 缩径 正挤压使杆部达到最终直径，总体长度趋近72.55 mm",
+      "operation": "",
+      "features": [],
+      "summary": "右端半空心孔成形 最终产品右端Ø16外径区内有Ø5.3半空心孔，孔深19.4，属于右端盲孔/半空心成形。",
       "kind": "textbook_cases"
     },
     {
       "case_id": "slim_large_flange_semi_hollow_pin_8_15",
       "station_n": 4,
-      "operation": "piercing",
-      "features": [
-        "op_pierce_through",
-        "raw_op:piercing"
-      ],
-      "summary": "半空心穿孔 尾端冲孔形成半空心盲孔，孔深19.4 mm，孔径φ5.3",
+      "operation": "",
+      "features": [],
+      "summary": "最终尺寸状态 最终总长72.55，包含左侧大盘/台阶、Ø5.3细长杆和右端Ø16半空心端。",
       "kind": "textbook_cases"
     },
     {
@@ -1744,7 +1942,7 @@
       "features": [
         "raw_op:combined"
       ],
-      "summary": "下料 圆柱坯料",
+      "summary": "下料 圆柱坯料。",
       "kind": "textbook_cases"
     },
     {
@@ -1752,10 +1950,9 @@
       "station_n": 1,
       "operation": "upsetting",
       "features": [
-        "op_predeform_conical",
         "raw_op:upsetting"
       ],
-      "summary": "预镦整形 初步整形，一端局部镦粗，形成小台阶",
+      "summary": "一次预成形 坯料缩短至14.7，右端预成形为Ø7并带R0.7过渡。",
       "kind": "textbook_cases"
     },
     {
@@ -1765,17 +1962,15 @@
       "features": [
         "raw_op:upsetting"
       ],
-      "summary": "头部预成形 镦出头部雏形，锥角约139°，形成颈部与头部过渡",
+      "summary": "二次预成形/头部与杆部拉伸 形成头部锥面、Ø7.5颈部和Ø5.16尾杆，整体长度增至20.513。",
       "kind": "textbook_cases"
     },
     {
       "case_id": "riveting_bolt_8_18_p358",
       "station_n": 3,
-      "operation": "forward_extrusion",
-      "features": [
-        "raw_op:forward_extrusion"
-      ],
-      "summary": "缩径成形颈部 进一步成形颈部与杆部，头部轮廓逐渐清晰，底部10°锥",
+      "operation": "",
+      "features": [],
+      "summary": "三次整形/阶梯与尾端成形 进一步形成Ø8.9头部、Ø7.45颈部、Ø5.2尾杆和右端Ø9.64台阶，出现10°锥面。",
       "kind": "textbook_cases"
     },
     {
@@ -1785,7 +1980,7 @@
       "features": [
         "raw_op:heading"
       ],
-      "summary": "终镦成形 终镦完成头部（150°锥面）、颈部、杆部及盲孔，8焊点SR1均布",
+      "summary": "终成形/铆接头与焊点 终成形Ø13铆接头、150°锥面、孔深4、8个SR1焊点以及右端Ø5.23/Ø9.9阶梯。",
       "kind": "textbook_cases"
     },
     {
@@ -2170,7 +2365,7 @@
       "features": [
         "raw_op:combined"
       ],
-      "summary": "下料 圆柱毛坯，直径Ø5.9，长度17.15",
+      "summary": "下料 圆柱坯料。",
       "kind": "textbook_cases"
     },
     {
@@ -2180,7 +2375,7 @@
       "features": [
         "raw_op:upsetting"
       ],
-      "summary": "一次预成形 头部端面倒锥45°预成形，局部压出R0.8圆角，杆端锥角30°；杆径Ø5.3，总长16.73，头部外径Ø6.04",
+      "summary": "一次预成形 端部45°预成形，形成R0.8过渡，右侧杆部定径到Ø5.3。",
       "kind": "textbook_cases"
     },
     {
@@ -2190,7 +2385,7 @@
       "features": [
         "raw_op:upsetting"
       ],
-      "summary": "二次成形（镦头+预挤孔） 头部进一步镦粗，外径Ø6.08，杆端挤出预孔Ø3.8，孔深约10.2，端面留余量0.4，锥角30°，头侧面锥5°；杆径Ø6.07（unclear），Ø5.3保留段",
+      "summary": "二次成形/预挤孔 左端局部镦粗并形成Ø3.8预孔，孔深约10.2，保留0.4端面余量。",
       "kind": "textbook_cases"
     },
     {
@@ -2198,15 +2393,17 @@
       "station_n": 3,
       "operation": "",
       "features": [],
-      "summary": "三次成形（杆部定径+孔延伸） 杆外径整形至Ø6.1，内孔延伸，头部平台长4，体长18.2，孔深约17",
+      "summary": "三次成形/孔延伸与外径定径 外径定径至Ø6.1，内孔延伸至约17，体长18.2。",
       "kind": "textbook_cases"
     },
     {
       "case_id": "stainless_kitchen_sanitary_nut_8_26",
       "station_n": 4,
-      "operation": "",
-      "features": [],
-      "summary": "四次成形（头部球面成形+最终孔） 头部成形SR6.8球面，头部外径Ø10.8，头高3.1，杆外径Ø6.13（uncertain），内孔Ø4.3，孔深17，体长18.2，端部特征Ø6深5.08",
+      "operation": "heading",
+      "features": [
+        "raw_op:heading"
+      ],
+      "summary": "四次成形/球面头终成形 成形SR6.8球面头部、Ø10.8头径、3.1头高，并校准孔和杆部外径。",
       "kind": "textbook_cases"
     },
     {

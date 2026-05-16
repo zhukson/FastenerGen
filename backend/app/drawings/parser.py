@@ -76,7 +76,7 @@ class DrawingParser:
         try:
             doc = ezdxf.readfile(str(path))
             parse_errors: list[str] = []
-        except ezdxf.DXFStructureError as e:
+        except ezdxf.DXFStructureError:
             try:
                 doc, auditor = ezdxf.recover.readfile(str(path))
                 parse_errors = [str(err) for err in auditor.errors]
@@ -197,7 +197,6 @@ class DrawingParser:
             if entity.dxftype() in ("TEXT", "MTEXT"):
                 try:
                     text = entity.plain_mtext() if entity.dxftype() == "MTEXT" else entity.dxf.text
-                    ins = getattr(entity.dxf, "insert", None) or getattr(entity.dxf, "attachment_point", None)
                     if hasattr(entity.dxf, "insert"):
                         x, y = entity.dxf.insert.x, entity.dxf.insert.y
                     else:
@@ -216,7 +215,7 @@ class DrawingParser:
         fields: dict[str, str] = {}
 
         # Simple heuristic: look for label: value pairs (same or adjacent lines)
-        for text, x, y in texts:
+        for text, _x, _y in texts:
             lower = text.lower().strip()
             for label, field in _TITLE_FIELD_MAP.items():
                 if label in lower:

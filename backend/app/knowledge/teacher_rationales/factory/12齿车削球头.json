@@ -1,0 +1,34 @@
+{
+  "case_id": "12齿车削球头",
+  "feature_observations": [],
+  "required_operations": [
+    {
+      "operation": "upsetting",
+      "why_zh": "产品有头部/法兰体积需求，需要先聚料。；镦粗用于轴向压缩并把材料聚集到头部或局部增厚区域。；1工位证据：一工位：缩径正挤压形成杆部并预镦头部；关键尺寸 L=49.37, D=14.9, shank_D=10.94, head_L=23.3；几何 type=stepped, L=49.37, Dmax=14.9；2工位证据：二工位：镦粗形成头部圆形雏形；关键尺寸 L=41, D=17.32, shank_D=10.98, head_H=18.52；几何 type=headed, L=41, Dmax=17.32"
+    },
+    {
+      "operation": "heading",
+      "why_zh": "产品头部需要形成稳定外形和头高，需要镦头/终镦。；镦头/终镦用于形成主要头部外形、头径和头高。；3工位证据：三工位：终镦成型六角头部及球头过渡面；关键尺寸 L=41, D=22, head_H=17.02, shank_D=11.02；几何 type=headed, L=41, Dmax=22"
+    },
+    {
+      "operation": "trimming",
+      "why_zh": "切边/修边用于把圆形预成形头修成六角、四方等最终外轮廓。；4工位证据：四工位：六角切边，形成最终六角头外形；关键尺寸 L=41, head_AF=17.42, head_H=13.77, shank_D=11.05, shank_L=23；几何 type=headed, L=41, Dmax=22, headD=17.42, shankD=11.05"
+    }
+  ],
+  "precedence_constraints": [
+    {
+      "before": "upsetting",
+      "after": "heading",
+      "why_zh": "相邻工位显示先 upsetting 后 heading，用于保持材料流动和尺寸基准连续。"
+    },
+    {
+      "before": "heading",
+      "after": "trimming",
+      "why_zh": "相邻工位显示先 heading 后 trimming，用于保持材料流动和尺寸基准连续。"
+    }
+  ],
+  "common_failure_modes": [
+    "不要把 combined 当作万能工序来掩盖正挤、反挤、切边、冲孔等具体成形机制。",
+    "复杂头部件需要同时解释材料聚集、杆部/孔槽成形和最终外轮廓控制。"
+  ]
+}

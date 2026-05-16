@@ -12,13 +12,13 @@ vector-RAG contracts.
 from __future__ import annotations
 
 from datetime import UTC, datetime
-from enum import Enum
+from enum import StrEnum
 from typing import Literal
 
 from pydantic import AliasChoices, BaseModel, Field, field_validator, model_validator
 
 
-class HeadType(str, Enum):
+class HeadType(StrEnum):
     flat = "flat"
     hex = "hex"
     button = "button"
@@ -29,7 +29,7 @@ class HeadType(str, Enum):
     oval = "oval"
 
 
-class DriveType(str, Enum):
+class DriveType(StrEnum):
     cross = "cross"
     hex_socket = "hex_socket"
     torx = "torx"
@@ -37,14 +37,14 @@ class DriveType(str, Enum):
     none = "none"
 
 
-class TailType(str, Enum):
+class TailType(StrEnum):
     flat = "flat"
     pointed = "pointed"
     dog_point = "dog_point"
     cone = "cone"
 
 
-class OperationType(str, Enum):
+class OperationType(StrEnum):
     forward_extrusion = "forward_extrusion"
     backward_extrusion = "backward_extrusion"
     upsetting = "upsetting"
@@ -54,7 +54,7 @@ class OperationType(str, Enum):
     combined = "combined"
 
 
-class PostProcess(str, Enum):
+class PostProcess(StrEnum):
     thread_rolling = "thread_rolling"
     thread_tapping = "thread_tapping"
     knurling = "knurling"
@@ -70,19 +70,19 @@ class PostProcess(str, Enum):
     hardness_inspection = "hardness_inspection"
 
 
-class ConfidenceLevel(str, Enum):
+class ConfidenceLevel(StrEnum):
     high = "high"
     medium = "medium"
     low = "low"
 
 
-class CheckSeverity(str, Enum):
+class CheckSeverity(StrEnum):
     error = "error"
     warning = "warning"
     info = "info"
 
 
-class DimensionType(str, Enum):
+class DimensionType(StrEnum):
     linear = "linear"
     diameter = "diameter"
     radius = "radius"

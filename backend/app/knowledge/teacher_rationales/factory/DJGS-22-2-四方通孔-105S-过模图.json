@@ -1,0 +1,68 @@
+{
+  "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+  "feature_observations": [
+    {
+      "feature_key": "square_or_t_head",
+      "evidence_zh": "产品特征包含四方/T 头外形，最终外轮廓不是单纯圆形镦头。",
+      "expected_inference": [
+        "需要考虑 trimming/cutting/form-calibration 控制方形外轮廓",
+        "不要只用 heading 或 combined 概括最终外形"
+      ]
+    },
+    {
+      "feature_key": "large_head_volume",
+      "evidence_zh": "头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。",
+      "expected_inference": [
+        "需要 upsetting 聚集头部材料",
+        "若存在细长杆/台阶，需考虑 forward_extrusion 或缩径类工序"
+      ]
+    },
+    {
+      "feature_key": "hole_or_recess",
+      "evidence_zh": "头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。",
+      "expected_inference": [
+        "需要安排 piercing/backward_extrusion/压印类工序形成孔槽结构",
+        "孔槽类工序应与外形稳定顺序配合，避免过早破坏材料流动"
+      ]
+    }
+  ],
+  "required_operations": [
+    {
+      "operation": "upsetting",
+      "why_zh": "产品特征依据：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；镦粗用于轴向压缩并把材料聚集到头部或局部增厚区域。；1工位证据：镦粗成型预制头, 下端预成形带锥度；关键尺寸 L=6.6, D=12.82, d_shank=7；几何 type=headed, L=6.6, Dmax=12.82"
+    },
+    {
+      "operation": "combined",
+      "why_zh": "产品特征依据：产品特征包含四方/T 头外形，最终外轮廓不是单纯圆形镦头。；复合工序用于把局部成形、压印、整形或下料校正合并到同一站。；2工位证据：进一步镦粗成型法兰圆形外轮廓, 反挤压形成下端柄部；关键尺寸 L=4.5, D_head=12.88, D_round=9.95, d_shank=7.58, R=2；几何 type=headed, L=4.5, Dmax=12.88；3工位证据：镦四方外形(10×10, 4-R1.5), 中心反挤压预成型孔, 下端正挤压形成柄部；关键尺寸 H=10, side=10, R=1.5, d_shank=5.12, L_shank=5.3, L_total=6.3；几何 type=flanged, L=6, Dmax=10"
+    },
+    {
+      "operation": "piercing",
+      "why_zh": "产品特征依据：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；冲孔用于打开通孔或为后续攻牙/功能孔准备孔形。；4工位证据：中心冲通孔, 法兰外圆 ø20.5 保留四方轮廓；关键尺寸 D_outer=20.5, side=10.04, R=1.5, d_shank=5.11, t_flange=1, L_shank=6；几何 type=flanged, L=6, Dmax=20.5"
+    },
+    {
+      "operation": "trimming",
+      "why_zh": "产品特征依据：产品特征包含四方/T 头外形，最终外轮廓不是单纯圆形镦头。；切边/修边用于把圆形预成形头修成六角、四方等最终外轮廓。；5工位证据：切边修整为最终四方法兰外形 15.05×15.05, 4-R1.5；关键尺寸 side=15.05, side_inner=10.1, R=1.5, d_shank=5.11, t_flange=1, L_shank=6；几何 type=flanged, L=6, Dmax=15.05"
+    }
+  ],
+  "precedence_constraints": [
+    {
+      "before": "upsetting",
+      "after": "combined",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 upsetting 后 combined：产品特征包含四方/T 头外形，最终外轮廓不是单纯圆形镦头。；头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。"
+    },
+    {
+      "before": "combined",
+      "after": "piercing",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 combined 后 piercing：产品特征包含四方/T 头外形，最终外轮廓不是单纯圆形镦头。；头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。"
+    },
+    {
+      "before": "piercing",
+      "after": "trimming",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 piercing 后 trimming：产品特征包含四方/T 头外形，最终外轮廓不是单纯圆形镦头。；头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。"
+    }
+  ],
+  "common_failure_modes": [
+    "不要把 combined 当作万能工序来掩盖正挤、反挤、切边、冲孔等具体成形机制。",
+    "复杂头部件需要同时解释材料聚集、杆部/孔槽成形和最终外轮廓控制。"
+  ]
+}

@@ -1,99 +1,200 @@
 {
   "id": "riveting_bolt_8_18_p358",
   "source": "gong_maoliang_Page355_358:358",
-  "status": "llm_draft_low_confidence",
+  "source_image": "fasternerGenData/textbook_pages/gong_maoliang_Page355_358/p004_book358.png",
+  "status": "manual_visual_reviewed",
+  "review_method": "human_visual_reading_from_page_image",
   "title_zh": "铆接螺栓",
-  "product_category": "铆接螺栓 (riveting bolt)",
-  "why_it_matters": "铆接螺栓是典型的复合成形冷镦件，头部需形成铆接凸缘或焊点结构，工艺包含多道次预成形与最终头部成形，代表了带台阶异形头部零件的冷镦工艺设计思路。",
-  "visible_process_summary_zh": "5工位冷镦成形（0#~4#）：0#下料→1#预镦（初步整形）→2#预成形头部锥面→3#进一步缩径成形颈部→4#终镦完成头部（含150°锥面及孔深，8焊点SR1均布）。材质：08AL。",
+  "product_category": "铆接螺栓 / Riveting bolt",
+  "material": "08AL",
+  "why_it_matters": "龚茂良第8章工艺变形图案例。该页给出0#到4#完整冷镦变形图，适合作为带铆接焊点、盲孔/孔深、阶梯头部和短杆多特征零件的教材GT。",
+  "visible_process_summary_zh": "共5个图示工位：0#圆柱坯料；1#端部预成形并缩短；2#头部与孔/凹部预成形，出现139°、R3.2和长杆段；3#进一步整形头部台阶、颈部和右端杆径；4#终成形铆接螺栓，包含Ø13头部、Ø11/Ø9孔侧尺寸、150°锥面、孔深4、8个焊点SR1均布和右端Ø5.23/Ø9.9阶梯。",
   "visible_dimensions": {
-    "material": "08AL",
-    "finish_head_OD": "Φ13 ± 0.1",
-    "finish_shank_OD_1": "Φ11 +0.02/0",
-    "finish_shank_OD_2": "Φ9 +0.02/0 (unclear, approx 7.4±0.02)",
-    "finish_flange_OD": "Φ25.23 +0.02/+0.05 (uncertain)",
-    "finish_pilot_OD": "Φ9.9 +0.05/0 (uncertain)",
-    "finish_total_length": "16 (approx)",
-    "finish_head_angle": "150°",
-    "finish_hole_depth": "4 -0.10/-0.20 (孔深)",
-    "weld_points": "8-焊点 SR1 均布",
-    "finish_dim_3_5": "3.5 -0.05/-0.08 (uncertain)",
-    "finish_dim_4": "4 +0.05/+0.03 (uncertain)",
-    "finish_dim_2_8": "2.8 +0.05/+0.02"
+    "blank_diameter_mm": 8.45,
+    "blank_length_mm": 15.9,
+    "final_head_diameter_mm": "Ø13±0.1",
+    "final_inner_diameter_1_mm": "Ø11",
+    "final_inner_diameter_2_mm": "Ø9 +0.02/-0",
+    "final_inner_diameter_3_mm": "Ø7.4 ±0.02",
+    "final_cone_angle_deg": 150.0,
+    "final_hole_depth_mm": "4 -0.10/-0.20",
+    "final_step_length_1_mm": "4 +0.05/+0.03",
+    "final_step_length_2_mm": "3.5 -0.05/-0.08",
+    "final_tail_length_mm": 6.0,
+    "final_tail_step_length_mm": "2.8 +0.05/+0.02",
+    "final_tail_diameter_small_mm": "Ø5.23 +0.02/-0.05",
+    "final_tail_diameter_large_mm": "Ø9.9 +0.05/-0",
+    "weld_points": "8-焊点SR1均布",
+    "material": "08AL"
   },
+  "manual_visual_evidence": [
+    {
+      "page": 358,
+      "station": "0#",
+      "evidence_zh": "图面0#为圆柱坯料，标注Ø8.45和长度15.9。",
+      "dimensions": {
+        "diameter_mm": 8.45,
+        "length_mm": 15.9
+      }
+    },
+    {
+      "page": 358,
+      "station": "1#",
+      "evidence_zh": "图面1#标Ø8.8、长度14.7、右端Ø7和R0.7。",
+      "dimensions": {
+        "body_diameter_mm": 8.8,
+        "overall_length_mm": 14.7,
+        "end_diameter_mm": 7.0,
+        "fillet_R_mm": 0.7
+      }
+    },
+    {
+      "page": 358,
+      "station": "2#",
+      "evidence_zh": "图面2#标总长20.513、15.3、3.25、5.213、Ø8.85、Ø7.5、Ø5.16、139°和R3.2。",
+      "dimensions": {
+        "overall_length_mm": 20.513,
+        "main_length_mm": 15.3,
+        "head_length_mm": 3.25,
+        "tail_length_mm": 5.213,
+        "head_outer_diameter_mm": 8.85,
+        "neck_diameter_mm": 7.5,
+        "tail_diameter_mm": 5.16,
+        "included_angle_deg": 139.0,
+        "fillet_R_mm": 3.2
+      }
+    },
+    {
+      "page": 358,
+      "station": "3#",
+      "evidence_zh": "图面3#标总长18.5、13、3.3、5.5、Ø8.9、Ø7.45、Ø5.2、Ø9.64、2.8、10°和R1。",
+      "dimensions": {
+        "overall_length_mm": 18.5,
+        "main_length_mm": 13.0,
+        "head_step_length_mm": 3.3,
+        "tail_length_mm": 5.5,
+        "head_outer_diameter_mm": 8.9,
+        "neck_diameter_mm": 7.45,
+        "tail_diameter_mm": 5.2,
+        "tail_outer_diameter_mm": 9.64,
+        "offset_mm": 2.8,
+        "taper_angle_deg": 10.0,
+        "fillet_R_mm": 1.0
+      }
+    },
+    {
+      "page": 358,
+      "station": "4#",
+      "evidence_zh": "图面4#终成形标Ø13±0.1、Ø11、Ø9+0.02/-0、Ø7.4±0.02、150°、孔深4-0.10/-0.20、4+0.05/+0.03、3.5-0.05/-0.08、6、2.8+0.05/+0.02、Ø5.23+0.02/-0.05、Ø9.9+0.05/-0，并标8-焊点SR1均布。",
+      "dimensions": {
+        "head_outer_diameter_mm": 13.0,
+        "inner_diameter_1_mm": 11.0,
+        "inner_diameter_2_mm": 9.0,
+        "inner_diameter_3_mm": 7.4,
+        "cone_angle_deg": 150.0,
+        "hole_depth_mm": 4.0,
+        "step_length_1_mm": 4.0,
+        "step_length_2_mm": 3.5,
+        "tail_length_mm": 6.0,
+        "tail_step_length_mm": 2.8,
+        "tail_small_diameter_mm": 5.23,
+        "tail_large_diameter_mm": 9.9,
+        "weld_point_radius_mm": 1.0,
+        "weld_point_count": 8
+      }
+    }
+  ],
   "station_sequence": [
     {
       "n": 0,
       "label_zh": "下料",
-      "geometry_zh": "圆柱坯料",
+      "operation_inference": "cutoff",
+      "geometry_zh": "圆柱坯料。",
       "dimensions": {
-        "OD": "Φ8.45",
-        "length": "15.9"
-      }
+        "wire_diameter_mm": 8.45,
+        "blank_length_mm": 15.9
+      },
+      "evidence_ref": "manual_visual_evidence[0]"
     },
     {
       "n": 1,
-      "label_zh": "预镦整形",
-      "geometry_zh": "初步整形，一端局部镦粗，形成小台阶",
+      "label_zh": "一次预成形",
+      "operation_inference": "preforming",
+      "geometry_zh": "坯料缩短至14.7，右端预成形为Ø7并带R0.7过渡。",
       "dimensions": {
-        "OD_body": "Φ8.8",
-        "OD_end": "Φ7 (approx, unclear)",
-        "length": "14.7"
-      }
+        "body_diameter_mm": 8.8,
+        "overall_length_mm": 14.7,
+        "end_diameter_mm": 7.0,
+        "fillet_R_mm": 0.7
+      },
+      "evidence_ref": "manual_visual_evidence[1]"
     },
     {
       "n": 2,
-      "label_zh": "头部预成形",
-      "geometry_zh": "镦出头部雏形，锥角约139°，形成颈部与头部过渡",
+      "label_zh": "二次预成形/头部与杆部拉伸",
+      "operation_inference": "upsetting_plus_forward_extrusion",
+      "geometry_zh": "形成头部锥面、Ø7.5颈部和Ø5.16尾杆，整体长度增至20.513。",
       "dimensions": {
-        "OD_head": "Φ8.85",
-        "OD_neck": "Φ7.5",
-        "OD_shank": "Φ5.16 (uncertain)",
-        "cone_angle": "139° (approx)",
-        "total_length": "20.513",
-        "head_length": "3.25",
-        "mid_length": "15.3",
-        "end_length": "5.213",
-        "fillet": "R3.2 (uncertain)"
-      }
+        "overall_length_mm": 20.513,
+        "main_length_mm": 15.3,
+        "head_length_mm": 3.25,
+        "tail_length_mm": 5.213,
+        "head_outer_diameter_mm": 8.85,
+        "neck_diameter_mm": 7.5,
+        "tail_diameter_mm": 5.16,
+        "included_angle_deg": 139.0,
+        "fillet_R_mm": 3.2
+      },
+      "evidence_ref": "manual_visual_evidence[2]"
     },
     {
       "n": 3,
-      "label_zh": "缩径成形颈部",
-      "geometry_zh": "进一步成形颈部与杆部，头部轮廓逐渐清晰，底部10°锥",
+      "label_zh": "三次整形/阶梯与尾端成形",
+      "operation_inference": "forward_extrusion_plus_sizing",
+      "geometry_zh": "进一步形成Ø8.9头部、Ø7.45颈部、Ø5.2尾杆和右端Ø9.64台阶，出现10°锥面。",
       "dimensions": {
-        "OD_head": "Φ8.9",
-        "OD_neck": "Φ7.45",
-        "OD_shank": "Φ5.2",
-        "OD_pilot": "Φ9.64 (uncertain)",
-        "total_length": "18.5",
-        "head_zone_length": "3.3",
-        "mid_length": "13",
-        "end_length": "5.5",
-        "bottom_angle": "10°",
-        "bottom_offset": "2.8",
-        "fillet": "R2 (unclear)"
-      }
+        "overall_length_mm": 18.5,
+        "main_length_mm": 13.0,
+        "head_step_length_mm": 3.3,
+        "tail_length_mm": 5.5,
+        "head_outer_diameter_mm": 8.9,
+        "neck_diameter_mm": 7.45,
+        "tail_diameter_mm": 5.2,
+        "tail_outer_diameter_mm": 9.64,
+        "offset_mm": 2.8,
+        "taper_angle_deg": 10.0,
+        "fillet_R_mm": 1.0
+      },
+      "evidence_ref": "manual_visual_evidence[3]"
     },
     {
       "n": 4,
-      "label_zh": "终镦成形",
-      "geometry_zh": "终镦完成头部（150°锥面）、颈部、杆部及盲孔，8焊点SR1均布",
+      "label_zh": "终成形/铆接头与焊点",
+      "operation_inference": "heading_plus_piercing_or_blind_hole_forming",
+      "geometry_zh": "终成形Ø13铆接头、150°锥面、孔深4、8个SR1焊点以及右端Ø5.23/Ø9.9阶梯。",
       "dimensions": {
-        "head_OD": "Φ13 ± 0.1",
-        "shank_OD_1": "Φ11 +0.02/0",
-        "shank_OD_2": "Φ7.4 ± 0.02 (uncertain label)",
-        "pilot_OD": "Φ9.9 +0.05/0 (uncertain)",
-        "flange_OD": "Φ25.23 +0.02/+0.05 (uncertain)",
-        "head_angle": "150°",
-        "hole_depth": "4 -0.10/-0.20",
-        "total_length": "16",
-        "dim_4_step": "4 +0.05/+0.03 (uncertain)",
-        "dim_3_5": "3.5 -0.05/-0.08 (uncertain)",
-        "dim_2_8": "2.8 +0.05/+0.02",
-        "weld_points": "8× SR1 均布"
-      }
+        "head_outer_diameter_mm": 13.0,
+        "inner_diameter_1_mm": 11.0,
+        "inner_diameter_2_mm": 9.0,
+        "inner_diameter_3_mm": 7.4,
+        "cone_angle_deg": 150.0,
+        "hole_depth_mm": 4.0,
+        "step_length_1_mm": 4.0,
+        "step_length_2_mm": 3.5,
+        "tail_length_mm": 6.0,
+        "tail_step_length_mm": 2.8,
+        "tail_small_diameter_mm": 5.23,
+        "tail_large_diameter_mm": 9.9,
+        "weld_point_radius_mm": 1.0,
+        "weld_point_count": 8
+      },
+      "evidence_ref": "manual_visual_evidence[4]"
     }
   ],
-  "usage_in_prompt": "本案例可用于：（1）说明带铆接凸缘/焊点头部螺栓的冷镦多工位工艺设计；（2）展示08AL低碳钢适合冷镦复杂头部形状；（3）说明终镦工位中盲孔与焊点一次成形的工艺可行性；（4）作为铆接螺栓类零件工艺排布的参考案例。注意：OCR噪声较大，部分尺寸（尤其4#工位法兰OD及公差）置信度较低，应以图纸原件为准。"
+  "process_design_lessons": [
+    "该案例不是简单头部镦粗：2#开始同时做头部体积分配和尾杆/阶梯拉伸，3#进一步稳定阶梯，4#才完成铆接头、孔深和焊点特征。",
+    "终站包含多个功能特征：150°锥面、孔深、SR1焊点均布和右端台阶。上游 schema 不应只输出L/D，应保留孔深、角度、焊点/球半径和台阶直径。",
+    "旧OCR/LLM草稿容易把Ø5.23误读为Ø25.23；人工读图时必须以页图尺寸线位置和小数点为准。"
+  ],
+  "usage_in_prompt": "高价值人工目视审核教材GT。用于铆接螺栓、焊点头部、盲孔/孔深、阶梯短杆和多特征终站的工序设计；可引用0#到4#的工位顺序和尺寸演变。"
 }

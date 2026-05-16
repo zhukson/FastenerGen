@@ -1,0 +1,64 @@
+{
+  "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+  "feature_observations": [
+    {
+      "feature_key": "large_head_volume",
+      "evidence_zh": "头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。",
+      "expected_inference": [
+        "需要 upsetting 聚集头部材料",
+        "若存在细长杆/台阶，需考虑 forward_extrusion 或缩径类工序"
+      ]
+    },
+    {
+      "feature_key": "hole_or_recess",
+      "evidence_zh": "头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。",
+      "expected_inference": [
+        "需要安排 piercing/backward_extrusion/压印类工序形成孔槽结构",
+        "孔槽类工序应与外形稳定顺序配合，避免过早破坏材料流动"
+      ]
+    },
+    {
+      "feature_key": "threaded_function",
+      "evidence_zh": "产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。",
+      "expected_inference": [
+        "ProcessForming 应区分冷镦工位与 post_processes",
+        "不要把螺纹最终形态误当成每站都要直接画出的冷镦实体"
+      ]
+    }
+  ],
+  "required_operations": [
+    {
+      "operation": "combined",
+      "why_zh": "复合工序用于把局部成形、压印、整形或下料校正合并到同一站。；1工位证据：下料：剪切棒料为圆柱坯，长度16.6mm，直径6.9mm；关键尺寸 L=16.6, D=6.9；几何 type=cylinder, L=16.6, Dmax=6.9；2工位证据：整形并倒锥端：下端缩径至3.94，过渡圆角R2.83，便于后续挤压定位；关键尺寸 L=16.8, D=6.94, d_end=3.94, R=2.83；几何 type=tapered, L=16.8, Dmax=6.94；6工位证据：整形头部并修整六角轮廓预备，下端铆接台肩定型；关键尺寸 L=13.33, D=7.1, step_d=6.36, step_l=3.03, tail_d=3.93；几何 type=headed, L=13.33, Dmax=7.1；7工位证据：成形六角头(对边7.13)、内六角孔4.13×深度、铆接台肩6.36与铆接尾杆2.95×1.5；关键尺寸 L_total=17.8, head_AF=7.13, head_h=5.2, socket_d=4.13, step_d=6.36, step_l=3.03, rivet_d=2.95, rivet_l=1.5, neck_l=3.97；几何 type=custom, L=17.8, Dmax=7.13"
+    },
+    {
+      "operation": "forward_extrusion",
+      "why_zh": "产品特征依据：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；正挤用于让材料沿轴向流动，形成较长杆部、缩径段或台阶过渡。；3工位证据：正挤压：形成主体直径6.98与端部缩径3.98的台阶过渡；关键尺寸 L=16.6, D=6.98, d=3.98；几何 type=stepped, L=16.6, Dmax=6.98；4工位证据：继续正挤：拉伸下端形成铆接杆部，杆径3.86，杆长6.3；关键尺寸 L=18.1, D=7.02, shank_d=3.86, shank_l=6.3；几何 type=stepped, L=18.1, Dmax=7.02"
+    },
+    {
+      "operation": "backward_extrusion",
+      "why_zh": "产品特征依据：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；反挤用于在头部形成内孔、内六角、凹穴等向内的功能结构。；5工位证据：上端预镦平准备六角成形，下端形成铆接台肩6.36×3.03，末端铆杆3.93×3.1；关键尺寸 L_head=13.3, D_head=7.07, step_d=6.36, step_l=3.03, tail_l=3.1, tail_d=3.93；几何 type=stepped, L=13.3, Dmax=7.07"
+    }
+  ],
+  "precedence_constraints": [
+    {
+      "before": "combined",
+      "after": "forward_extrusion",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 combined 后 forward_extrusion：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。"
+    },
+    {
+      "before": "forward_extrusion",
+      "after": "backward_extrusion",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 forward_extrusion 后 backward_extrusion：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。"
+    },
+    {
+      "before": "backward_extrusion",
+      "after": "combined",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 backward_extrusion 后 combined：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。"
+    }
+  ],
+  "common_failure_modes": [
+    "不要把 combined 当作万能工序来掩盖正挤、反挤、切边、冲孔等具体成形机制。",
+    "复杂头部件需要同时解释材料聚集、杆部/孔槽成形和最终外轮廓控制。"
+  ]
+}

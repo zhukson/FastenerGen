@@ -8,7 +8,7 @@ from pathlib import Path
 import ezdxf
 import pytest
 
-from app.data.schemas import ConfidenceLevel, DimensionType
+from app.data.schemas import DimensionType
 from app.drawings.parser import DrawingParser
 
 

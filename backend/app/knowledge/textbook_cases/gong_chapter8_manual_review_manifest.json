@@ -1,0 +1,64 @@
+{
+  "id": "gong_chapter8_manual_review_manifest",
+  "source": "gong_maoliang_p355_p378",
+  "status": "in_progress",
+  "review_policy": "逐页人工目视精读。每个尺寸必须能追溯到页图、工位号和尺寸标注；看不清则标注 uncertain，不用模板或批量LLM补齐。",
+  "reviewed_cases": [
+    {
+      "logical_page": 355,
+      "section": "8.15",
+      "title_zh": "细长中间大盘半空芯销",
+      "case_file": "gong_8_15_long_pin_large_mid_flange_semi_hollow.json",
+      "status": "manual_visual_reviewed",
+      "important_corrections": [
+        "该页主图是多工位模具排布，未给每个中间工位单独尺寸，不能强行编造0#~4#尺寸。",
+        "底部最终产品尺寸可读：Ø12、Ø7、Ø5.3、5.9、1.6、2.4、45.2、19.4、72.55、Ø16。"
+      ]
+    },
+    {
+      "logical_page": 358,
+      "section": "8.18",
+      "title_zh": "铆接螺栓",
+      "case_file": "gong_8_18_riveting_bolt.json",
+      "status": "manual_visual_reviewed",
+      "important_corrections": [
+        "终站右端小径为Ø5.23，不是Ø25.23。",
+        "终站包含150°锥面、孔深4、8-焊点SR1均布，不能只归纳为普通终镦。"
+      ]
+    },
+    {
+      "logical_page": 367,
+      "section": "8.26",
+      "title_zh": "不锈钢厨卫螺母",
+      "case_file": "gong_8_26_stainless_kitchen_bath_nut.json",
+      "status": "manual_visual_reviewed",
+      "important_corrections": [
+        "分离图上直接读到的尺寸证据和工序推断。",
+        "保留SR6.8、Ø10.8、Ø4.3、Ø6.2、5.08和302HQ等最终产品关键标注。"
+      ]
+    }
+  ],
+  "pending_pages": [
+    356,
+    357,
+    359,
+    360,
+    361,
+    362,
+    363,
+    364,
+    365,
+    366,
+    368,
+    369,
+    370,
+    371,
+    372,
+    373,
+    374,
+    375,
+    376,
+    377,
+    378
+  ]
+}

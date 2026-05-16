@@ -1,0 +1,60 @@
+{
+  "case_id": "STD-DIN912-M14-P2.0-40-60L",
+  "feature_observations": [
+    {
+      "feature_key": "hole_or_recess",
+      "evidence_zh": "头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。",
+      "expected_inference": [
+        "需要安排 piercing/backward_extrusion/压印类工序形成孔槽结构",
+        "孔槽类工序应与外形稳定顺序配合，避免过早破坏材料流动"
+      ]
+    },
+    {
+      "feature_key": "threaded_function",
+      "evidence_zh": "产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。",
+      "expected_inference": [
+        "ProcessForming 应区分冷镦工位与 post_processes",
+        "不要把螺纹最终形态误当成每站都要直接画出的冷镦实体"
+      ]
+    }
+  ],
+  "required_operations": [
+    {
+      "operation": "combined",
+      "why_zh": "复合工序用于把局部成形、压印、整形或下料校正合并到同一站。；1工位证据：下料：线材剪切为定长坯料，线径约Ø12.55 图面#1标注PUNCH=Ø16.4、DIE=Ø16.2，右侧最终杆径Ø13.7。；关键尺寸 L=65.6, D=12.55, D_punch=16.4, D_die=16.2, D_final_shank=13.7；几何 type=cylinder, L=65.6, Dmax=12.55"
+    },
+    {
+      "operation": "upsetting",
+      "why_zh": "产品有头部/法兰体积需求，需要先聚料。；镦粗用于轴向压缩并把材料聚集到头部或局部增厚区域。；2工位证据：预镦聚料，形成圆柱头预成形体；图面#2带俯视圆环/中心线。 图面#2有俯视环形视图，剖面标Ø20.6/Ø18.5/Ø14.8/Ø10.5、16°、40°、R1.1。；关键尺寸 D_head_pre=16.07, D_shank=13.7, D_head=20.6, D_socket_outer=18.5, D_socket_mid=14.8, D_socket_core=10.5, head_height=10.3, socket_chamfer_angle_deg=16, transition_angle_deg=40, R_underhead=1.1, D_lower_1=12.48, D_lower_2=12.47；几何 type=headed, L=51.6, Dmax=16.07, recessD=18.5"
+    },
+    {
+      "operation": "backward_extrusion",
+      "why_zh": "产品特征依据：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；反挤用于在头部形成内孔、内六角、凹穴等向内的功能结构。；3工位证据：反挤压成形内六角孔，对边约12；图面#3带俯视内六角/T:90标注。 图面#3有内六角俯视图，标12.2公差、T:90、Ø3，并有R1过渡。；关键尺寸 D_head=20.8, H_head=14, socket_size=12, D_head_max=21.1, D_neck=20.6, D_shank_upper=12.51, D_shank_lower=12.5, top_socket_across_flats=12.2, T_angle_deg=90, small_hole_diameter=3, R_underhead=1；几何 type=headed, L=64, Dmax=20.6, headD=20.6, shankD=13.7, recessD=12"
+    },
+    {
+      "operation": "forward_extrusion",
+      "why_zh": "正挤用于让材料沿轴向流动，形成较长杆部、缩径段或台阶过渡。；4工位证据：正挤/校准杆部至搓牙前坯径，并形成端部倒角。 图面#4为最长剖面，尾端Ø10.8并标45°，头部台阶处标30°。；关键尺寸 D_head=20.6, D_shank=12.51, L=50, D_tip=10.8, tail_chamfer_angle_deg=45, head_chamfer_angle_deg=30；几何 type=stepped, L=64, Dmax=20.6, headD=20.6, shankD=13.7, recessD=12"
+    }
+  ],
+  "precedence_constraints": [
+    {
+      "before": "combined",
+      "after": "upsetting",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 combined 后 upsetting：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。"
+    },
+    {
+      "before": "upsetting",
+      "after": "backward_extrusion",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 upsetting 后 backward_extrusion：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。"
+    },
+    {
+      "before": "backward_extrusion",
+      "after": "forward_extrusion",
+      "why_zh": "先完成头部孔槽/内六角特征，再正挤或校准杆部，保持头部功能区不被后续聚料破坏。"
+    }
+  ],
+  "common_failure_modes": [
+    "不要把 combined 当作万能工序来掩盖正挤、反挤、切边、冲孔等具体成形机制。",
+    "复杂头部件需要同时解释材料聚集、杆部/孔槽成形和最终外轮廓控制。"
+  ]
+}

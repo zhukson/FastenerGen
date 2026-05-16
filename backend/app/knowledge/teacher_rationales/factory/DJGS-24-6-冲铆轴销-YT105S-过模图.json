@@ -1,0 +1,48 @@
+{
+  "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+  "feature_observations": [
+    {
+      "feature_key": "large_head_volume",
+      "evidence_zh": "头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。",
+      "expected_inference": [
+        "需要 upsetting 聚集头部材料",
+        "若存在细长杆/台阶，需考虑 forward_extrusion 或缩径类工序"
+      ]
+    }
+  ],
+  "required_operations": [
+    {
+      "operation": "combined",
+      "why_zh": "复合工序用于把局部成形、压印、整形或下料校正合并到同一站。；1工位证据：正向挤压细杆部，保留头部坯料；R1.5/R0.5 过渡圆角；关键尺寸 L_total=74.11, L_head=15.41, D_head=10.75, L_shank=58.7, D_shank=7.98, R=1.5；几何 type=stepped, L=74.11, Dmax=10.75, headD=10.75, shankD=7.98；4工位证据：终镦+切边：法兰外径成形 φ19、头部凸台 φ10.95，杆端倒角 1.2×φ6.6；六角切边在最后一序完成；关键尺寸 L_total=75, H_flange=7.5, D_flange=19, D_head_top=10.95, H_head_top=6.5, D_head_recess=8.2, H_collar=3, D_shank=8.04, L_shank=61, chamfer_h=1.2, D_chamfer=6.6；几何 type=flanged, L=75, Dmax=19, headD=19, shankD=8.04"
+    },
+    {
+      "operation": "forward_extrusion",
+      "why_zh": "产品特征依据：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；正挤用于让材料沿轴向流动，形成较长杆部、缩径段或台阶过渡。；2工位证据：二次挤压成形，头部出现 φ9.2 阶梯（预成形凸台）；关键尺寸 L_total=74.03, L_head=15.53, D_head=10.8, D_head_top=9.2, L_head_top=13.35, D_shank=8, R=1.5；几何 type=stepped, L=74.03, Dmax=10.8, headD=10.8, shankD=8"
+    },
+    {
+      "operation": "upsetting",
+      "why_zh": "产品特征依据：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；镦粗用于轴向压缩并把材料聚集到头部或局部增厚区域。；3工位证据：镦粗成型头部，形成短粗法兰预形，头顶预留 φ8.35 凹槽；关键尺寸 L_total=75.38, H_head=6.6, D_head=10.85, D_head_recess=8.35, D_shank=8.02, R=1.4；几何 type=headed, L=75.38, Dmax=10.85, headD=10.85, shankD=8.02"
+    }
+  ],
+  "precedence_constraints": [
+    {
+      "before": "combined",
+      "after": "forward_extrusion",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 combined 后 forward_extrusion：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。"
+    },
+    {
+      "before": "forward_extrusion",
+      "after": "upsetting",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 forward_extrusion 后 upsetting：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。"
+    },
+    {
+      "before": "upsetting",
+      "after": "combined",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 upsetting 后 combined：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。"
+    }
+  ],
+  "common_failure_modes": [
+    "不要把 combined 当作万能工序来掩盖正挤、反挤、切边、冲孔等具体成形机制。",
+    "复杂头部件需要同时解释材料聚集、杆部/孔槽成形和最终外轮廓控制。"
+  ]
+}

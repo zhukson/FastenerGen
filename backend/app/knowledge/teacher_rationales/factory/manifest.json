@@ -1,0 +1,78 @@
+{
+  "source": "factory",
+  "case_count": 8,
+  "cases": [
+    {
+      "case_id": "12齿车削球头",
+      "source_kind": "case_dwg",
+      "product_category": "ball_head",
+      "teacher_rationale": "12齿车削球头.json",
+      "holdout_case_ids": [
+        "12齿车削球头"
+      ]
+    },
+    {
+      "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+      "source_kind": "case_dwg",
+      "product_category": "through_hole_part",
+      "teacher_rationale": "DJGS-22-2-四方通孔-105S-过模图.json",
+      "holdout_case_ids": [
+        "DJGS-22-2-四方通孔-105S-过模图"
+      ]
+    },
+    {
+      "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+      "source_kind": "case_dwg",
+      "product_category": "rivet_pin",
+      "teacher_rationale": "DJGS-24-6-冲铆轴销-YT105S-过模图.json",
+      "holdout_case_ids": [
+        "DJGS-24-6-冲铆轴销-YT105S-过模图"
+      ]
+    },
+    {
+      "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+      "source_kind": "case_dwg",
+      "product_category": "special_shape",
+      "teacher_rationale": "DJGS-25-2-B120-0044-YT105S-过模图.json",
+      "holdout_case_ids": [
+        "DJGS-25-2-B120-0044-YT105S-过模图"
+      ]
+    },
+    {
+      "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+      "source_kind": "case_dwg",
+      "product_category": "special_shape",
+      "teacher_rationale": "DJGS-25-5-B144-0056-106S-过模图.json",
+      "holdout_case_ids": [
+        "DJGS-25-5-B144-0056-106S-过模图"
+      ]
+    },
+    {
+      "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+      "source_kind": "case_dwg",
+      "product_category": "special_shape",
+      "teacher_rationale": "DJGS-25-7-21023C-00808-106S-过模图.json",
+      "holdout_case_ids": [
+        "DJGS-25-7-21023C-00808-106S-过模图"
+      ]
+    },
+    {
+      "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+      "source_kind": "case_dwg",
+      "product_category": "square_T_head",
+      "teacher_rationale": "DJGS-25-8-B001-0358-四方T帽-106S-过模图.json",
+      "holdout_case_ids": [
+        "DJGS-25-8-B001-0358-四方T帽-106S-过模图"
+      ]
+    },
+    {
+      "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+      "source_kind": "case_dwg",
+      "product_category": "riveting_screw",
+      "teacher_rationale": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图.json",
+      "holdout_case_ids": [
+        "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图"
+      ]
+    }
+  ]
+}

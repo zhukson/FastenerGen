@@ -1,0 +1,112 @@
+{
+  "source": "standard",
+  "case_count": 5,
+  "cases": [
+    {
+      "case_id": "BG24081-P03-DIN933-M18-P2-5",
+      "source_type": "standard_part",
+      "trust_level": "reviewed",
+      "product_name_zh": "DIN933 M18×2.5 外六角螺栓",
+      "product_category": "hex_bolt_DIN933",
+      "part_number": "BG24081-P03S01",
+      "holdout_case_ids": [
+        "BG24081-P03-DIN933-M18-P2-5"
+      ],
+      "tags": [
+        "combined",
+        "heading",
+        "hex_bolt_DIN933",
+        "thread",
+        "trimming",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/standard/BG24081-P03-DIN933-M18-P2-5.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_BG24081-P03-DIN933-M18-P2-5 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case BG24081-P03-DIN933-M18-P2-5 --prefer-category hex_bolt_DIN933 --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "BG30060-P03-DIN912-M20-P2-5",
+      "source_type": "standard_part",
+      "trust_level": "reviewed",
+      "product_name_zh": "DIN912 内六角圆柱头螺钉 M20×2.5",
+      "product_category": "socket_cap_screw_DIN912",
+      "part_number": "BG30060-P03S02",
+      "holdout_case_ids": [
+        "BG30060-P03-DIN912-M20-P2-5"
+      ],
+      "tags": [
+        "backward_extrusion",
+        "combined",
+        "forward_extrusion",
+        "heading",
+        "socket_cap_screw_DIN912",
+        "thread",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/standard/BG30060-P03-DIN912-M20-P2-5.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_BG30060-P03-DIN912-M20-P2-5 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case BG30060-P03-DIN912-M20-P2-5 --prefer-category socket_cap_screw_DIN912 --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "BG30060-P05-DIN933-M22-P2-5",
+      "source_type": "standard_part",
+      "trust_level": "reviewed",
+      "product_name_zh": "DIN933 M22×2.5 六角头螺栓",
+      "product_category": "hex_bolt_DIN933",
+      "part_number": "BG30060-P05S01",
+      "holdout_case_ids": [
+        "BG30060-P05-DIN933-M22-P2-5"
+      ],
+      "tags": [
+        "combined",
+        "heading",
+        "hex_bolt_DIN933",
+        "thread",
+        "trimming",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/standard/BG30060-P05-DIN933-M22-P2-5.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_BG30060-P05-DIN933-M22-P2-5 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case BG30060-P05-DIN933-M22-P2-5 --prefer-category hex_bolt_DIN933 --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-40-60L",
+      "source_type": "standard_part",
+      "trust_level": "reviewed",
+      "product_name_zh": "DIN912 内六角圆柱头螺钉 M14×2.0",
+      "product_category": "socket_cap_screw_DIN912",
+      "part_number": "STD-DIN912-M14-P2.0-40-60L",
+      "holdout_case_ids": [
+        "STD-DIN912-M14-P2.0-40-60L"
+      ],
+      "tags": [
+        "backward_extrusion",
+        "combined",
+        "forward_extrusion",
+        "socket_cap_screw_DIN912",
+        "thread",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/standard/STD-DIN912-M14-P2.0-40-60L.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_STD-DIN912-M14-P2.0-40-60L --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case STD-DIN912-M14-P2.0-40-60L --prefer-category socket_cap_screw_DIN912 --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-60-140L",
+      "source_type": "standard_part",
+      "trust_level": "reviewed",
+      "product_name_zh": "DIN912 内六角圆柱头螺钉 M14×2.0",
+      "product_category": "socket_cap_screw_DIN912",
+      "part_number": "STD-DIN912-M14-P2.0-60-140L",
+      "holdout_case_ids": [
+        "STD-DIN912-M14-P2.0-60-140L"
+      ],
+      "tags": [
+        "backward_extrusion",
+        "combined",
+        "forward_extrusion",
+        "socket_cap_screw_DIN912",
+        "thread",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/standard/STD-DIN912-M14-P2.0-60-140L.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_STD-DIN912-M14-P2.0-60-140L --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case STD-DIN912-M14-P2.0-60-140L --prefer-category socket_cap_screw_DIN912 --candidate-count 1 --max-design-attempts 1"
+    }
+  ]
+}

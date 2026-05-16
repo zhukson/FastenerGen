@@ -146,6 +146,12 @@ def _xml_escape(s: str) -> str:
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+def _clip_text(text: str, limit: int) -> str:
+    if len(text) <= limit:
+        return text
+    return text[:limit].rstrip() + "\n...[truncated for compact prompt]"
+
+
 # ---------------------------------------------------------------------------
 # 优化 3 — feature-based sub-process retrieval
 # ---------------------------------------------------------------------------
@@ -165,7 +171,7 @@ _INPUT_FEATURE_PATTERNS: dict[str, list[str]] = {
     "taper_end": [r"倒锥", r"45°", r"30°"],
     "thread_external": [r"螺纹", r"thread", r"M\d+"],
     "thread_internal": [r"内螺纹", r"攻丝"],
-    "through_hole": [r"通孔", r"through"],
+    "through_hole": [r"通孔", r"through", r"空心", r"内孔"],
     "rivet_tail": [r"铆"],
 }
 
@@ -534,6 +540,82 @@ def _format_case(rec: CaseRecord) -> str:
     )
 
 
+def _format_case_summary(rec: CaseRecord) -> str:
+    """Compact CaseRecord view for retrieved evidence.
+
+    Keeps station order and core dimensions, but drops verbose reasoning so
+    compact prompts focus attention on relevant process evidence.
+    """
+    pf = rec.process_forming.model_dump(exclude_none=True, mode="json")
+    feats = rec.part_features.model_dump(exclude_none=True, mode="json")
+    operations = [str(st.get("operation")) for st in pf.get("stations") or []]
+    station_lines: list[str] = []
+    for st in pf.get("stations") or []:
+        wp = st.get("workpiece") or {}
+        kd = st.get("key_dimensions") or {}
+        dims = {
+            k: v
+            for k, v in {
+                "L": wp.get("overall_length_mm") or kd.get("L"),
+                "D": wp.get("max_diameter_mm") or kd.get("D"),
+                "head_D": wp.get("head_diameter_mm"),
+                "head_H": wp.get("head_height_mm"),
+                "shank_D": wp.get("shank_diameter_mm"),
+                "shank_L": wp.get("shank_length_mm"),
+                "hole_D": wp.get("through_hole_diameter_mm"),
+                "R": wp.get("fillet_R_mm") or wp.get("corner_radius_mm"),
+                "C": wp.get("chamfer_C_mm"),
+            }.items()
+            if v is not None
+        }
+        dims.update({k: v for k, v in kd.items() if v is not None})
+        station_lines.append(
+            f'    <station n="{st.get("n")}" operation="{_xml_escape(str(st.get("operation")))}" '
+            f'dims="{_xml_escape(json.dumps(dims, ensure_ascii=False, separators=(",", ":")))}">'
+            f'{_xml_escape((st.get("notes_zh") or "")[:160])}</station>'
+        )
+
+    return (
+        f'<case_summary id="{_xml_escape(rec.case_id)}" '
+        f'category="{_xml_escape(rec.product_category)}" '
+        f'source="{rec.source_kind}" extracted_by="{rec.extracted_by}">\n'
+        f"  <part_name_zh>{_xml_escape(rec.product_name_zh)}</part_name_zh>\n"
+        f"  <description>{_xml_escape(str(feats.get('description') or ''))}</description>\n"
+        f"  <material>{_xml_escape(rec.material)}</material>\n"
+        f"  <size overall_L=\"{feats.get('overall_length', '')}\" "
+        f"shank_D=\"{((feats.get('shank') or {}).get('diameter', ''))}\"/>\n"
+        f"  <operations>{_xml_escape(' -> '.join(operations))}</operations>\n"
+        f"  <blank>{_format_workpiece(pf['blank'])}</blank>\n"
+        f"  <stations>\n" + "\n".join(station_lines) + "\n  </stations>\n"
+        "</case_summary>"
+    )
+
+
+def _format_textbook_case_summary(rec: dict[str, Any]) -> str:
+    record_id = rec.get("id") or rec.get("case_id") or rec.get("source") or "unknown"
+    stations = rec.get("station_sequence") or []
+    station_bits = []
+    for st in stations[:8]:
+        dims = st.get("dimensions") or {}
+        station_bits.append(
+            f"{st.get('n')}:{st.get('label_zh') or ''}"
+            f"({json.dumps(dims, ensure_ascii=False, separators=(',', ':'))[:80]})"
+        )
+    return (
+        f'<textbook_case_summary id="{_xml_escape(str(record_id))}" '
+        f'source="{_xml_escape(str(rec.get("source") or ""))}" '
+        f'status="{_xml_escape(str(rec.get("status") or ""))}">\n'
+        f"  <title>{_xml_escape(str(rec.get('title_zh') or ''))}</title>\n"
+        f"  <category>{_xml_escape(str(rec.get('product_category') or ''))}</category>\n"
+        f"  <material>{_xml_escape(str(rec.get('material') or ''))}</material>\n"
+        f"  <why>{_xml_escape(str(rec.get('why_it_matters') or '')[:240])}</why>\n"
+        f"  <summary>{_xml_escape(str(rec.get('visible_process_summary_zh') or '')[:360])}</summary>\n"
+        f"  <stations>{_xml_escape(' -> '.join(station_bits))}</stations>\n"
+        f"  <usage>{_xml_escape(str(rec.get('usage_in_prompt') or '')[:240])}</usage>\n"
+        "</textbook_case_summary>"
+    )
+
+
 def _format_json_record(tag: str, rec: dict[str, Any]) -> str:
     """Format a loose textbook/pattern JSON record as XML-wrapped JSON."""
     source = rec.get("source") or rec.get("source_id") or "unknown"
@@ -547,6 +629,134 @@ def _format_json_record(tag: str, rec: dict[str, Any]) -> str:
     )
 
 
+def _text_for_match(value: Any) -> str:
+    if value is None:
+        return ""
+    return json.dumps(value, ensure_ascii=False) if not isinstance(value, str) else value
+
+
+def _score_textbook_case(rec: dict[str, Any], needed_features: set[str], blob: str) -> int:
+    text = " ".join(
+        _text_for_match(rec.get(k))
+        for k in (
+            "id",
+            "title_zh",
+            "product_category",
+            "why_it_matters",
+            "visible_process_summary_zh",
+            "usage_in_prompt",
+            "station_sequence",
+        )
+    ).lower()
+    score = 0
+    keyword_scores = {
+        "external_square_head": ["四方", "外四角", "square", "t形", "t-bolt", "t bolt", "t帽"],
+        "external_flange_head": ["法兰", "凸缘", "大盘", "flange", "垫"],
+        "through_hole": ["通孔", "穿芯", "空心", "内孔", "孔", "through", "hollow", "bore", "冲孔"],
+        "thread_external": ["螺栓", "螺钉", "螺纹", "thread", "bolt", "screw"],
+        "shoulder_step": ["台阶", "阶梯", "支撑", "shoulder", "step"],
+        "taper_end": ["锥", "斜面", "taper", "bevel"],
+        "rivet_tail": ["铆", "rivet"],
+        "internal_hex_head": ["内六角", "hex socket"],
+        "external_ball_head": ["球面", "球头", "sr", "spherical", "ball"],
+    }
+    for feature in needed_features:
+        if any(word in text for word in keyword_scores.get(feature, [])):
+            score += 4
+
+    # Product-family bonuses for the current input text.
+    if (
+        any(word in blob for word in ("四方", "t帽", "t头", "square"))
+        and any(word in text for word in ("四方", "外四角", "t形", "t-bolt", "t bolt"))
+    ):
+        score += 8
+    if "通孔" in blob and any(word in text for word in ("通孔", "穿芯", "空心", "冲孔")):
+        score += 5
+    if "法兰" in blob and any(word in text for word in ("法兰", "凸缘", "大盘")):
+        score += 5
+    if any(word in blob for word in ("不锈钢", "302hq", "stainless")) and any(
+        word in text for word in ("不锈钢", "302hq", "stainless")
+    ):
+        score += 6
+    if any(word in blob for word in ("厨卫", "螺母", "nut")) and any(
+        word in text for word in ("厨卫", "螺母", "nut")
+    ):
+        score += 6
+    if any(word in blob for word in ("空心", "内孔", "孔", "hollow", "bore")) and any(
+        word in text for word in ("空心", "内孔", "孔", "hollow", "bore")
+    ):
+        score += 6
+    if any(word in blob for word in ("球面", "sr", "spherical")) and any(
+        word in text for word in ("球面", "sr", "spherical")
+    ):
+        score += 6
+    if rec.get("status") == "manual_visual_reviewed":
+        score += 5
+
+    station_count = len(rec.get("station_sequence") or [])
+    if station_count:
+        score += min(station_count, 6)
+    return score
+
+
+def _rank_case_records(
+    records: list[CaseRecord],
+    part_features: Any,
+    *,
+    prefer_category: str | None,
+    max_records: int,
+    feature_index: dict[str, Any],
+) -> list[CaseRecord]:
+    needed = set(detect_input_features(part_features)) if part_features is not None else set()
+    if hasattr(part_features, "model_dump"):
+        data = part_features.model_dump(exclude_none=True, mode="json")
+    else:
+        data = dict(part_features or {})
+    target_l = data.get("overall_length") or 0
+    target_d = (data.get("shank") or {}).get("diameter") or 0
+
+    def score_record(record: CaseRecord) -> tuple[int, str]:
+        score = 0
+        if prefer_category and record.product_category == prefer_category:
+            score += 20
+        record_features = set((feature_index.get("by_case") or {}).get(record.case_id, []))
+        score += len(needed & record_features) * 6
+        feats = record.part_features
+        if target_l and feats.overall_length:
+            ratio = target_l / feats.overall_length
+            if 0.6 <= ratio <= 1.66:
+                score += 4
+        shank_d = feats.shank.diameter if feats.shank else 0
+        if target_d and shank_d:
+            ratio = target_d / shank_d
+            if 0.6 <= ratio <= 1.66:
+                score += 4
+        return score, record.case_id
+
+    ranked = sorted(records, key=score_record, reverse=True)
+    return ranked[:max_records]
+
+
+def _rank_textbook_cases(
+    records: list[dict[str, Any]],
+    part_features: Any,
+    *,
+    max_records: int,
+) -> list[dict[str, Any]]:
+    needed = set(detect_input_features(part_features)) if part_features is not None else set()
+    if hasattr(part_features, "model_dump"):
+        data = part_features.model_dump(exclude_none=True, mode="json")
+    else:
+        data = dict(part_features or {})
+    blob = _text_for_match(data).lower()
+    ranked = sorted(
+        records,
+        key=lambda rec: (_score_textbook_case(rec, needed, blob), str(rec.get("id") or "")),
+        reverse=True,
+    )
+    return ranked[:max_records]
+
+
 def format_for_prompt(
     lib: Library,
     *,
@@ -554,6 +764,11 @@ def format_for_prompt(
     only_human_reviewed: bool = False,
     part_features: Any = None,
     exclude_case_ids: list[str] | set[str] | None = None,
+    compact: bool = False,
+    max_cases: int = 5,
+    max_textbook_cases: int = 5,
+    max_rule_chars: int | None = None,
+    max_textbook_rule_chars: int | None = None,
 ) -> str:
     """Format the entire library as one XML block for Step 3 few-shot.
 
@@ -572,15 +787,28 @@ def format_for_prompt(
     if only_human_reviewed:
         records = [r for r in records if r.extracted_by == "human_reviewed"]
 
-    if prefer_category:
+    if compact:
+        records = _rank_case_records(
+            records,
+            part_features,
+            prefer_category=prefer_category,
+            max_records=max_cases,
+            feature_index=lib.feature_index,
+        )
+    elif prefer_category:
         matching = [r for r in records if r.product_category == prefer_category]
         rest = [r for r in records if r.product_category != prefer_category]
         records = matching + rest
 
-    case_xml = "\n\n".join(_format_case(r) for r in records)
+    case_xml = "\n\n".join(
+        _format_case_summary(r) if compact else _format_case(r)
+        for r in records
+    )
 
     rule_xml_parts: list[str] = []
     for name, body in lib.rules.items():
+        if max_rule_chars is not None:
+            body = _clip_text(body, max_rule_chars)
         rule_xml_parts.append(
             f'<rule_set name="{_xml_escape(name)}">\n{_xml_escape(body)}\n</rule_set>'
         )
@@ -588,6 +816,8 @@ def format_for_prompt(
 
     textbook_rule_parts: list[str] = []
     for name, body in lib.textbook_rules.items():
+        if max_textbook_rule_chars is not None:
+            body = _clip_text(body, max_textbook_rule_chars)
         textbook_rule_parts.append(
             f'<textbook_rule name="{_xml_escape(name)}">\n{_xml_escape(body)}\n</textbook_rule>'
         )
@@ -597,8 +827,20 @@ def format_for_prompt(
         else "<!-- no textbook rules distilled yet -->"
     )
 
+    textbook_cases = (
+        _rank_textbook_cases(
+            lib.textbook_cases,
+            part_features,
+            max_records=max_textbook_cases,
+        )
+        if compact
+        else lib.textbook_cases
+    )
     textbook_case_xml = (
-        "\n\n".join(_format_json_record("textbook_case", rec) for rec in lib.textbook_cases)
+        "\n\n".join(
+            _format_textbook_case_summary(rec) if compact else _format_json_record("textbook_case", rec)
+            for rec in textbook_cases
+        )
         or "<!-- no textbook cases distilled yet -->"
     )
 
@@ -672,12 +914,12 @@ def format_for_prompt(
     # being distracted by the bulk <cases> dump. Prompt v1.2.0 explicitly
     # tells the LLM to start here and cite its case_ids.
     return (
-        "<knowledge_library>\n"
+        f'<knowledge_library mode="{"compact" if compact else "full"}">\n'
         f"  <relevant_subprocesses>\n{relevant_xml}\n  </relevant_subprocesses>\n"
         f"  <rules>\n{rule_xml}\n  </rules>\n"
         f"  <textbook_knowledge>\n{textbook_rule_xml}\n  </textbook_knowledge>\n"
         f"  <patterns>\n{pattern_xml}\n  </patterns>\n"
         f'  <cases count="{len(records)}">\n{case_xml}\n  </cases>\n'
-        f'  <textbook_cases count="{len(lib.textbook_cases)}">\n{textbook_case_xml}\n  </textbook_cases>\n'
+        f'  <textbook_cases count="{len(textbook_cases)}" total_available="{len(lib.textbook_cases)}">\n{textbook_case_xml}\n  </textbook_cases>\n'
         "</knowledge_library>"
     )

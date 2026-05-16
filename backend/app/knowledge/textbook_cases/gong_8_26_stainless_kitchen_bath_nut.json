@@ -1,87 +1,193 @@
 {
   "id": "stainless_kitchen_sanitary_nut_8_26",
   "source": "gong_maoliang_Page367_370:367",
-  "status": "llm_draft_low_confidence",
+  "source_image": "fasternerGenData/textbook_pages/gong_maoliang_Page367_370/p001_book367.png",
+  "status": "manual_visual_reviewed",
+  "review_method": "human_visual_reading_from_page_image",
   "title_zh": "不锈钢厨卫螺母",
   "product_category": "螺母 / Nut (厨卫用途)",
-  "why_it_matters": "展示不锈钢302HQ材质厨卫螺母的5工位冷镦成形工序，含头部球面成形与杆部挤压过程，适合小直径深孔类螺母工艺参考。",
-  "visible_process_summary_zh": "共5个工位（0#～4#），从圆柱毛坯下料开始，经预成形锥面、局部镦粗头部、挤压杆孔，最终成形带SR球面头部和内孔的厨卫螺母。",
+  "material": "302HQ",
+  "why_it_matters": "龚茂良第8章工艺变形图案例。该页给出0#到4#以及最终产品图，适合作为空心/带内孔不锈钢螺母多工位冷镦的高价值教材GT。",
+  "visible_process_summary_zh": "共5个图示工位：0#圆柱坯料；1#端部45°预成形并形成R0.8过渡；2#局部镦粗并形成预孔/内腔；3#外径定径并延伸内孔；4#成形SR6.8球面头部、内孔和端面视图，最终产品图给出关键公差与材料302HQ。",
   "visible_dimensions": {
-    "final_product_head_diameter_mm": "Ø10.8 +0.2/-0 (unclear, read as ~Ø10.8)",
-    "final_product_head_sphere_radius_mm": "SR6.8",
-    "final_product_shank_diameter_mm": "Ø6.2 -0/-0.1 (approx)",
-    "final_product_bore_diameter_mm": "Ø4.3 ±0.05",
-    "final_product_total_length_mm": "18-0.5 (approx 18.2±0.2 body + 3.1 head protrusion)",
-    "final_product_body_length_mm": "18.2 ±0.2",
-    "final_product_head_height_mm": "3.1",
-    "final_product_end_feature_diameter_mm": "Ø6 (approx), depth 5.08",
-    "material": "302HQ (不锈钢)"
+    "blank_length_mm": 17.15,
+    "blank_diameter_mm": 5.9,
+    "final_head_diameter_mm": "Ø10.8 +0.2/-0",
+    "final_head_spherical_radius_mm": "SR6.8",
+    "final_body_length_mm": "18.2±0.2",
+    "final_inner_length_mm": "18 -0.5",
+    "final_head_height_mm": 3.1,
+    "final_inner_diameter_mm": "Ø4.3 +0.05/-0",
+    "final_body_diameter_mm": "Ø6.2 -0/-0.1",
+    "final_end_diameter_mm": "Ø6",
+    "final_end_depth_mm": 5.08,
+    "material": "302HQ"
   },
+  "manual_visual_evidence": [
+    {
+      "page": 367,
+      "station": "0#",
+      "evidence_zh": "图面0#为圆柱坯料，标注长度17.15、直径Ø5.9。",
+      "dimensions": {
+        "length_mm": 17.15,
+        "diameter_mm": 5.9
+      }
+    },
+    {
+      "page": 367,
+      "station": "1#",
+      "evidence_zh": "图面1#标Ø6.04、Ø5.3、总长16.73、45°、30°和R0.8。",
+      "dimensions": {
+        "head_diameter_mm": 6.04,
+        "shank_diameter_mm": 5.3,
+        "overall_length_mm": 16.73,
+        "chamfer_angle_deg": 45.0,
+        "taper_angle_deg": 30.0,
+        "fillet_R_mm": 0.8
+      }
+    },
+    {
+      "page": 367,
+      "station": "2#",
+      "evidence_zh": "图面2#标Ø6.08、Ø3.8、4、10.2、0.4、30°、54°以及右端Ø5.3/Ø6.07。",
+      "dimensions": {
+        "head_outer_diameter_mm": 6.08,
+        "pre_bore_diameter_mm": 3.8,
+        "head_local_length_mm": 4.0,
+        "bore_depth_mm": 10.2,
+        "end_flat_mm": 0.4,
+        "taper_angle_deg": 30.0,
+        "included_angle_deg": 54.0,
+        "right_shank_diameter_mm": 5.3,
+        "right_outer_diameter_mm": 6.07
+      }
+    },
+    {
+      "page": 367,
+      "station": "3#",
+      "evidence_zh": "图面3#标4、18.2、17、Ø4.3、Ø6.1。",
+      "dimensions": {
+        "head_local_length_mm": 4.0,
+        "body_length_mm": 18.2,
+        "bore_depth_mm": 17.0,
+        "bore_diameter_mm": 4.3,
+        "outer_diameter_mm": 6.1
+      }
+    },
+    {
+      "page": 367,
+      "station": "4#",
+      "evidence_zh": "图面4#标SR6.8、Ø10.8、18.2、17、3.1、Ø4.3、Ø6.13，右侧端视图标Ø6和5.08。",
+      "dimensions": {
+        "head_spherical_radius_mm": 6.8,
+        "head_outer_diameter_mm": 10.8,
+        "body_length_mm": 18.2,
+        "bore_depth_mm": 17.0,
+        "head_height_mm": 3.1,
+        "bore_diameter_mm": 4.3,
+        "outer_diameter_mm": 6.13,
+        "end_diameter_mm": 6.0,
+        "end_depth_mm": 5.08
+      }
+    },
+    {
+      "page": 367,
+      "station": "final",
+      "evidence_zh": "最终产品框内标SR6.8、Ø10.8+0.2/-0、3.1、18.2±0.2、18-0.5、Ø4.3+0.05/-0、Ø6.2-0/-0.1、Ø6、5.08、材质302HQ。",
+      "dimensions": {
+        "head_spherical_radius_mm": 6.8,
+        "head_outer_diameter_mm": 10.8,
+        "head_height_mm": 3.1,
+        "body_length_mm": 18.2,
+        "inner_length_mm": 18.0,
+        "bore_diameter_mm": 4.3,
+        "body_diameter_mm": 6.2,
+        "end_diameter_mm": 6.0,
+        "end_depth_mm": 5.08
+      }
+    }
+  ],
   "station_sequence": [
     {
       "n": 0,
       "label_zh": "下料",
-      "geometry_zh": "圆柱毛坯，直径Ø5.9，长度17.15",
+      "operation_inference": "cutoff",
+      "geometry_zh": "圆柱坯料。",
       "dimensions": {
-        "wire_diameter_mm": "Ø5.9",
-        "blank_length_mm": "17.15"
-      }
+        "wire_diameter_mm": 5.9,
+        "blank_length_mm": 17.15
+      },
+      "evidence_ref": "manual_visual_evidence[0]"
     },
     {
       "n": 1,
       "label_zh": "一次预成形",
-      "geometry_zh": "头部端面倒锥45°预成形，局部压出R0.8圆角，杆端锥角30°；杆径Ø5.3，总长16.73，头部外径Ø6.04",
+      "operation_inference": "preforming",
+      "geometry_zh": "端部45°预成形，形成R0.8过渡，右侧杆部定径到Ø5.3。",
       "dimensions": {
-        "shank_diameter_mm": "Ø5.3",
-        "head_diameter_mm": "Ø6.04",
-        "total_length_mm": "16.73",
-        "taper_angle_deg": "30",
-        "chamfer_angle_deg": "45",
-        "corner_radius_mm": "R0.8"
-      }
+        "head_diameter_mm": 6.04,
+        "shank_diameter_mm": 5.3,
+        "overall_length_mm": 16.73,
+        "chamfer_angle_deg": 45.0,
+        "taper_angle_deg": 30.0,
+        "fillet_R_mm": 0.8
+      },
+      "evidence_ref": "manual_visual_evidence[1]"
     },
     {
       "n": 2,
-      "label_zh": "二次成形（镦头+预挤孔）",
-      "geometry_zh": "头部进一步镦粗，外径Ø6.08，杆端挤出预孔Ø3.8，孔深约10.2，端面留余量0.4，锥角30°，头侧面锥5°；杆径Ø6.07（unclear），Ø5.3保留段",
+      "label_zh": "二次成形/预挤孔",
+      "operation_inference": "upsetting_plus_backward_extrusion",
+      "geometry_zh": "左端局部镦粗并形成Ø3.8预孔，孔深约10.2，保留0.4端面余量。",
       "dimensions": {
-        "head_outer_diameter_mm": "Ø6.08",
-        "pre_bore_diameter_mm": "Ø3.8",
-        "pre_bore_depth_mm": "~10.2",
-        "end_flat_mm": "0.4",
-        "shank_diameter_upper_mm": "Ø5.3",
-        "shank_diameter_lower_mm": "Ø6.07 (uncertain)",
-        "body_taper_angle_deg": "30",
-        "head_taper_deg": "5"
-      }
+        "head_outer_diameter_mm": 6.08,
+        "pre_bore_diameter_mm": 3.8,
+        "bore_depth_mm": 10.2,
+        "end_flat_mm": 0.4,
+        "right_shank_diameter_mm": 5.3,
+        "right_outer_diameter_mm": 6.07,
+        "included_angle_deg": 54.0,
+        "taper_angle_deg": 30.0
+      },
+      "evidence_ref": "manual_visual_evidence[2]"
     },
     {
       "n": 3,
-      "label_zh": "三次成形（杆部定径+孔延伸）",
-      "geometry_zh": "杆外径整形至Ø6.1，内孔延伸，头部平台长4，体长18.2，孔深约17",
+      "label_zh": "三次成形/孔延伸与外径定径",
+      "operation_inference": "forward_extrusion_plus_bore_extension",
+      "geometry_zh": "外径定径至Ø6.1，内孔延伸至约17，体长18.2。",
       "dimensions": {
-        "shank_outer_diameter_mm": "Ø6.1",
-        "body_length_mm": "18.2",
-        "bore_depth_mm": "~17",
-        "head_platform_length_mm": "4"
-      }
+        "outer_diameter_mm": 6.1,
+        "body_length_mm": 18.2,
+        "bore_depth_mm": 17.0,
+        "bore_diameter_mm": 4.3,
+        "head_local_length_mm": 4.0
+      },
+      "evidence_ref": "manual_visual_evidence[3]"
     },
     {
       "n": 4,
-      "label_zh": "四次成形（头部球面成形+最终孔）",
-      "geometry_zh": "头部成形SR6.8球面，头部外径Ø10.8，头高3.1，杆外径Ø6.13（uncertain），内孔Ø4.3，孔深17，体长18.2，端部特征Ø6深5.08",
+      "label_zh": "四次成形/球面头终成形",
+      "operation_inference": "heading_plus_final_sizing",
+      "geometry_zh": "成形SR6.8球面头部、Ø10.8头径、3.1头高，并校准孔和杆部外径。",
       "dimensions": {
-        "head_sphere_radius_mm": "SR6.8",
-        "head_outer_diameter_mm": "Ø10.8",
-        "head_height_mm": "3.1",
-        "shank_outer_diameter_mm": "Ø6.13 (uncertain)",
-        "bore_diameter_mm": "Ø4.3",
-        "bore_depth_mm": "17",
-        "body_length_mm": "18.2",
-        "end_diameter_mm": "Ø6",
-        "end_depth_mm": "5.08"
-      }
+        "head_spherical_radius_mm": 6.8,
+        "head_outer_diameter_mm": 10.8,
+        "head_height_mm": 3.1,
+        "outer_diameter_mm": 6.13,
+        "bore_diameter_mm": 4.3,
+        "bore_depth_mm": 17.0,
+        "body_length_mm": 18.2,
+        "end_diameter_mm": 6.0,
+        "end_depth_mm": 5.08
+      },
+      "evidence_ref": "manual_visual_evidence[4]"
     }
   ],
-  "usage_in_prompt": "当用户询问不锈钢302HQ厨卫螺母冷镦工艺、球面头部成形工序设计、或类似带内孔螺母多工位成形时，可引用此案例的工位序列与关键尺寸作为参考。注意部分尺寸因扫描模糊存在不确定性，使用时需结合实际产品图纸核实。"
+  "process_design_lessons": [
+    "该案例先做端部预成形，再进行预孔/内腔成形，最后才终成形球面头部，体现了先体积分配、再孔腔、后外形精整的顺序。",
+    "不锈钢302HQ小直径空心件不能只靠最终产品图推断，应保留中间孔深、外径和头部SR的逐站演变。",
+    "3#到4#的主要变化是头部SR6.8和Ø10.8外形终成形，孔深和体长基本继承前一站，说明最终站偏整形/终成形。"
+  ],
+  "usage_in_prompt": "高价值人工目视审核教材GT。用于不锈钢小直径空心螺母、厨卫螺母、球面头部+内孔件的工序设计；可引用0#到4#的工位顺序和尺寸演变，但仍应结合实际材料、设备和产品图校核。"
 }

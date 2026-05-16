@@ -4,8 +4,8 @@
   "status": "image_indexed_not_fully_extracted",
   "title_zh": "龚茂良第8章经典需工艺变形图案例索引",
   "product_category": "textbook_case_index",
-  "why_it_matters": "第8章 p355-p378 包含大量复杂异形件冷镦变形图，是 demo 阶段弥补真实 DWG 数量不足的重要低权重参考。该索引用于提醒模型存在相关案例，并驱动后续 vision 精抽。",
-  "usage_in_prompt": "仅作为案例存在性索引，不作为尺寸 ground truth。若某个新零件匹配这里的标题类别，应优先参考已精抽的 textbook_case；如果尚未精抽，则在 reasoning_zh 中说明依据为龚书图例类别而非真实工厂 case。",
+  "why_it_matters": "第8章 p355-p378 包含大量复杂异形件冷镦变形图，是 demo 阶段弥补真实 DWG 数量不足的重要教材GT来源。该索引用于提醒模型存在相关案例，并驱动后续逐页目视精抽。",
+  "usage_in_prompt": "仅作为案例存在性索引，不作为尺寸 ground truth。若某个新零件匹配这里的标题类别，应优先参考 status=manual_visual_reviewed 的 textbook_case；如果尚未精抽，则在 reasoning_zh 中说明依据为龚书图例类别而非已审核尺寸GT。",
   "cases": [
     {
       "section": "8.15",
@@ -125,7 +125,7 @@
       "logical_page": 369,
       "image_path": "fasternerGenData/textbook_pages/gong_maoliang_Page367_370/p003_book369.png",
       "category_hint": "spark_plug_shell",
-      "relevance_zh": "壳体/空心件，复杂度高，Phase 1 仅低权重参考。"
+      "relevance_zh": "壳体/空心件，复杂度高；未逐页目视精抽前只作类别提示，精抽后可作为教材GT。"
     },
     {
       "section": "8.29",

@@ -1,0 +1,86 @@
+{
+  "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+  "feature_observations": [
+    {
+      "feature_key": "square_or_t_head",
+      "evidence_zh": "产品特征包含四方/T 头外形，最终外轮廓不是单纯圆形镦头。",
+      "expected_inference": [
+        "需要考虑 trimming/cutting/form-calibration 控制方形外轮廓",
+        "不要只用 heading 或 combined 概括最终外形"
+      ]
+    },
+    {
+      "feature_key": "large_head_volume",
+      "evidence_zh": "头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。",
+      "expected_inference": [
+        "需要 upsetting 聚集头部材料",
+        "若存在细长杆/台阶，需考虑 forward_extrusion 或缩径类工序"
+      ]
+    },
+    {
+      "feature_key": "hole_or_recess",
+      "evidence_zh": "头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。",
+      "expected_inference": [
+        "需要安排 piercing/backward_extrusion/压印类工序形成孔槽结构",
+        "孔槽类工序应与外形稳定顺序配合，避免过早破坏材料流动"
+      ]
+    }
+  ],
+  "required_operations": [
+    {
+      "operation": "upsetting",
+      "why_zh": "产品特征依据：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；镦粗用于轴向压缩并把材料聚集到头部或局部增厚区域。；1工位证据：整形镦粗,料径校正至 10.78；关键尺寸 L=17.8, D=10.78；几何 type=cylinder, L=17.8, Dmax=10.78"
+    },
+    {
+      "operation": "forward_extrusion",
+      "why_zh": "产品特征依据：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；正挤用于让材料沿轴向流动，形成较长杆部、缩径段或台阶过渡。；2工位证据：正挤压成型,挤出 φ7.84 杆部,头部预成形 φ10.85×11.08；关键尺寸 head_D=10.85, head_H=11.08, shank_D=7.84, shank_L=14；几何 type=stepped, L=25, Dmax=10.85, headD=10.85, shankD=7.84"
+    },
+    {
+      "operation": "heading",
+      "why_zh": "产品特征依据：产品特征包含四方/T 头外形，最终外轮廓不是单纯圆形镦头。；镦头/终镦用于形成主要头部外形、头径和头高。；3工位证据：镦粗成圆形大头(C17),头厚 4.1,杆部 φ7.87×14；关键尺寸 head_C=17, head_H=4.1, shank_D=7.87, shank_L=14；几何 type=headed, L=25.85, Dmax=17, headD=17, shankD=7.87"
+    },
+    {
+      "operation": "combined",
+      "why_zh": "产品特征依据：产品特征包含四方/T 头外形，最终外轮廓不是单纯圆形镦头。；复合工序用于把局部成形、压印、整形或下料校正合并到同一站。；4工位证据：压扁四方成形+正面凹坑(C7.2 凹槽,深 3.0),四方对边 17.65,毛边外径 24；关键尺寸 flat_W=24, head_H=2.61, recess_D=11.8, recess_depth=3, shank_D=7.9；几何 type=flanged, L=25.61, Dmax=24, headD=17.65, shankD=7.9, recessD=11.8"
+    },
+    {
+      "operation": "trimming",
+      "why_zh": "产品特征依据：产品特征包含四方/T 头外形，最终外轮廓不是单纯圆形镦头。；切边/修边用于把圆形预成形头修成六角、四方等最终外轮廓。；5工位证据：切边修整成四方头 17.65×17.65,4-R2.5 圆角,头厚 2.0；关键尺寸 head_W=17.65, head_H=2, recess_D=11.8, recess_depth=3, shank_D=7.93, shank_L=14, total_L=5.15；几何 type=flanged, L=21.15, Dmax=17.65, headD=17.65, shankD=7.93, recessD=11.8"
+    },
+    {
+      "operation": "piercing",
+      "why_zh": "产品特征依据：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；冲孔用于打开通孔或为后续攻牙/功能孔准备孔形。；6工位证据：冲通孔 φ9.65 为后续攻丝做准备；关键尺寸 hole_D=9.65, head_W=17.65, shank_D=7.93, shank_L=14；几何 type=flanged, L=21.12, Dmax=17.65, headD=17.65, shankD=7.93, holeD=9.65, recessD=11.8"
+    }
+  ],
+  "precedence_constraints": [
+    {
+      "before": "upsetting",
+      "after": "forward_extrusion",
+      "why_zh": "先镦粗聚集头部/局部体积，再正挤杆部或台阶，避免材料不足导致杆部尺寸不稳。"
+    },
+    {
+      "before": "forward_extrusion",
+      "after": "heading",
+      "why_zh": "先通过正挤确定杆部直径和长度，再镦头/终成形头部，便于控制头杆体积分配。"
+    },
+    {
+      "before": "heading",
+      "after": "combined",
+      "why_zh": "先完成基础头部成形，再用复合工序压印、凹槽或局部整形。"
+    },
+    {
+      "before": "combined",
+      "after": "trimming",
+      "why_zh": "复合成形会产生或保留外轮廓余量，之后切边/整形控制最终方形或六角外轮廓。"
+    },
+    {
+      "before": "trimming",
+      "after": "piercing",
+      "why_zh": "先切边稳定外轮廓和定位基准，再冲孔，避免孔位受后续切边变形影响。"
+    }
+  ],
+  "common_failure_modes": [
+    "不要把 combined 当作万能工序来掩盖正挤、反挤、切边、冲孔等具体成形机制。",
+    "复杂头部件需要同时解释材料聚集、杆部/孔槽成形和最终外轮廓控制。"
+  ]
+}

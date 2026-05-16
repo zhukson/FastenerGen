@@ -1,0 +1,246 @@
+{
+  "case_id": "STD-DIN912-M14-P2.0-60-140L",
+  "source_kind": "standard_pdf",
+  "source_file": "/Users/bobchen/FastenerGen/fasternerGenData/标准件/din912/DIN 912 M14P2.0x60-140L.png",
+  "product_name_zh": "DIN912 内六角圆柱头螺钉 M14×2.0",
+  "product_category": "socket_cap_screw_DIN912",
+  "standard_ref": "DIN912",
+  "material": "10B21",
+  "part_features": {
+    "part_number": "STD-DIN912-M14-P2.0-60-140L",
+    "description": "M14x2.0 socket cap screw, DIN912, length 60-140mm, grade 8.8",
+    "overall_length": 100.0,
+    "material_grade": "10B21",
+    "strength_grade": "8.8",
+    "head": {
+      "type": "socket",
+      "diameter": 20.6,
+      "height": 14.0,
+      "drive_type": "hex_socket",
+      "drive_size": 12.0,
+      "chamfer_angle_deg": 30
+    },
+    "shank": {
+      "diameter": 13.7,
+      "length": 100.0
+    },
+    "thread": {
+      "spec": "M14×2.0",
+      "nominal_diameter": 14.0,
+      "pitch": 2.0,
+      "length": 100.0,
+      "thread_class": "6g",
+      "thread_type": "metric",
+      "is_full_length": false
+    },
+    "tail": null,
+    "standard": "DIN 912",
+    "drawing_scale": "1:1.25",
+    "notes": [
+      "MARK: TASK 8.8",
+      "length range 60-140L",
+      "machine unknown",
+      "local_visual_read_from_png",
+      "ocr_cross_checked"
+    ]
+  },
+  "process_forming": {
+    "part_name_zh": "DIN912 内六角圆柱头螺钉 M14×2.0",
+    "material": "10B21",
+    "blank": {
+      "type": "cylinder",
+      "overall_length_mm": 117.3,
+      "max_diameter_mm": 13.83,
+      "profile_segments": [
+        {
+          "label_zh": "直杆/坯料",
+          "length_mm": 117.3,
+          "diameter_mm": 13.83
+        }
+      ]
+    },
+    "stations": [
+      {
+        "n": 1,
+        "operation": "combined",
+        "workpiece": {
+          "type": "cylinder",
+          "overall_length_mm": 117.3,
+          "max_diameter_mm": 13.83,
+          "profile_segments": [
+            {
+              "label_zh": "切料坯料",
+              "length_mm": 117.3,
+              "diameter_mm": 13.83
+            }
+          ]
+        },
+        "key_dimensions": {
+          "L": 117.3,
+          "D": 13.83,
+          "D_punch": 16.9,
+          "D_die": 16.8,
+          "D_final_shank": 13.7
+        },
+        "notes_zh": "下料：线材剪切为定长坯料，线径约Ø13.83 图面#1标注PUNCH=Ø16.9、DIE=Ø16.8，右侧最终杆径Ø13.7。"
+      },
+      {
+        "n": 2,
+        "operation": "upsetting",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 103.3,
+          "max_diameter_mm": 16.07,
+          "head_recess_diameter_mm": 18.5,
+          "head_recess_depth_mm": 7.0,
+          "extra_dims_mm": {
+            "D_head": 20.6,
+            "D_socket_outer": 18.5,
+            "D_socket_mid": 14.8,
+            "D_socket_core": 10.5,
+            "head_height": 10.3,
+            "socket_chamfer_angle_deg": 16.0,
+            "transition_angle_deg": 40.0,
+            "R_underhead": 0.8,
+            "D_lower_1": 13.77,
+            "D_lower_2": 13.76
+          },
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 100.0,
+              "diameter_mm": 13.7
+            },
+            {
+              "label_zh": "头部预成形",
+              "length_mm": 21.0,
+              "diameter_mm": 16.07
+            }
+          ]
+        },
+        "key_dimensions": {
+          "D_head_pre": 16.07,
+          "D_shank": 13.7,
+          "D_head": 20.6,
+          "D_socket_outer": 18.5,
+          "D_socket_mid": 14.8,
+          "D_socket_core": 10.5,
+          "head_height": 10.3,
+          "socket_chamfer_angle_deg": 16.0,
+          "transition_angle_deg": 40.0,
+          "R_underhead": 0.8,
+          "D_lower_1": 13.77,
+          "D_lower_2": 13.76
+        },
+        "notes_zh": "预镦聚料，形成圆柱头预成形体；图面#2带俯视圆环/中心线。 图面#2标Ø20.6/Ø18.5/Ø14.8/Ø10.5、16°、40°、R0.8。"
+      },
+      {
+        "n": 3,
+        "operation": "backward_extrusion",
+        "workpiece": {
+          "type": "headed",
+          "overall_length_mm": 114.0,
+          "max_diameter_mm": 20.6,
+          "head_diameter_mm": 20.6,
+          "head_height_mm": 14.0,
+          "head_recess_diameter_mm": 12.0,
+          "head_recess_depth_mm": 7.0,
+          "shank_diameter_mm": 13.7,
+          "shank_length_mm": 100.0,
+          "fillet_R_mm": 0.7,
+          "extra_dims_mm": {
+            "D_head_max": 21.1,
+            "D_head": 20.8,
+            "D_neck": 20.6,
+            "D_shank_upper": 13.8,
+            "D_shank_lower": 13.79,
+            "top_socket_across_flats": 12.2,
+            "T_angle_deg": 90.0,
+            "small_hole_diameter": 3.0,
+            "R_underhead": 0.7
+          },
+          "profile_segments": [
+            {
+              "label_zh": "杆部",
+              "length_mm": 100.0,
+              "diameter_mm": 13.7
+            },
+            {
+              "label_zh": "圆柱头/内六角预成形",
+              "length_mm": 14.0,
+              "diameter_mm": 20.6
+            }
+          ]
+        },
+        "key_dimensions": {
+          "D_head": 20.8,
+          "H_head": 14.0,
+          "socket_size": 12.0,
+          "D_head_max": 21.1,
+          "D_neck": 20.6,
+          "D_shank_upper": 13.8,
+          "D_shank_lower": 13.79,
+          "top_socket_across_flats": 12.2,
+          "T_angle_deg": 90.0,
+          "small_hole_diameter": 3.0,
+          "R_underhead": 0.7
+        },
+        "notes_zh": "反挤压成形内六角孔，对边约12；图面#3带俯视内六角/T:90标注。 图面#3有内六角俯视图，标12.2公差、T:90、Ø3，并有R0.7过渡。"
+      },
+      {
+        "n": 4,
+        "operation": "forward_extrusion",
+        "workpiece": {
+          "type": "stepped",
+          "overall_length_mm": 114.0,
+          "max_diameter_mm": 20.6,
+          "head_diameter_mm": 20.6,
+          "head_height_mm": 14.0,
+          "head_recess_diameter_mm": 12.0,
+          "head_recess_depth_mm": 7.0,
+          "shank_diameter_mm": 13.7,
+          "shank_length_mm": 100.0,
+          "extra_dims_mm": {
+            "D_tip": 10.8,
+            "tail_chamfer_angle_deg": 45.0,
+            "head_chamfer_angle_deg": 30.0,
+            "D_shank": 12.51,
+            "inner_length": 43.0
+          },
+          "profile_segments": [
+            {
+              "label_zh": "杆部/搓牙前坯径",
+              "length_mm": 100.0,
+              "diameter_mm": 13.7
+            },
+            {
+              "label_zh": "圆柱头",
+              "length_mm": 14.0,
+              "diameter_mm": 20.6
+            }
+          ]
+        },
+        "key_dimensions": {
+          "D_head": 20.6,
+          "D_shank": 12.51,
+          "L": 100.0,
+          "D_tip": 10.8,
+          "tail_chamfer_angle_deg": 45.0,
+          "head_chamfer_angle_deg": 30.0,
+          "inner_length": 43.0
+        },
+        "notes_zh": "正挤/校准杆部至搓牙前坯径，并形成端部倒角。 图面#4为长杆剖面，尾端Ø10.8并标45°，内段长度43，头部处30°。"
+      }
+    ],
+    "post_processes": [
+      "thread_rolling",
+      "heat_treatment"
+    ],
+    "reasoning_zh": "DIN912内六角圆柱头螺钉本地读图工艺：图面显示#1直坯、#2头部预成形、#3内六角/头部成形、#4最终校准，后续搓牙和热处理。",
+    "cited_case_ids": [],
+    "confidence": "medium"
+  },
+  "extraction_confidence": "medium",
+  "extracted_by": "llm_draft",
+  "notes_zh": "本地读图抽取：由PNG图面肉眼核对、OCR文本和DIN912工艺常识生成，未调用外部视觉API。"
+}

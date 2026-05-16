@@ -1,0 +1,51 @@
+{
+  "source": "standard",
+  "case_count": 5,
+  "cases": [
+    {
+      "case_id": "BG24081-P03-DIN933-M18-P2-5",
+      "source_kind": "standard_pdf",
+      "product_category": "hex_bolt_DIN933",
+      "teacher_rationale": "BG24081-P03-DIN933-M18-P2-5.json",
+      "holdout_case_ids": [
+        "BG24081-P03-DIN933-M18-P2-5"
+      ]
+    },
+    {
+      "case_id": "BG30060-P03-DIN912-M20-P2-5",
+      "source_kind": "standard_pdf",
+      "product_category": "socket_cap_screw_DIN912",
+      "teacher_rationale": "BG30060-P03-DIN912-M20-P2-5.json",
+      "holdout_case_ids": [
+        "BG30060-P03-DIN912-M20-P2-5"
+      ]
+    },
+    {
+      "case_id": "BG30060-P05-DIN933-M22-P2-5",
+      "source_kind": "standard_pdf",
+      "product_category": "hex_bolt_DIN933",
+      "teacher_rationale": "BG30060-P05-DIN933-M22-P2-5.json",
+      "holdout_case_ids": [
+        "BG30060-P05-DIN933-M22-P2-5"
+      ]
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-40-60L",
+      "source_kind": "standard_pdf",
+      "product_category": "socket_cap_screw_DIN912",
+      "teacher_rationale": "STD-DIN912-M14-P2.0-40-60L.json",
+      "holdout_case_ids": [
+        "STD-DIN912-M14-P2.0-40-60L"
+      ]
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-60-140L",
+      "source_kind": "standard_pdf",
+      "product_category": "socket_cap_screw_DIN912",
+      "teacher_rationale": "STD-DIN912-M14-P2.0-60-140L.json",
+      "holdout_case_ids": [
+        "STD-DIN912-M14-P2.0-60-140L"
+      ]
+    }
+  ]
+}

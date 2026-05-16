@@ -76,7 +76,11 @@ Method:
      c) <cases>: full worked examples. Use to look up dimension details for
         the case_ids surfaced by relevant_subprocesses, OR to find new
         analogs if relevant_subprocesses came up empty.
-     d) <textbook_cases>: low-weight illustrations from Gong Ch.8.
+     d) <textbook_cases>: Gong textbook process cases. Treat
+        status="manual_visual_reviewed" records as high-value textbook GT
+        for station order and visible dimensions. Treat llm_draft or
+        low-confidence records only as weak analogies until they are
+        manually reviewed.
      e) <patterns>: reusable station-sequence templates.
      Cite at least one case_id from <relevant_subprocesses> when those
      snippets are non-empty AND match a feature you used. If you ignore them

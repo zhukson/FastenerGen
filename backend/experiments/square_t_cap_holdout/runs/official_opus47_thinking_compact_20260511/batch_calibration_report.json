@@ -1,0 +1,202 @@
+{
+  "eval_id": "square_t_cap_holdout_official_opus47_thinking_compact",
+  "timestamp": "2026-05-12T11:11:49.883524Z",
+  "case_count": 1,
+  "metric_means": [
+    {
+      "metric_name": "key_dimension_coverage_mean",
+      "value": 1.0,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "key_dimension_coverage_pass_rate",
+      "value": 1.0,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "operation_sequence_similarity_mean",
+      "value": 0.33333333333333337,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "operation_sequence_similarity_pass_rate",
+      "value": 0.0,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "precedence_constraint_recall_mean",
+      "value": 0.2,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "precedence_constraint_recall_pass_rate",
+      "value": 0.0,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "renderer_geometry_readiness_mean",
+      "value": 1.0,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "renderer_geometry_readiness_pass_rate",
+      "value": 1.0,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "required_operation_recall_mean",
+      "value": 0.8333333333333334,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "required_operation_recall_pass_rate",
+      "value": 0.0,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "station_count_error_mean",
+      "value": 0.0,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "station_count_error_pass_rate",
+      "value": 1.0,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "station_operation_alignment_mean",
+      "value": 0.3333333333333333,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    },
+    {
+      "metric_name": "station_operation_alignment_pass_rate",
+      "value": 0.0,
+      "passed": null,
+      "threshold": null,
+      "case_id": null,
+      "notes": null
+    }
+  ],
+  "failure_tag_counts": {
+    "missing_required_operation": 1,
+    "station_alignment_error": 1,
+    "wrong_operation_sequence": 1,
+    "wrong_precedence": 1
+  },
+  "case_reports": [
+    {
+      "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+      "source_type": "factory_gt",
+      "trust_level": "gold",
+      "retrieved_case_ids": [
+        "DJGS-22-2-四方通孔-105S-过模图",
+        "DJGS-25-5-B144-0056-106S-过模图",
+        "DJGS-24-6-冲铆轴销-YT105S-过模图"
+      ],
+      "metrics": [
+        {
+          "metric_name": "station_count_error",
+          "value": 0.0,
+          "passed": true,
+          "threshold": 0.0,
+          "case_id": null,
+          "notes": null
+        },
+        {
+          "metric_name": "operation_sequence_similarity",
+          "value": 0.33333333333333337,
+          "passed": false,
+          "threshold": 0.75,
+          "case_id": null,
+          "notes": null
+        },
+        {
+          "metric_name": "station_operation_alignment",
+          "value": 0.3333333333333333,
+          "passed": false,
+          "threshold": 0.7,
+          "case_id": null,
+          "notes": null
+        },
+        {
+          "metric_name": "key_dimension_coverage",
+          "value": 1.0,
+          "passed": true,
+          "threshold": 0.8,
+          "case_id": null,
+          "notes": null
+        },
+        {
+          "metric_name": "renderer_geometry_readiness",
+          "value": 1.0,
+          "passed": true,
+          "threshold": 0.8,
+          "case_id": null,
+          "notes": null
+        },
+        {
+          "metric_name": "required_operation_recall",
+          "value": 0.8333333333333334,
+          "passed": false,
+          "threshold": 1.0,
+          "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+          "notes": "missing: forward_extrusion"
+        },
+        {
+          "metric_name": "precedence_constraint_recall",
+          "value": 0.2,
+          "passed": false,
+          "threshold": 1.0,
+          "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+          "notes": "violated: upsetting before forward_extrusion, forward_extrusion before heading, heading before combined, trimming before piercing"
+        }
+      ],
+      "failure_tags": [
+        "missing_required_operation",
+        "station_alignment_error",
+        "wrong_operation_sequence",
+        "wrong_precedence"
+      ]
+    }
+  ],
+  "notes": "Single-case batch wrapper for the 四方T帽 holdout run."
+}

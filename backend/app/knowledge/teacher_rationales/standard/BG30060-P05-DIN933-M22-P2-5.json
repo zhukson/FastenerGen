@@ -1,0 +1,52 @@
+{
+  "case_id": "BG30060-P05-DIN933-M22-P2-5",
+  "feature_observations": [
+    {
+      "feature_key": "threaded_function",
+      "evidence_zh": "产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。",
+      "expected_inference": [
+        "ProcessForming 应区分冷镦工位与 post_processes",
+        "不要把螺纹最终形态误当成每站都要直接画出的冷镦实体"
+      ]
+    }
+  ],
+  "required_operations": [
+    {
+      "operation": "combined",
+      "why_zh": "复合工序用于把局部成形、压印、整形或下料校正合并到同一站。；1工位证据：下料：Ø21.7 线材切断，长度按成品体积估算；关键尺寸 L=95, D=21.7；几何 type=cylinder, L=95, Dmax=21.7"
+    },
+    {
+      "operation": "upsetting",
+      "why_zh": "产品有头部/法兰体积需求，需要先聚料。；镦粗用于轴向压缩并把材料聚集到头部或局部增厚区域。；2工位证据：预镦：将头部料团预聚成圆台；关键尺寸 L=80, D_head=27, H_head=16；几何 type=headed, L=80, Dmax=27, headD=27, shankD=21.7"
+    },
+    {
+      "operation": "heading",
+      "why_zh": "产品头部需要形成稳定外形和头高，需要镦头/终镦。；镦头/终镦用于形成主要头部外形、头径和头高。；3工位证据：终镦：成形六角头雏形（带圆角），头顶刻字 TASK 6.8；关键尺寸 L=56, D_head=35.72, H_head=14；几何 type=headed, L=56, Dmax=35.72, headD=35.72, shankD=21.7"
+    },
+    {
+      "operation": "trimming",
+      "why_zh": "产品最终外轮廓包含非圆形头部，需要切边或整形控制外轮廓。；切边/修边用于把圆形预成形头修成六角、四方等最终外轮廓。；4工位证据：切边：将头部圆周修剪为六角形，对边距 30，对角距 35.72，杆端 45° 倒角；关键尺寸 S=30, E=35.72, H=14；几何 type=headed, L=56, Dmax=30, headD=30, shankD=21.7"
+    }
+  ],
+  "precedence_constraints": [
+    {
+      "before": "combined",
+      "after": "upsetting",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 combined 后 upsetting：产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。"
+    },
+    {
+      "before": "upsetting",
+      "after": "heading",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 upsetting 后 heading：产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。"
+    },
+    {
+      "before": "heading",
+      "after": "trimming",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 heading 后 trimming：产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。"
+    }
+  ],
+  "common_failure_modes": [
+    "不要把 combined 当作万能工序来掩盖正挤、反挤、切边、冲孔等具体成形机制。",
+    "复杂头部件需要同时解释材料聚集、杆部/孔槽成形和最终外轮廓控制。"
+  ]
+}

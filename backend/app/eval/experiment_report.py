@@ -7,9 +7,8 @@ from pathlib import Path
 from typing import Any
 
 from app.ai.process_designer import DesignArtifacts
-from app.data.schemas import GongMetricResult, ProcessForming
+from app.data.schemas import ProcessForming
 from app.eval.metrics import compute_process_forming_metrics
-
 
 SCHEMA_CONTRACT_NOTE = (
     "FastenerGen emits ProcessForming JSON. FastenerDrawingEngine accepts this "

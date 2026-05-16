@@ -28,6 +28,7 @@ from typing import Any
 
 import anthropic
 
+from app.core.anthropic_client import create_anthropic_client
 from app.core.env import load_local_env
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -308,7 +309,7 @@ def main() -> int:
 
     out_dir.mkdir(parents=True, exist_ok=True)
     text = _call_model(
-        anthropic.Anthropic(),
+        create_anthropic_client(),
         kind=args.kind,
         selected=selected,
         model=model,

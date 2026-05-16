@@ -1,0 +1,60 @@
+{
+  "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+  "feature_observations": [
+    {
+      "feature_key": "large_head_volume",
+      "evidence_zh": "头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。",
+      "expected_inference": [
+        "需要 upsetting 聚集头部材料",
+        "若存在细长杆/台阶，需考虑 forward_extrusion 或缩径类工序"
+      ]
+    },
+    {
+      "feature_key": "hole_or_recess",
+      "evidence_zh": "头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。",
+      "expected_inference": [
+        "需要安排 piercing/backward_extrusion/压印类工序形成孔槽结构",
+        "孔槽类工序应与外形稳定顺序配合，避免过早破坏材料流动"
+      ]
+    }
+  ],
+  "required_operations": [
+    {
+      "operation": "upsetting",
+      "why_zh": "产品特征依据：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；镦粗用于轴向压缩并把材料聚集到头部或局部增厚区域。；1工位证据：整形/倒角，料杆端部修整准备聚料；关键尺寸 L=17.7, D=7.59；几何 type=cylinder, L=17.7, Dmax=7.59；2工位证据：预镦头部，形成球冠形预成形头；关键尺寸 L=8.1, D=14.04, shank_D=7.7；几何 type=headed, L=8.1, Dmax=14.04"
+    },
+    {
+      "operation": "heading",
+      "why_zh": "产品头部需要形成稳定外形和头高，需要镦头/终镦。；镦头/终镦用于形成主要头部外形、头径和头高。；3工位证据：终镦扁平大法兰头部，初步形成头部轮廓；关键尺寸 head_D=20.5, head_H=1.3, shank_D=7.73；几何 type=flanged, L=13, Dmax=20.5"
+    },
+    {
+      "operation": "backward_extrusion",
+      "why_zh": "产品特征依据：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；反挤用于在头部形成内孔、内六角、凹穴等向内的功能结构。；4工位证据：头部反挤压，预冲内孔；关键尺寸 head_D=20.5, shank_D=7.76；几何 type=flanged, L=13, Dmax=20.5；5工位证据：切边修整外缘，反挤压成型内六角孔；关键尺寸 head_D=19, shank_D=7.79；几何 type=flanged, L=13, Dmax=19"
+    },
+    {
+      "operation": "piercing",
+      "why_zh": "产品特征依据：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；冲孔用于打开通孔或为后续攻牙/功能孔准备孔形。；6工位证据：冲通内孔/最终成型，孔径5.15；关键尺寸 head_D=19, shank_D=7.82, shank_L=12.6, hole_D=5.15, total_L=13.9；几何 type=flanged, L=13.9, Dmax=19, headD=19, shankD=7.82"
+    }
+  ],
+  "precedence_constraints": [
+    {
+      "before": "upsetting",
+      "after": "heading",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 upsetting 后 heading：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。"
+    },
+    {
+      "before": "heading",
+      "after": "backward_extrusion",
+      "why_zh": "先形成足够头部体积和外形，再反挤内孔/内六角，避免孔槽成形时头部材料不足。"
+    },
+    {
+      "before": "backward_extrusion",
+      "after": "piercing",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 backward_extrusion 后 piercing：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。"
+    }
+  ],
+  "common_failure_modes": [
+    "不要把 combined 当作万能工序来掩盖正挤、反挤、切边、冲孔等具体成形机制。",
+    "复杂头部件需要同时解释材料聚集、杆部/孔槽成形和最终外轮廓控制。"
+  ]
+}

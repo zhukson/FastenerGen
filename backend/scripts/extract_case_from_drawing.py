@@ -36,6 +36,7 @@ from app.ai.prompts.case_extraction import (
     SYSTEM_PROMPT,
     build_user_prompt,
 )
+from app.core.anthropic_client import create_anthropic_client
 from app.core.env import load_local_env
 from app.data.schemas import CaseRecord, PostProcess
 
@@ -207,7 +208,7 @@ def main() -> int:
         print("ERROR: ANTHROPIC_API_KEY not set", file=sys.stderr)
         return 2
 
-    client = anthropic.Anthropic() if not args.dry_run else None
+    client = create_anthropic_client() if not args.dry_run else None
     CASES_DIR.mkdir(parents=True, exist_ok=True)
     STANDARDS_DIR.mkdir(parents=True, exist_ok=True)
 

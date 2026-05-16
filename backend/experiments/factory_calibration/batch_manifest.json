@@ -1,0 +1,10 @@
+{
+  "eval_id": "factory_calibration_completed_predictions",
+  "cases": [
+    {
+      "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+      "predicted": "experiments/square_t_cap_holdout/runs/official_opus47_thinking_compact_20260511/process_parameters.json",
+      "teacher_rationale": "app/knowledge/teacher_rationales/factory/DJGS-25-8-B001-0358-四方T帽-106S-过模图.json"
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "source_dir": "/Users/bobchen/FastenerGen/fasternerGenData/标准件",
+  "case_count": 8,
+  "cases": [
+    {
+      "case_id": "STD-DIN912-M14-P2.0-40-60L",
+      "source_file": "/Users/bobchen/FastenerGen/fasternerGenData/标准件/din912/DIN 912 M14P2.0x40-60L.png",
+      "relative_source_file": "din912/DIN 912 M14P2.0x40-60L.png",
+      "standard_ref": "DIN912",
+      "product_category": "socket_cap_screw_DIN912",
+      "nominal_diameter_mm": 14,
+      "pitch_mm": 2.0,
+      "length_range_mm": [
+        40,
+        60
+      ],
+      "ocr_text_file": "experiments/standard_case_intake/ocr/STD-DIN912-M14-P2.0-40-60L.ocr.txt",
+      "existing_standard_case_ids": [],
+      "status": "pending_extraction"
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-60-140L",
+      "source_file": "/Users/bobchen/FastenerGen/fasternerGenData/标准件/din912/DIN 912 M14P2.0x60-140L.png",
+      "relative_source_file": "din912/DIN 912 M14P2.0x60-140L.png",
+      "standard_ref": "DIN912",
+      "product_category": "socket_cap_screw_DIN912",
+      "nominal_diameter_mm": 14,
+      "pitch_mm": 2.0,
+      "length_range_mm": [
+        60,
+        140
+      ],
+      "ocr_text_file": "experiments/standard_case_intake/ocr/STD-DIN912-M14-P2.0-60-140L.ocr.txt",
+      "existing_standard_case_ids": [],
+      "status": "pending_extraction"
+    },
+    {
+      "case_id": "STD-DIN912-M20-P2.5-40-45L",
+      "source_file": "/Users/bobchen/FastenerGen/fasternerGenData/标准件/din912/DIN 912 M20P2.5x40-45L.png",
+      "relative_source_file": "din912/DIN 912 M20P2.5x40-45L.png",
+      "standard_ref": "DIN912",
+      "product_category": "socket_cap_screw_DIN912",
+      "nominal_diameter_mm": 20,
+      "pitch_mm": 2.5,
+      "length_range_mm": [
+        40,
+        45
+      ],
+      "ocr_text_file": "experiments/standard_case_intake/ocr/STD-DIN912-M20-P2.5-40-45L.ocr.txt",
+      "existing_standard_case_ids": [
+        "BG30060-P03-DIN912-M20-P2-5"
+      ],
+      "status": "needs_review_existing_overlap"
+    },
+    {
+      "case_id": "STD-DIN912-M20-P2.5-50-70L",
+      "source_file": "/Users/bobchen/FastenerGen/fasternerGenData/标准件/din912/DIN 912 M20P2.5x50-70L.png",
+      "relative_source_file": "din912/DIN 912 M20P2.5x50-70L.png",
+      "standard_ref": "DIN912",
+      "product_category": "socket_cap_screw_DIN912",
+      "nominal_diameter_mm": 20,
+      "pitch_mm": 2.5,
+      "length_range_mm": [
+        50,
+        70
+      ],
+      "ocr_text_file": "experiments/standard_case_intake/ocr/STD-DIN912-M20-P2.5-50-70L.ocr.txt",
+      "existing_standard_case_ids": [
+        "BG30060-P03-DIN912-M20-P2-5"
+      ],
+      "status": "needs_review_existing_overlap"
+    },
+    {
+      "case_id": "STD-DIN912-M20-P2.5-80-200L",
+      "source_file": "/Users/bobchen/FastenerGen/fasternerGenData/标准件/din912/DIN 912 M20P2.5x80-200L.png",
+      "relative_source_file": "din912/DIN 912 M20P2.5x80-200L.png",
+      "standard_ref": "DIN912",
+      "product_category": "socket_cap_screw_DIN912",
+      "nominal_diameter_mm": 20,
+      "pitch_mm": 2.5,
+      "length_range_mm": [
+        80,
+        200
+      ],
+      "ocr_text_file": "experiments/standard_case_intake/ocr/STD-DIN912-M20-P2.5-80-200L.ocr.txt",
+      "existing_standard_case_ids": [
+        "BG30060-P03-DIN912-M20-P2-5"
+      ],
+      "status": "needs_review_existing_overlap"
+    },
+    {
+      "case_id": "STD-DIN933-M18-P2.5-25-150L",
+      "source_file": "/Users/bobchen/FastenerGen/fasternerGenData/标准件/din933/DIN 933 M18 P2.5x25-150L.png",
+      "relative_source_file": "din933/DIN 933 M18 P2.5x25-150L.png",
+      "standard_ref": "DIN933",
+      "product_category": "hex_bolt_DIN933",
+      "nominal_diameter_mm": 18,
+      "pitch_mm": 2.5,
+      "length_range_mm": [
+        25,
+        150
+      ],
+      "ocr_text_file": "experiments/standard_case_intake/ocr/STD-DIN933-M18-P2.5-25-150L.ocr.txt",
+      "existing_standard_case_ids": [
+        "BG24081-P03-DIN933-M18-P2-5"
+      ],
+      "status": "needs_review_existing_overlap"
+    },
+    {
+      "case_id": "STD-DIN933-M22-P2.5-160-200L",
+      "source_file": "/Users/bobchen/FastenerGen/fasternerGenData/标准件/din933/DIN 933 M22 P2.5x160-200L.png",
+      "relative_source_file": "din933/DIN 933 M22 P2.5x160-200L.png",
+      "standard_ref": "DIN933",
+      "product_category": "hex_bolt_DIN933",
+      "nominal_diameter_mm": 22,
+      "pitch_mm": 2.5,
+      "length_range_mm": [
+        160,
+        200
+      ],
+      "ocr_text_file": "experiments/standard_case_intake/ocr/STD-DIN933-M22-P2.5-160-200L.ocr.txt",
+      "existing_standard_case_ids": [
+        "BG30060-P05-DIN933-M22-P2-5"
+      ],
+      "status": "needs_review_existing_overlap"
+    },
+    {
+      "case_id": "STD-DIN933-M22-P2.5-40-150L",
+      "source_file": "/Users/bobchen/FastenerGen/fasternerGenData/标准件/din933/DIN 933 M22 P2.5x40-150L.png",
+      "relative_source_file": "din933/DIN 933 M22 P2.5x40-150L.png",
+      "standard_ref": "DIN933",
+      "product_category": "hex_bolt_DIN933",
+      "nominal_diameter_mm": 22,
+      "pitch_mm": 2.5,
+      "length_range_mm": [
+        40,
+        150
+      ],
+      "ocr_text_file": "experiments/standard_case_intake/ocr/STD-DIN933-M22-P2.5-40-150L.ocr.txt",
+      "existing_standard_case_ids": [
+        "BG30060-P05-DIN933-M22-P2-5"
+      ],
+      "status": "needs_review_existing_overlap"
+    }
+  ]
+}

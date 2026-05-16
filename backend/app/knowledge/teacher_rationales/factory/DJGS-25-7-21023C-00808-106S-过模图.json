@@ -1,0 +1,65 @@
+{
+  "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+  "feature_observations": [
+    {
+      "feature_key": "large_head_volume",
+      "evidence_zh": "头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。",
+      "expected_inference": [
+        "需要 upsetting 聚集头部材料",
+        "若存在细长杆/台阶，需考虑 forward_extrusion 或缩径类工序"
+      ]
+    },
+    {
+      "feature_key": "hole_or_recess",
+      "evidence_zh": "头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。",
+      "expected_inference": [
+        "需要安排 piercing/backward_extrusion/压印类工序形成孔槽结构",
+        "孔槽类工序应与外形稳定顺序配合，避免过早破坏材料流动"
+      ]
+    }
+  ],
+  "required_operations": [
+    {
+      "operation": "upsetting",
+      "why_zh": "产品特征依据：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；镦粗用于轴向压缩并把材料聚集到头部或局部增厚区域。；1工位证据：整形坯料,直径轻微胀粗,端面平整；关键尺寸 L=19.9, D=6.62；几何 type=cylinder, L=19.9, Dmax=6.62；4工位证据：预镦头部成圆柱形,Φ9.4×6.4；关键尺寸 D_head=9.4, H_head=6.4, D_shank=5.14, D_neck=6.7；几何 type=headed, L=31.7, Dmax=9.4, headD=9.4, shankD=5.14"
+    },
+    {
+      "operation": "forward_extrusion",
+      "why_zh": "产品特征依据：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；正挤用于让材料沿轴向流动，形成较长杆部、缩径段或台阶过渡。；2工位证据：正挤压成型杆部Φ5.17,长度13mm,头部段保留Φ6.66；关键尺寸 L_total=19.96, D_head=6.66, D_shank=5.17, L_shank=13, L_head=2.97；几何 type=stepped, L=19.96, Dmax=6.66, shankD=5.17；3工位证据：二次正挤压继续延长杆部至21.15mm,直径Φ5.15；关键尺寸 L_total=31.7, D_head=6.68, D_shank=5.15, L_shank=21.15；几何 type=stepped, L=31.7, Dmax=6.68, shankD=5.15"
+    },
+    {
+      "operation": "combined",
+      "why_zh": "复合工序用于把局部成形、压印、整形或下料校正合并到同一站。；5工位证据：终镦头部成形+反挤压预成内六角凹槽；关键尺寸 D_head=9.45, H_head=5.13, D_shank=5.12, D_neck=6.72；几何 type=headed, L=31.7, Dmax=9.45, headD=9.45, shankD=5.12"
+    },
+    {
+      "operation": "backward_extrusion",
+      "why_zh": "产品特征依据：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；反挤用于在头部形成内孔、内六角、凹穴等向内的功能结构。；6工位证据：反挤压成形内六角孔Φ7.17,头部Φ9.6×6.45定型；关键尺寸 D_head=9.6, H_head=6.45, D_socket=7.17, D_shank=5.12, D_neck=6.72；几何 type=headed, L=31.7, Dmax=9.6, headD=9.6, shankD=5.12"
+    }
+  ],
+  "precedence_constraints": [
+    {
+      "before": "upsetting",
+      "after": "forward_extrusion",
+      "why_zh": "先镦粗聚集头部/局部体积，再正挤杆部或台阶，避免材料不足导致杆部尺寸不稳。"
+    },
+    {
+      "before": "forward_extrusion",
+      "after": "upsetting",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 forward_extrusion 后 upsetting：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。"
+    },
+    {
+      "before": "upsetting",
+      "after": "combined",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 upsetting 后 combined：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。"
+    },
+    {
+      "before": "combined",
+      "after": "backward_extrusion",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 combined 后 backward_extrusion：头部或法兰直径明显大于杆部直径，需要前序聚料和体积分配。；头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。"
+    }
+  ],
+  "common_failure_modes": [
+    "不要把 combined 当作万能工序来掩盖正挤、反挤、切边、冲孔等具体成形机制。",
+    "复杂头部件需要同时解释材料聚集、杆部/孔槽成形和最终外轮廓控制。"
+  ]
+}

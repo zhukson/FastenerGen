@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import uuid
 from pathlib import Path
+from typing import Annotated
 
 from fastapi import APIRouter, File, HTTPException, UploadFile
 from pydantic import BaseModel
@@ -35,7 +36,7 @@ class DrawingUploadResponse(BaseModel):
 # ---------------------------------------------------------------------------
 
 @router.post("/drawings/upload", response_model=DrawingUploadResponse, tags=["drawings"])
-async def upload_drawing(file: UploadFile = File(...)) -> DrawingUploadResponse:
+async def upload_drawing(file: Annotated[UploadFile, File(...)]) -> DrawingUploadResponse:
     """
     Upload a product drawing file (PDF, DWG, DXF, JPG, PNG).
 

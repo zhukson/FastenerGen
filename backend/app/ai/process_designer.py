@@ -31,6 +31,7 @@ from app.ai.prompts.process_forming_design import (
     build_user_prompt,
 )
 from app.ai.verification import ProcessFormingVerifier
+from app.core.anthropic_client import create_anthropic_client, create_async_anthropic_client
 from app.core.config import settings
 from app.data.schemas import (
     CheckSeverity,
@@ -76,8 +77,8 @@ class ProcessDesigner:
         sync_client: anthropic.Anthropic | None = None,
         model: str = DEFAULT_MODEL,
     ) -> None:
-        self.async_client = client or anthropic.AsyncAnthropic(api_key=settings.anthropic_api_key)
-        self.sync_client = sync_client or anthropic.Anthropic(api_key=settings.anthropic_api_key)
+        self.async_client = client or create_async_anthropic_client()
+        self.sync_client = sync_client or create_anthropic_client()
         self.model = model
         self._reader = DrawingReader(client=self.async_client)
         self._library = load_library()
@@ -157,6 +158,7 @@ class ProcessDesigner:
             prefer_category=prefer_category,
             part_features=part_features,
             exclude_case_ids=exclude_case_ids,
+            compact=True,
         )
         logger.info(
             "Step 2 complete: %d cases + %d standards + %d rules + %d textbook rules + %d textbook cases + %d patterns in context (~%d tokens), excluded=%s",
@@ -221,8 +223,8 @@ class ProcessDesigner:
             ),
             encoding="utf-8",
         )
-        # P1.5 — also save the raw <gong_review> as its own sidecar so the
-        # frontend can show the full free-form analysis verbatim.
+        # P1.5 — also save the raw <gong_review> as its own sidecar so CLI
+        # experiment reports can link the full free-form analysis.
         gong_review_path = output_dir / "gong_review.md"
         if gong_review:
             gong_review_path.write_text(

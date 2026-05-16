@@ -1,0 +1,34 @@
+DIN 912 M14P2.0x40-60 上 MARK=TASK 8.8
+规格 L3 L4 #2 #1 (SERN (TERN
+40 L 39.6 | 39.4 | 39.5-40.5 #3
+45 L 44.6 | 44.4 | 44.4-45.6 1:90 23 PUNCH=916,4 ery
+
+49.6 | 49.4 | 49,5-50.5 es RN DIE =016.2
+54.6 | 54.4 | 54.4-55.6 机 AG Kt
+59.6 | 59.4 | 59.4-60.6 NSE oR ane
+#4 220.6 13.75
+018.5 $13.7
+| ae gat 14.8 ail rt
+LA o 20.8 - ) i 一 1
+mn 30 010.5 err?
+8 a fo) Loy 人
+wm ger 1 了 小 和 Ly a
+oo 則 ©
+一 8 时 Ms eT Leys == 8
+N L_ 4 S “一 二 30°
+Ye
+R1201 +0.4 | |
+«| | | | cf 0 R1.138 | 9 |
+| (612.44 |
+45° ‘| 612.51 | (4 012.48 |
+YY] 4 | |
+910.8 (A 12.5 | 912.47 | |
+PUNCH=@20.7
+DIE: 12.55 DIE= @20.6
+DIN 912 M14P2.0x40-60L
+TREE [| | |REMARK |BD19046-P03F0l055
+To 1 _ HARDNESS
+oes 40.08 OO | _—s| MATERIAL | 10B21
+é #0.401REV. NO. OLD NEW DATE | NAME _| QUANTITY
+pe SCALE | MACHINE NAME DESCRIPTION: FIN 912 M14P2.0x40-60 L
+oa JERN YAO ENTERPRISES CO., LTD. 1125] JBF-19B-4SL “| FORMING PROCESS

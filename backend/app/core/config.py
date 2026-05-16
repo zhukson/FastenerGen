@@ -42,6 +42,8 @@ class Settings(BaseSettings):
 
     # LLM API Keys
     anthropic_api_key: str = ""
+    anthropic_api_key_now: str = ""
+    anthropic_base_url: str = ""
 
     # LLM Models
     primary_model: str = "claude-opus-4-7"

@@ -1,0 +1,981 @@
+Design the forming process for this new part.
+
+<part_features>
+{
+  "part_number": "DJGS-25-8-B001-0358",
+  "description": "Square T-head fastener with internal thread (square flange T-head nut/insert)",
+  "overall_length": 17.0,
+  "head": {
+    "type": "flange",
+    "diameter": 17.65,
+    "height": 3.0,
+    "flange": false,
+    "drive_type": "none"
+  },
+  "shank": {
+    "diameter": 7.93,
+    "length": 14.0
+  },
+  "material_grade": "106S",
+  "strength_grade": "",
+  "notes": [
+    "机型 YT-106S",
+    "四方头带 4-R2.5 圆角",
+    "头部带十字凹槽特征"
+  ]
+}
+</part_features>
+
+<knowledge_library mode="compact">
+  <relevant_subprocesses>
+<relevant_station trigger_feature="external_flange_head" case_id="12齿车削球头" station_n="4" operation="trimming">
+<summary>四工位：六角切边，形成最终六角头外形</summary>
+<station_data>{
+  "n": 4,
+  "operation": "trimming",
+  "workpiece": {
+    "type": "headed",
+    "overall_length_mm": 41.0,
+    "max_diameter_mm": 22.0,
+    "head_diameter_mm": 17.42,
+    "head_height_mm": 13.77,
+    "shank_diameter_mm": 11.05,
+    "shank_length_mm": 23.0,
+    "profile_segments": [
+      {
+        "label_zh": "杆部",
+        "length_mm": 23.0,
+        "diameter_mm": 11.05
+      },
+      {
+        "label_zh": "过渡台阶",
+        "length_mm": 4.23,
+        "diameter_mm": 11.05,
+        "end_diameter_mm": 17.42
+      },
+      {
+        "label_zh": "头部",
+        "length_mm": 13.77,
+        "diameter_mm": 17.42
+      }
+    ],
+    "extra_dims_mm": {},
+    "notes_zh": "六角切边成型，对边Φ17.42，头部高13.77，杆径Φ11.05，杆长23"
+  },
+  "key_dimensions": {
+    "L": 41.0,
+    "head_AF": 17.42,
+    "head_H": 13.77,
+    "shank_D": 11.05,
+    "shank_L": 23.0
+  },
+  "notes_zh": "四工位：六角切边，形成最终六角头外形"
+}</station_data>
+</relevant_station>
+<relevant_station trigger_feature="external_flange_head" case_id="DJGS-22-2-四方通孔-105S-过模图" station_n="5" operation="trimming">
+<summary>切边修整为最终四方法兰外形 15.05×15.05, 4-R1.5</summary>
+<station_data>{
+  "n": 5,
+  "operation": "trimming",
+  "workpiece": {
+    "type": "flanged",
+    "overall_length_mm": 6.0,
+    "max_diameter_mm": 15.05,
+    "profile_segments": [
+      {
+        "label_zh": "杆部",
+        "length_mm": 4.32,
+        "diameter_mm": 10.836
+      },
+      {
+        "label_zh": "头部/法兰",
+        "length_mm": 1.68,
+        "diameter_mm": 15.05
+      }
+    ],
+    "extra_dims_mm": {}
+  },
+  "key_dimensions": {
+    "side": 15.05,
+    "side_inner": 10.1,
+    "R": 1.5,
+    "d_shank": 5.11,
+    "t_flange": 1.0,
+    "L_shank": 6.0
+  },
+  "notes_zh": "切边修整为最终四方法兰外形 15.05×15.05, 4-R1.5"
+}</station_data>
+</relevant_station>
+<relevant_station trigger_feature="external_flange_head" case_id="DJGS-24-6-冲铆轴销-YT105S-过模图" station_n="4" operation="combined">
+<summary>终镦+切边：法兰外径成形 φ19、头部凸台 φ10.95，杆端倒角 1.2×φ6.6；六角切边在最后一序完成</summary>
+<station_data>{
+  "n": 4,
+  "operation": "combined",
+  "workpiece": {
+    "type": "flanged",
+    "overall_length_mm": 75.0,
+    "max_diameter_mm": 19.0,
+    "head_diameter_mm": 19.0,
+    "head_height_mm": 7.5,
+    "shank_diameter_mm": 8.04,
+    "shank_length_mm": 61.0,
+    "profile_segments": [
+      {
+        "label_zh": "杆部",
+        "length_mm": 61.0,
+        "diameter_mm": 8.04
+      },
+      {
+        "label_zh": "过渡台阶",
+        "length_mm": 6.5,
+        "diameter_mm": 8.04,
+        "end_diameter_mm": 19.0
+      },
+      {
+        "label_zh": "头部/法兰",
+        "length_mm": 7.5,
+        "diameter_mm": 19.0
+      }
+    ],
+    "extra_dims_mm": {}
+  },
+  "key_dimensions": {
+    "L_total": 75.0,
+    "H_flange": 7.5,
+    "D_flange": 19.0,
+    "D_head_top": 10.95,
+    "H_head_top": 6.5,
+    "D_head_recess": 8.2,
+    "H_collar": 3.0,
+    "D_shank": 8.04,
+    "L_shank": 61.0,
+    "chamfer_h": 1.2,
+    "D_chamfer": 6.6
+  },
+  "notes_zh": "终镦+切边：法兰外径成形 φ19、头部凸台 φ10.95，杆端倒角 1.2×φ6.6；六角切边在最后一序完成"
+}</station_data>
+</relevant_station>
+<relevant_station trigger_feature="external_flange_head" case_id="double_head_hex_blind_hole_rivet_blank_8_16" station_n="3" operation="trimming">
+<summary>切边整形 六角头部切边，去除飞边，确保头部高度约10 mm</summary>
+<station_data>{
+  "n": 3,
+  "label_zh": "切边整形",
+  "geometry_zh": "六角头部切边，去除飞边，确保头部高度约10 mm",
+  "dimensions": {
+    "head_height_mm": 10
+  }
+}</station_data>
+</relevant_station>
+  </relevant_subprocesses>
+  <rules>
+<rule_set name="general">
+# 经验库 — 通用冷镦工艺规则 / General Cold-Heading Heuristics
+
+&gt; **来源 / Provenance:** 这些规则从 `cases/` + `standards/` 共 12 个真实工艺案例
+&gt; 加 `textbook_cases/` 25 个龚书第 8 章案例归纳而来,**不是教科书原文**。
+&gt;
+&gt; **使用方式 (重要):** 这些是**推导原则**,不是查表。LLM 应当根据零件特征
+&gt; 套用原则**自己算出工位数和工序顺序**,而不是按"哪个产品类别 → 几工位"查答案。
+
+---
+
+## 1. 工位数推导 / Station-count derivation (principle-based)
+
+**不要按产品类别查表。按特征数累加:**
+
+```
+station_count = 1 (下料/整形) + 1 (终镦头部) + N_features
+```
+
+其中 `N_features` 按零件特征逐项累加:
+
+| 特征 | 何时 +1 | 触发条件 |
+|---|---|---|
+| **head_predeform** | 头部预镦聚料 | head_d / shank_d &gt; 1.4 (体积扩大需分两道) |
+| **backward_extrusion** | 每个反挤特征 | 内六角 / 内梅花 / 凹头 / 内方 |
+| **forward_extrusion** | 每个杆部减径段 | 螺纹底径减径 / 阶梯杆 / 锥杆 |
+| **head_trim** | 头部修边 | 方头/T头/法兰 (因方变圆需切飞边) |
+| **piercing** | 冲通孔 | 通孔件、需后续攻丝 |
+| **end_chamfer** | 切尾倒锥 | 尾端 ≥ 30° 倒角 + 长杆件 (L/D &gt; 4) |
+| **two_blow_upset** | 强镦粗分二次 | head_d / shank_d &gt; 2.3 (单道极限) |
+
+**推导示例 (LLM 应当这样想,不是查表):**
+
+例 A: 内六角圆柱头螺钉, head_d=20.7, shank_d=13.7, 螺纹底径 12.5
+- head/shank = 1.51 &gt; 1.4 → +1 head_predeform
+- 内六角 → +1 backward_extrusion
+- 螺纹底径减径 (13.73 → 12.5) → +1 forward_extrusion
+- head/shank = 1.51 &lt; 2.3 → 不需 two_blow_upset
+- **stations = 1 + 1 + 3 = 5**
+
+例 B: 六角法兰螺栓, head_d=24, shank_d=14, 无内特征
+- head/shank = 1.71 &gt; 1.4 → +1 head_predeform
+- 法兰 (六角变法兰需修边) → +1 head_trim
+- 无内特征,无减径
+- **stations = 1 + 1 + 2 = 4**
+
+例 C: 长杆铆接螺钉, head_d=14, shank_d=4, L=80
+- head/shank = 3.5 &gt; 2.3 → +1 head_predeform, +1 two_blow_upset
+- 阶梯杆 (有 2 个减径段) → +2 forward_extrusion
+- 尾端倒锥 → +1 end_chamfer
+- **stations = 1 + 1 + 5 = 7**
+
+---
+
+## 2. 下料尺寸 / Blank sizing (continuous formulas)
+
+### 直径
+
+`blank_d` 选取目标:
+- 优先选**最大杆部直径或螺纹中径附近** (减少最终 forward_extrusion 量)
+- 一般 `blank_d ≈ 0.95 – 1.02 × shank_d` (略大,留 forward_extrusion 整形量)
+- 当头部需要大幅镦粗 (head_d / shank_d &gt; 1.7) 可适度选小,落在 0.85 – 0.95 × shank_d
+
+观察的真实分布: `blank_d / shank_d` ∈ [0.85, 1.05] in factory cases。
+
+### 长度 (体积守恒)
+
+```
+V_blank = V_head + V_shank_pre_extrusion + 5–8% 余量
+blank_L = V_blank / (π/4 × blank_d²)
+```
+
+实操简化:
+- 短件 (成品 L &lt; 30mm): blank_L 约 = 头部体积折算 + 成品 L × 1.0
+- 长螺栓 (L &gt; 50mm): blank_L 约 = 头部体积折算 + 成品 L × (1.05 – 1.10)
+- 螺纹底径减径段会**伸长** 5–15%, 必须扣除
+
+观察范围: `blank_L / product_L` ∈ [1.05, 2.5] depending on head volume share。
+
+---
+
+## 3. 工位顺序原则 / Station-order principles
+
+**核心原则: 先聚料,再成形,再细节。** 不要按"标准件模板"或"异形模板"查序列。
+
+### 排序规则
+
+1. **第 1 站永远是 `combined` / `upsetting`** —— 切料 + 整形,工件保持柱状
+2. **若需 `head_predeform`**: 紧跟第 1 站,锥形过渡为下一站终镦做准备
+3. **`heading` (终镦头部)**: 头部最终外径达成
+4. **`backward_extrusion`**: 一定在 heading 之后(头部已成形,才能反挤)。多个反挤按"先大后小"
+5. **`forward_extrusion`**: 一般在最后 1–2 站(避免后续工序破坏精度)。多段减径按"先粗减后精修"
+6. **`trimming` / `piercing`**: 永远在结构成形完成后
+
+### 不变约束
+
+- 反挤之前头部必须已基本成形(否则反挤压力会破坏头型)
+- 正挤减径段一旦做完,**禁止**在其后做镦粗(会失稳)
+- 两次同向变形(如 2 道镦粗)之间最好插一道整形或退火点(冷加工硬化)
+
+---
+
+## 4. 物理极限 / Physical limits (从教材抽取的硬约束)
+
+| 约束 | 极限值 | 来源 |
+|---|---|---|
+| 单道镦粗比 (D_out / D_in) | ≤ 2.3 | 龚书 Ch.8 + 1模2冲教程 |
+| 单道镦粗高度比 (h_in / d_in) | ≤ 2.5 (l/d 镦锻规则) | 龚书 |
+| 单道镦粗截面缩短率 Ep | 材料相关,见 verifier 表 | 1模2冲教程 25.7-2 |
+| 正挤减面率 | ≤ 70% (一般 50–60% 最稳) | 龚书 |
+| 反挤六角孔深径比 | ≤ 4 | 龚书 |
+| 反挤圆孔深径比 | ≤ 6 | 龚书 |
+| 体积守恒 (blank vs final) | 0.85 – 1.45 | 真实工厂案例统计 |
+
+**关键认知**: 这些是材料物理硬约束,**不是经验软建议**。verifier 强制检查。
+
+## 5. 后处理 / Post-processes (按特征,非按类别)
+
+| 触发特征 | 必加后处理 |
+|---|---|
+| 任何外螺纹 | `thread_rolling` |
+| 任何强度等级标注 ≥ 8.8 | `heat_treatment` |
+| 任何内螺纹孔(攻丝孔) | `thread_tapping` (在 piercing 后) |
+| 表面镀层 (Zn, Ni, 磷化) | 客户图标注才加,与冷镦无关 |
+
+**不要按"产品类别"决定后处理**,按特征。
+
+## 6. 材料适用性 / Material applicability
+
+冷镦钢的工艺极限**几乎与牌号无关** —— 只要是合格冷镦钢,镦粗比 ≤ 2.3 通用。
+材料牌号主要影响:
+- **变形抗力**(影响模具寿命,不影响工序设计)
+- **允许累积变形量** (Ep, 在 verifier 里有表)
+- **是否需热处理** (高强度等级才需)
+
+直接照抄客户图的材料牌号,**不要**因为材料推断工序数。
+
+---
+
+## 应用到 Step 3 的明确指令
+
+LLM 在 Step 3 应按以下顺序思考:
+
+1. **数特征**: 头部形状、内特征(六角/梅花/凹头)、杆部减径段数、尾端倒锥
+2. **算 head/shank 比**: 决定要不要 head_predeform 和是不是 two_blow_upset
+3. **套 §1 公式**: stations = 1 + 1 + N_features
+4. **按 §3 顺序原则**排站
+5. **按 §2 体积守恒**算 blank
+6. **按 §4 物理极限**自检 (verifier 还会再检一遍)
+7. **`cited_case_ids` 引用 2–3 个具有相似特征的案例** (不一定要同产品类别;
+   可以是"它的反挤工序参考自 X","它的预镦比例参考自 Y")
+
+**反模式 (不要做):**
+- ❌ "这是某某标准件 → N 站" (查表)
+- ❌ "我没见过这种件,所以保守用 6 站" (没推导)
+- ❌ "引用最像的整件案例" (整件常找不到近邻;按特征引用更可靠)
+
+</rule_set>
+  </rules>
+  <textbook_knowledge>
+<textbook_rule name="gong_maoliang">
+# 龚茂良资料摘录 — 冷镦工艺设计规则
+
+&gt; 来源：`/Users/bobchen/Desktop/fasternerData/gong mao liang/` 已渲染到
+&gt; `fasternerGenData/textbook_pages/`。本文件是人工目视抽取的 demo seed，
+&gt; 需后续 OCR/工程师复核。优先参考真实 DWG cases；本文件用于补充理论和案例覆盖。
+
+## 已确认的页码结构
+
+- 目录 p1-p3：全书前半部分覆盖冷镦基本理论、工序分类、变形程度、毛坯尺寸、冷镦力、预成形、模具设计。
+- p15：冷镦力计算相关系数表，包括变形形式系数、复杂系数、摩擦系数。
+- p21-p23：预成形/“奶头模”设计案例，强调纵向稳定性和变形后的最佳形状。
+- p355-p378：第 8 章“经典需工艺变形图”中的连续案例，是本项目很重要的 textbook case 来源。
+
+## 冷镦力估算
+
+冷镦力可以用经验公式估算，核心变量是：
+
+- 变形后头部最大截面积 `F`
+- 材料屈服/强度项 `σs`
+- 变形形式系数 `γ`
+- 形状复杂系数 `Zφ`
+- 摩擦系数 `f`
+- 头部最大直径 `d` 与高度 `h`
+
+Demo 阶段不直接输出成形力，但 Step 3 可用这些系数判断“这个工位是否过猛”，尤其用于大头、小杆、凹坑、封闭镦锻件。
+
+## 变形形式系数 γ
+
+目视抽取自 p15 表格：
+
+| 变形状态 | γ 参考值 |
+|---|---:|
+| 自由镦锻 | 1.0 |
+| 封闭镦锻 | 1.25-1.75 |
+| 无飞边封闭镦锻 | 1.75-2.0 |
+| 有薄毛刺封闭镦锻 | 2.5 |
+
+附注里还给出两个常用特例：
+
+- 六角头螺栓边前镦球：`γ ≈ 1.1`
+- 六角螺母封闭成形：`γ ≈ 1.2`
+
+应用到 过模图：
+
+- 开式/自由镦粗可以用较少工位。
+- 封闭成形、无飞边成形、薄飞边切边件的工艺风险更高，应更倾向于增加预成形或切边/整形站。
+
+## 形状复杂系数 Zφ
+
+目视抽取自 p15 表格：
+
+| 形状/精度状态 | Zφ 参考值 |
+|---|---:|
+| 简单形状粗镦 | 1.0-1.2 |
+| 较复杂形状精镦 | 1.2-1.5 |
+| 复杂形状精镦 | 1.5-1.8 |
+
+附注特例：
+
+- 六角头螺栓：`Zφ ≈ 1.2`
+- 六角螺母：`Zφ ≈ 1.6`
+
+应用到 过模图：
+
+- `hex_bolt_DIN933` 可走 4 工位模板。
+- `socket_cap_screw_DIN912` 因内六角反挤，复杂度高于普通六角头，常走 5 工位。
+- 内孔、外方/花形、双头、空心、异形套筒的 `Zφ` 偏高，不应硬压成少工位。
+
+## 摩擦系数 f
+
+目视抽取自 p15 表格：
+
+| 接触状态 | f 参考值 |
+|---|---:|
+| 有润滑 | 0.05-0.10 |
+| 无润滑 | 0.10-0.15 |
+| 工具和毛坯粗加工端面 | 0.15-0.20 |
+| 粗加工端面 | 0.20-0.30 |
+
+应用到 demo：
+
+- 不要在 Step 3 里直接猜润滑状态；默认按“有润滑冷镦”理解。
+- 若工艺需要大幅封闭镦粗或细长杆挤压，可在 reasoning_zh 中标注“需良好润滑/退火磷化”。
+
+## 预成形设计原则
+
+p21-p23 的预成形案例给出的重点不是固定公式，而是设计思路：
+
+- 预成形要同时保证纵向稳定性和终成形后的最佳形状。
+- 毛坯细长时，先做过渡预成形，避免一次终镦造成弯曲、折叠或充不满。
+- 对头部体积大、杆部细的零件，预镦形状比最终形状更重要；不要直接从圆柱坯跳到复杂最终头型。
+
+p22-p23 里可见的工程判断阈值：
+
+- 固定冲奶头模示例中，长度/直径比约 `2.76`，小于 `3.25`，属于可接受范围。
+- 对更严格或带浮动机构的设计，实际可采用更保守的 `L/D ≈ 2.5` 限制。
+- 当头部局部直径扩大接近或超过 `D1/D ≈ 1.4`，应考虑浮动模、分步成形或更保守的预成形。
+
+应用到 过模图：
+
+- 如果 `blank_L / blank_D &gt; 2.8`，不要只用一个镦粗站。
+- 如果 final head/shank 直径比过大，至少安排：整形/预镦 -&gt; 终镦/封闭成形 -&gt; 切边/冲孔。
+- 异形件的最终特征应尽量拆成“体积分配”和“形状细化”两类工位。
+
+## 第 8 章案例对 demo 的价值
+
+目录显示第 8 章包括多种“经典需工艺变形图”，例如：
+
+- 细长中间大盘半空芯销
+- 双头六角切边头部盲孔针环
+- 三角形斜面支承钉
+- 铆接螺栓
+- 内六角外四角花形套筒工具
+- 双头铆钉
+- T 型螺栓
+
+这些不是本项目的工厂 answer key，但非常适合补充：
+
+- 复杂异形件的站序模板
+- 空心/冲孔/内六角/外方/花形的变形顺序
+- “先体积分配、后特征成形、最后冲孔/切边”的工艺节奏
+
+
+</textbook_rule>
+
+<textbook_rule name="gong_maoliang_extended">
+# 龚茂良资料扩展规则 — p33-p104 可用于 demo 的工艺约束
+
+&gt; 来源：`/Users/bobchen/Desktop/fasternerData/gong mao liang/Page33~104.pdf` 分册页。
+&gt; OCR 与 Haiku 抽取稿保存在 `backend/app/knowledge/textbook_sources/extracted_rule_drafts/`。
+&gt; 本文件是人工收敛后的 prompt 规则，只保留当前 v2 过模图 demo 直接有用的内容。
+
+## 使用优先级
+
+- Tier 1 工厂/标准件 case 仍是最高权重 answer key。
+- 本文件用于补足工艺物理、材料准备、螺纹坯径、机器能力和后处理提醒。
+- 低置信表格不要直接当尺寸答案；若与真实 case 冲突，以真实 case 为准。
+- p69-p104 主要是标准模具图册页，已识别出 GB/T5784 M8x80 螺栓、GB/T70.1 M8x18 内六角圆柱头螺钉等标准案例；当前先作为待抽取 textbook cases，不直接进入硬规则。
+
+## 毛坯与螺纹坯径
+
+p45-p50 给出 GB/T 18685-2002 滚压普通螺纹前毛坯直径规则。
+
+- 外螺纹不是直接取公称直径；滚牙前坯径应略小于公称大径，并接近滚压后体积守恒的中径/底径折算结果。
+- 若图面或 case 已给出线径/搓牙坯径，优先使用图面/case 数值。
+
+**推导公式（无图面数据时使用，不要查表）:**
+
+```
+滚牙前坯径 (d_thread_blank) ≈ d_nominal − 0.65 × P    (P 为螺距)
+   M16×2.0 → 16 − 1.30 = 14.70  (公式为保守估算，实做按搓丝样件修正)
+   M20×2.5 → 20 − 1.63 = 18.37
+   M22×2.5 → 22 − 1.63 = 20.37
+   M8×1.25 → 8  − 0.81 = 7.19   (与 GB/T70.1 size table 中 d1=7.10 接近)
+
+正挤前线径 (d_blank) ≈ d_thread_blank + 0.2~0.5  (留正挤减径量)
+   或者 ≈ shank_diameter (光杆段),取较大者
+
+自攻螺纹 (Delta PT / Taptite / PowerLock)：
+  滚牙前坯径 ≈ 公称大径 − 0.4 ~ 0.5
+  (滚牙后径向膨胀至公称值，所以坯径必须 &lt; 公称)
+```
+
+- 车削毛坯需要考虑表面粗糙度余量；冷镦线材/拉拔线材可直接按公式或 factory case。
+- 生成 `ProcessForming` 时，正挤/缩径站应明确写出 `thread_blank_D` 和 `thread_L`，并把 `thread_rolling` 放入 post_processes。
+
+应用到 demo：
+
+- 有外螺纹时，最终冷镦站通常不是“成品螺纹”，而是“搓牙坯径/螺纹坯段”。
+- 若模型把最终杆径写成公称螺纹大径，应降置信度或要求重试。
+
+## 内螺纹和通孔件
+
+p51-p56 包含内螺纹底孔/攻丝孔相关表格，OCR 数字置信度低，但原则可用：
+
+- 内螺纹牙型高度通常按理论牙高的 `70%-85%` 选择，不追求 100% 满牙。
+- 内螺纹件、铆螺母、四方通孔件应显式包含：
+  - 预成形/镦粗聚料
+  - 冲孔或通孔成形
+  - 后续攻丝/滚压内螺纹说明
+- 冲孔/通孔不要和大变形终镦硬塞在同一站，除非有非常相似 factory case。
+
+应用到 demo：
+
+- `through_hole`、`internal_thread`、`四方通孔`、`T帽` 类零件，应优先引用四方T帽、四方通孔、铆接/铆螺母类 case。
+- `post_processes` 对内螺纹可使用 `thread_rolling` 近似表示后续成牙，但 reasoning_zh 必须写明“后续攻丝/成内螺纹”。
+
+## 变形力、机器能力和工位数
+
+p33-p44 重复出现冷镦力/切断力/机器能力判断，数值表只作参考，原则如下：
+
+- 切断力近似与线材截面积相关：`Pq ∝ d0^2 * τs`。
+- 成形力与材料强度、头部最大投影面积、摩擦和封闭程度相关；大头、小杆、封闭反挤、内孔件需要更保守。
+- 机器能力应至少覆盖估算成形力并留安全系数，工程上可按 `1.2-1.5×` 留余量。
+- 最大切断直径通常要比设计线径留出余量；机器能力不足时，不应靠减少工位硬压。
+- 工位数由工艺变形图决定：
+  - 标准六角头：切料 -&gt; 初镦 -&gt; 终镦 -&gt; 切边。
+  - 凸缘/大头件：切料 -&gt; 初镦 -&gt; 二镦/分配体积 -&gt; 终镦 -&gt; 切边。
+  - 内六角圆柱头：切料/整形 -&gt; 预镦 -&gt; 终镦圆柱头 -&gt; 反挤内六角 -&gt; 正挤螺纹坯。
+  - 通孔/内螺纹件：预成形和冲孔/通孔应分步体现。
+
+应用到 demo：
+
+- 若客户图或图框写着 4 模，但经验库同类 case 是 5 工位，可把“切料/整形”作为 station 1 单独画出，同时在 reasoning_zh 解释：客户机台工位与过模图展示站序不完全一一等同。
+- 对标准件 demo，宁可输出工程上稳妥的 4-5 站，不要为了显得简单而压成 2-3 站。
+
+## 模具/成形几何对过模图的影响
+
+p33-p44 包含较多哈夫模、冲模、模具行程和锥角内容。当前 v2 不输出模具图，但可以影响过模图站序：
+
+- 大直径差、深孔、异形头、方/六角切边件，通常需要把“体积分配”和“最终外形/冲孔/切边”拆开。
+- 引入斜角/圆角过渡能减少折叠、充不满和应力集中；过模图里可用 `notes_zh` 标注“锥形过渡/圆角过渡”。
+- 最终校形/切边站应保留关键外形尺寸，尤其是四方头、六角头、法兰边、花形外轮廓。
+- p33 的哈夫模拆分、过盈、模套硬度等属于 Phase 2 tooling 参考；不要让它驱动当前 DXF 过模图坐标。
+
+应用到 demo：
+
+- `WorkpieceGeometry.extra_dims_mm` 可记录 `chamfer_deg`、`fillet_R`、`socket_AF`、`socket_depth`、`hole_D` 等关键特征。
+- 过模图 DXF 应优先表达工件中间形态，而不是模芯、模套、冲棒结构。
+
+## 材料软化、表面处理和润滑
+
+p57-p68 对当前 demo 非常有用：它解释为什么冷镦/冷挤压前必须关注硬度、磷化和润滑。
+
+### 软化处理
+
+- 冷挤压/大变形前，毛坯软化的目的：降低硬度、提高塑性、消除残余应力、改善组织。
+- 中高碳钢或合金钢如果硬度偏高，应在 reasoning_zh 标注“需球化退火/软化处理后冷镦”。
+- 不锈钢、铝合金、铜/黄铜的软化和表面处理路径不同，不要默认全部按碳钢磷化处理。
+
+### 钢件磷化和皂化
+
+- 钢/合金钢冷镦前常用：除油 -&gt; 酸洗 -&gt; 磷化 -&gt; 中和 -&gt; 皂化/润滑。
+- 磷化膜的作用：承载润滑剂、隔离金属与模具、降低摩擦、减少粘模和表面拉伤。
+- 文中给出方向性数据：磷化后油吸附能力显著提高，摩擦系数可大幅降低。具体数值只作趋势，不用于硬计算。
+- 大头、小杆、反挤内六角、深孔/通孔件，应在 reasoning_zh 中标注“需良好磷化皂化/润滑”。
+
+### 不锈钢和有色金属
+
+- 奥氏体不锈钢不能按普通碳钢磷化路径处理；应考虑草酸盐/专用表面处理和更保守工位。
+- 铝合金通常通过氧化/磷化类膜层承载润滑剂，避免挤压裂纹。
+- 铜/黄铜使用钝化/润滑路线；不要把钢件磷化参数直接套用。
+
+应用到 demo：
+
+- 材料未知时，按中等冷镦钢保守处理，confidence 不给 high，除非有同类 factory case。
+- 材料为不锈钢、铝、铜、黄铜时，减少单站变形量，并在 reasoning_zh 标出材料准备风险。
+- `post_processes` 可增加 `annealing` 或 `phosphating`，但不要把表面处理画成过模图 station。
+
+## 可执行校验建议
+
+这些规则应进入 `ProcessFormingVerifier` 或 prompt retry：
+
+- 外螺纹件：必须有 `thread_rolling` 或明确“后续滚牙/搓牙”。
+- 内六角/凹孔件：必须有 `backward_extrusion` 或明确“反挤/压内孔”。
+- 通孔/内螺纹件：必须有 `piercing` 或明确“冲孔/通孔”，并有后续攻丝/成牙说明。
+- 大头小杆、法兰、四方/六角切边件：如果单站最大直径增长超过约 `1.6×`，要求增加预镦/二镦。
+- 材料为不锈钢/铝/铜时，若 station_count 过少或无润滑/退火说明，降 confidence。
+- 只要用到 textbook-only 规则而没有相似 Tier 1 case，confidence 最高只能是 medium。
+
+</textbook_rule>
+
+<textbook_rule name="one_die_two_blow">
+# 1模2冲教程 — 紧固件冷镦规则
+
+&gt; 来源：`/Users/bobchen/Desktop/fasternerData/紧固件模具.pdf`，已渲染到
+&gt; `fasternerGenData/textbook_pages/one_die_two_blow_tutorial/`。本文件是人工目视抽取的 demo seed。
+
+## 定位
+
+这份教程对当前 demo 的价值主要在两个地方：
+
+- 给标准件和少工位零件提供基础工艺模板。
+- 给 Step 3 一个物理 sanity check：毛坯允许镦粗率、冲击次数、头部毛坯长度、典型成形顺序。
+
+当前 demo 只输出 过模图，不输出冲模/凹模工程图；模具材料与硬度表先作为 Phase 2 参考，不进入主要 prompt 判断。
+
+## 线材尺寸公差
+
+目视抽取自 p1 表 25.7-1：
+
+| 线材外径 | 公差 | 圆度 |
+|---|---:|---:|
+| `&lt;9.00` | `+0 / -0.03` | `&lt;0.015` |
+| `9.00-18.00` | `+0 / -0.04` | `&lt;0.02` |
+| `&gt;18.00` | `+0 / -0.05` | `&lt;0.025` |
+
+应用到 过模图：
+
+- LLM 不要把线径写得比客户图更精细；可保留一位或两位小数。
+- 标准件线径通常略小于公称螺纹外径，用于后续滚牙。
+
+## 镦粗率与冲击次数
+
+p1-p2 给出了镦粗率定义和冲击次数判断。Demo 中可用以下规则：
+
+- 镦粗率可按高度变化估算：`E = (H0' - HN') / H0' * 100%`。
+- 若 `l / dm &lt;= 2.8`，通常可以一次冲击。
+- 若 `l / dm = 3.0-5.5`，通常需要二次冲击。
+- 若 `l / dm = 5.6-8.0`，通常需要三次冲击。
+
+多次冲击的高度分配：
+
+- 第一次冲击后缩短到约 `75%-80% l`
+- 第二次冲击后缩短到约 `40%-55% l`
+- 最后一次冲击到最终高度 `hk`
+
+应用到 过模图：
+
+- 头部成形如果需要二次冲击，应在 ProcessForming 中体现为“预镦/初镦”和“终镦/成形头部”两个站。
+- 细长杆件和大头件不要把全部镦粗量塞到一个 station。
+
+## 材料允许镦粗率参考
+
+目视抽取自 p2 表 25.7-2：
+
+| 材料 | 极限镦粗率 Emax | 许用镦粗率 Ep |
+|---|---:|---:|
+| 10 | 80 | 68 |
+| 08F / 10F | 90 | 72 |
+| 20 | 76 | 65 |
+| 35 | 73 | 60 |
+| 15Cr | 78 | 60 |
+| 40Cr | 74 | 55 |
+| 30CrMnSiA | 87 | 65 |
+| 65Mn | 50 | 40 |
+| GCr15 | 60 | 45 |
+| 1Cr18Ni9Ti | 90 | 76 |
+
+Demo 用法：
+
+- 如果材料未知，按中等冷镦钢保守处理，避免高镦粗率。
+- `10B21` 可按常见冷镦钢处理，但真实许用值需要后续工程师补表。
+
+## 头部毛坯长度估算
+
+p3 表 25.7-3 给出不同头型的毛坯长度计算。当前 demo 先使用这些作为趋势规则：
+
+- 平顶圆柱头：头部毛坯长度与 `D^2 * h / dm^2` 成正比。
+- 六角头：可用 `1.33 * S^2 * h / dm^2` 估算头部毛坯长度。
+- 四方头：可用 `1.27 * S^2 * h / dm^2` 估算头部毛坯长度。
+- 沉头/半沉头/半圆头需要考虑头部轮廓体积，不能只按圆柱体积估算。
+- 六角螺母毛坯直径：小规格约 `1.1-1.2 dn`，M8-M24 约 `1.0-1.1 dn`；长度按体积折算。
+
+应用到 过模图：
+
+- 头型不同，blank_L 不能只按成品总长拍脑袋。
+- 六角头、四方头、圆柱头应按头部体积单独估算，再加杆部/螺纹坯体积。
+
+## 冷镦力快速估算
+
+p4 给出冷镦力和变形力影响因素。Demo 阶段的简化判断：
+
+- 冷镦力与头部最大直径的平方强相关。
+- 变形程度在 `50%-60%` 时，经验系数常取 `5-6` 量级。
+- 变形方式、润滑、模具结构、材料机械性能都会改变所需吨位。
+
+应用到 过模图：
+
+- 大头、小杆、封闭成形、反挤内孔都应降低单站变形量。
+- 这类零件的 confidence 不应轻易给 high，除非有非常相似的 worked case。
+
+## 典型零件冷镦工艺
+
+目视抽取自 p4-p5 表 25.7-5：
+
+| 零件 | 典型成形工序 |
+|---|---|
+| 六角头螺栓 | 切料 -&gt; 初镦 -&gt; 终镦 -&gt; 切边 |
+| 凸缘螺栓 | 切料 -&gt; 初镦 -&gt; 二镦 -&gt; 终镦 -&gt; 切边 |
+| 钢球 | 切料 -&gt; 镦球 -&gt; 光球 |
+| 内六角螺钉 | 切料 -&gt; 初镦 -&gt; 二镦 -&gt; 内六角孔成形 |
+| 半圆头方颈螺栓 | 切料 -&gt; 初镦 -&gt; 终镦 -&gt; 切边 |
+| 连杆螺栓 | 切料 -&gt; 整形 -&gt; 初镦 -&gt; 二镦 -&gt; 终镦 |
+| 六角螺母 | 切料 -&gt; 镦球/预成形 -&gt; 镦六角 -&gt; 冲孔 |
+| 阀门弹簧座圈 | 切料 -&gt; 整形 -&gt; 镦球 -&gt; 冲孔 -&gt; 退火磷化 -&gt; 终镦 |
+
+应用到 Step 3：
+
+- DIN933 可优先套六角头螺栓模板。
+- DIN912 可优先套内六角螺钉模板，但本项目现有标准件 cases 显示通常还会包含正挤螺纹坯/杆部调整。
+- 六角螺母和空心件一定要显式出现冲孔/通孔步骤。
+
+
+</textbook_rule>
+  </textbook_knowledge>
+  <patterns>
+<pattern id="standard_fastener_sequences_v1" source="one_die_two_blow_tutorial+persistent_cases">
+{
+  "pattern_id": "standard_fastener_sequences_v1",
+  "source": "one_die_two_blow_tutorial+persistent_cases",
+  "status": "demo_seed",
+  "patterns": [
+    {
+      "name": "hex_head_bolt",
+      "applies_to": [
+        "DIN933",
+        "hex_bolt_DIN933",
+        "六角头螺栓"
+      ],
+      "station_sequence": [
+        "combined: 切料/整形",
+        "upsetting: 初镦聚料",
+        "heading: 终镦头部",
+        "trimming: 切边成六角"
+      ],
+      "post_processes": [
+        "thread_rolling",
+        "heat_treatment"
+      ],
+      "notes_zh": "来自 1模2冲教程的六角头螺栓流程，并与现有 DIN933 M18/M22 cases 一致。"
+    },
+    {
+      "name": "socket_cap_screw",
+      "applies_to": [
+        "DIN912",
+        "socket_cap_screw_DIN912",
+        "内六角螺钉"
+      ],
+      "station_sequence": [
+        "combined: 切料/整形",
+        "upsetting: 初镦",
+        "heading: 终镦圆柱头",
+        "backward_extrusion: 反挤/镦内六角孔",
+        "forward_extrusion: 杆部或螺纹坯调整"
+      ],
+      "post_processes": [
+        "thread_rolling",
+        "heat_treatment"
+      ],
+      "notes_zh": "教程给出内六角螺钉少工位模板；本项目标准件 cases 补充了正挤螺纹坯/杆部调整。"
+    },
+    {
+      "name": "hex_nut_or_hollow_part",
+      "applies_to": [
+        "六角螺母",
+        "空心件",
+        "through_hole_part"
+      ],
+      "station_sequence": [
+        "combined: 切料",
+        "upsetting: 镦球/预成形",
+        "heading: 镦外形",
+        "piercing: 冲孔"
+      ],
+      "post_processes": [],
+      "notes_zh": "空心/螺母/通孔件必须显式包含冲孔，不能只画实心成品。"
+    },
+    {
+      "name": "large_head_small_shank",
+      "applies_to": [
+        "凸缘螺栓",
+        "方头",
+        "T头",
+        "大头小杆异形件"
+      ],
+      "station_sequence": [
+        "combined: 切料/整形",
+        "upsetting: 初镦聚料",
+        "upsetting: 二镦分配头部体积",
+        "heading: 终镦头部/外形",
+        "trimming_or_piercing: 视最终形状切边或冲孔"
+      ],
+      "post_processes": [],
+      "notes_zh": "当 blank_L/blank_D 偏大或 head/shank 直径比大时，采用二次镦粗，不把头部一次镦成。"
+    }
+  ]
+}
+</pattern>
+  </patterns>
+  <cases count="5">
+<case_summary id="DJGS-25-5-B144-0056-106S-过模图" category="special_shape" source="case_dwg" extracted_by="llm_draft">
+  <part_name_zh>六角轴</part_name_zh>
+  <description>Hexagonal shaft / special shape part with flanged head and internal hex socket</description>
+  <material>106S</material>
+  <size overall_L="13.9" shank_D="7.82"/>
+  <operations>upsetting -&gt; upsetting -&gt; heading -&gt; backward_extrusion -&gt; backward_extrusion -&gt; piercing</operations>
+  <blank><workpiece type="cylinder" overall_length_mm="17.5" max_diameter_mm="7.5" profile="直杆/坯料:L17.5,D7.5"/></blank>
+  <stations>
+    <station n="1" operation="upsetting" dims="{"L":17.7,"D":7.59}">整形/倒角，料杆端部修整准备聚料</station>
+    <station n="2" operation="upsetting" dims="{"L":8.1,"D":14.04}">预镦头部，形成球冠形预成形头</station>
+    <station n="3" operation="heading" dims="{"L":13.0,"D":20.5}">终镦扁平大法兰头部，初步形成头部轮廓</station>
+    <station n="4" operation="backward_extrusion" dims="{"L":13.0,"D":20.5}">头部反挤压，预冲内孔</station>
+    <station n="5" operation="backward_extrusion" dims="{"L":13.0,"D":19.0}">切边修整外缘，反挤压成型内六角孔</station>
+    <station n="6" operation="piercing" dims="{"L":13.9,"D":19.0,"head_D":19.0,"shank_D":7.82,"shank_L":12.6}">冲通内孔/最终成型，孔径5.15</station>
+  </stations>
+</case_summary>
+
+<case_summary id="DJGS-25-2-B120-0044-YT105S-过模图" category="special_shape" source="case_dwg" extracted_by="llm_draft">
+  <part_name_zh>异形件（带凸缘双头方形件）</part_name_zh>
+  <description>Special-shape cold-headed part with flanged head and pierced socket</description>
+  <material>YT105S</material>
+  <size overall_L="8.05" shank_D="12.95"/>
+  <operations>upsetting -&gt; upsetting -&gt; combined -&gt; combined -&gt; trimming</operations>
+  <blank><workpiece type="cylinder" overall_length_mm="12.5" max_diameter_mm="11.5" profile="直杆/坯料:L12.5,D11.5">下料：方形/圆形坯料 11.5×12.5</workpiece></blank>
+  <stations>
+    <station n="1" operation="upsetting" dims="{"L":10.7,"D":12.6}">第一次镦粗整形</station>
+    <station n="2" operation="upsetting" dims="{"L":11.0,"D":12.85}">二次镦粗，头部成形</station>
+    <station n="3" operation="combined" dims="{"L":12.8,"D":12.9}">镦凸缘+反挤预成形</station>
+    <station n="4" operation="combined" dims="{"L":8.05,"D":15.9}">终成形：双向挤压+法兰镦粗</station>
+    <station n="5" operation="trimming" dims="{"L":8.05,"D":15.9}">切边整形，得到成品</station>
+  </stations>
+</case_summary>
+
+<case_summary id="DJGS-24-6-冲铆轴销-YT105S-过模图" category="rivet_pin" source="case_dwg" extracted_by="llm_draft">
+  <part_name_zh>冲铆轴销</part_name_zh>
+  <description>Hex-trim rivet pin with flange, formed on JM-85S</description>
+  <material>YT105S</material>
+  <size overall_L="75.38" shank_D="8.04"/>
+  <operations>combined -&gt; forward_extrusion -&gt; upsetting -&gt; combined</operations>
+  <blank><workpiece type="cylinder" overall_length_mm="48.0" max_diameter_mm="10.68" profile="直杆/坯料:L48.0,D10.68"/></blank>
+  <stations>
+    <station n="1" operation="combined" dims="{"L":74.11,"D":10.75,"head_D":10.75,"head_H":15.41,"shank_D":7.98,"shank_L":58.7}">正向挤压细杆部，保留头部坯料；R1.5/R0.5 过渡圆角</station>
+    <station n="2" operation="forward_extrusion" dims="{"L":74.03,"D":10.8,"head_D":10.8,"head_H":15.53,"shank_D":8.0,"shank_L":58.5}">二次挤压成形，头部出现 φ9.2 阶梯（预成形凸台）</station>
+    <station n="3" operation="upsetting" dims="{"L":75.38,"D":10.85,"head_D":10.85,"head_H":6.6,"shank_D":8.02,"shank_L":68.78}">镦粗成型头部，形成短粗法兰预形，头顶预留 φ8.35 凹槽</station>
+    <station n="4" operation="combined" dims="{"L":75.0,"D":19.0,"head_D":19.0,"head_H":7.5,"shank_D":8.04,"shank_L":61.0}">终镦+切边：法兰外径成形 φ19、头部凸台 φ10.95，杆端倒角 1.2×φ6.6；六角切边在最后一序完成</station>
+  </stations>
+</case_summary>
+
+<case_summary id="DJGS-22-2-四方通孔-105S-过模图" category="through_hole_part" source="case_dwg" extracted_by="llm_draft">
+  <part_name_zh>四方底座(通孔)</part_name_zh>
+  <description>Square base with through hole, four-station cold heading</description>
+  <material>105S</material>
+  <size overall_L="6.0" shank_D="5.11"/>
+  <operations>upsetting -&gt; combined -&gt; combined -&gt; piercing -&gt; trimming</operations>
+  <blank><workpiece type="cylinder" overall_length_mm="12.3" max_diameter_mm="8.9" profile="直杆/坯料:L12.3,D8.9"/></blank>
+  <stations>
+    <station n="1" operation="upsetting" dims="{"L":6.6,"D":12.82}">镦粗成型预制头, 下端预成形带锥度</station>
+    <station n="2" operation="combined" dims="{"L":4.5,"D":12.88}">进一步镦粗成型法兰圆形外轮廓, 反挤压形成下端柄部</station>
+    <station n="3" operation="combined" dims="{"L":6.0,"D":10.0}">镦四方外形(10×10, 4-R1.5), 中心反挤压预成型孔, 下端正挤压形成柄部</station>
+    <station n="4" operation="piercing" dims="{"L":6.0,"D":20.5}">中心冲通孔, 法兰外圆 ø20.5 保留四方轮廓</station>
+    <station n="5" operation="trimming" dims="{"L":6.0,"D":15.05}">切边修整为最终四方法兰外形 15.05×15.05, 4-R1.5</station>
+  </stations>
+</case_summary>
+
+<case_summary id="BG24081-P03-DIN933-M18-P2-5" category="hex_bolt_DIN933" source="standard_pdf" extracted_by="llm_draft">
+  <part_name_zh>DIN933 M18×2.5 外六角螺栓</part_name_zh>
+  <description>M18 hex head bolt, DIN933, full thread, grade 6.8</description>
+  <material>1025</material>
+  <size overall_L="25.0" shank_D="17.7"/>
+  <operations>combined -&gt; upsetting -&gt; heading -&gt; trimming</operations>
+  <blank><workpiece type="cylinder" overall_length_mm="95.0" max_diameter_mm="17.7" profile="直杆/坯料:L95.0,D17.7"/></blank>
+  <stations>
+    <station n="1" operation="combined" dims="{"L":95.0,"D":17.7}">切料：从 Ø17.7 线材切取所需长度坯料，端部倒角</station>
+    <station n="2" operation="upsetting" dims="{"L":75.0,"D":22.0}">一次镦粗：聚料形成头部预成形（锥形过渡）</station>
+    <station n="3" operation="heading" dims="{"L":36.5,"D":30.14,"head_D":30.14,"head_H":11.5,"shank_D":17.7,"shank_L":25.0}">二次镦粗成形六角头（头顶 30° 倒角，R0.6 圆角）</station>
+    <station n="4" operation="trimming" dims="{"L":36.5,"D":26.67,"head_D":26.67,"head_H":11.5,"shank_D":17.7,"shank_L":25.0}">切边：将圆头切成六角形，对边 27 mm，对角 26.67 mm</station>
+  </stations>
+</case_summary>
+  </cases>
+  <textbook_cases count="5" total_available="27">
+<textbook_case_summary id="t_bolt_cold_heading_8_34" source="gong_maoliang_Page375_378:375">
+  <title>T形螺栓冷镦工艺</title>
+  <category>T形螺栓 (T-bolt)</category>
+  <why>T形螺栓头部为T字形，需要横向扩展成形，与普通六角头螺栓工艺差异显著，是冷镦成形的典型复杂件案例。</why>
+  <summary>页面展示T形螺栓从线材到成品的多工位冷镦成形工序图，包含下料、预成形及最终T形头成形等阶段。图中标注有各工步毛坯及模具尺寸，但因扫描质量较差，大部分数值难以可靠读取。注记含材料利用率信息（疑似约82.7%或类似值）。</summary>
+  <stations>0:下料({"diameter":"φ6.2 (unclear)","length":"约79.22 (unclear)"}) -&gt; 1:预镦/整形({"head_diameter":"unclear","shank_diameter":"unclear"}) -&gt; 2:T形头预成形({"head_width":"unclear","head_thickness":"unclear"}) -&gt; 3:T形头终成形({"head_width":"unclear","head_height":"unclear","shank_length":"约50 (unclear)"}) -&gt; 4:搓丝/滚丝（后续工序）({"thread_spec":"unclear"})</stations>
+  <usage>当用户询问T形螺栓冷镦工艺、T形头成形方案或异形头螺栓冷镦工序设计时，可引用本案例说明T形头多工位成形的基本思路，但所有具体尺寸数值需结合原图核实，不可直接用于生产。</usage>
+</textbook_case_summary>
+
+<textbook_case_summary id="hex_socket_square_spline_sleeve_tool_p371" source="gong_maoliang_Page371_374:371">
+  <title>内六角外四角花形套筒工具</title>
+  <category>套筒工具 / socket tool (hex-internal, square-external spline)</category>
+  <why>展示多工位冷镦成形套筒类工具的各工序毛坯形状演变，从圆棒料逐步成形出内六角、外四角花形结构。</why>
+  <summary>共约5个工序图示：①原始圆棒料；②预缩径分段；③进一步阶梯成形；④外花形轮廓成形+端面端头；⑤最终形态含内六角孔及外四角花形，附截面端视图。</summary>
+  <stations>0:下料({"diameter_mm":12.5,"length_mm":48}) -&gt; 1:预缩径（一次挤压）({"large_dia_mm":12.7,"small_dia_mm":10.2,"large_seg_length_mm":35.5,"small_seg_l) -&gt; 2:三段阶梯成形({"head_dia_mm":13.7,"mid_dia_mm":10.3,"tail_dia_mm":12.76,"seg1_length_mm":18.5,) -&gt; 3:外花形轮廓成形({"head_spline_dia_mm":13.8,"mid_dia_mm":10.4,"hex_od_mm":12.82,"seg1_length_mm":) -&gt; 4:最终成形（含内六角孔）({"head_spline_dia_mm":13.8,"inner_hex_dia_mm":9.5,"tail_hex_od_mm":12.9,"nose_le)</stations>
+  <usage>Reference for multi-station cold heading of socket tools with internal hex and external square/spline features; provides station-by-station diameter and length progressions for a ~Ø12.5×48 mm blank.</usage>
+</textbook_case_summary>
+
+<textbook_case_summary id="螺塞_cold_heading_case_p370" source="gong_maoliang_Page367_370:370">
+  <title>螺塞 (Plug / Threaded Plug)</title>
+  <category>螺塞 / 管堵</category>
+  <why>螺塞是典型的带法兰盘或六角头的实心/空心冷镦件，成形工序涉及镦粗、正挤压、内孔成形及六角形外形挤压，是多工位冷镦工艺的代表案例。</why>
+  <summary>从圆柱坯料依次经过镦粗扩径、预成形收颈（形成台阶）、正挤压内孔及六角外形、最终镦出法兰盘，共约5~6个工位。图示从上到下展示各工位毛坯形状变化。</summary>
+  <stations>0:下料({"diameter_mm":23.6,"length_mm":34.2}) -&gt; 1:一次镦粗({"outer_diameter_mm":26.1}) -&gt; 2:二次镦粗 / 预成形({"outer_diameter_mm":26.3}) -&gt; 3:正挤压内孔 + 六角外形预成形({"hex_outer_diameter_mm":26.4,"inner_bore_diameter_mm":16.4,"shank_diameter_mm":) -&gt; 4:内孔精整 + 六角精整({"inner_bore_diameter_mm":16.45,"hex_outer_diameter_mm":25.2,"body_outer_diamete) -&gt; 5:镦法兰盘 / 最终成形({"flange_outer_diameter_mm":36.0,"flange_thickness_mm":3.0,"body_length_mm":11.8)</stations>
+  <usage>用于说明螺塞类零件的多工位冷镦工艺路线：坯料→镦粗→预成形→内孔挤压+六角外形挤压→精整→法兰镦出。关键工艺要点：六角形孔型挤压需控制减面率，内孔冲挤需分步进行以避免开裂；法兰镦制在最后工位完成以保证同轴度。</usage>
+</textbook_case_summary>
+
+<textbook_case_summary id="rivet_gun_hex_through_core_bolt_8_35" source="gong_maoliang_Page375_378:376">
+  <title>铆枪六角穿芯螺钉</title>
+  <category>冷镦六角头螺钉（穿芯型）</category>
+  <why>铆枪专用六角穿芯螺钉，需在头部成形凹模面（凹槽），并在杆部预留穿芯孔，工艺复杂，典型6工位冷镦成形案例。</why>
+  <summary>共7个工位（0#~6#），从坯料剪切开始，经逐步镦粗、预成形六角头、成形凹模面、整形，最终得到带凹模面的六角穿芯螺钉。</summary>
+  <stations>0:下料（坯料）({"diameter_mm":6.5,"length_mm":21}) -&gt; 1:剪切/整形坯料({"diameter_mm":6.7,"length_mm":20}) -&gt; 2:预镦粗头部({"head_diameter_mm":9.3,"shank_diameter_mm":"~6.75（unclear）","overall_length_mm") -&gt; 3:预成形六角头及锥面({"head_diameter_mm":9.7,"taper_angle_deg":"105（uncertain）","body_length_mm":"~5.) -&gt; 4:成形六角头+杆部整形({"head_across_flats_mm":9.8,"shank_diameter_mm":3.2,"shank_length_mm":"~12.96",") -&gt; 5:精整六角头及凹模面({"head_across_flats_mm":9.8,"shank_length_mm":"~9.1","recess_depth_mm":0.8,"step) -&gt; 6:最终成形（凹模面完成）({"head_across_flats_mm":9.8,"shank_diameter_mm":3.2,"head_height_mm":"~2.2","con)</stations>
+  <usage>用于说明铆枪六角穿芯螺钉的多工位冷镦工艺，重点在头部凹模面成形与六角头逐步成形的工序安排，可作为类似带凹槽六角头零件的工艺设计参考。部分尺寸因扫描图像模糊，标注为unclear，使用时需结合原图核实。</usage>
+</textbook_case_summary>
+
+<textbook_case_summary id="motorcycle_ebike_shock_absorber_piston_rod_8_33" source="gong_maoliang_Page371_374:374">
+  <title>摩托车、电瓶车减振活塞杆</title>
+  <category>减振活塞杆 (shock absorber piston rod for motorcycle / e-bike)</category>
+  <why>展示了细长杆类零件的多工步冷镦成形工艺，包括杆部、端头法兰/台阶及螺纹端的渐进成形过程，对细长轴类冷镦工艺设计具有参考价值。</why>
+  <summary>页面展示约6个中间工序截面图，从原始棒料逐步成形出带法兰头部、细长杆部和端部螺纹结构的活塞杆。各工步显示杆部长度逐步延伸、头部形状逐渐成形，最终达到成品尺寸。</summary>
+  <stations>0:下料({"length_mm":"unclear","diameter_mm":"unclear"}) -&gt; 1:第1工步 — 初步整形({"length_mm":53,"diameter_mm":"unclear"}) -&gt; 2:第2工步 — 头部预成形({"length_mm":52.99,"chamfer_mm":0.5}) -&gt; 3:第3工步 — 杆部拉长/减径({"inner_length_mm":72.06,"outer_length_mm":76.65}) -&gt; 4:第4工步 — 头部法兰成形({"rod_length_mm":76.05,"head_boss_height_mm":3.56}) -&gt; 5:第5工步 — 细长杆成形({"total_length_mm":176.97,"rod_effective_length_mm":170.99,"tail_zone_mm":8.96,") -&gt; 6:第6工步 — 尾端预成形({"total_length_mm":167.89,"tail_zone_mm":7.96,"flange_thickness_mm":1.3}) -&gt; 7:第7工步 — 成品件({"total_length_mm":180,"main_body_length_mm":168.1,"thread_end_length_mm":"11.9+)</stations>
+  <usage>用于细长杆类冷镦工艺设计参考：活塞杆从短坯料经多工步正挤压延伸杆部，同时成形头部法兰和尾部螺纹预型。关键控制点：各工步杆部伸长量、头部法兰成形时机、尾端螺纹预成形余量。具体尺寸因图像质量有限，应以实际工艺图纸为准。</usage>
+</textbook_case_summary>
+  </textbook_cases>
+</knowledge_library>
+
+Output a single JSON object with this exact shape (ProcessForming):
+
+{
+  "part_name_zh": "<Chinese name from features.description or inferred>",
+  "material": "<material_grade from features>",
+  "blank": {
+    "type": "cylinder",
+    "overall_length_mm": <float>,
+    "max_diameter_mm": <float>
+  },
+  "stations": [
+    {
+      "n": 1,
+      "operation": "upsetting" | ...,
+      "workpiece": {
+        "type": "cylinder" | ...,
+        "overall_length_mm": <float>,
+        "max_diameter_mm": <float>,
+        "head_diameter_mm": <float|null>,
+        "head_height_mm": <float|null>,
+        "shank_diameter_mm": <float|null>,
+        "shank_length_mm": <float|null>,
+        "head_recess_diameter_mm": <float|null>,
+        "head_recess_depth_mm": <float|null>,
+        "through_hole_diameter_mm": <float|null>,
+        "corner_radius_mm": <float|null>,
+        "chamfer_C_mm": <float|null>,
+        "fillet_R_mm": <float|null>,
+        "profile_segments": [
+          {
+            "label_zh": "杆部/台阶/头部/凹槽等",
+            "length_mm": <float>,
+            "diameter_mm": <float>,
+            "end_diameter_mm": <float|null>,
+            "fillet_R_mm": <float|null>,
+            "chamfer_C_mm": <float|null>
+          }
+        ],
+        "extra_dims_mm": {},
+        "notes_zh": "<short Chinese description>"
+      },
+      "key_dimensions": {"L": <float>, "D": <float>},
+      "notes_zh": "<station operation notes in Chinese>"
+    }
+  ],
+  "post_processes": ["thread_rolling", ...],
+  "reasoning_zh": "<浓缩版,200-400 字。核心结论 + 关键 cited case>",
+  "cited_case_ids": ["<case_id from knowledge_library that influenced design>"],
+  "confidence": "high" | "medium" | "low"
+}
+
+记得: 先 <gong_review>...</gong_review> 自由分析,再 JSON。两部分都要有。

@@ -1,56 +1,118 @@
 {
   "id": "slim_large_flange_semi_hollow_pin_8_15",
   "source": "gong_maoliang_Page355_358:355",
-  "status": "llm_draft_low_confidence",
+  "source_image": "fasternerGenData/textbook_pages/gong_maoliang_Page355_358/p001_book355.png",
+  "status": "manual_visual_reviewed",
+  "review_method": "human_visual_reading_from_page_image",
   "title_zh": "细长中间大盘半空芯销",
-  "product_category": "半空芯销 / semi-hollow pin with large intermediate flange",
-  "why_it_matters": "该零件为细长杆、中间带大凸缘、端部半空心的复杂冷镦件，代表多工位冷镦在长径比大、异形凸缘成形方面的典型难点案例。",
-  "visible_process_summary_zh": "4工位多工位冷镦机成形：坯料经预成形→中间大盘凸缘镦粗→杆部缩径→端部穿孔/半空心成形，工位间坯料轮廓在机床截面图中清晰可见。",
+  "product_category": "半空芯销 / Semi-hollow pin with large intermediate flange",
+  "why_it_matters": "龚茂良第8章工艺变形图案例。该页主图展示多工位模具中细长半空芯销的成形节奏，底部给出最终产品尺寸。适合用于长细杆、中部大盘/法兰、半空心盲孔类零件的工艺判断。",
+  "visible_process_summary_zh": "主图为多工位模具/工件排布，底部为最终产品尺寸图。该页没有逐站单独标注0#、1#等工位尺寸；可明确读取最终产品的长杆、左端中部大盘/台阶、右端Ø16端部以及右侧半空心孔深19.4等特征。",
   "visible_dimensions": {
-    "blank_diameter_mm": 12,
-    "shank_diameter_1_mm": 7,
-    "shank_diameter_2_mm": 5.3,
-    "flange_zone_length_mm": 5.9,
-    "body_length_mm": 45.2,
-    "hole_depth_mm": 19.4,
+    "left_large_diameter_mm": 12.0,
+    "left_shank_diameter_mm": 7.0,
+    "main_shank_diameter_mm": 5.3,
+    "left_flange_zone_length_mm": 5.9,
+    "small_step_length_mm": 1.6,
     "collar_width_mm": 2.4,
-    "total_length_mm": 72.55,
-    "tail_diameter_mm": 16,
-    "inner_bore_diameter_mm": 5.3,
-    "step_length_mm": 1.6,
-    "note": "φ12为坯料直径；φ16疑为尾端外径；部分尺寸因扫描噪声置信度中等"
+    "body_length_mm": 45.2,
+    "semi_hollow_depth_mm": 19.4,
+    "overall_length_mm": 72.55,
+    "right_end_outer_diameter_mm": 16.0,
+    "right_bore_diameter_mm": 5.3
   },
+  "manual_visual_evidence": [
+    {
+      "page": 355,
+      "station": "final_dimension_view",
+      "evidence_zh": "底部最终产品尺寸图左侧标Ø12、Ø7、Ø5.3，中部标5.9、1.6、2.4，长杆段标45.2，右侧孔深标19.4，总长标72.55，右端标Ø16和Ø5.3。",
+      "dimensions": {
+        "left_large_diameter_mm": 12.0,
+        "left_shank_diameter_mm": 7.0,
+        "main_shank_diameter_mm": 5.3,
+        "left_flange_zone_length_mm": 5.9,
+        "small_step_length_mm": 1.6,
+        "collar_width_mm": 2.4,
+        "body_length_mm": 45.2,
+        "semi_hollow_depth_mm": 19.4,
+        "overall_length_mm": 72.55,
+        "right_end_outer_diameter_mm": 16.0,
+        "right_bore_diameter_mm": 5.3
+      }
+    },
+    {
+      "page": 355,
+      "station": "multi_station_tooling_view",
+      "evidence_zh": "主图显示多工位模具中长细坯料逐步通过正挤/整形形成细长杆，并在左侧局部成形中部大盘/台阶，右端形成半空心结构。主图未给每个中间工位单独尺寸。",
+      "dimensions": {}
+    }
+  ],
   "station_sequence": [
     {
       "n": 0,
-      "label_zh": "下料",
-      "geometry_zh": "线材切断，直径φ12，长度按体积计算",
-      "dimensions": {"wire_diameter_mm": 12, "cut_length_mm": "unclear"}
+      "label_zh": "多工位模具排布/坯料进入",
+      "operation_inference": "multi_station_forming_context",
+      "geometry_zh": "主图展示长细坯料在多工位模具中的成形路径；该页未给出0#坯料尺寸。",
+      "dimensions": {},
+      "evidence_ref": "manual_visual_evidence[1]"
     },
     {
       "n": 1,
-      "label_zh": "预成形 / 头部初镦",
-      "geometry_zh": "坯料整形，端面平整，初步建立杆部与头部过渡区",
-      "dimensions": {}
+      "label_zh": "细长杆正挤/定径",
+      "operation_inference": "forward_extrusion",
+      "geometry_zh": "最终产品有Ø5.3细长杆和45.2长杆段，说明工艺中需要长杆正挤或定径。",
+      "dimensions": {
+        "main_shank_diameter_mm": 5.3,
+        "body_length_mm": 45.2
+      },
+      "evidence_ref": "manual_visual_evidence[0]"
     },
     {
       "n": 2,
-      "label_zh": "中间大盘凸缘镦粗",
-      "geometry_zh": "在杆部中间位置正挤+局部镦粗形成大直径凸缘，杆两侧分别缩径至φ5.3与φ7",
-      "dimensions": {"flange_zone_length_mm": 5.9, "shank_d1_mm": 7, "shank_d2_mm": 5.3}
+      "label_zh": "中部大盘/左端台阶成形",
+      "operation_inference": "local_upsetting_plus_sizing",
+      "geometry_zh": "最终产品左侧有Ø12大径区、Ø7台阶和Ø5.3杆部，需局部聚料/整形形成中间大盘和过渡台阶。",
+      "dimensions": {
+        "left_large_diameter_mm": 12.0,
+        "left_shank_diameter_mm": 7.0,
+        "main_shank_diameter_mm": 5.3,
+        "left_flange_zone_length_mm": 5.9,
+        "small_step_length_mm": 1.6,
+        "collar_width_mm": 2.4
+      },
+      "evidence_ref": "manual_visual_evidence[0]"
     },
     {
       "n": 3,
-      "label_zh": "杆部整形 / 缩径",
-      "geometry_zh": "正挤压使杆部达到最终直径，总体长度趋近72.55 mm",
-      "dimensions": {"total_length_mm": 72.55, "body_length_mm": 45.2}
+      "label_zh": "右端半空心孔成形",
+      "operation_inference": "backward_extrusion_or_piercing_blind_hole",
+      "geometry_zh": "最终产品右端Ø16外径区内有Ø5.3半空心孔，孔深19.4，属于右端盲孔/半空心成形。",
+      "dimensions": {
+        "right_end_outer_diameter_mm": 16.0,
+        "right_bore_diameter_mm": 5.3,
+        "semi_hollow_depth_mm": 19.4
+      },
+      "evidence_ref": "manual_visual_evidence[0]"
     },
     {
       "n": 4,
-      "label_zh": "半空心穿孔",
-      "geometry_zh": "尾端冲孔形成半空心盲孔，孔深19.4 mm，孔径φ5.3",
-      "dimensions": {"hole_depth_mm": 19.4, "bore_diameter_mm": 5.3, "tail_od_mm": 16}
+      "label_zh": "最终尺寸状态",
+      "operation_inference": "final_sizing",
+      "geometry_zh": "最终总长72.55，包含左侧大盘/台阶、Ø5.3细长杆和右端Ø16半空心端。",
+      "dimensions": {
+        "overall_length_mm": 72.55,
+        "left_large_diameter_mm": 12.0,
+        "main_shank_diameter_mm": 5.3,
+        "right_end_outer_diameter_mm": 16.0,
+        "semi_hollow_depth_mm": 19.4
+      },
+      "evidence_ref": "manual_visual_evidence[0]"
     }
   ],
-  "usage_in_prompt": "当用户询问细长杆件带中间凸缘的多工位冷镦工艺、大长径比半空芯销的成形顺序或中间大盘类零件的模具设计时，可引用本案例作为参考示例（尺寸置信度中等，建议结合实际验证）。"
+  "process_design_lessons": [
+    "这页不能像带0#~4#尺寸的页面那样强行拆逐站尺寸；它的可靠GT是最终产品尺寸和模具排布显示的成形节奏。",
+    "细长Ø5.3杆、总长72.55和右端半空心孔深19.4共同说明工艺必须考虑长杆稳定性、正挤定径和盲孔/半空心成形顺序。",
+    "中部大盘/台阶和右端Ø16半空心端分别位于长杆两端，工艺上应避免一次完成全部体积分配，需分阶段成形。"
+  ],
+  "usage_in_prompt": "高价值人工目视审核教材GT。用于长细杆、中部大盘/法兰、半空心盲孔销类零件的工序设计；该页只作为最终尺寸和成形节奏GT，不提供逐站尺寸GT。"
 }

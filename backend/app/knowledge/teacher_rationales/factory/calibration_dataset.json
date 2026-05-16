@@ -1,0 +1,169 @@
+{
+  "source": "factory",
+  "case_count": 8,
+  "cases": [
+    {
+      "case_id": "12齿车削球头",
+      "source_type": "factory_gt",
+      "trust_level": "gold",
+      "product_name_zh": "六角切边球头件",
+      "product_category": "ball_head",
+      "part_number": "DJTZ-23-5",
+      "holdout_case_ids": [
+        "12齿车削球头"
+      ],
+      "tags": [
+        "ball_head",
+        "heading",
+        "trimming",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/factory/12齿车削球头.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_12齿车削球头 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case 12齿车削球头 --prefer-category ball_head --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "DJGS-22-2-四方通孔-105S-过模图",
+      "source_type": "factory_gt",
+      "trust_level": "gold",
+      "product_name_zh": "四方底座(通孔)",
+      "product_category": "through_hole_part",
+      "part_number": "B106-0054",
+      "holdout_case_ids": [
+        "DJGS-22-2-四方通孔-105S-过模图"
+      ],
+      "tags": [
+        "combined",
+        "hole",
+        "piercing",
+        "square_head",
+        "through_hole_part",
+        "trimming",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/factory/DJGS-22-2-四方通孔-105S-过模图.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_DJGS-22-2-四方通孔-105S-过模图 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case DJGS-22-2-四方通孔-105S-过模图 --prefer-category through_hole_part --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "DJGS-24-6-冲铆轴销-YT105S-过模图",
+      "source_type": "factory_gt",
+      "trust_level": "gold",
+      "product_name_zh": "冲铆轴销",
+      "product_category": "rivet_pin",
+      "part_number": "DJTZ-23-5",
+      "holdout_case_ids": [
+        "DJGS-24-6-冲铆轴销-YT105S-过模图"
+      ],
+      "tags": [
+        "combined",
+        "forward_extrusion",
+        "rivet_pin",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/factory/DJGS-24-6-冲铆轴销-YT105S-过模图.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_DJGS-24-6-冲铆轴销-YT105S-过模图 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case DJGS-24-6-冲铆轴销-YT105S-过模图 --prefer-category rivet_pin --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "DJGS-25-2-B120-0044-YT105S-过模图",
+      "source_type": "factory_gt",
+      "trust_level": "gold",
+      "product_name_zh": "异形件（带凸缘双头方形件）",
+      "product_category": "special_shape",
+      "part_number": "DJGS-25-2-B120-0044",
+      "holdout_case_ids": [
+        "DJGS-25-2-B120-0044-YT105S-过模图"
+      ],
+      "tags": [
+        "combined",
+        "special_shape",
+        "trimming",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/factory/DJGS-25-2-B120-0044-YT105S-过模图.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_DJGS-25-2-B120-0044-YT105S-过模图 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case DJGS-25-2-B120-0044-YT105S-过模图 --prefer-category special_shape --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "DJGS-25-5-B144-0056-106S-过模图",
+      "source_type": "factory_gt",
+      "trust_level": "gold",
+      "product_name_zh": "六角轴",
+      "product_category": "special_shape",
+      "part_number": "DJGS-25-5-B144-0056",
+      "holdout_case_ids": [
+        "DJGS-25-5-B144-0056-106S-过模图"
+      ],
+      "tags": [
+        "backward_extrusion",
+        "heading",
+        "piercing",
+        "special_shape",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/factory/DJGS-25-5-B144-0056-106S-过模图.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_DJGS-25-5-B144-0056-106S-过模图 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case DJGS-25-5-B144-0056-106S-过模图 --prefer-category special_shape --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "DJGS-25-7-21023C-00808-106S-过模图",
+      "source_type": "factory_gt",
+      "trust_level": "gold",
+      "product_name_zh": "内六角圆柱头螺钉过模件",
+      "product_category": "special_shape",
+      "part_number": "DJGS-25-7-21023C-00808",
+      "holdout_case_ids": [
+        "DJGS-25-7-21023C-00808-106S-过模图"
+      ],
+      "tags": [
+        "backward_extrusion",
+        "combined",
+        "forward_extrusion",
+        "special_shape",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/factory/DJGS-25-7-21023C-00808-106S-过模图.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_DJGS-25-7-21023C-00808-106S-过模图 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case DJGS-25-7-21023C-00808-106S-过模图 --prefer-category special_shape --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "DJGS-25-8-B001-0358-四方T帽-106S-过模图",
+      "source_type": "factory_gt",
+      "trust_level": "gold",
+      "product_name_zh": "四方T帽",
+      "product_category": "square_T_head",
+      "part_number": "DJGS-25-8-B001-0358",
+      "holdout_case_ids": [
+        "DJGS-25-8-B001-0358-四方T帽-106S-过模图"
+      ],
+      "tags": [
+        "combined",
+        "forward_extrusion",
+        "heading",
+        "piercing",
+        "square_T_head",
+        "square_head",
+        "thread",
+        "trimming",
+        "upsetting"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/factory/DJGS-25-8-B001-0358-四方T帽-106S-过模图.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_DJGS-25-8-B001-0358-四方T帽-106S-过模图 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case DJGS-25-8-B001-0358-四方T帽-106S-过模图 --prefer-category square_T_head --candidate-count 1 --max-design-attempts 1"
+    },
+    {
+      "case_id": "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图",
+      "source_type": "factory_gt",
+      "trust_level": "gold",
+      "product_name_zh": "铆接螺钉",
+      "product_category": "riveting_screw",
+      "part_number": "DJGS-25-9-B057-0200",
+      "holdout_case_ids": [
+        "DJGS-25-9-B057-0200-铆接螺钉-106S-过模图"
+      ],
+      "tags": [
+        "backward_extrusion",
+        "combined",
+        "forward_extrusion",
+        "riveting_screw",
+        "thread"
+      ],
+      "teacher_rationale": "app/knowledge/teacher_rationales/factory/DJGS-25-9-B057-0200-铆接螺钉-106S-过模图.json",
+      "suggested_command": "uv run python -m scripts.run_gong_experiment --experiment-id calibration_DJGS-25-9-B057-0200-铆接螺钉-106S-过模图 --part-features path/to/part_features.json --expected path/to/process_parameters_ground_truth.json --exclude-case DJGS-25-9-B057-0200-铆接螺钉-106S-过模图 --prefer-category riveting_screw --candidate-count 1 --max-design-attempts 1"
+    }
+  ]
+}

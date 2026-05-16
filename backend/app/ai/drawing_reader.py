@@ -21,6 +21,7 @@ from pathlib import Path
 
 import anthropic
 
+from app.core.anthropic_client import create_async_anthropic_client
 from app.core.config import settings
 from app.core.logging import get_logger
 from app.data.schemas import PartFeatures
@@ -136,7 +137,7 @@ class DrawingReader:
     """Extract structured PartFeatures from a product drawing using Claude Vision."""
 
     def __init__(self, client: anthropic.AsyncAnthropic | None = None) -> None:
-        self._client = client or anthropic.AsyncAnthropic(api_key=settings.anthropic_api_key)
+        self._client = client or create_async_anthropic_client()
 
     async def read_drawing(
         self,
@@ -245,7 +246,7 @@ class DrawingReader:
     def _parse_response(self, raw: str) -> PartFeatures:
         """Parse Claude's JSON response into a validated PartFeatures model."""
         # Strip markdown fences if present (Claude sometimes adds them)
-        cleaned = re.sub(r"```(?:json)?\s*", "", raw).strip().rstrip("```").strip()
+        cleaned = re.sub(r"^```(?:json)?\s*|\s*```$", "", raw.strip(), flags=re.MULTILINE).strip()
 
         try:
             data = json.loads(cleaned)
@@ -322,11 +323,12 @@ class DrawingReader:
     async def _dxf_to_images(self, path: Path) -> list[dict[str, str]]:
         """Render a DXF file to PNG using ezdxf's matplotlib backend."""
         try:
-            import ezdxf
-            from ezdxf.addons.drawing import RenderContext, Frontend
-            from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
-            import matplotlib.pyplot as plt
             import io
+
+            import ezdxf
+            import matplotlib.pyplot as plt
+            from ezdxf.addons.drawing import Frontend, RenderContext
+            from ezdxf.addons.drawing.matplotlib import MatplotlibBackend
 
             doc = ezdxf.readfile(str(path))
             msp = doc.modelspace()
@@ -349,8 +351,9 @@ class DrawingReader:
     async def _pdf_to_images(self, path: Path) -> list[dict[str, str]]:
         """Convert PDF pages to PNG images using pdf2image or pypdfium2."""
         try:
-            import pypdfium2 as pdfium
             import io
+
+            import pypdfium2 as pdfium
 
             pdf = pdfium.PdfDocument(str(path))
             images = []
@@ -373,8 +376,9 @@ class DrawingReader:
 
         # Fallback: try pdf2image
         try:
-            from pdf2image import convert_from_path
             import io
+
+            from pdf2image import convert_from_path
 
             pages = convert_from_path(str(path), dpi=150, first_page=1, last_page=4)
             images = []

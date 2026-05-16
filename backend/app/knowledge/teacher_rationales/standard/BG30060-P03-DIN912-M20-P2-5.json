@@ -1,0 +1,69 @@
+{
+  "case_id": "BG30060-P03-DIN912-M20-P2-5",
+  "feature_observations": [
+    {
+      "feature_key": "hole_or_recess",
+      "evidence_zh": "头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。",
+      "expected_inference": [
+        "需要安排 piercing/backward_extrusion/压印类工序形成孔槽结构",
+        "孔槽类工序应与外形稳定顺序配合，避免过早破坏材料流动"
+      ]
+    },
+    {
+      "feature_key": "threaded_function",
+      "evidence_zh": "产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。",
+      "expected_inference": [
+        "ProcessForming 应区分冷镦工位与 post_processes",
+        "不要把螺纹最终形态误当成每站都要直接画出的冷镦实体"
+      ]
+    }
+  ],
+  "required_operations": [
+    {
+      "operation": "combined",
+      "why_zh": "复合工序用于把局部成形、压印、整形或下料校正合并到同一站。；1工位证据：下料：将盘元剪切成定长坯料，线径Ø19.7；关键尺寸 L=230, D=19.7；几何 type=cylinder, L=230, Dmax=19.7"
+    },
+    {
+      "operation": "upsetting",
+      "why_zh": "产品有头部/法兰体积需求，需要先聚料。；镦粗用于轴向压缩并把材料聚集到头部或局部增厚区域。；2工位证据：预镦：粗镦聚料，形成头部预成形料球；关键尺寸 L=215, D=25；几何 type=headed, L=215, Dmax=25"
+    },
+    {
+      "operation": "heading",
+      "why_zh": "产品头部需要形成稳定外形和头高，需要镦头/终镦。；镦头/终镦用于形成主要头部外形、头径和头高。；3工位证据：终镦头：成形圆柱头外形，头径Ø30.33，头高约20；关键尺寸 L=205, D=30.33, H=20；几何 type=headed, L=205, Dmax=30.33, headD=30.33"
+    },
+    {
+      "operation": "backward_extrusion",
+      "why_zh": "产品特征依据：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；反挤用于在头部形成内孔、内六角、凹穴等向内的功能结构。；4工位证据：反挤压成形内六角孔，对边17.05，深度≥10；关键尺寸 socket_size=17.05, socket_depth=10；几何 type=headed, L=205, Dmax=30.33, headD=30.33"
+    },
+    {
+      "operation": "forward_extrusion",
+      "why_zh": "正挤用于让材料沿轴向流动，形成较长杆部、缩径段或台阶过渡。；5工位证据：正挤压杆部至搓牙底径Ø19.67，并倒角50°/30°；关键尺寸 D_head=30.33, D_shank=19.67, L=200；几何 type=stepped, L=200, Dmax=30.33, headD=30.33, shankD=19.67"
+    }
+  ],
+  "precedence_constraints": [
+    {
+      "before": "combined",
+      "after": "upsetting",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 combined 后 upsetting：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。"
+    },
+    {
+      "before": "upsetting",
+      "after": "heading",
+      "why_zh": "由产品特征和相邻工位几何演变决定先 upsetting 后 heading：头部存在槽/孔/驱动结构，通常不是纯外形成形即可完成。；产品包含螺纹功能，冷镦成形后通常还需要搓牙/攻牙等后处理。"
+    },
+    {
+      "before": "heading",
+      "after": "backward_extrusion",
+      "why_zh": "先形成足够头部体积和外形，再反挤内孔/内六角，避免孔槽成形时头部材料不足。"
+    },
+    {
+      "before": "backward_extrusion",
+      "after": "forward_extrusion",
+      "why_zh": "先完成头部孔槽/内六角特征，再正挤或校准杆部，保持头部功能区不被后续聚料破坏。"
+    }
+  ],
+  "common_failure_modes": [
+    "不要把 combined 当作万能工序来掩盖正挤、反挤、切边、冲孔等具体成形机制。",
+    "复杂头部件需要同时解释材料聚集、杆部/孔槽成形和最终外轮廓控制。"
+  ]
+}

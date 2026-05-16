@@ -1,0 +1,139 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case_id": "STD-DIN912-M14-P2.0-40-60L",
+      "passed": true,
+      "skipped": false,
+      "checks": [
+        {
+          "check_name": "pydantic_schema",
+          "passed": true,
+          "severity": "error",
+          "message": "CaseRecord schema valid"
+        },
+        {
+          "check_name": "standard_ref_matches",
+          "passed": true,
+          "severity": "error",
+          "message": "expected DIN912, got DIN912"
+        },
+        {
+          "check_name": "thread_matches_filename",
+          "passed": true,
+          "severity": "error",
+          "message": "thread nominal/pitch must match intake manifest"
+        },
+        {
+          "check_name": "din912_requires_socket",
+          "passed": true,
+          "severity": "error",
+          "message": "DIN912 must expose hex_socket drive_type"
+        },
+        {
+          "check_name": "din912_requires_backward_extrusion",
+          "passed": true,
+          "severity": "error",
+          "message": "DIN912 forming process should include backward_extrusion for socket"
+        },
+        {
+          "check_name": "din912_requires_forward_extrusion",
+          "passed": true,
+          "severity": "error",
+          "message": "DIN912 forming process should include forward_extrusion/calibration for shank"
+        },
+        {
+          "check_name": "station_dimensions_present",
+          "passed": true,
+          "severity": "error",
+          "message": "each station should expose key dimensions"
+        }
+      ]
+    },
+    {
+      "case_id": "STD-DIN912-M14-P2.0-60-140L",
+      "passed": true,
+      "skipped": false,
+      "checks": [
+        {
+          "check_name": "pydantic_schema",
+          "passed": true,
+          "severity": "error",
+          "message": "CaseRecord schema valid"
+        },
+        {
+          "check_name": "standard_ref_matches",
+          "passed": true,
+          "severity": "error",
+          "message": "expected DIN912, got DIN912"
+        },
+        {
+          "check_name": "thread_matches_filename",
+          "passed": true,
+          "severity": "error",
+          "message": "thread nominal/pitch must match intake manifest"
+        },
+        {
+          "check_name": "din912_requires_socket",
+          "passed": true,
+          "severity": "error",
+          "message": "DIN912 must expose hex_socket drive_type"
+        },
+        {
+          "check_name": "din912_requires_backward_extrusion",
+          "passed": true,
+          "severity": "error",
+          "message": "DIN912 forming process should include backward_extrusion for socket"
+        },
+        {
+          "check_name": "din912_requires_forward_extrusion",
+          "passed": true,
+          "severity": "error",
+          "message": "DIN912 forming process should include forward_extrusion/calibration for shank"
+        },
+        {
+          "check_name": "station_dimensions_present",
+          "passed": true,
+          "severity": "error",
+          "message": "each station should expose key dimensions"
+        }
+      ]
+    },
+    {
+      "case_id": "STD-DIN912-M20-P2.5-40-45L",
+      "passed": true,
+      "skipped": true,
+      "reason": "existing standard overlap"
+    },
+    {
+      "case_id": "STD-DIN912-M20-P2.5-50-70L",
+      "passed": true,
+      "skipped": true,
+      "reason": "existing standard overlap"
+    },
+    {
+      "case_id": "STD-DIN912-M20-P2.5-80-200L",
+      "passed": true,
+      "skipped": true,
+      "reason": "existing standard overlap"
+    },
+    {
+      "case_id": "STD-DIN933-M18-P2.5-25-150L",
+      "passed": true,
+      "skipped": true,
+      "reason": "existing standard overlap"
+    },
+    {
+      "case_id": "STD-DIN933-M22-P2.5-160-200L",
+      "passed": true,
+      "skipped": true,
+      "reason": "existing standard overlap"
+    },
+    {
+      "case_id": "STD-DIN933-M22-P2.5-40-150L",
+      "passed": true,
+      "skipped": true,
+      "reason": "existing standard overlap"
+    }
+  ]
+}
